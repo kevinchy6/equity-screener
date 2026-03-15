@@ -1,0 +1,113 @@
+name: Scan & Deploy
+
+on:
+  # 每天 4 次 (UTC 时间)
+  # HKT 05:00 = UTC 21:00 (前一天) — 美股收盘后
+  # HKT 08:00 = UTC 00:00 — 港股开盘前
+  # HKT 16:30 = UTC 08:30 — 港股收盘后
+  # HKT 22:00 = UTC 14:00 — 美股盘中/港股最终
+  schedule:
+    - cron: '0 21 * * 1-5'   # HKT 05:00 (Mon-Fri)
+    - cron: '0 0 * * 1-5'    # HKT 08:00 (Mon-Fri)
+    - cron: '30 8 * * 1-5'   # HKT 16:30 (Mon-Fri)
+    - cron: '0 14 * * 1-5'   # HKT 22:00 (Mon-Fri)
+
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      market:
+        description: 'Which market to scan'
+        required: false
+        default: 'both'
+        type: choice
+        options:
+          - both
+          - us
+          - hk
+
+# 确保同一时间只跑一个 workflow
+concurrency:
+  group: scan-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install yfinance pandas
+
+      - name: Determine which markets to scan
+        id: markets
+        run: |
+          MARKET="${{ github.event.inputs.market || 'both' }}"
+          HOUR=$(date -u +%H)
+          MINUTE=$(date -u +%M)
+
+          if [ "$MARKET" = "both" ]; then
+            # Auto-detect based on schedule time
+            # UTC 21:00 (HKT 05:00) → US (美股刚收盘)
+            # UTC 00:00 (HKT 08:00) → both
+            # UTC 08:30 (HKT 16:30) → HK (港股刚收盘)
+            # UTC 14:00 (HKT 22:00) → both
+            if [ "$HOUR" = "21" ]; then
+              MARKET="us"
+            elif [ "$HOUR" = "08" ]; then
+              MARKET="hk"
+            else
+              MARKET="both"
+            fi
+          fi
+          echo "market=$MARKET" >> $GITHUB_OUTPUT
+          echo "Scanning: $MARKET"
+
+      - name: Run US scanner
+        if: steps.markets.outputs.market == 'us' || steps.markets.outputs.market == 'both'
+        run: python scripts/scan_us.py
+        continue-on-error: true
+
+      - name: Run HK scanner
+        if: steps.markets.outputs.market == 'hk' || steps.markets.outputs.market == 'both'
+        run: python scripts/scan_hk.py
+        continue-on-error: true
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/*.json
+          git diff --staged --quiet || git commit -m "Update scan data $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: scan
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
