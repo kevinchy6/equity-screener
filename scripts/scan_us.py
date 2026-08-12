@@ -1,22 +1,29 @@
 #!/usr/bin/env python3
 """
-US Stock Screener using yfinance (Yahoo Finance).
-Free data source replacement for Polygon-based scanner.
+US Stock Screener — v2 (rate-limit resilient)
 
-Strategy: 
-  Phase 1 — Batch download 2y data for all tickers (yf.download handles batch efficiently)
-             Compute SMAs and volume filters entirely from batch data.
-  Phase 2 — Only fetch market_cap, name, sector for the ~100-200 survivors.
-             This minimizes per-ticker API calls and avoids rate limits.
+Pipeline:
+  Phase 0 — Nasdaq screener API (1 HTTP call) returns ALL US stocks with
+            market cap / price / volume / name / sector.
+            Pre-filter: MCap >= $3B, Price > $10  →  ~7000 tickers reduced to ~600.
+            This removes the need to fetch per-ticker metadata from Yahoo entirely.
+  Phase 1 — yf.download 1y history ONLY for pre-filtered tickers,
+            small chunks + pauses + exponential backoff on rate limit.
+            Compute SMA trend / volume / trading value filters.
+  Guard   — If the scan produced 0 results because of rate limiting,
+            KEEP the previous data file and exit(1) so the workflow shows failure.
+
+Filters:
+  MCap > $3B, Price > $10, Vol > 500K, AvgVol 10/60/90d > 500K,
+  AvgValue(20d) > $50M, SMA 10>20>50>100>200, Price > SMA30
 """
 
 import json
-import sys
 import os
+import sys
 import time
+import urllib.request
 from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor, as_completed
-import threading
 
 try:
     import yfinance as yf
@@ -25,12 +32,7 @@ except ImportError:
     subprocess.run([sys.executable, "-m", "pip", "install", "yfinance", "-q"])
     import yfinance as yf
 
-try:
-    import pandas as pd
-except ImportError:
-    import subprocess
-    subprocess.run([sys.executable, "-m", "pip", "install", "pandas", "-q"])
-    import pandas as pd
+import pandas as pd
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -40,31 +42,98 @@ UNIVERSE_FILE = os.path.join(SCRIPT_DIR, "us_universe.txt")
 os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
 MCAP_THRESHOLD = 3_000_000_000
+PRICE_THRESHOLD = 10
+VOL_THRESHOLD = 500_000
+VALUE_THRESHOLD = 50_000_000
+
+CHUNK_SIZE = 50          # small chunks like the breadth script (proven on Actions)
+CHUNK_PAUSE = 2.0        # seconds between chunks
+MAX_CHUNK_RETRIES = 4    # per-chunk retries with backoff
 
 
-def calc_sma(prices, period):
-    if len(prices) < period:
+def log(msg):
+    print(msg, file=sys.stderr, flush=True)
+
+
+# ────────────────────────── Phase 0: universe + fundamentals ──────────────────────────
+
+def fetch_nasdaq_screener():
+    """One call to Nasdaq's screener API → every US-listed stock with
+    marketCap / lastsale / volume / name / sector. Returns list of dicts or None."""
+    url = ("https://api.nasdaq.com/api/screener/stocks"
+           "?tableonly=true&limit=25&offset=0&download=true")
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Origin": "https://www.nasdaq.com",
+        "Referer": "https://www.nasdaq.com/",
+    })
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                data = json.loads(resp.read().decode())
+            rows = data["data"]["rows"]
+            if rows and len(rows) > 1000:
+                return rows
+        except Exception as e:
+            log(f"[Phase 0] Nasdaq API attempt {attempt+1} failed: {e}")
+            time.sleep(10)
+    return None
+
+
+def build_prefiltered_universe():
+    """Returns (candidates dict ticker→meta, total_universe_count, used_nasdaq)."""
+    rows = fetch_nasdaq_screener()
+    if rows is None:
+        log("[Phase 0] Nasdaq API unavailable — falling back to static universe file")
+        with open(UNIVERSE_FILE) as f:
+            tickers = [line.strip() for line in f if line.strip()]
+        return {t: None for t in tickers}, len(tickers), False
+
+    total = len(rows)
+    candidates = {}
+    for r in rows:
+        try:
+            sym = r["symbol"].strip()
+            # skip preferred/units (^, spaces); convert BRK/B → BRK-B for Yahoo
+            if "^" in sym or " " in sym:
+                continue
+            sym = sym.replace("/", "-").replace(".", "-")
+            mcap = float(r.get("marketCap") or 0)
+            price = float((r.get("lastsale") or "$0").replace("$", "").replace(",", ""))
+            if mcap < MCAP_THRESHOLD or price <= PRICE_THRESHOLD:
+                continue
+            candidates[sym] = {
+                "name": (r.get("name") or sym)
+                    .replace(" Common Stock", "").replace(" Class A", "")
+                    .replace(" Ordinary Shares", "").replace(" Inc.", " Inc")
+                    .strip(),
+                "sector": r.get("sector") or "",
+                "marketCap": int(mcap),
+            }
+        except Exception:
+            continue
+    log(f"[Phase 0] Nasdaq universe {total} → {len(candidates)} after MCap>${MCAP_THRESHOLD/1e9:.0f}B & Price>${PRICE_THRESHOLD}")
+    return candidates, total, True
+
+
+# ────────────────────────── Phase 1: history + technical filters ──────────────────────────
+
+def calc_sma(values, period):
+    if len(values) < period:
         return None
-    return sum(prices[-period:]) / period
+    return sum(values[-period:]) / period
 
 
-_print_lock = threading.Lock()
-_pass_count = [0]
-_fail_count = [0]
-
-
-def analyze_from_batch(ticker, closes, volumes):
-    """
-    Analyze a ticker using pre-downloaded close/volume arrays.
-    Returns dict with technical data if all SMA/volume filters pass, else None.
-    """
+def analyze(ticker, closes, volumes):
     if len(closes) < 200:
         return None
 
     last_price = closes[-1]
     prev_close = closes[-2] if len(closes) >= 2 else last_price
-
-    if last_price < 10:
+    if last_price <= PRICE_THRESHOLD:
         return None
 
     sma10 = calc_sma(closes, 10)
@@ -73,63 +142,49 @@ def analyze_from_batch(ticker, closes, volumes):
     sma50 = calc_sma(closes, 50)
     sma100 = calc_sma(closes, 100)
     sma200 = calc_sma(closes, 200)
-
     if not all([sma10, sma20, sma30, sma50, sma100, sma200]):
         return None
 
-    # SMA trend
-    if sma10 <= sma20 or sma20 <= sma50 or sma50 <= sma100 or sma100 <= sma200:
+    if not (sma10 > sma20 > sma50 > sma100 > sma200):
         return None
     if last_price <= sma30:
         return None
 
-    # Volume
+    daily_volume = volumes[-1]
     avg_vol_10 = calc_sma(volumes, 10)
     avg_vol_60 = calc_sma(volumes, 60)
     avg_vol_90 = calc_sma(volumes, 90)
-    daily_volume = volumes[-1]
-
     if not all([avg_vol_10, avg_vol_60, avg_vol_90]):
         return None
-
-    if daily_volume < 500_000:
-        return None
-    if avg_vol_10 < 500_000:
-        return None
-    if avg_vol_60 < 500_000:
-        return None
-    if avg_vol_90 < 500_000:
+    if (daily_volume < VOL_THRESHOLD or avg_vol_10 < VOL_THRESHOLD
+            or avg_vol_60 < VOL_THRESHOLD or avg_vol_90 < VOL_THRESHOLD):
         return None
 
-    recent_closes = closes[-20:]
-    recent_volumes = volumes[-20:]
-    avg_trading_value = sum(c * v for c, v in zip(recent_closes, recent_volumes)) / len(recent_closes)
-
-    if avg_trading_value < 50_000_000:
+    recent_c = closes[-20:]
+    recent_v = volumes[-20:]
+    avg_value = sum(c * v for c, v in zip(recent_c, recent_v)) / len(recent_c)
+    if avg_value < VALUE_THRESHOLD:
         return None
 
     change = last_price - prev_close
-    change_pct = (change / prev_close * 100) if prev_close != 0 else 0
-
-    if len(closes) >= 6:
-        price_5d_ago = closes[-6]
-        change_5d_pct = ((last_price - price_5d_ago) / price_5d_ago * 100) if price_5d_ago != 0 else 0
-    else:
-        change_5d_pct = 0
+    change_pct = (change / prev_close * 100) if prev_close else 0
+    change_5d_pct = 0
+    if len(closes) >= 6 and closes[-6]:
+        change_5d_pct = (last_price - closes[-6]) / closes[-6] * 100
 
     return {
         "ticker": ticker,
-        "name": ticker,  # will be filled in Phase 2
+        "name": ticker,
         "price": round(last_price, 2),
         "change": round(change, 2),
         "changePercent": round(change_pct, 2),
         "change5dPercent": round(change_5d_pct, 2),
-        "marketCap": 0,  # will be filled in Phase 2
+        "marketCap": 0,
         "volume": int(daily_volume),
         "avgVolume10d": int(avg_vol_10),
         "avgVolume60d": int(avg_vol_60),
         "avgVolume90d": int(avg_vol_90),
-        "avgTradingValue": int(avg_trading_value),
+        "avgTradingValue": int(avg_value),
         "sma10": round(sma10, 2),
         "sma20": round(sma20, 2),
         "sma30": round(sma30, 2),
@@ -141,183 +196,126 @@ def analyze_from_batch(ticker, closes, volumes):
     }
 
 
-def fetch_metadata(ticker_code, retries=3):
-    """Phase 2: Fetch market cap, name, sector for a single ticker with retry."""
-    for attempt in range(retries):
+def download_chunk(chunk):
+    """yf.download with exponential backoff. Returns DataFrame or None."""
+    delay = 30
+    for attempt in range(MAX_CHUNK_RETRIES):
         try:
-            tk = yf.Ticker(ticker_code)
-            market_cap = 0
-            name = ticker_code
-            sector = ''
-
-            try:
-                fi = tk.fast_info
-                market_cap = getattr(fi, 'market_cap', 0) or 0
-            except:
-                pass
-
-            try:
-                info = tk.info
-                name = info.get('shortName', '') or info.get('longName', ticker_code)
-                sector = info.get('sector', '') or ''
-            except:
-                pass
-
-            # If we got meaningful data, return
-            if market_cap > 0 or name != ticker_code:
-                return {"market_cap": market_cap, "name": name, "sector": sector}
-
-            # Retry if got nothing
-            if attempt < retries - 1:
-                time.sleep(2)
-                continue
-
-            return {"market_cap": market_cap, "name": name, "sector": sector}
-        except:
-            if attempt < retries - 1:
-                time.sleep(2)
+            data = yf.download(chunk, period="1y", group_by="ticker",
+                               progress=False, threads=False, auto_adjust=True)
+            if data is not None and not data.empty:
+                return data
+            raise RuntimeError("empty dataframe")
+        except Exception as e:
+            msg = str(e)
+            is_rate = "Rate" in msg or "429" in msg or "Too Many" in msg or "empty" in msg
+            if attempt < MAX_CHUNK_RETRIES - 1:
+                wait = delay * (2 ** attempt) if is_rate else 10
+                log(f"    retry {attempt+1} in {wait}s ({msg[:80]})")
+                time.sleep(wait)
             else:
-                return {"market_cap": 0, "name": ticker_code, "sector": ""}
-
-    return {"market_cap": 0, "name": ticker_code, "sector": ""}
+                log(f"    chunk failed permanently: {msg[:120]}")
+    return None
 
 
 def main():
-    print("[US Screener] Starting yfinance-based scan...", file=sys.stderr)
-    start_time = time.time()
+    start = time.time()
+    log("[US Screener v2] Starting...")
 
-    if not os.path.exists(UNIVERSE_FILE):
-        print(f"[US Screener] ERROR: Universe file not found: {UNIVERSE_FILE}", file=sys.stderr)
-        return
+    candidates, total_universe, used_nasdaq = build_prefiltered_universe()
+    tickers = list(candidates.keys())
 
-    with open(UNIVERSE_FILE) as f:
-        tickers = [line.strip() for line in f if line.strip()]
-
-    print(f"[US Screener] Universe: {len(tickers)} tickers", file=sys.stderr)
-
-    # ─── Phase 1: Batch download 2y history and compute all technicals ───
-    print("[US Screener] Phase 1: Batch downloading 2y history...", file=sys.stderr)
-
-    chunk_size = 200  # yfinance handles large batches well
-    technical_passers = []  # list of result dicts
-
-    for i in range(0, len(tickers), chunk_size):
-        chunk = tickers[i:i + chunk_size]
-        chunk_num = i // chunk_size + 1
-        total_chunks = (len(tickers) + chunk_size - 1) // chunk_size
-
-        try:
-            # Download 2 years for the whole chunk at once
-            data = yf.download(chunk, period="2y", group_by="ticker", progress=False, threads=True)
-
-            for t in chunk:
-                try:
-                    if len(chunk) == 1:
-                        ticker_data = data
-                    else:
-                        if t not in data.columns.get_level_values(0):
-                            continue
-                        ticker_data = data[t]
-
-                    # Drop NaN rows
-                    ticker_data = ticker_data.dropna(subset=["Close", "Volume"])
-                    if len(ticker_data) < 200:
-                        continue
-
-                    closes = ticker_data["Close"].tolist()
-                    volumes = ticker_data["Volume"].tolist()
-
-                    result = analyze_from_batch(t, closes, volumes)
-                    if result:
-                        technical_passers.append(result)
-                        # Skip if looks like ETF (ticker > 4 chars and typically 3-4 letter ETFs)
-                        # Real ETF filtering happens in Phase 2 via market_cap check
-                except:
-                    pass
-
-        except Exception as e:
-            print(f"  [Batch Error] chunk {chunk_num}: {e}", file=sys.stderr)
-
-        elapsed = time.time() - start_time
-        if chunk_num % 3 == 0 or chunk_num == total_chunks:
-            print(f"  [Phase 1] Chunk {chunk_num}/{total_chunks}, {len(technical_passers)} technical passers ({elapsed:.0f}s)", file=sys.stderr)
-
-    elapsed = time.time() - start_time
-    print(f"[US Screener] Phase 1 complete: {len(technical_passers)} pass all technical filters ({elapsed:.0f}s)", file=sys.stderr)
-
-    # ─── Phase 2: Fetch metadata only for survivors (sequential with delays) ──
-    print(f"[US Screener] Phase 2: Fetching metadata for {len(technical_passers)} stocks...", file=sys.stderr)
+    log(f"[Phase 1] Downloading 1y history for {len(tickers)} tickers "
+        f"(chunks of {CHUNK_SIZE})...")
 
     passing = []
+    failed_chunks = 0
+    total_chunks = (len(tickers) + CHUNK_SIZE - 1) // CHUNK_SIZE
 
-    for idx, item in enumerate(technical_passers):
-        try:
-            meta = fetch_metadata(item["ticker"])
-            market_cap = meta["market_cap"]
+    for i in range(0, len(tickers), CHUNK_SIZE):
+        chunk = tickers[i:i + CHUNK_SIZE]
+        chunk_num = i // CHUNK_SIZE + 1
 
-            # Market cap filter — also skip ETFs (market_cap = 0 usually means ETF/fund)
-            if market_cap == 0:
-                continue
-            if market_cap < MCAP_THRESHOLD:
-                continue
+        data = download_chunk(chunk)
+        if data is None:
+            failed_chunks += 1
+            continue
 
-            item["marketCap"] = int(market_cap)
-            item["name"] = meta["name"]
-            item["sector"] = meta["sector"]
-            passing.append(item)
-
-            _pass_count[0] += 1
-            print(f"[Pass] {item['ticker']} ({meta['name']}) ${item['price']:.2f} MCap={market_cap/1e9:.1f}B Sector={meta['sector']}", file=sys.stderr)
-        except:
-            _fail_count[0] += 1
-
-        # Small delay to avoid rate limits
-        if (idx + 1) % 5 == 0:
-            time.sleep(1.0)
-        else:
-            time.sleep(0.2)
-
-        if (idx + 1) % 20 == 0:
-            elapsed = time.time() - start_time
-            print(f"  [Phase 2] {idx+1}/{len(technical_passers)} metadata fetched ({elapsed:.0f}s)", file=sys.stderr)
-
-    # ─── Phase 3: Fetch sectors sequentially with delays ──────
-    no_sector = [s for s in passing if not s.get("sector")]
-    if no_sector:
-        print(f"[US Screener] Phase 3: Fetching sectors for {len(no_sector)} stocks...", file=sys.stderr)
-        for idx, stock in enumerate(no_sector):
+        for t in chunk:
             try:
-                tk = yf.Ticker(stock["ticker"])
-                info = tk.info
-                stock["sector"] = info.get("sector", "") or ""
-                if not stock["name"] or stock["name"] == stock["ticker"]:
-                    stock["name"] = info.get("shortName", "") or info.get("longName", stock["ticker"])
-            except:
+                if len(chunk) == 1:
+                    tdf = data
+                else:
+                    if t not in data.columns.get_level_values(0):
+                        continue
+                    tdf = data[t]
+                tdf = tdf.dropna(subset=["Close", "Volume"])
+                if len(tdf) < 200:
+                    continue
+                result = analyze(t, tdf["Close"].tolist(), tdf["Volume"].tolist())
+                if result:
+                    meta = candidates.get(t)
+                    if meta:
+                        result["name"] = meta["name"]
+                        result["sector"] = meta["sector"]
+                        result["marketCap"] = meta["marketCap"]
+                    passing.append(result)
+            except Exception:
                 pass
-            if (idx + 1) % 10 == 0:
-                print(f"  [Phase 3] {idx+1}/{len(no_sector)} sectors fetched", file=sys.stderr)
-                time.sleep(2)  # pause every 10 to avoid rate limit
-            else:
-                time.sleep(0.5)
 
-    # Sort by market cap descending
+        if chunk_num % 3 == 0 or chunk_num == total_chunks:
+            log(f"  [Phase 1] chunk {chunk_num}/{total_chunks}, "
+                f"{len(passing)} passing, {failed_chunks} failed chunks "
+                f"({time.time()-start:.0f}s)")
+        time.sleep(CHUNK_PAUSE)
+
+    # ── Fallback metadata fetch (only if Nasdaq API was unavailable) ──
+    if not used_nasdaq and passing:
+        log(f"[Phase 2] Fetching metadata for {len(passing)} survivors via yfinance...")
+        kept = []
+        for idx, item in enumerate(passing):
+            try:
+                tk = yf.Ticker(item["ticker"])
+                mcap = 0
+                try:
+                    mcap = getattr(tk.fast_info, "market_cap", 0) or 0
+                except Exception:
+                    pass
+                if mcap < MCAP_THRESHOLD:
+                    continue
+                item["marketCap"] = int(mcap)
+                try:
+                    info = tk.info
+                    item["name"] = info.get("shortName") or info.get("longName") or item["ticker"]
+                    item["sector"] = info.get("sector") or ""
+                except Exception:
+                    pass
+                kept.append(item)
+            except Exception:
+                pass
+            time.sleep(1.0 if (idx + 1) % 5 == 0 else 0.3)
+        passing = kept
+
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
+    elapsed = time.time() - start
 
-    elapsed = time.time() - start_time
-    print(f"\n[US Screener] ═══════════════════════════════════════", file=sys.stderr)
-    print(f"[US Screener] Complete. {len(passing)} stocks pass all filters.", file=sys.stderr)
-    print(f"[US Screener] Total time: {elapsed:.0f}s ({elapsed/60:.1f}min)", file=sys.stderr)
+    log(f"[US Screener v2] Complete: {len(passing)} stocks pass "
+        f"({failed_chunks}/{total_chunks} chunks failed, {elapsed:.0f}s)")
+
+    # ── Empty-result guard: never overwrite good data with a rate-limited empty scan ──
+    if len(passing) == 0 and (failed_chunks > total_chunks * 0.3):
+        log("[GUARD] 0 results AND >30% chunks failed → keeping previous data, exiting 1")
+        sys.exit(1)
 
     output = {
         "stocks": passing,
-        "totalUniverse": len(tickers),
+        "totalUniverse": total_universe,
         "totalPassing": len(passing),
         "lastUpdated": datetime.now().isoformat(),
     }
-
     with open(OUTPUT_FILE, "w") as f:
         json.dump(output, f)
-    print(f"[Done] Output: {OUTPUT_FILE}", file=sys.stderr)
+    log(f"[Done] {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":

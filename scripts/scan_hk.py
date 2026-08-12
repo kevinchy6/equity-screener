@@ -196,17 +196,40 @@ def main():
     # ─── Phase 1: Batch download 2y history and compute all technicals ───
     print("[HK Screener] Phase 1: Batch downloading 2y history...", file=sys.stderr)
 
-    chunk_size = 100
+    chunk_size = 50
     technical_passers = []
+    failed_chunks = 0
+    total_chunks = (len(tickers) + chunk_size - 1) // chunk_size
+
+    def download_chunk_with_retry(chunk, max_retries=4):
+        delay = 30
+        for attempt in range(max_retries):
+            try:
+                d = yf.download(chunk, period="1y", group_by="ticker", progress=False, threads=False)
+                if d is not None and not d.empty:
+                    return d
+                raise RuntimeError("empty dataframe")
+            except Exception as e:
+                msg = str(e)
+                is_rate = "Rate" in msg or "429" in msg or "Too Many" in msg or "empty" in msg
+                if attempt < max_retries - 1:
+                    wait = delay * (2 ** attempt) if is_rate else 10
+                    print(f"    retry {attempt+1} in {wait}s ({msg[:80]})", file=sys.stderr)
+                    time.sleep(wait)
+                else:
+                    print(f"    chunk failed permanently: {msg[:120]}", file=sys.stderr)
+        return None
 
     for i in range(0, len(tickers), chunk_size):
         chunk = tickers[i:i + chunk_size]
         chunk_num = i // chunk_size + 1
-        total_chunks = (len(tickers) + chunk_size - 1) // chunk_size
+
+        data = download_chunk_with_retry(chunk)
+        if data is None:
+            failed_chunks += 1
+            continue
 
         try:
-            data = yf.download(chunk, period="2y", group_by="ticker", progress=False, threads=True)
-
             for t in chunk:
                 try:
                     if len(chunk) == 1:
@@ -228,12 +251,12 @@ def main():
                         technical_passers.append(result)
                 except:
                     pass
-
         except Exception as e:
             print(f"  [Batch Error] chunk {chunk_num}: {e}", file=sys.stderr)
 
         elapsed = time.time() - start_time
         print(f"  [Phase 1] Chunk {chunk_num}/{total_chunks}, {len(technical_passers)} technical passers ({elapsed:.0f}s)", file=sys.stderr)
+        time.sleep(2.0)
 
     elapsed = time.time() - start_time
     print(f"[HK Screener] Phase 1 complete: {len(technical_passers)} pass all technical filters ({elapsed:.0f}s)", file=sys.stderr)
@@ -249,9 +272,17 @@ def main():
             meta = fetch_metadata(item["ticker"])
             market_cap = meta["market_cap"]
 
-            # Market cap filter — skip if 0 (likely ETF/fund) or below threshold
+            # Market cap filter — skip if 0 (likely ETF/fund) or below threshold.
+            # BUT: if metadata lookups are failing across the board (rate limit),
+            # keep the stock rather than silently dropping everything.
             if market_cap == 0:
-                print(f"  [Skip] {item['ticker']} — no market cap data (likely ETF)", file=sys.stderr)
+                if meta["name"] != item["ticker"]:
+                    print(f"  [Skip] {item['ticker']} — no market cap data (likely ETF)", file=sys.stderr)
+                    continue
+                print(f"  [Keep] {item['ticker']} — metadata unavailable (rate limit?), keeping with MCap=0", file=sys.stderr)
+                item["name"] = meta["name"]
+                item["sector"] = meta["sector"]
+                passing.append(item)
                 continue
             if market_cap < MCAP_THRESHOLD:
                 print(f"  [Skip] {item['ticker']} — MCap HK${market_cap/1e9:.1f}B < HK$1B", file=sys.stderr)
@@ -305,6 +336,11 @@ def main():
     print(f"[HK Screener] Complete. {len(passing)} stocks pass all filters.", file=sys.stderr)
     print(f"[HK Screener] Total time: {elapsed:.0f}s ({elapsed/60:.1f}min)", file=sys.stderr)
     print(f"[HK Screener] Passed: {_pass_count[0]}, Failed: {_fail_count[0]}", file=sys.stderr)
+
+    # ── Empty-result guard: never overwrite good data with a rate-limited empty scan ──
+    if len(passing) == 0 and failed_chunks > total_chunks * 0.3:
+        print("[GUARD] 0 results AND >30% chunks failed → keeping previous data, exiting 1", file=sys.stderr)
+        sys.exit(1)
 
     output = {
         "stocks": passing,

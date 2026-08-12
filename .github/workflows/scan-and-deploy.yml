@@ -52,7 +52,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install yfinance pandas
+        run: pip install "yfinance[nospam]" pandas curl_cffi
 
       - name: Determine which markets to scan
         id: markets
