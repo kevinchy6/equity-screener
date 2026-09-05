@@ -34,6 +34,8 @@ except ImportError:
 
 import pandas as pd
 
+from enrich import compute_extras, add_rs_ranks, apply_history, utc_now_iso
+
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 OUTPUT_FILE = os.path.join(ROOT_DIR, "public", "data", "us.json")
@@ -172,7 +174,7 @@ def analyze(ticker, closes, volumes):
     if len(closes) >= 6 and closes[-6]:
         change_5d_pct = (last_price - closes[-6]) / closes[-6] * 100
 
-    return {
+    out = {
         "ticker": ticker,
         "name": ticker,
         "price": round(last_price, 2),
@@ -194,6 +196,8 @@ def analyze(ticker, closes, volumes):
         "sector": "",
         "indices": [],
     }
+    out.update(compute_extras(closes))
+    return out
 
 
 def download_chunk(chunk):
@@ -297,6 +301,9 @@ def main():
         passing = kept
 
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
+    add_rs_ranks(passing)
+    apply_history(passing, os.path.join(ROOT_DIR, "public", "data", "us_history.json"),
+                  "America/New_York")
     elapsed = time.time() - start
 
     log(f"[US Screener v2] Complete: {len(passing)} stocks pass "
@@ -311,7 +318,7 @@ def main():
         "stocks": passing,
         "totalUniverse": total_universe,
         "totalPassing": len(passing),
-        "lastUpdated": datetime.now().isoformat(),
+        "lastUpdated": utc_now_iso(),
     }
     with open(OUTPUT_FILE, "w") as f:
         json.dump(output, f)

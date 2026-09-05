@@ -28,6 +28,8 @@ except ImportError:
     subprocess.run([sys.executable, "-m", "pip", "install", "pandas", "-q"])
     import pandas as pd
 
+from enrich import compute_extras, add_rs_ranks, apply_history, utc_now_iso
+
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 OUTPUT_FILE = os.path.join(ROOT_DIR, "public", "data", "hk.json")
@@ -115,7 +117,7 @@ def analyze_from_batch(ticker, closes, volumes):
     else:
         change_5d_pct = 0
 
-    return {
+    out = {
         "ticker": ticker,
         "name": ticker,  # filled in Phase 2
         "price": round(last_price, 2),
@@ -137,6 +139,8 @@ def analyze_from_batch(ticker, closes, volumes):
         "sector": "",
         "indices": [],
     }
+    out.update(compute_extras(closes))
+    return out
 
 
 def fetch_metadata(ticker_code, retries=3):
@@ -330,6 +334,9 @@ def main():
 
     # Sort by market cap descending
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
+    add_rs_ranks(passing)
+    apply_history(passing, os.path.join(ROOT_DIR, "public", "data", "hk_history.json"),
+                  "Asia/Hong_Kong")
 
     elapsed = time.time() - start_time
     print(f"\n[HK Screener] ═══════════════════════════════════════", file=sys.stderr)
@@ -346,7 +353,7 @@ def main():
         "stocks": passing,
         "totalUniverse": len(tickers),
         "totalPassing": len(passing),
-        "lastUpdated": datetime.now().isoformat(),
+        "lastUpdated": utc_now_iso(),
     }
 
     with open(OUTPUT_FILE, "w") as f:

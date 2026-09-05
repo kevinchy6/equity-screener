@@ -19,6 +19,8 @@
       --positive-bg: rgba(22,163,74,0.08);
       --negative: #dc2626;
       --negative-bg: rgba(220,38,38,0.08);
+      --accent: #d97706;
+      --accent-bg: rgba(217,119,6,0.12);
       --hover: rgba(0,0,0,0.03);
     }
     .dark {
@@ -34,6 +36,8 @@
       --positive-bg: rgba(74,222,128,0.1);
       --negative: #f87171;
       --negative-bg: rgba(248,113,113,0.1);
+      --accent: #fbbf24;
+      --accent-bg: rgba(251,191,36,0.12);
       --hover: rgba(255,255,255,0.03);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -61,7 +65,6 @@
     .logo { color: var(--primary); flex-shrink: 0; }
     .title { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; }
     .subtitle { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-    /* Market Toggle */
     .market-toggle {
       display: inline-flex; border-radius: 8px; border: 1px solid var(--border);
       background: var(--bg-muted); padding: 2px;
@@ -98,6 +101,33 @@
       color: var(--text-muted); white-space: nowrap;
     }
     .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+    /* Sector summary */
+    .sector-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+      gap: 8px; margin-bottom: 12px;
+    }
+    .sector-card {
+      padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg-card); cursor: pointer; transition: all 0.15s;
+      min-width: 0;
+    }
+    .sector-card:hover { border-color: var(--primary); }
+    .sector-card.active {
+      border-color: var(--primary); background: var(--bg-muted);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+    .sector-card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; }
+    .sector-count { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
+    .sector-share { font-size: 10px; color: var(--text-xs); }
+    .sector-cname {
+      font-size: 11px; font-weight: 600; color: var(--text-muted);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px;
+    }
+    .sector-top3 {
+      font-size: 11px; color: var(--primary); margin-top: 3px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      font-variant-numeric: tabular-nums;
+    }
     /* Toolbar */
     .toolbar {
       display: flex; align-items: center; justify-content: space-between;
@@ -118,6 +148,7 @@
       height: 32px; padding: 0 8px; border-radius: 6px;
       border: 1px solid var(--border); background: var(--bg);
       color: var(--text); font-size: 12px; cursor: pointer; outline: none;
+      max-width: 150px;
     }
     .btn {
       height: 32px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--border);
@@ -126,8 +157,6 @@
       transition: all 0.15s; white-space: nowrap;
     }
     .btn:hover { background: var(--bg-muted); }
-    .btn-primary { background: var(--primary); color: white; border-color: var(--primary); }
-    .btn-primary:hover { opacity: 0.9; }
     .btn.copied { border-color: var(--positive); color: var(--positive); }
     .stats { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 12px; }
     .stats-num { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
@@ -140,7 +169,7 @@
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     thead { background: var(--bg-muted); position: sticky; top: 0; z-index: 10; }
     th {
-      padding: 8px 12px; text-align: left; font-size: 11px; font-weight: 600;
+      padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 600;
       text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted);
       cursor: pointer; white-space: nowrap; user-select: none; transition: color 0.15s;
     }
@@ -148,13 +177,15 @@
     th.active { color: var(--primary); }
     th .sort-icon { display: inline-flex; margin-left: 3px; opacity: 0.3; vertical-align: middle; }
     th.active .sort-icon { opacity: 1; }
-    td { padding: 6px 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    td { padding: 6px 10px; font-variant-numeric: tabular-nums; white-space: nowrap; }
     tr { border-top: 1px solid var(--border); transition: background 0.1s; }
     thead tr { border-top: none; }
     tbody tr:hover { background: var(--hover); }
     .ticker { font-weight: 600; font-size: 13px; letter-spacing: -0.01em; }
-    .name { font-size: 12px; color: var(--text-muted); max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
-    .sector { font-size: 12px; color: var(--text-muted); }
+    .ticker a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--text-xs); }
+    .ticker a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+    .name { font-size: 12px; color: var(--text-muted); max-width: 170px; overflow: hidden; text-overflow: ellipsis; }
+    .sector { font-size: 12px; color: var(--text-muted); max-width: 130px; overflow: hidden; text-overflow: ellipsis; }
     .price { font-weight: 500; }
     .chg-badge {
       display: inline-flex; padding: 2px 6px; border-radius: 4px;
@@ -162,13 +193,19 @@
     }
     .chg-pos { color: var(--positive); background: var(--positive-bg); }
     .chg-neg { color: var(--negative); background: var(--negative-bg); }
+    .badge-new {
+      display: inline-flex; padding: 2px 6px; border-radius: 4px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
+      color: var(--accent); background: var(--accent-bg);
+    }
+    .streak-val { font-size: 12px; color: var(--text-muted); }
     .muted-val { font-size: 12px; color: var(--text-muted); }
     .sma-primary { font-size: 12px; font-weight: 500; color: var(--primary); }
     .sma-val { font-size: 12px; }
     .row-num { font-size: 11px; color: var(--text-xs); }
-    .empty-state {
-      padding: 48px 12px; text-align: center; color: var(--text-muted);
-    }
+    .rs-hot { color: var(--primary); font-weight: 700; }
+    .near-high { color: var(--positive); font-weight: 600; }
+    .empty-state { padding: 48px 12px; text-align: center; color: var(--text-muted); }
     .empty-state svg { opacity: 0.3; margin-bottom: 8px; }
     .empty-state p { font-size: 13px; }
     /* Footer */
@@ -179,7 +216,8 @@
     .main { max-width: 1600px; margin: 0 auto; padding: 16px 20px; }
     @media (max-width: 640px) {
       .header-inner, .main { padding-left: 12px; padding-right: 12px; }
-      .search-input { width: 160px; }
+      .search-input { width: 140px; }
+      .sector-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
     }
   </style>
 </head>
@@ -195,6 +233,8 @@
     let sortDir = 'desc';
     let minDailyChg = 'none';
     let min5dChg = 'none';
+    let sectorFilter = null;
+    let viewMode = 'compact';   // 'compact' | 'full'
     let isDark = true;
     let copied = false;
 
@@ -207,7 +247,7 @@
     async function loadData(m) {
       if (data[m]) return;
       try {
-        const resp = await fetch(`data/${m}.json`);
+        const resp = await fetch(`data/${m}.json?t=${Date.now()}`);
         data[m] = await resp.json();
       } catch(e) {
         data[m] = { stocks: [], totalPassing: 0, lastUpdated: null };
@@ -223,6 +263,9 @@
         const q = search.toLowerCase();
         result = result.filter(s => s.ticker.toLowerCase().includes(q) || s.name.toLowerCase().includes(q));
       }
+      if (sectorFilter) {
+        result = result.filter(s => (s.sector || 'Other') === sectorFilter);
+      }
       if (minDailyChg !== 'none') {
         const t = parseFloat(minDailyChg);
         result = result.filter(s => s.changePercent >= t);
@@ -233,13 +276,29 @@
       }
       if (sortField) {
         result.sort((a, b) => {
-          const av = a[sortField] ?? 0, bv = b[sortField] ?? 0;
+          const av = a[sortField] ?? -Infinity, bv = b[sortField] ?? -Infinity;
           if (typeof av === 'string' && typeof bv === 'string')
             return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
           return sortDir === 'asc' ? Number(av) - Number(bv) : Number(bv) - Number(av);
         });
       }
       return result;
+    }
+
+    // ─── Sector Summary ────────────────────────────────
+    function getSectorSummary() {
+      const stocks = data[market]?.stocks || [];
+      const groups = {};
+      stocks.forEach(s => {
+        const sec = s.sector || 'Other';
+        (groups[sec] = groups[sec] || []).push(s);
+      });
+      return Object.entries(groups).map(([sec, arr]) => ({
+        sector: sec,
+        count: arr.length,
+        share: stocks.length ? (arr.length / stocks.length * 100) : 0,
+        top3: [...arr].sort((a, b) => (b.marketCap||0) - (a.marketCap||0)).slice(0, 3),
+      })).sort((a, b) => b.count - a.count);
     }
 
     // ─── Format Helpers ────────────────────────────────
@@ -263,15 +322,45 @@
         if (v >= 1e6) return p + (v/1e6).toFixed(0) + 'M';
         return p + v.toLocaleString();
       },
+      hkt(iso) {
+        try {
+          const parts = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'Asia/Hong_Kong', month: 'short', day: 'numeric',
+            hour: '2-digit', minute: '2-digit', hour12: false
+          }).format(new Date(iso));
+          return parts + ' HKT';
+        } catch(e) { return iso; }
+      },
     };
 
-    function toTVHK(ticker) {
-      return 'HKEX:' + ticker.replace('.HK', '').replace(/^0+/, '');
+    function tvSymbol(ticker) {
+      if (market === 'hk') return 'HKEX:' + ticker.replace('.HK', '').replace(/^0+/, '');
+      return ticker.replace(/-/g, '.');
+    }
+    function tvLink(ticker) {
+      return `https://www.tradingview.com/chart/?symbol=${encodeURIComponent(tvSymbol(ticker))}`;
+    }
+
+    function sparkSVG(spark) {
+      if (!spark || spark.length < 2) return '<span class="muted-val">—</span>';
+      const w = 64, h = 20;
+      const min = Math.min(...spark), max = Math.max(...spark), rng = (max - min) || 1;
+      const pts = spark.map((v, i) =>
+        `${(i / (spark.length - 1) * w).toFixed(1)},${(h - 2 - (v - min) / rng * (h - 4)).toFixed(1)}`
+      ).join(' ');
+      const up = spark[spark.length - 1] >= spark[0];
+      return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" style="display:block"><polyline points="${pts}" fill="none" stroke="var(--${up ? 'positive' : 'negative'})" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
+    }
+
+    function streakCell(s) {
+      if (s.isNew) return '<span class="badge-new">NEW</span>';
+      if (s.streak) return `<span class="streak-val">${s.streak}d</span>`;
+      return '<span class="muted-val">—</span>';
     }
 
     // ─── Copy Tickers ──────────────────────────────────
     function copyTickers(tickers) {
-      const formatted = market === 'hk' ? tickers.map(toTVHK) : tickers;
+      const formatted = market === 'hk' ? tickers.map(t => 'HKEX:' + t.replace('.HK','').replace(/^0+/,'')) : tickers;
       const text = formatted.join(', ');
       try { navigator.clipboard.writeText(text); } catch {
         const ta = document.createElement('textarea');
@@ -285,8 +374,8 @@
 
     // ─── Export CSV ────────────────────────────────────
     function exportCSV(stocks) {
-      const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','Sector','MarketCap','Volume','AvgVol10d','AvgVol60d','AvgVol90d','AvgTradingValue','SMA10','SMA20','SMA30','SMA50','SMA100','SMA200'];
-      const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,`"${s.sector||''}"`,s.marketCap,s.volume,s.avgVolume10d,s.avgVolume60d,s.avgVolume90d,s.avgTradingValue,s.sma10,s.sma20,s.sma30,s.sma50,s.sma100,s.sma200].join(','));
+      const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','From52wHigh%','RS','Days','Sector','MarketCap','Volume','AvgVol10d','AvgVol60d','AvgVol90d','AvgTradingValue','SMA10','SMA20','SMA30','SMA50','SMA100','SMA200'];
+      const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,s.pctFrom52wHigh??'',s.rs??'',s.streak??'',`"${s.sector||''}"`,s.marketCap,s.volume,s.avgVolume10d,s.avgVolume60d,s.avgVolume90d,s.avgTradingValue,s.sma10,s.sma20,s.sma30,s.sma50,s.sma100,s.sma200].join(','));
       const csv = [h.join(','), ...rows].join('\n');
       const a = document.createElement('a');
       a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
@@ -308,6 +397,7 @@
       copy: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
       check: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>',
       download: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>',
+      columns: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18"/></svg>',
     };
 
     // ─── Render ────────────────────────────────────────
@@ -317,6 +407,9 @@
       const filtered = getFiltered();
       const tickers = filtered.map(s => s.ticker);
       const lastUpdated = data[market]?.lastUpdated;
+      const summary = getSectorSummary();
+      const full = viewMode === 'full';
+      const wasSearchFocused = document.activeElement && document.activeElement.id === 'search-input';
 
       const chgOptions = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(v => `<option value="${v}" ${minDailyChg===String(v)?'selected':''}>≥ ${v}%</option>`).join('');
       const chg5dOptions = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(v => `<option value="${v}" ${min5dChg===String(v)?'selected':''}>≥ ${v}%</option>`).join('');
@@ -327,30 +420,52 @@
         return `<th class="${active?'active':''}" data-sort="${field}">${label}<span class="sort-icon">${icon}</span></th>`;
       }
 
+      // Sector summary cards
+      const sectorCards = summary.map(g => `
+        <div class="sector-card ${sectorFilter===g.sector?'active':''}" data-sector="${g.sector}">
+          <div class="sector-card-top">
+            <span class="sector-count">${g.count}</span>
+            <span class="sector-share">${g.share.toFixed(0)}%</span>
+          </div>
+          <div class="sector-cname" title="${g.sector}">${g.sector}</div>
+          <div class="sector-top3">${g.top3.map(s => s.ticker).join(' · ')}</div>
+        </div>`).join('');
+
+      const colCount = full ? 18 : 13;
       let tableRows = '';
       if (filtered.length === 0) {
-        tableRows = `<tr><td colspan="16" class="empty-state">${icons.chart}<p>No results</p></td></tr>`;
+        tableRows = `<tr><td colspan="${colCount}" class="empty-state">${icons.chart}<p>No results</p></td></tr>`;
       } else {
         filtered.forEach((s, i) => {
           const chgCls = s.changePercent >= 0 ? 'chg-pos' : 'chg-neg';
           const chg5dCls = (s.change5dPercent??0) >= 0 ? 'chg-pos' : 'chg-neg';
+          const p52 = s.pctFrom52wHigh;
+          const p52Cell = (p52 === undefined || p52 === null) ? '<span class="muted-val">—</span>'
+            : `<span class="${p52 >= -3 ? 'near-high' : 'muted-val'}">${p52.toFixed(1)}%</span>`;
+          const rsCell = (s.rs === undefined || s.rs === null) ? '<span class="muted-val">—</span>'
+            : `<span class="${s.rs >= 90 ? 'rs-hot' : ''}">${s.rs}</span>`;
           tableRows += `<tr>
             <td class="row-num">${i+1}</td>
-            <td class="ticker">${s.ticker}</td>
-            <td class="name">${s.name}</td>
+            <td class="ticker"><a href="${tvLink(s.ticker)}" target="_blank" rel="noopener" title="Open in TradingView">${s.ticker}</a></td>
+            <td class="name" title="${s.name}">${s.name}</td>
             <td class="sector">${s.sector||'—'}</td>
             <td class="price">${c.currency}${fmt.price(s.price)}</td>
             <td><span class="chg-badge ${chgCls}">${s.changePercent>=0?'+':''}${s.changePercent.toFixed(2)}%</span></td>
             <td><span class="chg-badge ${chg5dCls}">${(s.change5dPercent??0)>=0?'+':''}${(s.change5dPercent??0).toFixed(2)}%</span></td>
+            <td>${sparkSVG(s.spark)}</td>
+            <td>${p52Cell}</td>
+            <td>${rsCell}</td>
+            <td>${streakCell(s)}</td>
             <td class="muted-val">${fmt.mcap(s.marketCap)}</td>
+            <td class="muted-val">${fmt.val(s.avgTradingValue)}</td>
+            ${full ? `
             <td class="muted-val">${fmt.vol(s.volume)}</td>
             <td class="muted-val">${fmt.vol(s.avgVolume10d)}</td>
-            <td class="muted-val">${fmt.val(s.avgTradingValue)}</td>
             <td class="sma-primary">${fmt.price(s.sma10)}</td>
             <td class="sma-val">${fmt.price(s.sma20)}</td>
             <td class="sma-val">${fmt.price(s.sma50)}</td>
             <td class="sma-val">${fmt.price(s.sma100)}</td>
-            <td class="sma-val">${fmt.price(s.sma200)}</td>
+            <td class="sma-val">${fmt.price(s.sma200)}</td>` : ''}
           </tr>`;
         });
       }
@@ -390,6 +505,7 @@
               <span class="badge">Price &gt; SMA30</span>
             </div>
           </div>
+          <div class="sector-grid">${sectorCards}</div>
           <div class="toolbar">
             <div class="toolbar-left">
               <div class="search-wrap">
@@ -410,13 +526,15 @@
                   ${chg5dOptions}
                 </select>
               </div>
+              ${sectorFilter ? `<button class="btn" id="clear-sector">✕ ${sectorFilter}</button>` : ''}
             </div>
             <div class="toolbar-right">
               <div class="stats">
                 ${icons.chart}
                 <span><span class="stats-num">${filtered.length}</span> stocks</span>
-                ${lastUpdated ? `<span>Updated ${new Date(lastUpdated).toLocaleString([], {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})}</span>` : ''}
+                ${lastUpdated ? `<span>Updated ${fmt.hkt(lastUpdated)}</span>` : ''}
               </div>
+              <button class="btn" id="view-toggle">${icons.columns} ${full ? 'Compact' : 'Full'}</button>
               <button class="btn ${copied?'copied':''}" id="copy-btn">
                 ${copied ? icons.check : icons.copy}
                 ${copied ? 'Copied!' : `Copy ${tickers.length} Tickers`}
@@ -435,22 +553,27 @@
                   ${th('price','Price')}
                   ${th('changePercent','Chg%')}
                   ${th('change5dPercent','5D Chg%')}
+                  <th>30D Trend</th>
+                  ${th('pctFrom52wHigh','52W High')}
+                  ${th('rs','RS')}
+                  ${th('streak','Days')}
                   ${th('marketCap','Mkt Cap')}
+                  ${th('avgTradingValue','Avg Value')}
+                  ${full ? `
                   ${th('volume','Volume')}
                   ${th('avgVolume10d','Avg 10d')}
-                  ${th('avgTradingValue','Avg Value')}
                   ${th('sma10','SMA10')}
                   ${th('sma20','SMA20')}
                   ${th('sma50','SMA50')}
                   ${th('sma100','SMA100')}
-                  ${th('sma200','SMA200')}
+                  ${th('sma200','SMA200')}` : ''}
                 </tr></thead>
                 <tbody>${tableRows}</tbody>
               </table>
             </div>
           </div>
           <div class="footer">
-            <a href="https://github.com" target="_blank">Open Source Equity Screener</a>
+            <a href="https://github.com/kevinchy6/equity-screener" target="_blank">Open Source Equity Screener</a>
           </div>
         </main>
       `;
@@ -459,17 +582,28 @@
       document.querySelectorAll('.market-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           market = btn.dataset.market;
-          search = ''; minDailyChg = 'none'; min5dChg = 'none';
+          search = ''; minDailyChg = 'none'; min5dChg = 'none'; sectorFilter = null;
           loadData(market);
           render();
         });
       });
+      document.querySelectorAll('.sector-card').forEach(card => {
+        card.addEventListener('click', () => {
+          sectorFilter = sectorFilter === card.dataset.sector ? null : card.dataset.sector;
+          render();
+        });
+      });
+      const clearSector = document.getElementById('clear-sector');
+      if (clearSector) clearSector.addEventListener('click', () => { sectorFilter = null; render(); });
+
       document.getElementById('theme-toggle').addEventListener('click', () => { isDark = !isDark; render(); });
+      document.getElementById('view-toggle').addEventListener('click', () => { viewMode = full ? 'compact' : 'full'; render(); });
       document.getElementById('search-input').addEventListener('input', e => { search = e.target.value; render(); });
-      document.getElementById('search-input').focus();
-      // Restore cursor position
-      const si = document.getElementById('search-input');
-      si.setSelectionRange(si.value.length, si.value.length);
+      if (wasSearchFocused || search) {
+        const si = document.getElementById('search-input');
+        si.focus();
+        si.setSelectionRange(si.value.length, si.value.length);
+      }
 
       document.getElementById('filter-daily').addEventListener('change', e => { minDailyChg = e.target.value; render(); });
       document.getElementById('filter-5d').addEventListener('change', e => { min5dChg = e.target.value; render(); });
