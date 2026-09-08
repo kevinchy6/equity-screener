@@ -74,14 +74,17 @@ git push -u origin main
 4. Wait ~5 minutes for the scan to complete
 5. Your site will be live at `https://<your-username>.github.io/<repo-name>/`
 
-After the first run, the scanner will automatically run 4x daily on weekdays:
+After the first run, the scanner will automatically run 7x daily on weekdays:
 
 | Time (HKT) | UTC | What it scans |
 |-------------|-----|---------------|
 | 05:00 | 21:00 (prev day) | US (post US close) |
 | 08:00 | 00:00 | Both (pre HK open) |
 | 16:30 | 08:30 | HK (post HK close) |
-| 22:00 | 14:00 | Both |
+| 21:30 | 13:30 | US open scan (EDT) — live ~15min after open |
+| 22:00 | 14:00 | Both (US intraday) |
+| 22:30 | 14:30 | US open scan (EST winter) |
+| 23:00 | 15:00 | US open +30min (EDT) |
 
 ---
 

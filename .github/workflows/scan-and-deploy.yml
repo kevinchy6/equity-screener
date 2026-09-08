@@ -1,17 +1,21 @@
 name: Scan & Deploy
 
 on:
-  # 每天 5 次 (UTC 时间)
+  # 每天 7 次 (UTC 时间)
   # HKT 05:00 = UTC 21:00 (前一天) — 美股收盘后
   # HKT 08:00 = UTC 00:00 — 港股开盘前
   # HKT 16:30 = UTC 08:30 — 港股收盘后
-  # HKT 22:00 = UTC 14:00 — 美股盘中/港股最终
+  # HKT 21:30 = UTC 13:30 — 美股开盘即扫描 (夏令时), 完成≈开盘后10-15分钟
+  # HKT 22:00 = UTC 14:00 — 美股盘中刷新
+  # HKT 22:30 = UTC 14:30 — 冬令时开盘即扫描 / 夏令时盘中刷新
   # HKT 23:00 = UTC 15:00 — 美股开盘后30分钟 (夏令时)
   schedule:
     - cron: '0 21 * * 1-5'   # HKT 05:00 (Mon-Fri)
     - cron: '0 0 * * 1-5'    # HKT 08:00 (Mon-Fri)
     - cron: '30 8 * * 1-5'   # HKT 16:30 (Mon-Fri)
+    - cron: '30 13 * * 1-5'  # US open 9:30am EDT — data live ~15min after open
     - cron: '0 14 * * 1-5'   # HKT 22:00 (Mon-Fri)
+    - cron: '30 14 * * 1-5'  # US open 9:30am EST (winter) — data live ~15min after open
     - cron: '0 15 * * 2-6'   # HKT 23:00 (Tue-Sat) — US open +30min
 
   # 手动触发
