@@ -100,7 +100,24 @@
       border-radius: 4px; font-size: 11px; background: var(--bg-muted);
       color: var(--text-muted); white-space: nowrap;
     }
-    .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    /* Price > SMA toggle */
+    .sma-toggle {
+      display: inline-flex; align-items: center; border-radius: 4px;
+      background: var(--bg-muted); padding: 2px; gap: 2px;
+    }
+    .sma-toggle .sma-label {
+      font-size: 11px; color: var(--text-muted); padding: 0 6px 0 6px; white-space: nowrap;
+    }
+    .sma-toggle button {
+      border: none; background: transparent; color: var(--text-muted);
+      font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 3px;
+      cursor: pointer; font-family: inherit; line-height: 1.4;
+    }
+    .sma-toggle button:hover { color: var(--text); }
+    .sma-toggle button.active {
+      background: var(--accent); color: #fff;
+    }
     /* Sector summary */
     .sector-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
@@ -235,6 +252,9 @@
     let min5dChg = 'none';
     let sectorFilter = null;
     let viewMode = 'compact';   // 'compact' | 'full'
+    let smaFilter = (() => {     // Price > SMA10 | SMA20 | SMA30 (30 = scanner default)
+      try { const v = parseInt(localStorage.getItem('es_smaFilter'), 10); return [10,20,30].includes(v) ? v : 30; } catch { return 30; }
+    })();
     let isDark = true;
     let copied = false;
 
@@ -256,8 +276,17 @@
     }
 
     // ─── Filtering & Sorting ───────────────────────────
-    function getFiltered() {
+    // Stocks passing the selected Price > SMA{10|20|30} condition.
+    // Data is scanned with Price > SMA30, so SMA20 / SMA10 are tighter subsets.
+    function getBaseStocks() {
       const stocks = data[market]?.stocks || [];
+      if (smaFilter === 30) return stocks;
+      const key = 'sma' + smaFilter;
+      return stocks.filter(s => typeof s[key] === 'number' ? s.price > s[key] : true);
+    }
+
+    function getFiltered() {
+      const stocks = getBaseStocks();
       let result = [...stocks];
       if (search.trim()) {
         const q = search.toLowerCase();
@@ -287,7 +316,7 @@
 
     // ─── Sector Summary ────────────────────────────────
     function getSectorSummary() {
-      const stocks = data[market]?.stocks || [];
+      const stocks = getBaseStocks();
       const groups = {};
       stocks.forEach(s => {
         const sec = s.sector || 'Other';
@@ -502,7 +531,10 @@
               <span class="badge">AvgVol 10/60/90d &gt; 500K</span>
               <span class="badge">${c.value}</span>
               <span class="badge">${icons.trend} SMA 10&gt;20&gt;50&gt;100&gt;200</span>
-              <span class="badge">Price &gt; SMA30</span>
+              <span class="sma-toggle" id="sma-toggle" title="Toggle the Price &gt; SMA condition">
+                <span class="sma-label">Price &gt;</span>
+                ${[10,20,30].map(n => `<button data-sma="${n}" class="${smaFilter===n?'active':''}">SMA${n}</button>`).join('')}
+              </span>
             </div>
           </div>
           <div class="sector-grid">${sectorCards}</div>
@@ -595,6 +627,14 @@
       });
       const clearSector = document.getElementById('clear-sector');
       if (clearSector) clearSector.addEventListener('click', () => { sectorFilter = null; render(); });
+
+      document.querySelectorAll('#sma-toggle button').forEach(b => {
+        b.addEventListener('click', () => {
+          smaFilter = parseInt(b.dataset.sma, 10);
+          try { localStorage.setItem('es_smaFilter', String(smaFilter)); } catch {}
+          render();
+        });
+      });
 
       document.getElementById('theme-toggle').addEventListener('click', () => { isDark = !isDark; render(); });
       document.getElementById('view-toggle').addEventListener('click', () => { viewMode = full ? 'compact' : 'full'; render(); });
