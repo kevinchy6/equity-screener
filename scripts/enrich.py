@@ -28,24 +28,29 @@ def compute_extras(closes):
     ret63 = None
     if len(closes) >= 64 and closes[-64]:
         ret63 = (last / closes[-64] - 1) * 100
+    ret21 = None
+    if len(closes) >= 22 and closes[-22]:
+        ret21 = (last / closes[-22] - 1) * 100
 
     spark = [round(v, 2 if v < 1000 else 1) for v in closes[-30:]]
 
     return {
         "pctFrom52wHigh": round(pct_from_high, 1),
         "ret63": round(ret63, 2) if ret63 is not None else None,
+        "ret21": round(ret21, 2) if ret21 is not None else None,
         "spark": spark,
     }
 
 
-def add_rs_ranks(passing, field="rs"):
-    """RS 1-99: percentile rank of 3-month return among the given stocks.
+def add_rs_ranks(passing, field="rs", ret_field="ret63"):
+    """RS 1-99: percentile rank of `ret_field` (default 3-month return) among
+    the given stocks.
 
     Stocks not in `passing` are untouched; callers that rank a subset should
     pre-set the field to None on the excluded stocks.
     """
-    vals = [(i, s.get("ret63")) for i, s in enumerate(passing)
-            if s.get("ret63") is not None]
+    vals = [(i, s.get(ret_field)) for i, s in enumerate(passing)
+            if s.get(ret_field) is not None]
     n = len(vals)
     if n < 2:
         for s in passing:
@@ -108,17 +113,20 @@ def finalize_lists(passing, history_file, tz_name):
     """Rank + track both the strict list (SMA50 > SMA100 required) and the
     relaxed list (all stocks, incl. those where only SMA50 <= SMA100).
 
-    Strict fields: rs / streak / isNew (None for relaxed-only stocks).
-    Relaxed fields: rsAll / streakAll / isNewAll (set for every stock).
+    Strict fields: rs (3M) / rs1m (1M) / streak / isNew (None for relaxed-only).
+    Relaxed fields: rsAll / rs1mAll / streakAll / isNewAll (set for every stock).
     """
     strict = [s for s in passing if s.get("strict", True)]
     for s in passing:
         if not s.get("strict", True):
             s["rs"] = None
+            s["rs1m"] = None
             s["streak"] = None
             s["isNew"] = False
-    add_rs_ranks(strict, field="rs")
-    add_rs_ranks(passing, field="rsAll")
+    add_rs_ranks(strict, field="rs", ret_field="ret63")
+    add_rs_ranks(strict, field="rs1m", ret_field="ret21")
+    add_rs_ranks(passing, field="rsAll", ret_field="ret63")
+    add_rs_ranks(passing, field="rs1mAll", ret_field="ret21")
     apply_history(strict, history_file, tz_name, key="dates",
                   streak_field="streak", new_field="isNew")
     apply_history(passing, history_file, tz_name, key="datesAll",

@@ -263,14 +263,23 @@
     let requireSma50gt100 = (() => { // strict trend: SMA50 > SMA100 required (scanner default)
       try { return localStorage.getItem('es_strict50') !== '0'; } catch { return true; }
     })();
+    let rsPeriod = (() => {          // RS lookback: '3m' (63 trading days) | '1m' (21 trading days)
+      try { return localStorage.getItem('es_rsPeriod') === '1m' ? '1m' : '3m'; } catch { return '3m'; }
+    })();
     let isDark = true;
     let copied = false;
 
-    // Field accessors that follow the SMA50>SMA100 toggle.
-    // Strict mode: rs / streak / isNew (ranked & tracked within the strict list).
-    // Relaxed mode: rsAll / streakAll / isNewAll (ranked & tracked within the full list).
+    // Field accessors that follow the SMA50>SMA100 toggle (and RS period).
+    // Strict mode: rs / rs1m / streak / isNew (ranked & tracked within the strict list).
+    // Relaxed mode: rsAll / rs1mAll / streakAll / isNewAll (ranked & tracked within the full list).
     const F = {
-      rs(s)     { return requireSma50gt100 ? s.rs : (s.rsAll ?? s.rs); },
+      rs(s) {
+        if (rsPeriod === '1m') {
+          const v = requireSma50gt100 ? s.rs1m : (s.rs1mAll ?? s.rs1m);
+          return v === undefined ? null : v;   // legacy data without 1M ranks → —
+        }
+        return requireSma50gt100 ? s.rs : (s.rsAll ?? s.rs);
+      },
       streak(s) { return requireSma50gt100 ? s.streak : (s.streakAll ?? s.streak); },
       isNew(s)  { return requireSma50gt100 ? s.isNew : (s.isNewAll ?? s.isNew); },
     };
@@ -323,8 +332,9 @@
         result = result.filter(s => (s.change5dPercent ?? 0) >= t);
       }
       if (sortField) {
+        const get = sortField === 'rs' ? F.rs : sortField === 'streak' ? F.streak : (s => s[sortField]);
         result.sort((a, b) => {
-          const av = a[sortField] ?? -Infinity, bv = b[sortField] ?? -Infinity;
+          const av = get(a) ?? -Infinity, bv = get(b) ?? -Infinity;
           if (typeof av === 'string' && typeof bv === 'string')
             return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
           return sortDir === 'asc' ? Number(av) - Number(bv) : Number(bv) - Number(av);
@@ -423,7 +433,7 @@
 
     // ─── Export CSV ────────────────────────────────────
     function exportCSV(stocks) {
-      const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','From52wHigh%','RS','Days','SMA50>SMA100','Sector','MarketCap','Volume','AvgVol10d','AvgVol60d','AvgVol90d','AvgTradingValue','SMA10','SMA20','SMA30','SMA50','SMA100','SMA200'];
+      const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','From52wHigh%',(rsPeriod==='1m'?'RS1M':'RS3M'),'Days','SMA50>SMA100','Sector','MarketCap','Volume','AvgVol10d','AvgVol60d','AvgVol90d','AvgTradingValue','SMA10','SMA20','SMA30','SMA50','SMA100','SMA200'];
       const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,s.pctFrom52wHigh??'',F.rs(s)??'',F.streak(s)??'',(s.strict===false?'N':'Y'),`"${s.sector||''}"`,s.marketCap,s.volume,s.avgVolume10d,s.avgVolume60d,s.avgVolume90d,s.avgTradingValue,s.sma10,s.sma20,s.sma30,s.sma50,s.sma100,s.sma200].join(','));
       const csv = [h.join(','), ...rows].join('\n');
       const a = document.createElement('a');
@@ -561,6 +571,11 @@
                 <span class="sma-label">Price &gt;</span>
                 ${[10,20,30].map(n => `<button data-sma="${n}" class="${smaFilter===n?'active':''}">SMA${n}</button>`).join('')}
               </span>
+              <span class="sma-toggle" id="rs-toggle" title="RS lookback: percentile rank of 1-month (21d) or 3-month (63d) return within the list">
+                <span class="sma-label">RS</span>
+                <button data-rs="1m" class="${rsPeriod==='1m'?'active':''}">1M</button>
+                <button data-rs="3m" class="${rsPeriod==='3m'?'active':''}">3M</button>
+              </span>
             </div>
           </div>
           <div class="sector-grid">${sectorCards}</div>
@@ -613,7 +628,7 @@
                   ${th('change5dPercent','5D Chg%')}
                   <th>30D Trend</th>
                   ${th('pctFrom52wHigh','52W High')}
-                  ${th('rs','RS')}
+                  ${th('rs', rsPeriod === '1m' ? 'RS 1M' : 'RS 3M')}
                   ${th('streak','Days')}
                   ${th('marketCap','Mkt Cap')}
                   ${th('avgTradingValue','Avg Value')}
@@ -658,6 +673,14 @@
         b.addEventListener('click', () => {
           requireSma50gt100 = b.dataset.strict === '1';
           try { localStorage.setItem('es_strict50', requireSma50gt100 ? '1' : '0'); } catch {}
+          render();
+        });
+      });
+
+      document.querySelectorAll('#rs-toggle button').forEach(b => {
+        b.addEventListener('click', () => {
+          rsPeriod = b.dataset.rs === '1m' ? '1m' : '3m';
+          try { localStorage.setItem('es_rsPeriod', rsPeriod); } catch {}
           render();
         });
       });
