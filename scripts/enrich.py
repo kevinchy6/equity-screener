@@ -63,6 +63,19 @@ def add_rs_ranks(passing, field="rs", ret_field="ret63"):
         s.setdefault(field, None)
 
 
+def add_composite_rs(passing, field="rsComp", a="rs", b="rs1m"):
+    """Composite RS 1-99: percentile rank of the equal-weighted average of two
+    RS ranks (default 3-month `rs` and 1-month `rs1m`). Re-ranking the average
+    keeps the result on the same 1-99 percentile scale.
+    """
+    for s in passing:
+        ra, rb = s.get(a), s.get(b)
+        s["_comp"] = (ra + rb) / 2 if (ra is not None and rb is not None) else None
+    add_rs_ranks(passing, field=field, ret_field="_comp")
+    for s in passing:
+        s.pop("_comp", None)
+
+
 def apply_history(passing, history_file, tz_name, keep=40,
                   key="dates", streak_field="streak", new_field="isNew"):
     """Track daily lists; annotate each stock with streak / isNew.
@@ -121,12 +134,15 @@ def finalize_lists(passing, history_file, tz_name):
         if not s.get("strict", True):
             s["rs"] = None
             s["rs1m"] = None
+            s["rsComp"] = None
             s["streak"] = None
             s["isNew"] = False
     add_rs_ranks(strict, field="rs", ret_field="ret63")
     add_rs_ranks(strict, field="rs1m", ret_field="ret21")
+    add_composite_rs(strict, field="rsComp", a="rs", b="rs1m")
     add_rs_ranks(passing, field="rsAll", ret_field="ret63")
     add_rs_ranks(passing, field="rs1mAll", ret_field="ret21")
+    add_composite_rs(passing, field="rsCompAll", a="rsAll", b="rs1mAll")
     apply_history(strict, history_file, tz_name, key="dates",
                   streak_field="streak", new_field="isNew")
     apply_history(passing, history_file, tz_name, key="datesAll",

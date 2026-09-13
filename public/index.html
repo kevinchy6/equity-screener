@@ -263,9 +263,10 @@
     let requireSma50gt100 = (() => { // strict trend: SMA50 > SMA100 required (scanner default)
       try { return localStorage.getItem('es_strict50') !== '0'; } catch { return true; }
     })();
-    let rsPeriod = (() => {          // RS lookback: '3m' (63 trading days) | '1m' (21 trading days)
-      try { return localStorage.getItem('es_rsPeriod') === '1m' ? '1m' : '3m'; } catch { return '3m'; }
+    let rsPeriod = (() => {          // RS mode: '3m' (63d) | '1m' (21d) | 'comp' (avg of 1M & 3M ranks, re-ranked)
+      try { const v = localStorage.getItem('es_rsPeriod'); return ['1m','3m','comp'].includes(v) ? v : '3m'; } catch { return '3m'; }
     })();
+    const RS_LABEL = { '1m': 'RS 1M', '3m': 'RS 3M', 'comp': 'RS 1M+3M' };
     let isDark = true;
     let copied = false;
 
@@ -274,11 +275,11 @@
     // Relaxed mode: rsAll / rs1mAll / streakAll / isNewAll (ranked & tracked within the full list).
     const F = {
       rs(s) {
-        if (rsPeriod === '1m') {
-          const v = requireSma50gt100 ? s.rs1m : (s.rs1mAll ?? s.rs1m);
-          return v === undefined ? null : v;   // legacy data without 1M ranks → —
-        }
-        return requireSma50gt100 ? s.rs : (s.rsAll ?? s.rs);
+        let v;
+        if (rsPeriod === '1m')        v = requireSma50gt100 ? s.rs1m   : (s.rs1mAll   ?? s.rs1m);
+        else if (rsPeriod === 'comp') v = requireSma50gt100 ? s.rsComp : (s.rsCompAll ?? s.rsComp);
+        else                          v = requireSma50gt100 ? s.rs     : (s.rsAll     ?? s.rs);
+        return v === undefined ? null : v;   // legacy data without the field → —
       },
       streak(s) { return requireSma50gt100 ? s.streak : (s.streakAll ?? s.streak); },
       isNew(s)  { return requireSma50gt100 ? s.isNew : (s.isNewAll ?? s.isNew); },
@@ -433,7 +434,7 @@
 
     // ─── Export CSV ────────────────────────────────────
     function exportCSV(stocks) {
-      const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','From52wHigh%',(rsPeriod==='1m'?'RS1M':'RS3M'),'Days','SMA50>SMA100','Sector','MarketCap','Volume','AvgVol10d','AvgVol60d','AvgVol90d','AvgTradingValue','SMA10','SMA20','SMA30','SMA50','SMA100','SMA200'];
+      const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','From52wHigh%',RS_LABEL[rsPeriod].replace(/\s/g,''),'Days','SMA50>SMA100','Sector','MarketCap','Volume','AvgVol10d','AvgVol60d','AvgVol90d','AvgTradingValue','SMA10','SMA20','SMA30','SMA50','SMA100','SMA200'];
       const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,s.pctFrom52wHigh??'',F.rs(s)??'',F.streak(s)??'',(s.strict===false?'N':'Y'),`"${s.sector||''}"`,s.marketCap,s.volume,s.avgVolume10d,s.avgVolume60d,s.avgVolume90d,s.avgTradingValue,s.sma10,s.sma20,s.sma30,s.sma50,s.sma100,s.sma200].join(','));
       const csv = [h.join(','), ...rows].join('\n');
       const a = document.createElement('a');
@@ -571,10 +572,11 @@
                 <span class="sma-label">Price &gt;</span>
                 ${[10,20,30].map(n => `<button data-sma="${n}" class="${smaFilter===n?'active':''}">SMA${n}</button>`).join('')}
               </span>
-              <span class="sma-toggle" id="rs-toggle" title="RS lookback: percentile rank of 1-month (21d) or 3-month (63d) return within the list">
+              <span class="sma-toggle" id="rs-toggle" title="RS: percentile rank within the list of 1-month (21d) return, 3-month (63d) return, or the composite (average of both ranks)">
                 <span class="sma-label">RS</span>
                 <button data-rs="1m" class="${rsPeriod==='1m'?'active':''}">1M</button>
                 <button data-rs="3m" class="${rsPeriod==='3m'?'active':''}">3M</button>
+                <button data-rs="comp" class="${rsPeriod==='comp'?'active':''}" title="Average of 1M and 3M ranks, re-ranked 1-99">1M+3M</button>
               </span>
             </div>
           </div>
@@ -628,7 +630,7 @@
                   ${th('change5dPercent','5D Chg%')}
                   <th>30D Trend</th>
                   ${th('pctFrom52wHigh','52W High')}
-                  ${th('rs', rsPeriod === '1m' ? 'RS 1M' : 'RS 3M')}
+                  ${th('rs', RS_LABEL[rsPeriod])}
                   ${th('streak','Days')}
                   ${th('marketCap','Mkt Cap')}
                   ${th('avgTradingValue','Avg Value')}
@@ -679,7 +681,7 @@
 
       document.querySelectorAll('#rs-toggle button').forEach(b => {
         b.addEventListener('click', () => {
-          rsPeriod = b.dataset.rs === '1m' ? '1m' : '3m';
+          rsPeriod = ['1m','3m','comp'].includes(b.dataset.rs) ? b.dataset.rs : '3m';
           try { localStorage.setItem('es_rsPeriod', rsPeriod); } catch {}
           render();
         });
