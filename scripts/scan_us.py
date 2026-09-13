@@ -34,7 +34,7 @@ except ImportError:
 
 import pandas as pd
 
-from enrich import compute_extras, add_rs_ranks, apply_history, utc_now_iso
+from enrich import compute_extras, finalize_lists, utc_now_iso
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -147,8 +147,11 @@ def analyze(ticker, closes, volumes):
     if not all([sma10, sma20, sma30, sma50, sma100, sma200]):
         return None
 
-    if not (sma10 > sma20 > sma50 > sma100 > sma200):
+    # Relaxed alignment: 10 > 20 > 50, 100 > 200, and 50 > 200.
+    # The 50 > 100 leg is recorded as `strict` so the frontend can toggle it.
+    if not (sma10 > sma20 > sma50 and sma100 > sma200 and sma50 > sma200):
         return None
+    strict = sma50 > sma100
     if last_price <= sma30:
         return None
 
@@ -193,6 +196,7 @@ def analyze(ticker, closes, volumes):
         "sma50": round(sma50, 2),
         "sma100": round(sma100, 2),
         "sma200": round(sma200, 2),
+        "strict": strict,
         "sector": "",
         "indices": [],
     }
@@ -301,9 +305,9 @@ def main():
         passing = kept
 
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
-    add_rs_ranks(passing)
-    apply_history(passing, os.path.join(ROOT_DIR, "public", "data", "us_history.json"),
-                  "America/New_York")
+    n_strict = finalize_lists(passing, os.path.join(ROOT_DIR, "public", "data", "us_history.json"),
+                              "America/New_York")
+    log(f"[Lists] strict (50>100 required): {n_strict}, relaxed total: {len(passing)}")
     elapsed = time.time() - start
 
     log(f"[US Screener v2] Complete: {len(passing)} stocks pass "

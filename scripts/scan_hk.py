@@ -28,7 +28,7 @@ except ImportError:
     subprocess.run([sys.executable, "-m", "pip", "install", "pandas", "-q"])
     import pandas as pd
 
-from enrich import compute_extras, add_rs_ranks, apply_history, utc_now_iso
+from enrich import compute_extras, finalize_lists, utc_now_iso
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -76,9 +76,11 @@ def analyze_from_batch(ticker, closes, volumes):
     if not all([sma10, sma20, sma30, sma50, sma100, sma200]):
         return None
 
-    # SMA trend alignment: 10 > 20 > 50 > 100 > 200
-    if sma10 <= sma20 or sma20 <= sma50 or sma50 <= sma100 or sma100 <= sma200:
+    # Relaxed alignment: 10 > 20 > 50, 100 > 200, 50 > 200.
+    # The 50 > 100 leg is recorded as `strict` so the frontend can toggle it.
+    if sma10 <= sma20 or sma20 <= sma50 or sma100 <= sma200 or sma50 <= sma200:
         return None
+    strict = sma50 > sma100
     if last_price <= sma30:
         return None
 
@@ -138,6 +140,7 @@ def analyze_from_batch(ticker, closes, volumes):
         "sma200": round(sma200, 2),
         "sector": "",
         "indices": [],
+        "strict": strict,
     }
     out.update(compute_extras(closes))
     return out
@@ -334,9 +337,9 @@ def main():
 
     # Sort by market cap descending
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
-    add_rs_ranks(passing)
-    apply_history(passing, os.path.join(ROOT_DIR, "public", "data", "hk_history.json"),
-                  "Asia/Hong_Kong")
+    n_strict = finalize_lists(passing, os.path.join(ROOT_DIR, "public", "data", "hk_history.json"),
+                              "Asia/Hong_Kong")
+    print(f"[Lists] strict (50>100 required): {n_strict}, relaxed total: {len(passing)}", file=sys.stderr)
 
     elapsed = time.time() - start_time
     print(f"\n[HK Screener] ═══════════════════════════════════════", file=sys.stderr)

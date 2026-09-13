@@ -38,40 +38,49 @@ def compute_extras(closes):
     }
 
 
-def add_rs_ranks(passing):
-    """RS 1-99: percentile rank of 3-month return among passing stocks."""
+def add_rs_ranks(passing, field="rs"):
+    """RS 1-99: percentile rank of 3-month return among the given stocks.
+
+    Stocks not in `passing` are untouched; callers that rank a subset should
+    pre-set the field to None on the excluded stocks.
+    """
     vals = [(i, s.get("ret63")) for i, s in enumerate(passing)
             if s.get("ret63") is not None]
     n = len(vals)
     if n < 2:
         for s in passing:
-            s["rs"] = None
+            s[field] = None
         return
     order = sorted(vals, key=lambda x: x[1])
     for rank, (i, _) in enumerate(order):
-        passing[i]["rs"] = max(1, min(99, round(rank / (n - 1) * 98 + 1)))
+        passing[i][field] = max(1, min(99, round(rank / (n - 1) * 98 + 1)))
     for s in passing:
-        s.setdefault("rs", None)
+        s.setdefault(field, None)
 
 
-def apply_history(passing, history_file, tz_name, keep=40):
+def apply_history(passing, history_file, tz_name, keep=40,
+                  key="dates", streak_field="streak", new_field="isNew"):
     """Track daily lists; annotate each stock with streak / isNew.
 
-    history JSON: {"dates": {"YYYY-MM-DD": ["TICK", ...], ...}}
-    Re-runs on the same date overwrite that date's entry.
+    history JSON: {"dates": {"YYYY-MM-DD": ["TICK", ...], ...}, "datesAll": {...}}
+    `key` selects which list is tracked (strict vs relaxed). Other keys in
+    the file are preserved. Re-runs on the same date overwrite that date.
     """
     if ZoneInfo is not None:
         today = datetime.now(ZoneInfo(tz_name)).strftime("%Y-%m-%d")
     else:
         today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    hist = {}
+    doc = {}
     if os.path.exists(history_file):
         try:
             with open(history_file) as f:
-                hist = json.load(f).get("dates", {})
+                doc = json.load(f)
+            if not isinstance(doc, dict):
+                doc = {}
         except Exception:
-            hist = {}
+            doc = {}
+    hist = doc.get(key, {}) if isinstance(doc.get(key), dict) else {}
 
     hist[today] = sorted(s["ticker"] for s in passing)
     dates = sorted(hist.keys())[-keep:]
@@ -86,9 +95,32 @@ def apply_history(passing, history_file, tz_name, keep=40):
                 streak += 1
             else:
                 break
-        s["streak"] = streak
-        s["isNew"] = bool(prior) and streak == 1
+        s[streak_field] = streak
+        s[new_field] = bool(prior) and streak == 1
 
+    doc[key] = hist
     with open(history_file, "w") as f:
-        json.dump({"dates": hist}, f)
+        json.dump(doc, f)
     return today
+
+
+def finalize_lists(passing, history_file, tz_name):
+    """Rank + track both the strict list (SMA50 > SMA100 required) and the
+    relaxed list (all stocks, incl. those where only SMA50 <= SMA100).
+
+    Strict fields: rs / streak / isNew (None for relaxed-only stocks).
+    Relaxed fields: rsAll / streakAll / isNewAll (set for every stock).
+    """
+    strict = [s for s in passing if s.get("strict", True)]
+    for s in passing:
+        if not s.get("strict", True):
+            s["rs"] = None
+            s["streak"] = None
+            s["isNew"] = False
+    add_rs_ranks(strict, field="rs")
+    add_rs_ranks(passing, field="rsAll")
+    apply_history(strict, history_file, tz_name, key="dates",
+                  streak_field="streak", new_field="isNew")
+    apply_history(passing, history_file, tz_name, key="datesAll",
+                  streak_field="streakAll", new_field="isNewAll")
+    return len(strict)

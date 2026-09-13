@@ -118,6 +118,11 @@
     .sma-toggle button.active {
       background: var(--accent); color: #fff;
     }
+    .tag-relaxed {
+      display: inline-block; margin-left: 6px; padding: 0 5px; border-radius: 3px;
+      font-size: 9.5px; font-weight: 600; letter-spacing: 0.02em; vertical-align: middle;
+      color: var(--accent); background: var(--accent-bg); white-space: nowrap;
+    }
     /* Sector summary */
     .sector-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
@@ -255,8 +260,20 @@
     let smaFilter = (() => {     // Price > SMA10 | SMA20 | SMA30 (30 = scanner default)
       try { const v = parseInt(localStorage.getItem('es_smaFilter'), 10); return [10,20,30].includes(v) ? v : 30; } catch { return 30; }
     })();
+    let requireSma50gt100 = (() => { // strict trend: SMA50 > SMA100 required (scanner default)
+      try { return localStorage.getItem('es_strict50') !== '0'; } catch { return true; }
+    })();
     let isDark = true;
     let copied = false;
+
+    // Field accessors that follow the SMA50>SMA100 toggle.
+    // Strict mode: rs / streak / isNew (ranked & tracked within the strict list).
+    // Relaxed mode: rsAll / streakAll / isNewAll (ranked & tracked within the full list).
+    const F = {
+      rs(s)     { return requireSma50gt100 ? s.rs : (s.rsAll ?? s.rs); },
+      streak(s) { return requireSma50gt100 ? s.streak : (s.streakAll ?? s.streak); },
+      isNew(s)  { return requireSma50gt100 ? s.isNew : (s.isNewAll ?? s.isNew); },
+    };
 
     const CONFIG = {
       us: { title: 'US Equity Screener', currency: '$', mcap: 'MCap > $3B', price: 'Price > $10', value: 'AvgValue > $50M' },
@@ -279,7 +296,9 @@
     // Stocks passing the selected Price > SMA{10|20|30} condition.
     // Data is scanned with Price > SMA30, so SMA20 / SMA10 are tighter subsets.
     function getBaseStocks() {
-      const stocks = data[market]?.stocks || [];
+      let stocks = data[market]?.stocks || [];
+      // Legacy data (no `strict` field) was scanned with 50>100 required → treat as strict pass.
+      if (requireSma50gt100) stocks = stocks.filter(s => s.strict !== false);
       if (smaFilter === 30) return stocks;
       const key = 'sma' + smaFilter;
       return stocks.filter(s => typeof s[key] === 'number' ? s.price > s[key] : true);
@@ -382,8 +401,9 @@
     }
 
     function streakCell(s) {
-      if (s.isNew) return '<span class="badge-new">NEW</span>';
-      if (s.streak) return `<span class="streak-val">${s.streak}d</span>`;
+      if (F.isNew(s)) return '<span class="badge-new">NEW</span>';
+      const st = F.streak(s);
+      if (st) return `<span class="streak-val">${st}d</span>`;
       return '<span class="muted-val">—</span>';
     }
 
@@ -403,8 +423,8 @@
 
     // ─── Export CSV ────────────────────────────────────
     function exportCSV(stocks) {
-      const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','From52wHigh%','RS','Days','Sector','MarketCap','Volume','AvgVol10d','AvgVol60d','AvgVol90d','AvgTradingValue','SMA10','SMA20','SMA30','SMA50','SMA100','SMA200'];
-      const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,s.pctFrom52wHigh??'',s.rs??'',s.streak??'',`"${s.sector||''}"`,s.marketCap,s.volume,s.avgVolume10d,s.avgVolume60d,s.avgVolume90d,s.avgTradingValue,s.sma10,s.sma20,s.sma30,s.sma50,s.sma100,s.sma200].join(','));
+      const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','From52wHigh%','RS','Days','SMA50>SMA100','Sector','MarketCap','Volume','AvgVol10d','AvgVol60d','AvgVol90d','AvgTradingValue','SMA10','SMA20','SMA30','SMA50','SMA100','SMA200'];
+      const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,s.pctFrom52wHigh??'',F.rs(s)??'',F.streak(s)??'',(s.strict===false?'N':'Y'),`"${s.sector||''}"`,s.marketCap,s.volume,s.avgVolume10d,s.avgVolume60d,s.avgVolume90d,s.avgTradingValue,s.sma10,s.sma20,s.sma30,s.sma50,s.sma100,s.sma200].join(','));
       const csv = [h.join(','), ...rows].join('\n');
       const a = document.createElement('a');
       a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
@@ -471,12 +491,14 @@
           const p52 = s.pctFrom52wHigh;
           const p52Cell = (p52 === undefined || p52 === null) ? '<span class="muted-val">—</span>'
             : `<span class="${p52 >= -3 ? 'near-high' : 'muted-val'}">${p52.toFixed(1)}%</span>`;
-          const rsCell = (s.rs === undefined || s.rs === null) ? '<span class="muted-val">—</span>'
-            : `<span class="${s.rs >= 90 ? 'rs-hot' : ''}">${s.rs}</span>`;
+          const rsv = F.rs(s);
+          const rsCell = (rsv === undefined || rsv === null) ? '<span class="muted-val">—</span>'
+            : `<span class="${rsv >= 90 ? 'rs-hot' : ''}">${rsv}</span>`;
+          const relaxedTag = s.strict === false ? '<span class="tag-relaxed" title="SMA50 is below SMA100">50&lt;100</span>' : '';
           tableRows += `<tr>
             <td class="row-num">${i+1}</td>
             <td class="ticker"><a href="${tvLink(s.ticker)}" target="_blank" rel="noopener" title="Open in TradingView">${s.ticker}</a></td>
-            <td class="name" title="${s.name}">${s.name}</td>
+            <td class="name" title="${s.name}">${s.name}${relaxedTag}</td>
             <td class="sector">${s.sector||'—'}</td>
             <td class="price">${c.currency}${fmt.price(s.price)}</td>
             <td><span class="chg-badge ${chgCls}">${s.changePercent>=0?'+':''}${s.changePercent.toFixed(2)}%</span></td>
@@ -530,7 +552,11 @@
               <span class="badge">Vol &gt; 500K</span>
               <span class="badge">AvgVol 10/60/90d &gt; 500K</span>
               <span class="badge">${c.value}</span>
-              <span class="badge">${icons.trend} SMA 10&gt;20&gt;50&gt;100&gt;200</span>
+              <span class="sma-toggle" id="strict-toggle" title="Require SMA50 &gt; SMA100 in the trend alignment">
+                <span class="sma-label">${icons.trend} SMA 10&gt;20&gt;50${requireSma50gt100 ? '&gt;100&gt;200' : ' &middot; 100&gt;200'} &nbsp;·&nbsp; 50&gt;100</span>
+                <button data-strict="1" class="${requireSma50gt100?'active':''}">Required</button>
+                <button data-strict="0" class="${!requireSma50gt100?'active':''}">Optional</button>
+              </span>
               <span class="sma-toggle" id="sma-toggle" title="Toggle the Price &gt; SMA condition">
                 <span class="sma-label">Price &gt;</span>
                 ${[10,20,30].map(n => `<button data-sma="${n}" class="${smaFilter===n?'active':''}">SMA${n}</button>`).join('')}
@@ -627,6 +653,14 @@
       });
       const clearSector = document.getElementById('clear-sector');
       if (clearSector) clearSector.addEventListener('click', () => { sectorFilter = null; render(); });
+
+      document.querySelectorAll('#strict-toggle button').forEach(b => {
+        b.addEventListener('click', () => {
+          requireSma50gt100 = b.dataset.strict === '1';
+          try { localStorage.setItem('es_strict50', requireSma50gt100 ? '1' : '0'); } catch {}
+          render();
+        });
+      });
 
       document.querySelectorAll('#sma-toggle button').forEach(b => {
         b.addEventListener('click', () => {
