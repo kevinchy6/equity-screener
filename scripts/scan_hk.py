@@ -52,10 +52,25 @@ _pass_count = [0]
 _fail_count = [0]
 
 
-def analyze_from_batch(ticker, closes, volumes):
+def is_partial_bar(last_index, tz="Asia/Hong_Kong", close_hm=(16, 15)):
+    """True if the last daily bar is today's session and HKEX has not closed
+    yet (intraday scan), i.e. its volume is incomplete."""
+    try:
+        from zoneinfo import ZoneInfo
+        from datetime import datetime
+        now = datetime.now(ZoneInfo(tz))
+        bar_date = last_index.date() if hasattr(last_index, "date") else last_index
+        return bar_date == now.date() and (now.hour, now.minute) < close_hm
+    except Exception:
+        return False
+
+
+def analyze_from_batch(ticker, closes, volumes, partial_last_bar=False):
     """
     Phase 1: Analyze a ticker using pre-downloaded close/volume arrays.
     Returns dict with technical data if all SMA/volume filters pass, else None.
+    `partial_last_bar=True`: the last bar is today's open session -- price/SMA
+    use it, but all volume tests use completed sessions only.
     """
     if len(closes) < 200:
         return None
@@ -85,10 +100,14 @@ def analyze_from_batch(ticker, closes, volumes):
         return None
 
     # Volume
-    avg_vol_10 = calc_sma(volumes, 10)
-    avg_vol_60 = calc_sma(volumes, 60)
-    avg_vol_90 = calc_sma(volumes, 90)
-    daily_volume = volumes[-1]
+    vol_c = volumes[:-1] if partial_last_bar else volumes
+    close_c = closes[:-1] if partial_last_bar else closes
+    if len(vol_c) < 90:
+        return None
+    avg_vol_10 = calc_sma(vol_c, 10)
+    avg_vol_60 = calc_sma(vol_c, 60)
+    avg_vol_90 = calc_sma(vol_c, 90)
+    daily_volume = vol_c[-1]
 
     if not all([avg_vol_10, avg_vol_60, avg_vol_90]):
         return None
@@ -103,8 +122,8 @@ def analyze_from_batch(ticker, closes, volumes):
         return None
 
     # Average trading value (last 20 days)
-    recent_closes = closes[-20:]
-    recent_volumes = volumes[-20:]
+    recent_closes = close_c[-20:]
+    recent_volumes = vol_c[-20:]
     avg_trading_value = sum(c * v for c, v in zip(recent_closes, recent_volumes)) / len(recent_closes)
 
     if avg_trading_value < 50_000_000:
@@ -253,7 +272,8 @@ def main():
                     closes = ticker_data["Close"].tolist()
                     volumes = ticker_data["Volume"].tolist()
 
-                    result = analyze_from_batch(t, closes, volumes)
+                    result = analyze_from_batch(t, closes, volumes,
+                                                partial_last_bar=is_partial_bar(ticker_data.index[-1]))
                     if result:
                         technical_passers.append(result)
                 except:

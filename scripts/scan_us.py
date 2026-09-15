@@ -129,7 +129,24 @@ def calc_sma(values, period):
     return sum(values[-period:]) / period
 
 
-def analyze(ticker, closes, volumes):
+def is_partial_bar(last_index, tz="America/New_York", close_hm=(16, 5)):
+    """True if the last daily bar is today's session and the market has not
+    closed yet (intraday scan), i.e. its volume is incomplete."""
+    try:
+        from zoneinfo import ZoneInfo
+        from datetime import datetime
+        now = datetime.now(ZoneInfo(tz))
+        bar_date = last_index.date() if hasattr(last_index, "date") else last_index
+        return bar_date == now.date() and (now.hour, now.minute) < close_hm
+    except Exception:
+        return False
+
+
+def analyze(ticker, closes, volumes, partial_last_bar=False):
+    """`partial_last_bar=True` means the final bar is today's still-open session
+    (intraday scan). Price / SMA use it (that is the point of scanning after the
+    open), but every volume-based test uses only completed sessions so a stock
+    is not rejected for having traded "too little" in the first minutes."""
     if len(closes) < 200:
         return None
 
@@ -155,18 +172,23 @@ def analyze(ticker, closes, volumes):
     if last_price <= sma30:
         return None
 
-    daily_volume = volumes[-1]
-    avg_vol_10 = calc_sma(volumes, 10)
-    avg_vol_60 = calc_sma(volumes, 60)
-    avg_vol_90 = calc_sma(volumes, 90)
+    # Volume tests on completed sessions only.
+    vol_c = volumes[:-1] if partial_last_bar else volumes
+    close_c = closes[:-1] if partial_last_bar else closes
+    if len(vol_c) < 90:
+        return None
+    daily_volume = vol_c[-1]
+    avg_vol_10 = calc_sma(vol_c, 10)
+    avg_vol_60 = calc_sma(vol_c, 60)
+    avg_vol_90 = calc_sma(vol_c, 90)
     if not all([avg_vol_10, avg_vol_60, avg_vol_90]):
         return None
     if (daily_volume < VOL_THRESHOLD or avg_vol_10 < VOL_THRESHOLD
             or avg_vol_60 < VOL_THRESHOLD or avg_vol_90 < VOL_THRESHOLD):
         return None
 
-    recent_c = closes[-20:]
-    recent_v = volumes[-20:]
+    recent_c = close_c[-20:]
+    recent_v = vol_c[-20:]
     avg_value = sum(c * v for c, v in zip(recent_c, recent_v)) / len(recent_c)
     if avg_value < VALUE_THRESHOLD:
         return None
@@ -260,7 +282,8 @@ def main():
                 tdf = tdf.dropna(subset=["Close", "Volume"])
                 if len(tdf) < 200:
                     continue
-                result = analyze(t, tdf["Close"].tolist(), tdf["Volume"].tolist())
+                result = analyze(t, tdf["Close"].tolist(), tdf["Volume"].tolist(),
+                                 partial_last_bar=is_partial_bar(tdf.index[-1]))
                 if result:
                     meta = candidates.get(t)
                     if meta:
