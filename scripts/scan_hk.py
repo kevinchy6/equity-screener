@@ -29,7 +29,7 @@ except ImportError:
     import pandas as pd
 
 from enrich import compute_extras, finalize_lists, utc_now_iso
-from momentum import (rs_score, rank_rs, analyze_momentum, select_momentum,
+from momentum import (rs_returns, rs_ratings, analyze_momentum, select_momentum,
                       finalize_momentum, pct_above_52w_low, market_stats)
 
 MOM_PRICE_THRESHOLD = 10.0   # HK$10 for the momentum tab
@@ -228,7 +228,7 @@ def main():
 
     chunk_size = 50
     technical_passers = []
-    rs_scores = {}        # ticker -> raw RS score, for EVERY ticker with enough history
+    rs_rets = {}          # ticker -> {ret21, ret63}, for EVERY ticker with enough history
     above_low = {}        # ticker -> % above 52-week low (market breadth stat)
     mom_candidates = []   # momentum tab passers (before the RS Rating test)
     failed_chunks = 0
@@ -281,9 +281,9 @@ def main():
                     partial = is_partial_bar(ticker_data.index[-1])
 
                     # Momentum tab: universe-wide RS score + non-RS criteria.
-                    sc = rs_score(closes)
-                    if sc is not None:
-                        rs_scores[t] = sc
+                    rr = rs_returns(closes)
+                    if rr is not None:
+                        rs_rets[t] = rr
                     try:
                         highs = ticker_data["High"].fillna(ticker_data["Close"]).tolist()
                         lows = ticker_data["Low"].fillna(ticker_data["Close"]).tolist()
@@ -389,12 +389,10 @@ def main():
     mkt = market_stats(above_low)
     print(f"[Market] {mkt.get('above70Pct')}% of {mkt.get('universe')} stocks are >70% above their 52W low "
           f"(median +{mkt.get('medianPctAbove52wLow')}%)", file=sys.stderr)
-    ratings = rank_rs(rs_scores)
-    for s in passing:
-        s["rsRating"] = ratings.get(s["ticker"])
-    momentum = select_momentum(mom_candidates, ratings, rs_scores)
-    print(f"[Momentum] {len(mom_candidates)} pass ADR/EMA/52wLow, {len(momentum)} with RS Rating > 90 "
-          f"(universe ranked: {len(rs_scores)}); fetching metadata...", file=sys.stderr)
+    ratings = rs_ratings(rs_rets)
+    momentum = select_momentum(mom_candidates, ratings)
+    print(f"[Momentum] {len(mom_candidates)} pass ADR/EMA, {len(momentum)} with RS > 90 on 1M/3M/1M+3M "
+          f"(universe ranked: {len(rs_rets)}); fetching metadata...", file=sys.stderr)
     kept = []
     for idx, item in enumerate(momentum):
         try:
@@ -434,7 +432,7 @@ def main():
         "totalUniverse": len(tickers),
         "totalPassing": len(passing),
         "momentum": momentum,
-        "momentumUniverse": len(rs_scores),
+        "momentumUniverse": len(rs_rets),
         "market": mkt,
         "lastUpdated": utc_now_iso(),
     }

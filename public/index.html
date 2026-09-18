@@ -299,18 +299,27 @@
     // Relaxed mode: rsAll / rs1mAll / streakAll / isNewAll (ranked & tracked within the full list).
     const F = {
       rs(s) {
-        if (view === 'momentum') return s.rsRating ?? null;
+        if (view === 'momentum') {
+          const v = rsPeriod === '1m' ? s.rs1m : rsPeriod === 'comp' ? s.rsComp : s.rs3m;
+          return v === undefined ? null : v;
+        }
         let v;
         if (rsPeriod === '1m')        v = requireSma50gt100 ? s.rs1m   : (s.rs1mAll   ?? s.rs1m);
         else if (rsPeriod === 'comp') v = requireSma50gt100 ? s.rsComp : (s.rsCompAll ?? s.rsComp);
         else                          v = requireSma50gt100 ? s.rs     : (s.rsAll     ?? s.rs);
         return v === undefined ? null : v;   // legacy data without the field → —
       },
-      streak(s) { return view === 'momentum' ? s.streak : (requireSma50gt100 ? s.streak : (s.streakAll ?? s.streak)); },
-      isNew(s)  { return view === 'momentum' ? !!s.isNew : (requireSma50gt100 ? s.isNew : (s.isNewAll ?? s.isNew)); },
+      streak(s) {
+        if (view === 'momentum') return rsPeriod === '1m' ? s.streak1m : rsPeriod === 'comp' ? s.streakComp : s.streak3m;
+        return requireSma50gt100 ? s.streak : (s.streakAll ?? s.streak);
+      },
+      isNew(s) {
+        if (view === 'momentum') return !!(rsPeriod === '1m' ? s.isNew1m : rsPeriod === 'comp' ? s.isNewComp : s.isNew3m);
+        return requireSma50gt100 ? s.isNew : (s.isNewAll ?? s.isNew);
+      },
     };
     const isMom = () => view === 'momentum';
-    const rsHeader = () => isMom() ? 'RS Rating' : RS_LABEL[rsPeriod];
+    const MOM_RS_MIN = 90;
 
     const CONFIG = {
       us: { title: 'US Equity Screener', currency: '$', mcap: 'MCap > $3B', price: 'Price > $10', value: 'AvgValue > $50M' },
@@ -333,7 +342,7 @@
     // Stocks passing the selected Price > SMA{10|20|30} condition.
     // Data is scanned with Price > SMA30, so SMA20 / SMA10 are tighter subsets.
     function getBaseStocks() {
-      if (isMom()) return data[market]?.momentum || [];
+      if (isMom()) return (data[market]?.momentum || []).filter(s => (F.rs(s) ?? 0) > MOM_RS_MIN);
       let stocks = data[market]?.stocks || [];
       // Legacy data (no `strict` field) was scanned with 50>100 required → treat as strict pass.
       if (requireSma50gt100) stocks = stocks.filter(s => s.strict !== false);
@@ -463,8 +472,8 @@
     // ─── Export CSV ────────────────────────────────────
     function exportCSV(stocks) {
       if (isMom()) {
-        const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','ADR%','RSRating','RSScore%','Above52wLow%','52wLow','From52wHigh%','EMA10','EMA20','EMA50','Days','Sector','MarketCap','Volume','AvgTradingValue'];
-        const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,s.adr,s.rsRating,s.rsScore??'',s.pctAbove52wLow,s.low52,s.pctFrom52wHigh??'',s.ema10,s.ema20,s.ema50,s.streak??'',`"${s.sector||''}"`,s.marketCap,s.volume,s.avgTradingValue].join(','));
+        const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','ADR%',RS_LABEL[rsPeriod].replace(/\s/g,''),'RS1M','RS3M','RS1M+3M','Ret1M%','Ret3M%','Above52wLow%','52wLow','From52wHigh%','EMA10','EMA20','EMA50','Days','Sector','MarketCap','Volume','AvgTradingValue'];
+        const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,s.adr,F.rs(s)??'',s.rs1m??'',s.rs3m??'',s.rsComp??'',s.ret21??'',s.ret63??'',s.pctAbove52wLow,s.low52,s.pctFrom52wHigh??'',s.ema10,s.ema20,s.ema50,F.streak(s)??'',`"${s.sector||''}"`,s.marketCap,s.volume,s.avgTradingValue].join(','));
         const csv = [h.join(','), ...rows].join('\n');
         const a = document.createElement('a');
         a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
@@ -552,7 +561,7 @@
             <td><span class="chg-badge ${chg5dCls}">${(s.change5dPercent??0)>=0?'+':''}${(s.change5dPercent??0).toFixed(2)}%</span></td>
             <td>${sparkSVG(s.spark)}</td>
             <td><span class="${s.adr >= 6 ? 'adr-hot' : ''}">${s.adr.toFixed(2)}%</span></td>
-            <td><span class="rs-hot" title="Weighted 12M performance ${s.rsScore != null ? (s.rsScore>=0?'+':'')+s.rsScore+'%' : ''}">${s.rsRating}</span></td>
+            <td><span class="rs-hot" title="1M ${s.rs1m ?? '—'} · 3M ${s.rs3m ?? '—'} · 1M+3M ${s.rsComp ?? '—'}  (ret 1M ${s.ret21 != null ? (s.ret21>=0?'+':'')+s.ret21.toFixed(1)+'%' : '—'}, 3M ${s.ret63 != null ? (s.ret63>=0?'+':'')+s.ret63.toFixed(1)+'%' : '—'})">${F.rs(s)}</span></td>
             <td><span class="chg-badge ${s.pctAbove52wLow >= 70 ? 'chg-pos' : ''}" style="${s.pctAbove52wLow >= 70 ? '' : 'background:var(--bg-muted);color:var(--text-muted)'}" title="52W low ${c.currency}${fmt.price(s.low52)}">+${s.pctAbove52wLow.toFixed(0)}%</span></td>
             <td>${p52Cell}</td>
             <td>${streakCell(s)}</td>
@@ -614,7 +623,7 @@
               </svg>
               <div>
                 <div class="title">${c.title}</div>
-                <div class="subtitle">${mom ? 'Momentum · ADR / RS Rating / EMA' : 'SMA Trend Alignment'}</div>
+                <div class="subtitle">${mom ? 'Momentum · ADR / RS / EMA' : 'SMA Trend Alignment'}</div>
               </div>
               <div class="market-toggle">
                 <button class="market-btn ${market==='us'?'active':''}" data-market="us">🇺🇸 US</button>
@@ -622,7 +631,7 @@
               </div>
               <div class="view-tabs" id="view-tabs">
                 <button class="view-tab ${!mom?'active':''}" data-view="trend" title="SMA 10&gt;20&gt;50&gt;100&gt;200 trend alignment">Trend</button>
-                <button class="view-tab ${mom?'active':''}" data-view="momentum" title="ADR &gt; 4%, RS Rating &gt; 90, Price &gt; EMA50, EMA10 &gt; EMA20">Momentum</button>
+                <button class="view-tab ${mom?'active':''}" data-view="momentum" title="ADR &gt; 4%, RS &gt; 90 (1M / 3M / 1M+3M, universe-wide), Price &gt; EMA50, EMA10 &gt; EMA20">Momentum</button>
               </div>
             </div>
             <button class="icon-btn" id="theme-toggle">${isDark ? icons.sun : icons.moon}</button>
@@ -635,7 +644,12 @@
               <span class="badge">${c.mcap}</span>
               <span class="badge">${c.price}</span>
               <span class="badge badge-hi" title="Average Daily Range: 20-day mean of High/Low − 1">ADR (20d) &gt; 4%</span>
-              <span class="badge badge-hi" title="1–99 percentile of weighted 12-month performance (last quarter ×2) across all ${(data[market]?.momentumUniverse||0).toLocaleString()} scanned stocks">RS Rating &gt; 90</span>
+              <span class="sma-toggle" id="rs-toggle" style="outline:1px solid var(--primary)" title="RS &gt; 90: 1–99 percentile rank across ALL ${(data[market]?.momentumUniverse||0).toLocaleString()} scanned stocks of the 1-month (21d) return, 3-month (63d) return, or the composite (average of both ranks, re-ranked)">
+                <span class="sma-label">RS &gt; 90 ·</span>
+                <button data-rs="1m" class="${rsPeriod==='1m'?'active':''}">1M</button>
+                <button data-rs="3m" class="${rsPeriod==='3m'?'active':''}">3M</button>
+                <button data-rs="comp" class="${rsPeriod==='comp'?'active':''}" title="Average of 1M and 3M ranks, re-ranked 1-99">1M+3M</button>
+              </span>
               <span class="badge badge-hi">Price &gt; EMA50</span>
               <span class="badge badge-hi">EMA10 &gt; EMA20</span>
               <span class="badge" title="Shown for reference only — not a filter">vs 52W Low: shown, not filtered</span>
@@ -725,7 +739,7 @@
                   ${th('change5dPercent','5D Chg%')}
                   <th>30D Trend</th>
                   ${th('adr','ADR%')}
-                  ${th('rs','RS Rating')}
+                  ${th('rs', RS_LABEL[rsPeriod])}
                   ${th('pctAbove52wLow','vs 52W Low')}
                   ${th('pctFrom52wHigh','52W High')}
                   ${th('streak','Days')}

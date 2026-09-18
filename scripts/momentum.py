@@ -4,16 +4,19 @@
 Criteria (all must hold):
   * Price above the market's price threshold ($10 / HK$10)
   * Average Daily Range (ADR, 20-day) above 4%
-  * RS Rating above 90 (1-99 percentile of IBD-style weighted 12-month
-    performance across the WHOLE scanned universe, not just the passers)
+  * RS above 90 -- 1-99 percentile rank across the WHOLE scanned universe
+    (not just the passers) of the 1-month (21d) return, the 3-month (63d)
+    return, or the composite (average of both ranks, re-ranked). All three
+    are stored so the frontend can switch between them, exactly like the
+    Trend tab; a stock is kept if it is > 90 on ANY of the three.
   * Price above the 50-day EMA
   * 10-day EMA above the 20-day EMA
   * (% above the 52-week low is REPORTED, not filtered)
 
 Shared by scan_us.py and scan_hk.py. Each scanner feeds every ticker it
-downloaded into `rs_score()` (so the RS percentile is universe-wide), and runs
-`analyze_momentum()` to test the non-RS criteria. `rank_rs()` then turns the
-raw scores into 1-99 ratings and `select_momentum()` keeps rating > 90.
+downloaded into `rs_returns()` (so the RS percentile is universe-wide), and runs
+`analyze_momentum()` to test the non-RS criteria. `rs_ratings()` then turns the
+returns into 1-99 ranks and `select_momentum()` keeps stocks > 90 on any mode.
 """
 from enrich import compute_extras, apply_history
 
@@ -39,23 +42,15 @@ def _ret(closes, n):
     return None
 
 
-def rs_score(closes):
-    """IBD-style weighted 12-month performance: the most recent quarter counts
-    double (40%), the other three quarters 20% each. With ~1y of history the
-    12-month leg falls back to the oldest available close."""
-    if len(closes) < 130:
+def rs_returns(closes):
+    """1-month (21d) and 3-month (63d) returns in %, or None if too short."""
+    if len(closes) < 64:
         return None
+    r21 = _ret(closes, 21)
     r63 = _ret(closes, 63)
-    r126 = _ret(closes, 126)
-    r189 = _ret(closes, 189)
-    r252 = _ret(closes, 252)
-    if r252 is None and closes[0]:
-        r252 = closes[-1] / closes[0] - 1
-    if r189 is None:
-        r189 = r252
-    if r63 is None or r126 is None or r189 is None or r252 is None:
+    if r21 is None or r63 is None:
         return None
-    return (2 * r63 + r126 + r189 + r252) / 5 * 100
+    return {"ret21": r21 * 100, "ret63": r63 * 100}
 
 
 def rank_rs(scores):
@@ -69,6 +64,22 @@ def rank_rs(scores):
     for rank, (t, _) in enumerate(items):
         out[t] = max(1, min(99, round(rank / (n - 1) * 98 + 1)))
     return out
+
+
+def rs_ratings(returns):
+    """{ticker: {"ret21", "ret63"}} -> {ticker: {"rs1m", "rs3m", "rsComp"}}.
+    Each is a 1-99 percentile rank across the whole universe; rsComp is the
+    re-ranked average of the 1M and 3M ranks (same recipe as the Trend tab)."""
+    r1 = rank_rs({t: v["ret21"] for t, v in returns.items() if v})
+    r3 = rank_rs({t: v["ret63"] for t, v in returns.items() if v})
+    comp_in = {t: (r1[t] + r3[t]) / 2 for t in r1 if t in r3 and r1[t] is not None and r3[t] is not None}
+    rc = rank_rs(comp_in)
+    return {t: {"rs1m": r1.get(t), "rs3m": r3.get(t), "rsComp": rc.get(t)} for t in r1}
+
+
+RS_MODES = (("rs1m", "datesMom1m", "streak1m", "isNew1m"),
+            ("rs3m", "datesMom3m", "streak3m", "isNew3m"),
+            ("rsComp", "datesMomComp", "streakComp", "isNewComp"))
 
 
 def adr_pct(highs, lows, period=ADR_PERIOD):
@@ -175,23 +186,31 @@ def analyze_momentum(ticker, closes, highs, lows, volumes, price_threshold,
     return out
 
 
-def select_momentum(candidates, ratings, scores, min_rs=RS_MIN):
-    """Keep candidates whose universe-wide RS Rating is above `min_rs`."""
+def select_momentum(candidates, ratings, min_rs=RS_MIN):
+    """Keep candidates whose universe-wide RS is above `min_rs` on at least one
+    of the three modes; store all three ranks so the UI can switch."""
     out = []
     for s in candidates:
         r = ratings.get(s["ticker"])
-        if r is None or r <= min_rs:
+        if not r:
             continue
-        s["rsRating"] = r
-        sc = scores.get(s["ticker"])
-        s["rsScore"] = round(sc, 1) if sc is not None else None
+        vals = [r.get("rs1m"), r.get("rs3m"), r.get("rsComp")]
+        if not any(v is not None and v > min_rs for v in vals):
+            continue
+        s["rs1m"], s["rs3m"], s["rsComp"] = vals
         out.append(s)
-    out.sort(key=lambda x: (x["rsRating"], x.get("rsScore") or 0), reverse=True)
+    out.sort(key=lambda x: ((x.get("rs3m") or 0), (x.get("ret63") or 0)), reverse=True)
     return out
 
 
-def finalize_momentum(mom, history_file, tz_name):
-    """Track the momentum list day over day (NEW badge / streak days)."""
-    apply_history(mom, history_file, tz_name, key="datesMom",
-                  streak_field="streak", new_field="isNew")
+def finalize_momentum(mom, history_file, tz_name, min_rs=RS_MIN):
+    """Track each RS-mode list day over day (NEW badge / streak days).
+    A stock not in a given mode's list gets None / False for that mode."""
+    for rs_field, key, streak_field, new_field in RS_MODES:
+        subset = [s for s in mom if (s.get(rs_field) or 0) > min_rs]
+        for s in mom:
+            s[streak_field] = None
+            s[new_field] = False
+        apply_history(subset, history_file, tz_name, key=key,
+                      streak_field=streak_field, new_field=new_field)
     return len(mom)

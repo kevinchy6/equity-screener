@@ -35,7 +35,7 @@ except ImportError:
 import pandas as pd
 
 from enrich import compute_extras, finalize_lists, utc_now_iso
-from momentum import (rs_score, rank_rs, analyze_momentum, select_momentum,
+from momentum import (rs_returns, rs_ratings, analyze_momentum, select_momentum,
                       finalize_momentum, pct_above_52w_low, market_stats)
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -261,7 +261,7 @@ def main():
         f"(chunks of {CHUNK_SIZE})...")
 
     passing = []
-    rs_scores = {}        # ticker -> raw RS score, for EVERY ticker with enough history
+    rs_rets = {}          # ticker -> {ret21, ret63}, for EVERY ticker with enough history
     above_low = {}        # ticker -> % above 52-week low (market breadth stat)
     mom_candidates = []   # momentum screen passers (before the RS Rating test)
     failed_chunks = 0
@@ -292,9 +292,9 @@ def main():
                 partial = is_partial_bar(tdf.index[-1])
 
                 # Momentum tab: universe-wide RS score + non-RS criteria.
-                sc = rs_score(closes_l)
-                if sc is not None:
-                    rs_scores[t] = sc
+                rr = rs_returns(closes_l)
+                if rr is not None:
+                    rs_rets[t] = rr
                 try:
                     highs_l = tdf["High"].fillna(tdf["Close"]).tolist()
                     lows_l = tdf["Low"].fillna(tdf["Close"]).tolist()
@@ -361,16 +361,14 @@ def main():
     log(f"[Lists] strict (50>100 required): {n_strict}, relaxed total: {len(passing)}")
 
     # ── Momentum tab: RS Rating percentile across the whole scanned universe ──
-    ratings = rank_rs(rs_scores)
-    for s in passing:
-        s["rsRating"] = ratings.get(s["ticker"])
-    momentum = select_momentum(mom_candidates, ratings, rs_scores)
+    ratings = rs_ratings(rs_rets)
+    momentum = select_momentum(mom_candidates, ratings)
     finalize_momentum(momentum, history_file, "America/New_York")
     mkt = market_stats(above_low)
     log(f"[Market] {mkt.get('above70Pct')}% of {mkt.get('universe')} stocks are >70% above their 52W low "
         f"(median +{mkt.get('medianPctAbove52wLow')}%)")
-    log(f"[Momentum] {len(mom_candidates)} pass ADR/EMA, "
-        f"{len(momentum)} with RS Rating > 90 (universe ranked: {len(rs_scores)})")
+    log(f"[Momentum] {len(mom_candidates)} pass ADR/EMA, {len(momentum)} with RS > 90 on 1M/3M/1M+3M "
+        f"(universe ranked: {len(rs_rets)})")
     elapsed = time.time() - start
 
     log(f"[US Screener v2] Complete: {len(passing)} stocks pass "
@@ -386,7 +384,7 @@ def main():
         "totalUniverse": total_universe,
         "totalPassing": len(passing),
         "momentum": momentum,
-        "momentumUniverse": len(rs_scores),
+        "momentumUniverse": len(rs_rets),
         "market": mkt,
         "lastUpdated": utc_now_iso(),
     }
