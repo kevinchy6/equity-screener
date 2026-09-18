@@ -8,7 +8,7 @@ Criteria (all must hold):
     performance across the WHOLE scanned universe, not just the passers)
   * Price above the 50-day EMA
   * 10-day EMA above the 20-day EMA
-  * Price more than 70% above the 52-week low
+  * (% above the 52-week low is REPORTED, not filtered)
 
 Shared by scan_us.py and scan_hk.py. Each scanner feeds every ticker it
 downloaded into `rs_score()` (so the RS percentile is universe-wide), and runs
@@ -20,7 +20,6 @@ from enrich import compute_extras, apply_history
 ADR_MIN_PCT = 4.0
 ADR_PERIOD = 20
 RS_MIN = 90
-ABOVE_LOW_MIN_PCT = 70.0
 
 
 def ema(values, period):
@@ -113,10 +112,9 @@ def analyze_momentum(ticker, closes, highs, lows, volumes, price_threshold,
     if adr is None or adr <= ADR_MIN_PCT:
         return None
 
+    # Distance from the 52-week low: shown as a column, not a filter.
     low52 = min(x for x in lows[-252:] if x and x > 0)
     pct_above_low = (price / low52 - 1) * 100
-    if pct_above_low <= ABOVE_LOW_MIN_PCT:
-        return None
 
     prev_close = closes[-2]
     change = price - prev_close

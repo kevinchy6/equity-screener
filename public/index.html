@@ -544,7 +544,7 @@
             <td>${sparkSVG(s.spark)}</td>
             <td><span class="${s.adr >= 6 ? 'adr-hot' : ''}">${s.adr.toFixed(2)}%</span></td>
             <td><span class="rs-hot" title="Weighted 12M performance ${s.rsScore != null ? (s.rsScore>=0?'+':'')+s.rsScore+'%' : ''}">${s.rsRating}</span></td>
-            <td><span class="chg-badge chg-pos" title="52W low ${c.currency}${fmt.price(s.low52)}">+${s.pctAbove52wLow.toFixed(0)}%</span></td>
+            <td><span class="chg-badge ${s.pctAbove52wLow >= 70 ? 'chg-pos' : ''}" style="${s.pctAbove52wLow >= 70 ? '' : 'background:var(--bg-muted);color:var(--text-muted)'}" title="52W low ${c.currency}${fmt.price(s.low52)}">+${s.pctAbove52wLow.toFixed(0)}%</span></td>
             <td>${p52Cell}</td>
             <td>${streakCell(s)}</td>
             <td class="muted-val">${fmt.mcap(s.marketCap)}</td>
@@ -613,7 +613,7 @@
               </div>
               <div class="view-tabs" id="view-tabs">
                 <button class="view-tab ${!mom?'active':''}" data-view="trend" title="SMA 10&gt;20&gt;50&gt;100&gt;200 trend alignment">Trend</button>
-                <button class="view-tab ${mom?'active':''}" data-view="momentum" title="ADR &gt; 4%, RS Rating &gt; 90, Price &gt; EMA50, EMA10 &gt; EMA20, &gt;70% above 52W low">Momentum</button>
+                <button class="view-tab ${mom?'active':''}" data-view="momentum" title="ADR &gt; 4%, RS Rating &gt; 90, Price &gt; EMA50, EMA10 &gt; EMA20">Momentum</button>
               </div>
             </div>
             <button class="icon-btn" id="theme-toggle">${isDark ? icons.sun : icons.moon}</button>
@@ -629,7 +629,7 @@
               <span class="badge badge-hi" title="1–99 percentile of weighted 12-month performance (last quarter ×2) across all ${(data[market]?.momentumUniverse||0).toLocaleString()} scanned stocks">RS Rating &gt; 90</span>
               <span class="badge badge-hi">Price &gt; EMA50</span>
               <span class="badge badge-hi">EMA10 &gt; EMA20</span>
-              <span class="badge badge-hi">&gt; 70% above 52W Low</span>
+              <span class="badge" title="Shown for reference only — not a filter">vs 52W Low: shown, not filtered</span>
             </div>` : `<div class="badges">
               <span class="badge">${c.mcap}</span>
               <span class="badge">${c.price}</span>
