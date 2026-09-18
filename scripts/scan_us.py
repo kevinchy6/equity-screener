@@ -35,6 +35,8 @@ except ImportError:
 import pandas as pd
 
 from enrich import compute_extras, finalize_lists, utc_now_iso
+from momentum import (rs_score, rank_rs, analyze_momentum, select_momentum,
+                      finalize_momentum)
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -259,6 +261,8 @@ def main():
         f"(chunks of {CHUNK_SIZE})...")
 
     passing = []
+    rs_scores = {}        # ticker -> raw RS score, for EVERY ticker with enough history
+    mom_candidates = []   # momentum screen passers (before the RS Rating test)
     failed_chunks = 0
     total_chunks = (len(tickers) + CHUNK_SIZE - 1) // CHUNK_SIZE
 
@@ -282,8 +286,30 @@ def main():
                 tdf = tdf.dropna(subset=["Close", "Volume"])
                 if len(tdf) < 200:
                     continue
-                result = analyze(t, tdf["Close"].tolist(), tdf["Volume"].tolist(),
-                                 partial_last_bar=is_partial_bar(tdf.index[-1]))
+                closes_l = tdf["Close"].tolist()
+                volumes_l = tdf["Volume"].tolist()
+                partial = is_partial_bar(tdf.index[-1])
+
+                # Momentum tab: universe-wide RS score + non-RS criteria.
+                sc = rs_score(closes_l)
+                if sc is not None:
+                    rs_scores[t] = sc
+                try:
+                    highs_l = tdf["High"].fillna(tdf["Close"]).tolist()
+                    lows_l = tdf["Low"].fillna(tdf["Close"]).tolist()
+                    m = analyze_momentum(t, closes_l, highs_l, lows_l, volumes_l,
+                                         PRICE_THRESHOLD, partial_last_bar=partial)
+                    if m:
+                        meta = candidates.get(t)
+                        if meta:
+                            m["name"] = meta["name"]
+                            m["sector"] = meta["sector"]
+                            m["marketCap"] = meta["marketCap"]
+                        mom_candidates.append(m)
+                except Exception:
+                    pass
+
+                result = analyze(t, closes_l, volumes_l, partial_last_bar=partial)
                 if result:
                     meta = candidates.get(t)
                     if meta:
@@ -328,9 +354,18 @@ def main():
         passing = kept
 
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
-    n_strict = finalize_lists(passing, os.path.join(ROOT_DIR, "public", "data", "us_history.json"),
-                              "America/New_York")
+    history_file = os.path.join(ROOT_DIR, "public", "data", "us_history.json")
+    n_strict = finalize_lists(passing, history_file, "America/New_York")
     log(f"[Lists] strict (50>100 required): {n_strict}, relaxed total: {len(passing)}")
+
+    # ── Momentum tab: RS Rating percentile across the whole scanned universe ──
+    ratings = rank_rs(rs_scores)
+    for s in passing:
+        s["rsRating"] = ratings.get(s["ticker"])
+    momentum = select_momentum(mom_candidates, ratings, rs_scores)
+    finalize_momentum(momentum, history_file, "America/New_York")
+    log(f"[Momentum] {len(mom_candidates)} pass ADR/EMA/52wLow, "
+        f"{len(momentum)} with RS Rating > 90 (universe ranked: {len(rs_scores)})")
     elapsed = time.time() - start
 
     log(f"[US Screener v2] Complete: {len(passing)} stocks pass "
@@ -345,6 +380,8 @@ def main():
         "stocks": passing,
         "totalUniverse": total_universe,
         "totalPassing": len(passing),
+        "momentum": momentum,
+        "momentumUniverse": len(rs_scores),
         "lastUpdated": utc_now_iso(),
     }
     with open(OUTPUT_FILE, "w") as f:

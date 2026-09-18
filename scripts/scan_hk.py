@@ -29,6 +29,10 @@ except ImportError:
     import pandas as pd
 
 from enrich import compute_extras, finalize_lists, utc_now_iso
+from momentum import (rs_score, rank_rs, analyze_momentum, select_momentum,
+                      finalize_momentum)
+
+MOM_PRICE_THRESHOLD = 10.0   # HK$10 for the momentum tab
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -224,6 +228,8 @@ def main():
 
     chunk_size = 50
     technical_passers = []
+    rs_scores = {}        # ticker -> raw RS score, for EVERY ticker with enough history
+    mom_candidates = []   # momentum tab passers (before the RS Rating test)
     failed_chunks = 0
     total_chunks = (len(tickers) + chunk_size - 1) // chunk_size
 
@@ -271,9 +277,23 @@ def main():
 
                     closes = ticker_data["Close"].tolist()
                     volumes = ticker_data["Volume"].tolist()
+                    partial = is_partial_bar(ticker_data.index[-1])
 
-                    result = analyze_from_batch(t, closes, volumes,
-                                                partial_last_bar=is_partial_bar(ticker_data.index[-1]))
+                    # Momentum tab: universe-wide RS score + non-RS criteria.
+                    sc = rs_score(closes)
+                    if sc is not None:
+                        rs_scores[t] = sc
+                    try:
+                        highs = ticker_data["High"].fillna(ticker_data["Close"]).tolist()
+                        lows = ticker_data["Low"].fillna(ticker_data["Close"]).tolist()
+                        m = analyze_momentum(t, closes, highs, lows, volumes,
+                                             MOM_PRICE_THRESHOLD, partial_last_bar=partial)
+                        if m:
+                            mom_candidates.append(m)
+                    except Exception:
+                        pass
+
+                    result = analyze_from_batch(t, closes, volumes, partial_last_bar=partial)
                     if result:
                         technical_passers.append(result)
                 except:
@@ -292,11 +312,13 @@ def main():
     print(f"[HK Screener] Phase 2: Fetching metadata for {len(technical_passers)} stocks...", file=sys.stderr)
 
     passing = []
+    meta_cache = {}
 
     # Use sequential with delays to avoid rate limiting (only ~30-50 tickers)
     for idx, item in enumerate(technical_passers):
         try:
             meta = fetch_metadata(item["ticker"])
+            meta_cache[item["ticker"]] = meta
             market_cap = meta["market_cap"]
 
             # Market cap filter — skip if 0 (likely ETF/fund) or below threshold.
@@ -357,9 +379,39 @@ def main():
 
     # Sort by market cap descending
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
-    n_strict = finalize_lists(passing, os.path.join(ROOT_DIR, "public", "data", "hk_history.json"),
-                              "Asia/Hong_Kong")
+    history_file = os.path.join(ROOT_DIR, "public", "data", "hk_history.json")
+    n_strict = finalize_lists(passing, history_file, "Asia/Hong_Kong")
     print(f"[Lists] strict (50>100 required): {n_strict}, relaxed total: {len(passing)}", file=sys.stderr)
+
+    # ── Momentum tab: RS Rating percentile across the whole universe ──
+    ratings = rank_rs(rs_scores)
+    for s in passing:
+        s["rsRating"] = ratings.get(s["ticker"])
+    momentum = select_momentum(mom_candidates, ratings, rs_scores)
+    print(f"[Momentum] {len(mom_candidates)} pass ADR/EMA/52wLow, {len(momentum)} with RS Rating > 90 "
+          f"(universe ranked: {len(rs_scores)}); fetching metadata...", file=sys.stderr)
+    kept = []
+    for idx, item in enumerate(momentum):
+        try:
+            meta = meta_cache.get(item["ticker"])
+            if meta is None:
+                meta = fetch_metadata(item["ticker"])
+                meta_cache[item["ticker"]] = meta
+                time.sleep(1.5 if (idx + 1) % 5 == 0 else 0.3)
+            market_cap = meta["market_cap"]
+            if market_cap == 0 and meta["name"] != item["ticker"]:
+                continue   # no market cap -> likely ETF/fund
+            if 0 < market_cap < MCAP_THRESHOLD:
+                continue
+            item["marketCap"] = int(market_cap)
+            item["name"] = meta["name"]
+            item["sector"] = meta["sector"]
+            kept.append(item)
+        except Exception:
+            pass
+    momentum = kept
+    finalize_momentum(momentum, history_file, "Asia/Hong_Kong")
+    print(f"[Momentum] final list: {len(momentum)}", file=sys.stderr)
 
     elapsed = time.time() - start_time
     print(f"\n[HK Screener] ═══════════════════════════════════════", file=sys.stderr)
@@ -376,6 +428,8 @@ def main():
         "stocks": passing,
         "totalUniverse": len(tickers),
         "totalPassing": len(passing),
+        "momentum": momentum,
+        "momentumUniverse": len(rs_scores),
         "lastUpdated": utc_now_iso(),
     }
 

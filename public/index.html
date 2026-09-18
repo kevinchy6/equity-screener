@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Equity Screener — SMA Trend Alignment</title>
+  <title>Equity Screener — Trend &amp; Momentum</title>
   <meta name="description" content="US & HK equity screener with SMA trend alignment filters. Free, open-source." />
   <style>
     :root {
@@ -78,6 +78,18 @@
       background: var(--bg); color: var(--text);
       box-shadow: 0 1px 2px rgba(0,0,0,0.06);
     }
+    .view-tabs {
+      display: inline-flex; gap: 2px; margin-left: 4px;
+      border-radius: 8px; border: 1px solid var(--border); background: var(--bg-muted); padding: 2px;
+    }
+    .view-tab {
+      padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;
+      cursor: pointer; border: none; background: none; color: var(--text-muted);
+      transition: all 0.15s; white-space: nowrap;
+    }
+    .view-tab.active { background: var(--primary); color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+    .badge.badge-hi { color: var(--primary); border: 1px solid var(--primary); background: transparent; }
+    .adr-hot { color: var(--accent); font-weight: 600; }
     .icon-btn {
       width: 32px; height: 32px; border-radius: 6px; border: none;
       background: none; color: var(--text-muted); cursor: pointer;
@@ -249,9 +261,12 @@
   (function() {
     // ─── State ─────────────────────────────────────────
     let market = 'us';
+    let view = (() => {           // 'trend' (SMA alignment) | 'momentum' (ADR / RS Rating / EMA screen)
+      try { const v = localStorage.getItem('es_view'); return ['trend','momentum'].includes(v) ? v : 'trend'; } catch { return 'trend'; }
+    })();
     let data = { us: null, hk: null };
     let search = '';
-    let sortField = 'marketCap';
+    let sortField = view === 'momentum' ? 'rs' : 'marketCap';
     let sortDir = 'desc';
     let minDailyChg = 'none';
     let min5dChg = 'none';
@@ -275,15 +290,18 @@
     // Relaxed mode: rsAll / rs1mAll / streakAll / isNewAll (ranked & tracked within the full list).
     const F = {
       rs(s) {
+        if (view === 'momentum') return s.rsRating ?? null;
         let v;
         if (rsPeriod === '1m')        v = requireSma50gt100 ? s.rs1m   : (s.rs1mAll   ?? s.rs1m);
         else if (rsPeriod === 'comp') v = requireSma50gt100 ? s.rsComp : (s.rsCompAll ?? s.rsComp);
         else                          v = requireSma50gt100 ? s.rs     : (s.rsAll     ?? s.rs);
         return v === undefined ? null : v;   // legacy data without the field → —
       },
-      streak(s) { return requireSma50gt100 ? s.streak : (s.streakAll ?? s.streak); },
-      isNew(s)  { return requireSma50gt100 ? s.isNew : (s.isNewAll ?? s.isNew); },
+      streak(s) { return view === 'momentum' ? s.streak : (requireSma50gt100 ? s.streak : (s.streakAll ?? s.streak)); },
+      isNew(s)  { return view === 'momentum' ? !!s.isNew : (requireSma50gt100 ? s.isNew : (s.isNewAll ?? s.isNew)); },
     };
+    const isMom = () => view === 'momentum';
+    const rsHeader = () => isMom() ? 'RS Rating' : RS_LABEL[rsPeriod];
 
     const CONFIG = {
       us: { title: 'US Equity Screener', currency: '$', mcap: 'MCap > $3B', price: 'Price > $10', value: 'AvgValue > $50M' },
@@ -306,6 +324,7 @@
     // Stocks passing the selected Price > SMA{10|20|30} condition.
     // Data is scanned with Price > SMA30, so SMA20 / SMA10 are tighter subsets.
     function getBaseStocks() {
+      if (isMom()) return data[market]?.momentum || [];
       let stocks = data[market]?.stocks || [];
       // Legacy data (no `strict` field) was scanned with 50>100 required → treat as strict pass.
       if (requireSma50gt100) stocks = stocks.filter(s => s.strict !== false);
@@ -434,6 +453,16 @@
 
     // ─── Export CSV ────────────────────────────────────
     function exportCSV(stocks) {
+      if (isMom()) {
+        const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','ADR%','RSRating','RSScore%','Above52wLow%','52wLow','From52wHigh%','EMA10','EMA20','EMA50','Days','Sector','MarketCap','Volume','AvgTradingValue'];
+        const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,s.adr,s.rsRating,s.rsScore??'',s.pctAbove52wLow,s.low52,s.pctFrom52wHigh??'',s.ema10,s.ema20,s.ema50,s.streak??'',`"${s.sector||''}"`,s.marketCap,s.volume,s.avgTradingValue].join(','));
+        const csv = [h.join(','), ...rows].join('\n');
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+        a.download = `screener_${market}_momentum_${new Date().toISOString().split('T')[0]}.csv`;
+        a.click();
+        return;
+      }
       const h = ['Ticker','Name','Price','Change','Change%','5D Chg%','From52wHigh%',RS_LABEL[rsPeriod].replace(/\s/g,''),'Days','SMA50>SMA100','Sector','MarketCap','Volume','AvgVol10d','AvgVol60d','AvgVol90d','AvgTradingValue','SMA10','SMA20','SMA30','SMA50','SMA100','SMA200'];
       const rows = stocks.map(s => [s.ticker,`"${s.name}"`,s.price,s.change,s.changePercent,s.change5dPercent??0,s.pctFrom52wHigh??'',F.rs(s)??'',F.streak(s)??'',(s.strict===false?'N':'Y'),`"${s.sector||''}"`,s.marketCap,s.volume,s.avgVolume10d,s.avgVolume60d,s.avgVolume90d,s.avgTradingValue,s.sma10,s.sma20,s.sma30,s.sma50,s.sma100,s.sma200].join(','));
       const csv = [h.join(','), ...rows].join('\n');
@@ -491,10 +520,42 @@
           <div class="sector-top3">${g.top3.map(s => s.ticker).join(' · ')}</div>
         </div>`).join('');
 
-      const colCount = full ? 18 : 13;
+      const mom = isMom();
+      const colCount = mom ? (full ? 19 : 15) : (full ? 18 : 13);
       let tableRows = '';
       if (filtered.length === 0) {
-        tableRows = `<tr><td colspan="${colCount}" class="empty-state">${icons.chart}<p>No results</p></td></tr>`;
+        const hint = mom && !(data[market]?.momentum) && data[market] ? 'Momentum data not scanned yet — wait for the next scan.' : 'No results';
+        tableRows = `<tr><td colspan="${colCount}" class="empty-state">${icons.chart}<p>${hint}</p></td></tr>`;
+      } else if (mom) {
+        filtered.forEach((s, i) => {
+          const chgCls = s.changePercent >= 0 ? 'chg-pos' : 'chg-neg';
+          const chg5dCls = (s.change5dPercent??0) >= 0 ? 'chg-pos' : 'chg-neg';
+          const p52 = s.pctFrom52wHigh;
+          const p52Cell = (p52 === undefined || p52 === null) ? '<span class="muted-val">—</span>'
+            : `<span class="${p52 >= -3 ? 'near-high' : 'muted-val'}">${p52.toFixed(1)}%</span>`;
+          tableRows += `<tr>
+            <td class="row-num">${i+1}</td>
+            <td class="ticker"><a href="${tvLink(s.ticker)}" target="_blank" rel="noopener" title="Open in TradingView">${s.ticker}</a></td>
+            <td class="name" title="${s.name}">${s.name}</td>
+            <td class="sector">${s.sector||'—'}</td>
+            <td class="price">${c.currency}${fmt.price(s.price)}</td>
+            <td><span class="chg-badge ${chgCls}">${s.changePercent>=0?'+':''}${s.changePercent.toFixed(2)}%</span></td>
+            <td><span class="chg-badge ${chg5dCls}">${(s.change5dPercent??0)>=0?'+':''}${(s.change5dPercent??0).toFixed(2)}%</span></td>
+            <td>${sparkSVG(s.spark)}</td>
+            <td><span class="${s.adr >= 6 ? 'adr-hot' : ''}">${s.adr.toFixed(2)}%</span></td>
+            <td><span class="rs-hot" title="Weighted 12M performance ${s.rsScore != null ? (s.rsScore>=0?'+':'')+s.rsScore+'%' : ''}">${s.rsRating}</span></td>
+            <td><span class="chg-badge chg-pos" title="52W low ${c.currency}${fmt.price(s.low52)}">+${s.pctAbove52wLow.toFixed(0)}%</span></td>
+            <td>${p52Cell}</td>
+            <td>${streakCell(s)}</td>
+            <td class="muted-val">${fmt.mcap(s.marketCap)}</td>
+            <td class="muted-val">${fmt.val(s.avgTradingValue)}</td>
+            ${full ? `
+            <td class="muted-val">${fmt.vol(s.volume)}</td>
+            <td class="sma-primary">${fmt.price(s.ema10)}</td>
+            <td class="sma-val">${fmt.price(s.ema20)}</td>
+            <td class="sma-val">${fmt.price(s.ema50)}</td>` : ''}
+          </tr>`;
+        });
       } else {
         filtered.forEach((s, i) => {
           const chgCls = s.changePercent >= 0 ? 'chg-pos' : 'chg-neg';
@@ -544,11 +605,15 @@
               </svg>
               <div>
                 <div class="title">${c.title}</div>
-                <div class="subtitle">SMA Trend Alignment</div>
+                <div class="subtitle">${mom ? 'Momentum · ADR / RS Rating / EMA' : 'SMA Trend Alignment'}</div>
               </div>
               <div class="market-toggle">
                 <button class="market-btn ${market==='us'?'active':''}" data-market="us">🇺🇸 US</button>
                 <button class="market-btn ${market==='hk'?'active':''}" data-market="hk">🇭🇰 HK</button>
+              </div>
+              <div class="view-tabs" id="view-tabs">
+                <button class="view-tab ${!mom?'active':''}" data-view="trend" title="SMA 10&gt;20&gt;50&gt;100&gt;200 trend alignment">Trend</button>
+                <button class="view-tab ${mom?'active':''}" data-view="momentum" title="ADR &gt; 4%, RS Rating &gt; 90, Price &gt; EMA50, EMA10 &gt; EMA20, &gt;70% above 52W low">Momentum</button>
               </div>
             </div>
             <button class="icon-btn" id="theme-toggle">${isDark ? icons.sun : icons.moon}</button>
@@ -557,7 +622,15 @@
         <main class="main">
           <div class="filters-box">
             <div class="filters-label">${icons.filter} Active Filters</div>
-            <div class="badges">
+            ${mom ? `<div class="badges">
+              <span class="badge">${c.mcap}</span>
+              <span class="badge">${c.price}</span>
+              <span class="badge badge-hi" title="Average Daily Range: 20-day mean of High/Low − 1">ADR (20d) &gt; 4%</span>
+              <span class="badge badge-hi" title="1–99 percentile of weighted 12-month performance (last quarter ×2) across all ${(data[market]?.momentumUniverse||0).toLocaleString()} scanned stocks">RS Rating &gt; 90</span>
+              <span class="badge badge-hi">Price &gt; EMA50</span>
+              <span class="badge badge-hi">EMA10 &gt; EMA20</span>
+              <span class="badge badge-hi">&gt; 70% above 52W Low</span>
+            </div>` : `<div class="badges">
               <span class="badge">${c.mcap}</span>
               <span class="badge">${c.price}</span>
               <span class="badge">Vol &gt; 500K</span>
@@ -578,7 +651,7 @@
                 <button data-rs="3m" class="${rsPeriod==='3m'?'active':''}">3M</button>
                 <button data-rs="comp" class="${rsPeriod==='comp'?'active':''}" title="Average of 1M and 3M ranks, re-ranked 1-99">1M+3M</button>
               </span>
-            </div>
+            </div>`}
           </div>
           <div class="sector-grid">${sectorCards}</div>
           <div class="toolbar">
@@ -620,7 +693,27 @@
           <div class="table-wrap">
             <div class="table-scroll">
               <table>
-                <thead><tr>
+                <thead><tr>${mom ? `
+                  <th style="width:36px">#</th>
+                  ${th('ticker','Ticker')}
+                  ${th('name','Name')}
+                  ${th('sector','Sector')}
+                  ${th('price','Price')}
+                  ${th('changePercent','Chg%')}
+                  ${th('change5dPercent','5D Chg%')}
+                  <th>30D Trend</th>
+                  ${th('adr','ADR%')}
+                  ${th('rs','RS Rating')}
+                  ${th('pctAbove52wLow','vs 52W Low')}
+                  ${th('pctFrom52wHigh','52W High')}
+                  ${th('streak','Days')}
+                  ${th('marketCap','Mkt Cap')}
+                  ${th('avgTradingValue','Avg Value')}
+                  ${full ? `
+                  ${th('volume','Volume')}
+                  ${th('ema10','EMA10')}
+                  ${th('ema20','EMA20')}
+                  ${th('ema50','EMA50')}` : ''}` : `
                   <th style="width:36px">#</th>
                   ${th('ticker','Ticker')}
                   ${th('name','Name')}
@@ -641,7 +734,7 @@
                   ${th('sma20','SMA20')}
                   ${th('sma50','SMA50')}
                   ${th('sma100','SMA100')}
-                  ${th('sma200','SMA200')}` : ''}
+                  ${th('sma200','SMA200')}` : ''}`}
                 </tr></thead>
                 <tbody>${tableRows}</tbody>
               </table>
@@ -659,6 +752,17 @@
           market = btn.dataset.market;
           search = ''; minDailyChg = 'none'; min5dChg = 'none'; sectorFilter = null;
           loadData(market);
+          render();
+        });
+      });
+      document.querySelectorAll('#view-tabs .view-tab').forEach(b => {
+        b.addEventListener('click', () => {
+          const v = b.dataset.view === 'momentum' ? 'momentum' : 'trend';
+          if (v === view) return;
+          view = v;
+          try { localStorage.setItem('es_view', view); } catch {}
+          search = ''; sectorFilter = null;
+          sortField = view === 'momentum' ? 'rs' : 'marketCap'; sortDir = 'desc';
           render();
         });
       });
