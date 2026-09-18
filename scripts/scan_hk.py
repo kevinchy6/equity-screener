@@ -30,7 +30,7 @@ except ImportError:
 
 from enrich import compute_extras, finalize_lists, utc_now_iso
 from momentum import (rs_returns, rs_ratings, analyze_momentum, select_momentum,
-                      finalize_momentum, pct_above_52w_low, market_stats)
+                      finalize_momentum)
 
 MOM_PRICE_THRESHOLD = 10.0   # HK$10 for the momentum tab
 
@@ -229,7 +229,6 @@ def main():
     chunk_size = 50
     technical_passers = []
     rs_rets = {}          # ticker -> {ret21, ret63}, for EVERY ticker with enough history
-    above_low = {}        # ticker -> % above 52-week low (market breadth stat)
     mom_candidates = []   # momentum tab passers (before the RS Rating test)
     failed_chunks = 0
     total_chunks = (len(tickers) + chunk_size - 1) // chunk_size
@@ -287,7 +286,6 @@ def main():
                     try:
                         highs = ticker_data["High"].fillna(ticker_data["Close"]).tolist()
                         lows = ticker_data["Low"].fillna(ticker_data["Close"]).tolist()
-                        above_low[t] = pct_above_52w_low(closes, lows)
                         m = analyze_momentum(t, closes, highs, lows, volumes,
                                              MOM_PRICE_THRESHOLD, partial_last_bar=partial)
                         if m:
@@ -386,9 +384,6 @@ def main():
     print(f"[Lists] strict (50>100 required): {n_strict}, relaxed total: {len(passing)}", file=sys.stderr)
 
     # ── Momentum tab: RS Rating percentile across the whole universe ──
-    mkt = market_stats(above_low)
-    print(f"[Market] {mkt.get('above70Pct')}% of {mkt.get('universe')} stocks are >70% above their 52W low "
-          f"(median +{mkt.get('medianPctAbove52wLow')}%)", file=sys.stderr)
     ratings = rs_ratings(rs_rets)
     momentum = select_momentum(mom_candidates, ratings)
     print(f"[Momentum] {len(mom_candidates)} pass ADR/EMA, {len(momentum)} with RS > 90 on 1M/3M/1M+3M "
@@ -433,7 +428,6 @@ def main():
         "totalPassing": len(passing),
         "momentum": momentum,
         "momentumUniverse": len(rs_rets),
-        "market": mkt,
         "lastUpdated": utc_now_iso(),
     }
 

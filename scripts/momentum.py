@@ -11,7 +11,6 @@ Criteria (all must hold):
     Trend tab; a stock is kept if it is > 90 on ANY of the three.
   * Price above the 50-day EMA
   * 10-day EMA above the 20-day EMA
-  * (% above the 52-week low is REPORTED, not filtered)
 
 Shared by scan_us.py and scan_hk.py. Each scanner feeds every ticker it
 downloaded into `rs_returns()` (so the RS percentile is universe-wide), and runs
@@ -95,36 +94,6 @@ def adr_pct(highs, lows, period=ADR_PERIOD):
     return sum(vals) / len(vals) * 100
 
 
-def pct_above_52w_low(closes, lows):
-    """% distance of the last close above the 52-week low (None if unavailable)."""
-    try:
-        low52 = min(x for x in lows[-252:] if x and x > 0)
-        return (closes[-1] / low52 - 1) * 100
-    except (ValueError, ZeroDivisionError, IndexError):
-        return None
-
-
-def market_stats(above_low, threshold=70.0):
-    """Universe-wide breadth of distance from the 52-week low.
-    above_low: {ticker: pct_above_52w_low}. Returns counts/percentages."""
-    vals = sorted(v for v in above_low.values() if v is not None)
-    n = len(vals)
-    if n == 0:
-        return {"universe": 0}
-    def share(th):
-        return round(sum(1 for v in vals if v > th) / n * 100, 1)
-    median = vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) / 2
-    return {
-        "universe": n,
-        "above70Count": sum(1 for v in vals if v > threshold),
-        "above70Pct": share(threshold),
-        "above100Pct": share(100.0),
-        "above50Pct": share(50.0),
-        "above30Pct": share(30.0),
-        "medianPctAbove52wLow": round(median, 1),
-    }
-
-
 def analyze_momentum(ticker, closes, highs, lows, volumes, price_threshold,
                      partial_last_bar=False):
     """Test every criterion except RS Rating (needs the whole universe).
@@ -153,9 +122,6 @@ def analyze_momentum(ticker, closes, highs, lows, volumes, price_threshold,
     if adr is None or adr <= ADR_MIN_PCT:
         return None
 
-    # Distance from the 52-week low: shown as a column, not a filter.
-    low52 = min(x for x in lows[-252:] if x and x > 0)
-    pct_above_low = (price / low52 - 1) * 100
 
     prev_close = closes[-2]
     change = price - prev_close
@@ -179,8 +145,6 @@ def analyze_momentum(ticker, closes, highs, lows, volumes, price_threshold,
         "ema10": round(e10, 2),
         "ema20": round(e20, 2),
         "ema50": round(e50, 2),
-        "low52": round(low52, 2),
-        "pctAbove52wLow": round(pct_above_low, 1),
     }
     out.update(compute_extras(closes))
     return out

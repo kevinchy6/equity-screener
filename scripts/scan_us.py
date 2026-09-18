@@ -36,7 +36,7 @@ import pandas as pd
 
 from enrich import compute_extras, finalize_lists, utc_now_iso
 from momentum import (rs_returns, rs_ratings, analyze_momentum, select_momentum,
-                      finalize_momentum, pct_above_52w_low, market_stats)
+                      finalize_momentum)
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -262,7 +262,6 @@ def main():
 
     passing = []
     rs_rets = {}          # ticker -> {ret21, ret63}, for EVERY ticker with enough history
-    above_low = {}        # ticker -> % above 52-week low (market breadth stat)
     mom_candidates = []   # momentum screen passers (before the RS Rating test)
     failed_chunks = 0
     total_chunks = (len(tickers) + CHUNK_SIZE - 1) // CHUNK_SIZE
@@ -298,7 +297,6 @@ def main():
                 try:
                     highs_l = tdf["High"].fillna(tdf["Close"]).tolist()
                     lows_l = tdf["Low"].fillna(tdf["Close"]).tolist()
-                    above_low[t] = pct_above_52w_low(closes_l, lows_l)
                     m = analyze_momentum(t, closes_l, highs_l, lows_l, volumes_l,
                                          PRICE_THRESHOLD, partial_last_bar=partial)
                     if m:
@@ -364,9 +362,6 @@ def main():
     ratings = rs_ratings(rs_rets)
     momentum = select_momentum(mom_candidates, ratings)
     finalize_momentum(momentum, history_file, "America/New_York")
-    mkt = market_stats(above_low)
-    log(f"[Market] {mkt.get('above70Pct')}% of {mkt.get('universe')} stocks are >70% above their 52W low "
-        f"(median +{mkt.get('medianPctAbove52wLow')}%)")
     log(f"[Momentum] {len(mom_candidates)} pass ADR/EMA, {len(momentum)} with RS > 90 on 1M/3M/1M+3M "
         f"(universe ranked: {len(rs_rets)})")
     elapsed = time.time() - start
@@ -385,7 +380,6 @@ def main():
         "totalPassing": len(passing),
         "momentum": momentum,
         "momentumUniverse": len(rs_rets),
-        "market": mkt,
         "lastUpdated": utc_now_iso(),
     }
     with open(OUTPUT_FILE, "w") as f:
