@@ -449,7 +449,9 @@
     // ─── Copy Tickers ──────────────────────────────────
     function copyTickers(tickers) {
       const formatted = market === 'hk' ? tickers.map(t => 'HKEX:' + t.replace('.HK','').replace(/^0+/,'')) : tickers;
-      const text = formatted.join(', ');
+      // Comma only, no spaces: TradingView's watchlist / symbol-search paste
+      // handler URL-encodes anything after the first space ("%20HKEX%3A...").
+      const text = formatted.join(',');
       try { navigator.clipboard.writeText(text); } catch {
         const ta = document.createElement('textarea');
         ta.value = text; ta.style.cssText = 'position:fixed;opacity:0';
