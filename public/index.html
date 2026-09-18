@@ -90,6 +90,15 @@
     .view-tab.active { background: var(--primary); color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
     .badge.badge-hi { color: var(--primary); border: 1px solid var(--primary); background: transparent; }
     .adr-hot { color: var(--accent); font-weight: 600; }
+    .mkt-stat {
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+      margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border);
+      font-size: 12px; color: var(--text-muted);
+    }
+    .mkt-stat .mkt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .mkt-stat .mkt-big { font-size: 20px; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; line-height: 1; }
+    .mkt-stat .mkt-sub { font-variant-numeric: tabular-nums; }
+    .mkt-stat .mkt-sub b { color: var(--text); font-weight: 600; }
     .icon-btn {
       width: 32px; height: 32px; border-radius: 6px; border: none;
       background: none; color: var(--text-muted); cursor: pointer;
@@ -630,7 +639,20 @@
               <span class="badge badge-hi">Price &gt; EMA50</span>
               <span class="badge badge-hi">EMA10 &gt; EMA20</span>
               <span class="badge" title="Shown for reference only — not a filter">vs 52W Low: shown, not filtered</span>
-            </div>` : `<div class="badges">
+            </div>
+            ${(() => {
+              const k = data[market]?.market;
+              if (!k || !k.universe) return '';
+              return `<div class="mkt-stat" title="Share of ALL ${k.universe.toLocaleString()} scanned stocks (${c.mcap}, ${c.price}) whose last close is more than 70% above their 52-week low">
+                <span class="mkt-label">Market · &gt;70% above 52W low</span>
+                <span class="mkt-big">${k.above70Pct.toFixed(1)}%</span>
+                <span class="mkt-sub"><b>${k.above70Count.toLocaleString()}</b> of ${k.universe.toLocaleString()} stocks</span>
+                <span class="mkt-sub">&gt;100%: <b>${k.above100Pct}%</b></span>
+                <span class="mkt-sub">&gt;50%: <b>${k.above50Pct}%</b></span>
+                <span class="mkt-sub">&gt;30%: <b>${k.above30Pct}%</b></span>
+                <span class="mkt-sub">median: <b>+${k.medianPctAbove52wLow}%</b></span>
+              </div>`;
+            })()}` : `<div class="badges">
               <span class="badge">${c.mcap}</span>
               <span class="badge">${c.price}</span>
               <span class="badge">Vol &gt; 500K</span>

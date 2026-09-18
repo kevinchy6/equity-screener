@@ -84,6 +84,36 @@ def adr_pct(highs, lows, period=ADR_PERIOD):
     return sum(vals) / len(vals) * 100
 
 
+def pct_above_52w_low(closes, lows):
+    """% distance of the last close above the 52-week low (None if unavailable)."""
+    try:
+        low52 = min(x for x in lows[-252:] if x and x > 0)
+        return (closes[-1] / low52 - 1) * 100
+    except (ValueError, ZeroDivisionError, IndexError):
+        return None
+
+
+def market_stats(above_low, threshold=70.0):
+    """Universe-wide breadth of distance from the 52-week low.
+    above_low: {ticker: pct_above_52w_low}. Returns counts/percentages."""
+    vals = sorted(v for v in above_low.values() if v is not None)
+    n = len(vals)
+    if n == 0:
+        return {"universe": 0}
+    def share(th):
+        return round(sum(1 for v in vals if v > th) / n * 100, 1)
+    median = vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) / 2
+    return {
+        "universe": n,
+        "above70Count": sum(1 for v in vals if v > threshold),
+        "above70Pct": share(threshold),
+        "above100Pct": share(100.0),
+        "above50Pct": share(50.0),
+        "above30Pct": share(30.0),
+        "medianPctAbove52wLow": round(median, 1),
+    }
+
+
 def analyze_momentum(ticker, closes, highs, lows, volumes, price_threshold,
                      partial_last_bar=False):
     """Test every criterion except RS Rating (needs the whole universe).
