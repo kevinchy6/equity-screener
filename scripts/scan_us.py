@@ -34,7 +34,7 @@ except ImportError:
 
 import pandas as pd
 
-from enrich import compute_extras, finalize_lists, utc_now_iso
+from enrich import compute_extras, finalize_lists, utc_now_iso, patch_last_bar
 from momentum import (rs_returns, rs_ratings, analyze_momentum, select_momentum,
                       finalize_momentum)
 
@@ -274,6 +274,10 @@ def main():
         if data is None:
             failed_chunks += 1
             continue
+        # Yahoo's daily row for the latest session is NaN for hours after the
+        # close; repair it from hourly bars + official close so the scan never
+        # silently describes the previous day.
+        data = patch_last_bar(data, chunk, "America/New_York", log=log)
 
         for t in chunk:
             try:

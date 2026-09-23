@@ -28,7 +28,7 @@ except ImportError:
     subprocess.run([sys.executable, "-m", "pip", "install", "pandas", "-q"])
     import pandas as pd
 
-from enrich import compute_extras, finalize_lists, utc_now_iso
+from enrich import compute_extras, finalize_lists, utc_now_iso, patch_last_bar
 from momentum import (rs_returns, rs_ratings, analyze_momentum, select_momentum,
                       finalize_momentum)
 
@@ -257,6 +257,9 @@ def main():
         chunk_num = i // chunk_size + 1
 
         data = download_chunk_with_retry(chunk)
+        if data is not None:
+            data = patch_last_bar(data, chunk, "Asia/Hong_Kong",
+                                  log=lambda m: print(m, file=sys.stderr))
         if data is None:
             failed_chunks += 1
             continue
