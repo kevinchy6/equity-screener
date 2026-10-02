@@ -12,7 +12,8 @@ on:
   schedule:
     - cron: '0 21 * * 1-5'   # HKT 05:00 (Mon-Fri)
     - cron: '0 0 * * 1-5'    # HKT 08:00 (Mon-Fri)
-    - cron: '30 8 * * 1-5'   # HKT 16:30 (Mon-Fri)
+    - cron: '45 6 * * 1-5'   # JST 15:45 — TSE just closed (JP only)
+    - cron: '30 8 * * 1-5'   # HKT 16:30 (Mon-Fri) — HK close (+ JP refresh)
     - cron: '30 13 * * 1-5'  # US open 9:30am EDT — data live ~15min after open
     - cron: '0 14 * * 1-5'   # HKT 22:00 (Mon-Fri)
     - cron: '30 14 * * 1-5'  # US open 9:30am EST (winter) — data live ~15min after open
@@ -28,9 +29,11 @@ on:
         default: 'both'
         type: choice
         options:
-          - both
+          - both   # auto-detect by time of day (default)
+          - all    # US + HK + JP
           - us
           - hk
+          - jp
 
 # 确保同一时间只跑一个 workflow
 concurrency:
@@ -57,7 +60,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install "yfinance[nospam]" pandas curl_cffi
+        run: pip install "yfinance[nospam]" pandas curl_cffi openpyxl
 
       - name: Determine which markets to scan
         id: markets
@@ -66,37 +69,49 @@ jobs:
           HOUR=$(date -u +%H)
           MINUTE=$(date -u +%M)
 
+          # Auto-detect based on schedule time (UTC):
+          #   00:00 (JST 09:00 TSE open / HKT 08:00)  → US + HK + JP
+          #   06:45 (JST 15:45 TSE just closed)        → JP
+          #   08:30 (HKT 16:30 HK just closed)         → HK + JP
+          #   13:30 / 14:xx (US open)                  → US + HK
+          #   15:00-21:59 (US session / after close)   → US
           if [ "$MARKET" = "both" ]; then
-            # Auto-detect based on schedule time
-            # UTC 21:00 (HKT 05:00) → US (美股刚收盘)
-            # UTC 00:00 (HKT 08:00) → both
-            # UTC 08:30 (HKT 16:30) → HK (港股刚收盘)
-            # UTC 14:00 (HKT 22:00) → both
-            # UTC 15:00-21:59 (US session / just after close; HK closed) → US only
             case "$HOUR" in
               15|16|17|18|19|20|21) MARKET="us" ;;
-              08) MARKET="hk" ;;
-              *) MARKET="both" ;;
+              06|07) MARKET="jp" ;;
+              08) MARKET="hk jp" ;;
+              00) MARKET="us hk jp" ;;
+              *) MARKET="us hk" ;;
             esac
+          elif [ "$MARKET" = "all" ]; then
+            MARKET="us hk jp"
           fi
+          for m in us hk jp; do
+            case " $MARKET " in *" $m "*) echo "$m=true" >> $GITHUB_OUTPUT ;; *) echo "$m=false" >> $GITHUB_OUTPUT ;; esac
+          done
           echo "market=$MARKET" >> $GITHUB_OUTPUT
           echo "Scanning: $MARKET"
 
       - name: Run US scanner
-        if: steps.markets.outputs.market == 'us' || steps.markets.outputs.market == 'both'
+        if: steps.markets.outputs.us == 'true'
         run: python scripts/scan_us.py
         continue-on-error: true
 
       - name: Run HK scanner
-        if: steps.markets.outputs.market == 'hk' || steps.markets.outputs.market == 'both'
+        if: steps.markets.outputs.hk == 'true'
         run: python scripts/scan_hk.py
+        continue-on-error: true
+
+      - name: Run JP scanner
+        if: steps.markets.outputs.jp == 'true'
+        run: python scripts/scan_jp.py
         continue-on-error: true
 
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/*.json
+          git add public/data/*.json scripts/jp_universe.txt
           git diff --staged --quiet || git commit -m "Update scan data $(date -u +'%Y-%m-%d %H:%M UTC')"
           # Another run may have pushed while we were scanning. Rebase our data
           # commit on top; on conflict the data files from THIS scan win

@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """
-Hong Kong Stock Screener using yfinance.
-Two-phase approach (same as US scanner):
-  Phase 1 — Batch download 2y OHLCV for all tickers, compute SMAs/volume in bulk.
-  Phase 2 — Only fetch metadata (market_cap, name, sector) for survivors (~30-50 tickers).
+Japan (TSE Prime) Stock Screener using yfinance.
+Two-phase approach (same as US/HK scanners):
+  Phase 1 — Batch download 1y OHLCV for all tickers, compute SMAs/volume in bulk.
+  Phase 2 — Only fetch metadata (market_cap, name, sector) for survivors.
+
+Universe: every "Prime Market (Domestic)" issue in JPX's monthly
+"List of TSE-listed Issues" (data_e.xlsx). Downloaded at run time and cached
+to scripts/jp_universe.txt (used as the fallback if JPX is unreachable).
+Yahoo tickers are "<code>.T"; TradingView symbols are "TSE:<code>".
 """
 
 import json
@@ -32,17 +37,23 @@ from enrich import compute_extras, finalize_lists, utc_now_iso, patch_last_bar
 from momentum import (rs_returns, rs_ratings, analyze_momentum, select_momentum,
                       finalize_momentum)
 
-MOM_PRICE_THRESHOLD = 10.0   # HK$10 for the momentum tab
+MOM_PRICE_THRESHOLD = 100.0   # JPY 100 for the momentum tab
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
-OUTPUT_FILE = os.path.join(ROOT_DIR, "public", "data", "hk.json")
-UNIVERSE_FILE = os.path.join(SCRIPT_DIR, "hk_universe.txt")
+OUTPUT_FILE = os.path.join(ROOT_DIR, "public", "data", "jp.json")
+UNIVERSE_FILE = os.path.join(SCRIPT_DIR, "jp_universe.txt")
+JPX_LIST_URL = ("https://www.jpx.co.jp/english/markets/statistics-equities/misc/"
+                "tvdivq0000001vg2-att/data_e.xlsx")
+JPX_SECTOR = {}   # ticker -> JPX 33-sector name (fallback when Yahoo has none)
 
 os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
-# Market cap threshold: HK$1 billion
-MCAP_THRESHOLD = 1_000_000_000
+# Market cap threshold: JPY 100 billion
+MCAP_THRESHOLD = 100_000_000_000
+PRICE_THRESHOLD = 100.0          # JPY
+MIN_VOLUME = 100_000             # shares/day (TSE trades in 100-share units)
+MIN_TRADING_VALUE = 1_000_000_000  # JPY 1B average daily value (20d)
 
 
 def calc_sma(prices, period):
@@ -56,8 +67,8 @@ _pass_count = [0]
 _fail_count = [0]
 
 
-def is_partial_bar(last_index, tz="Asia/Hong_Kong", close_hm=(16, 15)):
-    """True if the last daily bar is today's session and HKEX has not closed
+def is_partial_bar(last_index, tz="Asia/Tokyo", close_hm=(15, 35)):
+    """True if the last daily bar is today's session and TSE has not closed
     yet (intraday scan), i.e. its volume is incomplete."""
     try:
         from zoneinfo import ZoneInfo
@@ -82,7 +93,7 @@ def analyze_from_batch(ticker, closes, volumes, partial_last_bar=False):
     last_price = closes[-1]
     prev_close = closes[-2] if len(closes) >= 2 else last_price
 
-    if last_price < 10:
+    if last_price < PRICE_THRESHOLD:
         return None
 
     sma10 = calc_sma(closes, 10)
@@ -116,13 +127,13 @@ def analyze_from_batch(ticker, closes, volumes, partial_last_bar=False):
     if not all([avg_vol_10, avg_vol_60, avg_vol_90]):
         return None
 
-    if daily_volume < 500_000:
+    if daily_volume < MIN_VOLUME:
         return None
-    if avg_vol_10 < 500_000:
+    if avg_vol_10 < MIN_VOLUME:
         return None
-    if avg_vol_60 < 500_000:
+    if avg_vol_60 < MIN_VOLUME:
         return None
-    if avg_vol_90 < 500_000:
+    if avg_vol_90 < MIN_VOLUME:
         return None
 
     # Average trading value (last 20 days)
@@ -130,7 +141,7 @@ def analyze_from_batch(ticker, closes, volumes, partial_last_bar=False):
     recent_volumes = vol_c[-20:]
     avg_trading_value = sum(c * v for c, v in zip(recent_closes, recent_volumes)) / len(recent_closes)
 
-    if avg_trading_value < 50_000_000:
+    if avg_trading_value < MIN_TRADING_VALUE:
         return None
 
     change = last_price - prev_close
@@ -169,7 +180,7 @@ def analyze_from_batch(ticker, closes, volumes, partial_last_bar=False):
     return out
 
 
-META_CACHE_FILE = os.path.join(SCRIPT_DIR, "hk_meta.json")
+META_CACHE_FILE = os.path.join(SCRIPT_DIR, "jp_meta.json")
 try:
     with open(META_CACHE_FILE) as _f:
         META_CACHE = json.load(_f)   # ticker -> {"name", "sector"} (built offline; Yahoo's
@@ -229,21 +240,56 @@ def _fetch_metadata_live(ticker_code, retries=3):
     return {"market_cap": 0, "name": ticker_code, "sector": ""}
 
 
+def load_universe():
+    """TSE Prime (domestic) tickers from JPX's monthly list; cache to disk.
+    Falls back to the cached file when the download/parse fails."""
+    try:
+        import io
+        from curl_cffi import requests as _rq
+        r = _rq.get(JPX_LIST_URL, impersonate="chrome", timeout=30)
+        r.raise_for_status()
+        df = pd.read_excel(io.BytesIO(r.content), dtype=str)
+        sec_col = next(c for c in df.columns if c.startswith("Section"))
+        code_col = next(c for c in df.columns if "Code" in c and "Local" in c)
+        sect_col = next((c for c in df.columns if "33 Sector(name)" in c), None)
+        prime = df[df[sec_col].str.contains("Prime Market", na=False)
+                   & ~df[sec_col].str.contains("Foreign", na=False)]
+        tickers = []
+        for _, row in prime.iterrows():
+            code = str(row[code_col]).strip()
+            if not code or code == "nan":
+                continue
+            t = f"{code}.T"
+            tickers.append(t)
+            if sect_col:
+                JPX_SECTOR[t] = str(row[sect_col]).strip()
+        if len(tickers) < 1000:
+            raise RuntimeError(f"only {len(tickers)} Prime tickers parsed")
+        with open(UNIVERSE_FILE, "w") as f:
+            f.write("\n".join(tickers) + "\n")
+        print(f"[JP Screener] Universe from JPX: {len(tickers)} Prime tickers", file=sys.stderr)
+        return tickers
+    except Exception as e:
+        print(f"[JP Screener] JPX list unavailable ({str(e)[:80]}); using cached universe", file=sys.stderr)
+        if not os.path.exists(UNIVERSE_FILE):
+            return []
+        with open(UNIVERSE_FILE) as f:
+            return [line.strip() for line in f if line.strip()]
+
+
 def main():
-    print("[HK Screener] Starting yfinance-based scan...", file=sys.stderr)
+    print("[JP Screener] Starting yfinance-based scan...", file=sys.stderr)
     start_time = time.time()
 
-    if not os.path.exists(UNIVERSE_FILE):
-        print(f"[HK Screener] ERROR: Universe file not found: {UNIVERSE_FILE}", file=sys.stderr)
-        return
+    tickers = load_universe()
+    if not tickers:
+        print("[JP Screener] ERROR: empty universe", file=sys.stderr)
+        sys.exit(1)
 
-    with open(UNIVERSE_FILE) as f:
-        tickers = [line.strip() for line in f if line.strip()]
-
-    print(f"[HK Screener] Universe: {len(tickers)} tickers", file=sys.stderr)
+    print(f"[JP Screener] Universe: {len(tickers)} tickers", file=sys.stderr)
 
     # ─── Phase 1: Batch download 2y history and compute all technicals ───
-    print("[HK Screener] Phase 1: Batch downloading 2y history...", file=sys.stderr)
+    print("[JP Screener] Phase 1: Batch downloading 2y history...", file=sys.stderr)
 
     chunk_size = 50
     technical_passers = []
@@ -277,7 +323,7 @@ def main():
 
         data = download_chunk_with_retry(chunk)
         if data is not None:
-            data = patch_last_bar(data, chunk, "Asia/Hong_Kong",
+            data = patch_last_bar(data, chunk, "Asia/Tokyo",
                                   log=lambda m: print(m, file=sys.stderr))
         if data is None:
             failed_chunks += 1
@@ -328,10 +374,10 @@ def main():
         time.sleep(2.0)
 
     elapsed = time.time() - start_time
-    print(f"[HK Screener] Phase 1 complete: {len(technical_passers)} pass all technical filters ({elapsed:.0f}s)", file=sys.stderr)
+    print(f"[JP Screener] Phase 1 complete: {len(technical_passers)} pass all technical filters ({elapsed:.0f}s)", file=sys.stderr)
 
     # ─── Phase 2: Fetch metadata only for survivors ──────────────
-    print(f"[HK Screener] Phase 2: Fetching metadata for {len(technical_passers)} stocks...", file=sys.stderr)
+    print(f"[JP Screener] Phase 2: Fetching metadata for {len(technical_passers)} stocks...", file=sys.stderr)
 
     passing = []
     meta_cache = {}
@@ -352,21 +398,21 @@ def main():
                     continue
                 print(f"  [Keep] {item['ticker']} — metadata unavailable (rate limit?), keeping with MCap=0", file=sys.stderr)
                 item["name"] = meta["name"]
-                item["sector"] = meta["sector"]
+                item["sector"] = meta["sector"] or JPX_SECTOR.get(item["ticker"], "")
                 passing.append(item)
                 continue
             if market_cap < MCAP_THRESHOLD:
-                print(f"  [Skip] {item['ticker']} — MCap HK${market_cap/1e9:.1f}B < HK$1B", file=sys.stderr)
+                print(f"  [Skip] {item['ticker']} — MCap ¥{market_cap/1e9:.0f}B < ¥100B", file=sys.stderr)
                 continue
 
             item["marketCap"] = int(market_cap)
             item["name"] = meta["name"]
-            item["sector"] = meta["sector"]
+            item["sector"] = meta["sector"] or JPX_SECTOR.get(item["ticker"], "")
             passing.append(item)
 
             with _print_lock:
                 _pass_count[0] += 1
-                print(f"[Pass] {item['ticker']} ({meta['name']}) HK${item['price']:.2f} MCap={market_cap/1e9:.1f}B Sector={meta['sector']}", file=sys.stderr)
+                print(f"[Pass] {item['ticker']} ({meta['name']}) ¥{item['price']:.0f} MCap=¥{market_cap/1e9:.0f}B Sector={item['sector']}", file=sys.stderr)
         except:
             _fail_count[0] += 1
 
@@ -383,12 +429,12 @@ def main():
     # ─── Phase 3: Retry missing sectors ──────────────
     no_sector = [s for s in passing if not s.get("sector")]
     if no_sector:
-        print(f"[HK Screener] Phase 3: Retrying sectors for {len(no_sector)} stocks...", file=sys.stderr)
+        print(f"[JP Screener] Phase 3: Retrying sectors for {len(no_sector)} stocks...", file=sys.stderr)
         for idx, stock in enumerate(no_sector):
             try:
                 tk = yf.Ticker(stock["ticker"])
                 info = tk.info
-                stock["sector"] = info.get("sector", "") or (META_CACHE.get(stock["ticker"]) or {}).get("sector", "") or ""
+                stock["sector"] = info.get("sector", "") or (META_CACHE.get(stock["ticker"]) or {}).get("sector", "") or JPX_SECTOR.get(stock["ticker"], "")
                 if not stock["name"] or stock["name"] == stock["ticker"]:
                     stock["name"] = info.get("shortName", "") or info.get("longName", stock["ticker"])
             except:
@@ -401,8 +447,8 @@ def main():
 
     # Sort by market cap descending
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
-    history_file = os.path.join(ROOT_DIR, "public", "data", "hk_history.json")
-    n_strict = finalize_lists(passing, history_file, "Asia/Hong_Kong")
+    history_file = os.path.join(ROOT_DIR, "public", "data", "jp_history.json")
+    n_strict = finalize_lists(passing, history_file, "Asia/Tokyo")
     print(f"[Lists] strict (50>100 required): {n_strict}, relaxed total: {len(passing)}", file=sys.stderr)
 
     # ── Momentum tab: RS Rating percentile across the whole universe ──
@@ -425,19 +471,19 @@ def main():
                 continue
             item["marketCap"] = int(market_cap)
             item["name"] = meta["name"]
-            item["sector"] = meta["sector"]
+            item["sector"] = meta["sector"] or JPX_SECTOR.get(item["ticker"], "")
             kept.append(item)
         except Exception:
             pass
     momentum = kept
-    finalize_momentum(momentum, history_file, "Asia/Hong_Kong")
+    finalize_momentum(momentum, history_file, "Asia/Tokyo")
     print(f"[Momentum] final list: {len(momentum)}", file=sys.stderr)
 
     elapsed = time.time() - start_time
-    print(f"\n[HK Screener] ═══════════════════════════════════════", file=sys.stderr)
-    print(f"[HK Screener] Complete. {len(passing)} stocks pass all filters.", file=sys.stderr)
-    print(f"[HK Screener] Total time: {elapsed:.0f}s ({elapsed/60:.1f}min)", file=sys.stderr)
-    print(f"[HK Screener] Passed: {_pass_count[0]}, Failed: {_fail_count[0]}", file=sys.stderr)
+    print(f"\n[JP Screener] ═══════════════════════════════════════", file=sys.stderr)
+    print(f"[JP Screener] Complete. {len(passing)} stocks pass all filters.", file=sys.stderr)
+    print(f"[JP Screener] Total time: {elapsed:.0f}s ({elapsed/60:.1f}min)", file=sys.stderr)
+    print(f"[JP Screener] Passed: {_pass_count[0]}, Failed: {_fail_count[0]}", file=sys.stderr)
 
     # ── Empty-result guard: never overwrite good data with a rate-limited empty scan ──
     if len(passing) == 0 and failed_chunks > total_chunks * 0.3:

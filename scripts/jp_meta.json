@@ -1,0 +1,7782 @@
+{
+"1301.T": {
+"name": "KYOKUYO CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Fishery, Agriculture and Forestry"
+},
+"1332.T": {
+"name": "NISSUI CORPORATION",
+"sector": "Consumer Defensive",
+"sectorJPX": "Fishery, Agriculture and Forestry"
+},
+"1333.T": {
+"name": "UMIOS CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Fishery, Agriculture and Forestry"
+},
+"1375.T": {
+"name": "YUKIGUNI FACTORY CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Fishery, Agriculture and Forestry"
+},
+"1377.T": {
+"name": "SAKATA SEED CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Fishery, Agriculture and Forestry"
+},
+"1379.T": {
+"name": "HOKUTO CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Fishery, Agriculture and Forestry"
+},
+"1414.T": {
+"name": "SHO-BOND HOLDINGS CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1417.T": {
+"name": "MIRAIT ONE CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1419.T": {
+"name": "TAMA HOME CO LIMITED",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Construction"
+},
+"1429.T": {
+"name": "NIPPON AQUA CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1433.T": {
+"name": "BESTERRA CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1515.T": {
+"name": "NITTETSU MINING CO",
+"sector": "Basic Materials",
+"sectorJPX": "Mining"
+},
+"1518.T": {
+"name": "MITSUI MATSUSHIMA HOLDINGS CO L",
+"sector": "Energy",
+"sectorJPX": "Other Products"
+},
+"1605.T": {
+"name": "INPEX CORPORATION",
+"sector": "Energy",
+"sectorJPX": "Mining"
+},
+"1662.T": {
+"name": "JAPAN PETROLEUM EXPLORATION CO ",
+"sector": "Energy",
+"sectorJPX": "Mining"
+},
+"1663.T": {
+"name": "K&O ENERGY GROUP INC",
+"sector": "Utilities",
+"sectorJPX": "Mining"
+},
+"166A.T": {
+"name": "TASUKI HOLDINGS INC",
+"sector": "Technology",
+"sectorJPX": "Real Estate"
+},
+"167A.T": {
+"name": "RYOYO RYOSAN HOLDINGS INC",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"1719.T": {
+"name": "HAZAMA ANDO CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1720.T": {
+"name": "TOKYU CONSTRUCTION CO(NEW)",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1721.T": {
+"name": "COMSYS HOLDINGS CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1762.T": {
+"name": "TAKAMATSU CONSTRUCTION GROUP CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1766.T": {
+"name": "TOKEN CORPORATION",
+"sector": "Real Estate",
+"sectorJPX": "Construction"
+},
+"1780.T": {
+"name": "YAMAURA CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1786.T": {
+"name": "ORIENTAL SHIRAISHI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1801.T": {
+"name": "TAISEI CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1802.T": {
+"name": "OBAYASHI CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1803.T": {
+"name": "SHIMIZU CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1808.T": {
+"name": "HASEKO CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Construction"
+},
+"1812.T": {
+"name": "KAJIMA CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1813.T": {
+"name": "FUDO TETRA CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1814.T": {
+"name": "DAISUE CONSTRUCTION CO",
+"sector": "Real Estate",
+"sectorJPX": "Construction"
+},
+"1815.T": {
+"name": "TEKKEN CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1820.T": {
+"name": "NISHIMATSU CONSTRUCTION CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1833.T": {
+"name": "OKUMURA CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1835.T": {
+"name": "TOTETSU KOGYO CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1852.T": {
+"name": "ASANUMA CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1860.T": {
+"name": "TODA CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1861.T": {
+"name": "KUMAGAI GUMI CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1870.T": {
+"name": "YAHAGI CONSTRUCTION CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1871.T": {
+"name": "PS CONSTRUCTION CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1873.T": {
+"name": "NIHON HOUSE HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Construction"
+},
+"1878.T": {
+"name": "DAITO TRUST CONSTRUCTION CO",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"1879.T": {
+"name": "SHINNIHON CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1882.T": {
+"name": "TOA ROAD CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1885.T": {
+"name": "TOA CORPORATION (CONST)",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1887.T": {
+"name": "JDC CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1888.T": {
+"name": "WAKACHIKU CONSTRUCTION CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1893.T": {
+"name": "PENTA OCEAN CONSTRUCTION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1898.T": {
+"name": "SEIKITOKYU KOGYO CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1899.T": {
+"name": "FUKUDA CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1911.T": {
+"name": "SUMITOMO FORESTRY CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Construction"
+},
+"1925.T": {
+"name": "DAIWA HOUSE INDUSTRY CO",
+"sector": "Real Estate",
+"sectorJPX": "Construction"
+},
+"1926.T": {
+"name": "RAITO KOGYO CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1928.T": {
+"name": "SEKISUI HOUSE",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Construction"
+},
+"1929.T": {
+"name": "NITTOC CONSTRUCTION CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1930.T": {
+"name": "HOKURIKU ELECTRICAL CONSTRUCTIO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1934.T": {
+"name": "YURTEC CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1938.T": {
+"name": "NIPPON RIETEC CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1939.T": {
+"name": "YONDENKO CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1941.T": {
+"name": "CHUDENKO CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1942.T": {
+"name": "KANDENKO CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1944.T": {
+"name": "KINDEN CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1945.T": {
+"name": "TOKYO ENERGY & SYSTEMS INC",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1946.T": {
+"name": "TOENEC CORP",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1950.T": {
+"name": "NIPPON DENSETSU KOGYO CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1951.T": {
+"name": "EXEO GROUP INC",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1952.T": {
+"name": "SHIN NIPPON AIR TECHNOLOGIES CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1959.T": {
+"name": "KRAFTIA CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1961.T": {
+"name": "SANKI ENGINEERING CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1963.T": {
+"name": "JGC HOLDINGS CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1964.T": {
+"name": "CHUGAI RO CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1968.T": {
+"name": "TAIHEI DENGYO KAISHA",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1969.T": {
+"name": "TAKASAGO THERMAL ENGINEERING CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1975.T": {
+"name": "ASAHI KOGYOSHA CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1976.T": {
+"name": "MEISEI INDUSTRIAL CO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1979.T": {
+"name": "TAIKISHA LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1980.T": {
+"name": "DAI-DAN CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"1982.T": {
+"name": "HIBIYA ENGINEERING",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"2001.T": {
+"name": "NIPPN CORPORATION",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2002.T": {
+"name": "NISSHIN SEIFUN GROUP INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2004.T": {
+"name": "SHOWA SANGYO CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2053.T": {
+"name": "CHUBU SHIRYO CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2060.T": {
+"name": "FEED ONE CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2108.T": {
+"name": "NIPPON BEET SUGAR MANUFACTURING",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2109.T": {
+"name": "MITSUI DM SUGAR CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2117.T": {
+"name": "WELLNEO SUGAR CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2120.T": {
+"name": "LIFULL CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"2121.T": {
+"name": "MIXI. INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"2124.T": {
+"name": "JAC RECRUITMENT CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2127.T": {
+"name": "NIHON M&A CENTER HOLDINGS INC",
+"sector": "Financial Services",
+"sectorJPX": "Services"
+},
+"212A.T": {
+"name": "FIT EASY INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"2130.T": {
+"name": "MEMBERS CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"2146.T": {
+"name": "UT GROUP CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2148.T": {
+"name": "ITMEDIA INC.",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"2153.T": {
+"name": "E J HOLDINGS INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2154.T": {
+"name": "OPEN UP GROUP INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2157.T": {
+"name": "KOSHIDAKA HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"2163.T": {
+"name": "ARTNER CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2168.T": {
+"name": "PASONA GROUP INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2170.T": {
+"name": "LINK AND MOTIVATION INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2175.T": {
+"name": "SMS CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Services"
+},
+"2181.T": {
+"name": "PERSOL HOLDINGS CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2198.T": {
+"name": "IKK HOLDINGS INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"2201.T": {
+"name": "MORINAGA & CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2206.T": {
+"name": "EZAKI GLICO CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2207.T": {
+"name": "MEITO CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2209.T": {
+"name": "IMURAYA GROUP CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2211.T": {
+"name": "FUJIYA CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2212.T": {
+"name": "YAMAZAKI BAKING LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2217.T": {
+"name": "MOROZOFF LIMITED",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2220.T": {
+"name": "KAMEDA SEIKA CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2222.T": {
+"name": "KOTOBUKI SPIRITS",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2229.T": {
+"name": "CALBEE INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2264.T": {
+"name": "MORINAGA MILK INDUSTRY CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2266.T": {
+"name": "ROKKO BUTTER CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2267.T": {
+"name": "YAKULT HONSHA CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2269.T": {
+"name": "MEIJI HOLDINGS CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2270.T": {
+"name": "MEGMILK SNOW BRAND CO.LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2281.T": {
+"name": "PRIMA MEAT PACKERS",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2282.T": {
+"name": "NH FOODS LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2288.T": {
+"name": "MARUDAI FOOD CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2292.T": {
+"name": "S FOODS INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2294.T": {
+"name": "KAKIYASU HONTEN",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2296.T": {
+"name": "ITOHAM YONEKYU HOLDINGS INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2301.T": {
+"name": "GAKUJO CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2307.T": {
+"name": "CROSS CAT CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"2317.T": {
+"name": "SYSTENA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"2325.T": {
+"name": "NJS CO. LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2326.T": {
+"name": "DIGITAL ARTS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"2327.T": {
+"name": "NS SOLUTIONS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"2331.T": {
+"name": "ALSOK CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2335.T": {
+"name": "CUBE SYSTEM INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"2337.T": {
+"name": "ICHIGO INC",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"2353.T": {
+"name": "NIPPON PARKING DEVELOPMENT CO.L",
+"sector": "Industrials",
+"sectorJPX": "Real Estate"
+},
+"2359.T": {
+"name": "CORE CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"2371.T": {
+"name": "KAKAKU.COM. INC",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"2378.T": {
+"name": "RENAISSANCE INC",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"2379.T": {
+"name": "DIP CORPORATION",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"2384.T": {
+"name": "SBS HOLDINGS INC",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"2395.T": {
+"name": "SHIN NIPPON BIOMEDICAL LABORATO",
+"sector": "Healthcare",
+"sectorJPX": "Services"
+},
+"2410.T": {
+"name": "CAREER DESIGN CENTER CO.LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2413.T": {
+"name": "M3 INC",
+"sector": "Healthcare",
+"sectorJPX": "Services"
+},
+"2429.T": {
+"name": "WORLD HOLDINGS CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2432.T": {
+"name": "DENA CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Information & Communication"
+},
+"2433.T": {
+"name": "HAKUHODO DY HLDGS INC",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"2461.T": {
+"name": "FAN COMMUNICATIONS INC",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"2462.T": {
+"name": "LIKE CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2471.T": {
+"name": "S-POOL INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2475.T": {
+"name": "WDB HOLDINGS CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2491.T": {
+"name": "VALUECOMMERCE CO.LTD.",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"2492.T": {
+"name": "INFOMART CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Services"
+},
+"2501.T": {
+"name": "SAPPORO BREWERIES LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2502.T": {
+"name": "ASAHI GROUP HLDGS",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2503.T": {
+"name": "KIRIN HOLDINGS COMPANY LIMITED",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2531.T": {
+"name": "TAKARA HOLDINGS INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2533.T": {
+"name": "OENON HOLDINGS INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"256A.T": {
+"name": "TOBISHIMA HOLDINGS INC",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"2579.T": {
+"name": "COCA-COLA BOTTLERS JAPAN HLDGS ",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2585.T": {
+"name": "LIFEDRINK CO INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2587.T": {
+"name": "SUNTORY BEVERAGE & FOOD LIMITED",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2590.T": {
+"name": "DYDO GROUP HOLDINGS INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2593.T": {
+"name": "ITO EN LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"25935.T": {
+"name": "ITO EN LTD NPV PRF STOCK TYPE 1",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2594.T": {
+"name": "KEY COFFEE INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2602.T": {
+"name": "NISSHIN OILLIO GROUP LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2607.T": {
+"name": "FUJI OIL CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2613.T": {
+"name": "J-OIL MILLS INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"262A.T": {
+"name": "INTERMESTIC INC",
+"sector": "Healthcare",
+"sectorJPX": "Retail Trade"
+},
+"2659.T": {
+"name": "SAN-A CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2664.T": {
+"name": "CAWACHI LIMITED",
+"sector": "Healthcare",
+"sectorJPX": "Retail Trade"
+},
+"2670.T": {
+"name": "ABC-MART INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2674.T": {
+"name": "HARD OFF CORPORATION CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2676.T": {
+"name": "TAKACHIHO KOHEKI CO",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"2678.T": {
+"name": "ASKUL CORP",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2681.T": {
+"name": "GEO HOLDINGS CORP",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2685.T": {
+"name": "AND ST HD CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"268A.T": {
+"name": "RIGAKU HOLDINGS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"2695.T": {
+"name": "KURA SUSHI INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2726.T": {
+"name": "PAL GROUP HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2730.T": {
+"name": "EDION CORP",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2733.T": {
+"name": "ARATA CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Wholesale Trade"
+},
+"2734.T": {
+"name": "SALA CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Retail Trade"
+},
+"2737.T": {
+"name": "TOMEN DEVICES CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"2742.T": {
+"name": "HALOWS CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Retail Trade"
+},
+"2749.T": {
+"name": "JP-HOLDINGS INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2752.T": {
+"name": "FUJIO FOOD GROUP INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2753.T": {
+"name": "AMIYAKI TEI CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2760.T": {
+"name": "TOKYO ELECTRON DEVICE",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"2767.T": {
+"name": "TSUBURAYA FIELDS HOLDINGS INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Wholesale Trade"
+},
+"2768.T": {
+"name": "SOJITZ CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"277A.T": {
+"name": "GLOBE-ING INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"2784.T": {
+"name": "ALFRESA HOLDINGS CORP",
+"sector": "Healthcare",
+"sectorJPX": "Wholesale Trade"
+},
+"2791.T": {
+"name": "DAIKOKUTENBUSSAN CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Retail Trade"
+},
+"2792.T": {
+"name": "HONEYS HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"2801.T": {
+"name": "KIKKOMAN CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2802.T": {
+"name": "AJINOMOTO CO INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2804.T": {
+"name": "BULL DOG SAUCE CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2809.T": {
+"name": "KEWPIE CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2810.T": {
+"name": "HOUSE FOODS GROUP INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2811.T": {
+"name": "KAGOME CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2815.T": {
+"name": "ARIAKE JAPAN CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"285A.T": {
+"name": "KIOXIA HOLDINGS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"2871.T": {
+"name": "NICHIREI CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2874.T": {
+"name": "YOKOREI CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Wholesale Trade"
+},
+"2875.T": {
+"name": "TOYO SUISAN KAISHA",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2882.T": {
+"name": "EAT&HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Foods"
+},
+"2884.T": {
+"name": "YOSHIMURA FOOD HOLDINGS KK",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2897.T": {
+"name": "NISSIN FOODS HOLDINGS CO. LTD.",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2908.T": {
+"name": "FUJICCO CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2910.T": {
+"name": "ROCK FIELD CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2914.T": {
+"name": "JAPAN TOBACCO INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2915.T": {
+"name": "KENKO MAYONNAISE CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2918.T": {
+"name": "WARABEYA NICHIYO HOLDINGS CO LT",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2922.T": {
+"name": "NATORI CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2929.T": {
+"name": "PHARMA FOODS INTERNATIONAL CO",
+"sector": "Healthcare",
+"sectorJPX": "Foods"
+},
+"2930.T": {
+"name": "KITANOTATSUJIN CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"2931.T": {
+"name": "EUGLENA CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2933.T": {
+"name": "KIBUN FOODS INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2935.T": {
+"name": "PICKLES HOLDINGS CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"2975.T": {
+"name": "STAR MICA HLDGS CO",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"2980.T": {
+"name": "SRE HLDGS CORP",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"2982.T": {
+"name": "AD WORKS GRP CO LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3002.T": {
+"name": "GUNZE LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3003.T": {
+"name": "HULIC CO LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3028.T": {
+"name": "ALPEN CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3031.T": {
+"name": "RACCOON HOLDINGS INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Information & Communication"
+},
+"3034.T": {
+"name": "QOL HOLDINGS CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Retail Trade"
+},
+"3036.T": {
+"name": "ALCONIX CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Wholesale Trade"
+},
+"3038.T": {
+"name": "KOBE BUSSAN CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Wholesale Trade"
+},
+"3040.T": {
+"name": "SOLITON SYSTEMS K.K.",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3046.T": {
+"name": "JINS HOLDINGS INC",
+"sector": "Healthcare",
+"sectorJPX": "Retail Trade"
+},
+"3048.T": {
+"name": "BIC CAMERA INC.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3050.T": {
+"name": "DCM HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3064.T": {
+"name": "MONOTARO CO.LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3076.T": {
+"name": "AI HOLDINGS CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"3086.T": {
+"name": "J FRONT RETAILING CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3087.T": {
+"name": "DOUTOR NICHIRES HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3088.T": {
+"name": "MATSUKIYOCOCOKARA & CO",
+"sector": "Healthcare",
+"sectorJPX": "Retail Trade"
+},
+"3091.T": {
+"name": "BRONCO BILLY CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3092.T": {
+"name": "ZOZO INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3093.T": {
+"name": "TREASURE FACTORY CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3097.T": {
+"name": "MONOGATARI CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3099.T": {
+"name": "ISETAN MITSUKOSHI HOLDINGS LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3101.T": {
+"name": "TOYOBO CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"3104.T": {
+"name": "FUJIBO HOLDINGS INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3105.T": {
+"name": "NISSHINBO HOLDINGS INC",
+"sector": "Industrials",
+"sectorJPX": "Electric Appliances"
+},
+"3106.T": {
+"name": "KURABO INDUSTRIES",
+"sector": "Industrials",
+"sectorJPX": "Textiles and Apparels"
+},
+"3107.T": {
+"name": "DAIWABO HOLDINGS CO LTD",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"3109.T": {
+"name": "SHIKIBO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3110.T": {
+"name": "NITTO BOSEKI CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"3116.T": {
+"name": "TOYOTA BOSHOKU CORP",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"3132.T": {
+"name": "MACNICA HOLDINGS INC",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"3139.T": {
+"name": "LACTO JAPAN CO.LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Wholesale Trade"
+},
+"3148.T": {
+"name": "CREATE SD HOLDINGS CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Retail Trade"
+},
+"3150.T": {
+"name": "GREMS INC",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"3151.T": {
+"name": "VITAL KSK HOLDINGS INC",
+"sector": "Healthcare",
+"sectorJPX": "Wholesale Trade"
+},
+"3153.T": {
+"name": "YASHIMA DENKI CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"3154.T": {
+"name": "MEDIUS HLDG CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Wholesale Trade"
+},
+"3156.T": {
+"name": "RESTAR CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"3167.T": {
+"name": "TOKAI HLDGS CORP",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"3176.T": {
+"name": "SANYO TRADING CO LIMITED",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"3179.T": {
+"name": "SYUPPIN CO LIMITED",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3180.T": {
+"name": "BEAUTY GARAGE INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Wholesale Trade"
+},
+"3182.T": {
+"name": "OISIX INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3183.T": {
+"name": "WIN-PARTNERS CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Wholesale Trade"
+},
+"3186.T": {
+"name": "NEXTAGE CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3191.T": {
+"name": "JOYFUL HONDA CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3193.T": {
+"name": "ETERNAL HOSPITALITY GROUP CO LT",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3196.T": {
+"name": "HOTLAND HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3197.T": {
+"name": "SKYLARK HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3199.T": {
+"name": "WATAHAN CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3201.T": {
+"name": "JAPAN WOOL TEXTILE CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3221.T": {
+"name": "YOSSIX HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3231.T": {
+"name": "NOMURA REAL ESTATE HOLDINGS INC",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3232.T": {
+"name": "MIE KOTSU GROUP HOLDINGS INC",
+"sector": "Industrials",
+"sectorJPX": "Real Estate"
+},
+"3245.T": {
+"name": "DEAR LIFE CO.LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3252.T": {
+"name": "JINUSHI CO LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3276.T": {
+"name": "JAPAN PROPERTY MANAGEMENT CENTE",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3284.T": {
+"name": "HOOSIERS HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Real Estate"
+},
+"3288.T": {
+"name": "OPEN HOUSE GROUP CO LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3289.T": {
+"name": "TOKYU FUDOSAN HOLDINGS CORPORAT",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3291.T": {
+"name": "IIDA GROUP HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Real Estate"
+},
+"3302.T": {
+"name": "TEIKOKU SEN-I CO",
+"sector": "Industrials",
+"sectorJPX": "Textiles and Apparels"
+},
+"3315.T": {
+"name": "NIPPON COKE & ENGINEERING CO LT",
+"sector": "Basic Materials",
+"sectorJPX": "Oil and Coal Products"
+},
+"3333.T": {
+"name": "ASAHI CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3349.T": {
+"name": "COSMOS PHARMACEUTICAL CORP",
+"sector": "Healthcare",
+"sectorJPX": "Retail Trade"
+},
+"3360.T": {
+"name": "SHIP HEALTH CARE HOLDINGS INC",
+"sector": "Healthcare",
+"sectorJPX": "Wholesale Trade"
+},
+"3371.T": {
+"name": "SOFTCREATE HOLDINGS CORP",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3382.T": {
+"name": "SEVEN & I HOLDINGS CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Retail Trade"
+},
+"3387.T": {
+"name": "CREATE RESTAURANTS HOLDINGS INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3388.T": {
+"name": "MEIJI ELECTRIC INDUSTRIES CO LT",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"3391.T": {
+"name": "TSURUHA HOLDINGS INC",
+"sector": "Healthcare",
+"sectorJPX": "Retail Trade"
+},
+"3393.T": {
+"name": "STARTIA HLDGS INC",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"3395.T": {
+"name": "SAINT MARC HOLDINGS CO.LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3397.T": {
+"name": "TORIDOLL HOLDINGS CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3401.T": {
+"name": "TEIJIN LTD",
+"sector": "Industrials",
+"sectorJPX": "Textiles and Apparels"
+},
+"3402.T": {
+"name": "TORAY INDUSTRIES INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3405.T": {
+"name": "KURARAY CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"3407.T": {
+"name": "ASAHI KASEI CORP",
+"sector": "Industrials",
+"sectorJPX": "Chemicals"
+},
+"3415.T": {
+"name": "TOKYO BASE CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3431.T": {
+"name": "MIYAJI ENGINEERING GROUP INC",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"3433.T": {
+"name": "TOCALO CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"3436.T": {
+"name": "SUMCO CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Metal Products"
+},
+"3443.T": {
+"name": "KAWADA TECHNOLOGIES INC",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"3445.T": {
+"name": "RS TECHNOLOGIES CO LTD",
+"sector": "Technology",
+"sectorJPX": "Metal Products"
+},
+"3457.T": {
+"name": "&DO HOLDINGS CO LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3465.T": {
+"name": "KI-STAR REAL ESTATE CO LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3475.T": {
+"name": "GOOD COM ASSET CO LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3480.T": {
+"name": "J S B CO LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3482.T": {
+"name": "LOADSTAR CAPITAL K K",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3486.T": {
+"name": "GLOBAL LINK MANAGEMENT INC",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3496.T": {
+"name": "AZOOM CO LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"3498.T": {
+"name": "KASUMIGASEKI CAPITAL CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Real Estate"
+},
+"3501.T": {
+"name": "SUMINOE CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3539.T": {
+"name": "JM HOLDINGS CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Retail Trade"
+},
+"3543.T": {
+"name": "KOMEDA HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Wholesale Trade"
+},
+"3548.T": {
+"name": "BAROQUE JAPAN LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3561.T": {
+"name": "CHIKARANOMOTO HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3563.T": {
+"name": "FOOD & LIFE COMPANIES LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"3569.T": {
+"name": "SEIREN CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3580.T": {
+"name": "KOMATSU MATERE CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3591.T": {
+"name": "WACOAL HOLDINGS CORP",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3608.T": {
+"name": "TSI HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3612.T": {
+"name": "WORLD CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"3626.T": {
+"name": "TISI INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3632.T": {
+"name": "GREE HOLDINGS INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3635.T": {
+"name": "KOEI TECMO HOLDINGS CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3636.T": {
+"name": "MITSUBISHI RESEARCH INSTITUTE I",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3649.T": {
+"name": "FINDEX INC",
+"sector": "Healthcare",
+"sectorJPX": "Information & Communication"
+},
+"3656.T": {
+"name": "KLAB INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3657.T": {
+"name": "POLE TO WIN HOLDINGS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3659.T": {
+"name": "NEXON CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3660.T": {
+"name": "ISTYLE INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Information & Communication"
+},
+"3661.T": {
+"name": "M UP HOLDINGS INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3662.T": {
+"name": "ATEAM HOLDINGS CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3663.T": {
+"name": "CELSYS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3665.T": {
+"name": "ENIGMO INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Information & Communication"
+},
+"3668.T": {
+"name": "COLOPL INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3673.T": {
+"name": "BROADLEAF CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3676.T": {
+"name": "DIGITAL HEARTS HOLDINGS CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3678.T": {
+"name": "MEDIA DO CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3679.T": {
+"name": "ZIGEXN CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3687.T": {
+"name": "FIXSTARS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"368A.T": {
+"name": "KITAZATO CORPORATION",
+"sector": "Healthcare",
+"sectorJPX": "Precision Instruments"
+},
+"3694.T": {
+"name": "OPTIM CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3696.T": {
+"name": "CERES INC.",
+"sector": "Industrials",
+"sectorJPX": "Information & Communication"
+},
+"3697.T": {
+"name": "SHIFT INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3708.T": {
+"name": "TOKUSHU TOKAI PAPER CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Pulp and Paper"
+},
+"3741.T": {
+"name": "SYSTEMS ENGINEERING CONSULTANTS",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3762.T": {
+"name": "TECHMATRIX CORP",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3763.T": {
+"name": "PRO-SHIP INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3765.T": {
+"name": "GUNGHO ONLINE ENTERTAINMENT",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3769.T": {
+"name": "GMO PAYMENT GATEWAY INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3771.T": {
+"name": "SYSTEM RESEARCH CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3774.T": {
+"name": "INTERNET INITIATIVE JAPAN INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3778.T": {
+"name": "SAKURA INTERNET INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3788.T": {
+"name": "GMO GLOBALSIGN HOLDINGS K.K.",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3817.T": {
+"name": "SRA HOLDINGS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3834.T": {
+"name": "ASAHI NET INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3835.T": {
+"name": "EBASE CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3836.T": {
+"name": "AVANT GROUP CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3837.T": {
+"name": "AD-SOL NISSIN CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3843.T": {
+"name": "FREEBIT CO.LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3844.T": {
+"name": "COMTURE CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3853.T": {
+"name": "ASTERIA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3854.T": {
+"name": "I'LL INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3861.T": {
+"name": "OJI HOLDINGS CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Pulp and Paper"
+},
+"3863.T": {
+"name": "NIPPON PAPER INDUSTRIES CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Pulp and Paper"
+},
+"3864.T": {
+"name": "MITSUBISHI PAPER MILLS",
+"sector": "Basic Materials",
+"sectorJPX": "Pulp and Paper"
+},
+"3865.T": {
+"name": "HOKUETSU CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Pulp and Paper"
+},
+"3877.T": {
+"name": "CHUETSU PULP & PAPER",
+"sector": "Basic Materials",
+"sectorJPX": "Pulp and Paper"
+},
+"3880.T": {
+"name": "DAIO PAPER CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Pulp and Paper"
+},
+"3901.T": {
+"name": "MARKLINES CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3903.T": {
+"name": "GUMI INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3915.T": {
+"name": "TERRASKY CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3916.T": {
+"name": "DIGITAL INFORMATION TECHNOLOGIE",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3921.T": {
+"name": "NEO JAPAN INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3922.T": {
+"name": "PR TIMES CORPORATION",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3923.T": {
+"name": "RAKUS CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3925.T": {
+"name": "DOUBLE STANDARD INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3932.T": {
+"name": "AKATSUKI INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"3939.T": {
+"name": "KANAMIC NETWORK CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Information & Communication"
+},
+"3941.T": {
+"name": "RENGO CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Pulp and Paper"
+},
+"3946.T": {
+"name": "TOMOKU CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Pulp and Paper"
+},
+"3950.T": {
+"name": "THE PACK CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Pulp and Paper"
+},
+"3962.T": {
+"name": "CHANGE HOLDINGS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3963.T": {
+"name": "SYNCHRO FOOD CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Information & Communication"
+},
+"3964.T": {
+"name": "AUCNET INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Information & Communication"
+},
+"3968.T": {
+"name": "SEGUE GROUP CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3983.T": {
+"name": "ORO CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3984.T": {
+"name": "USER LOCAL INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3992.T": {
+"name": "NEEDS WELL INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3993.T": {
+"name": "PKSHA TECHNOLOGY INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"3994.T": {
+"name": "MONEY FORWARD INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4004.T": {
+"name": "RESONAC HOLDINGS CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4005.T": {
+"name": "SUMITOMO CHEMICAL COMPANY",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4008.T": {
+"name": "SUMITOMO SEIKA CHEMICALS CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4021.T": {
+"name": "NISSAN CHEMICAL CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4022.T": {
+"name": "RASA INDUSTRIES",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4023.T": {
+"name": "KUREHA CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4025.T": {
+"name": "TAKI CHEMICAL CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4027.T": {
+"name": "TAYCA CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4028.T": {
+"name": "ISHIHARA SANGYO KAISHA",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4041.T": {
+"name": "NIPPON SODA CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4042.T": {
+"name": "TOSOH CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4043.T": {
+"name": "TOKUYAMA CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4044.T": {
+"name": "CENTRAL GLASS CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4045.T": {
+"name": "TOAGOSEI CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4046.T": {
+"name": "OSAKA SODA CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4047.T": {
+"name": "KANTO DENKA KOGYO CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4051.T": {
+"name": "GMO FINANCIAL GATE INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4053.T": {
+"name": "SUN INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4061.T": {
+"name": "DENKA COMPANY LIMITED",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4062.T": {
+"name": "IBIDEN CO LTD",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"4063.T": {
+"name": "SHIN-ETSU CHEMICAL CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4064.T": {
+"name": "NIPPON CARBIDE INDUSTRIES CO IN",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4071.T": {
+"name": "PLUS ALPHA CONSULTING CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4072.T": {
+"name": "DENSAN SYSTEM HOLDINGS CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4078.T": {
+"name": "SAKAI CHEMICAL INDUSTRY CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4082.T": {
+"name": "DAIICHI KIGENSO KAGAKU-KOGYO CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4088.T": {
+"name": "AIR WATER INC",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4091.T": {
+"name": "NIPPON SANSO HOLDINGS CORPORATI",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4092.T": {
+"name": "NIPPON CHEMICAL INDUSTRIAL CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4095.T": {
+"name": "NIHON PARKERIZING CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4097.T": {
+"name": "KOATSU GAS KOGYO CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4099.T": {
+"name": "SHIKOKU KASEI HOLDINGS CORPORAT",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"409A.T": {
+"name": "ORION BREWERIES LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"4109.T": {
+"name": "STELLA CHEMIFA",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4112.T": {
+"name": "HODOGAYA CHEMICAL CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4114.T": {
+"name": "NIPPON SHOKUBAI CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4116.T": {
+"name": "DAINICHISEIKA COLOR & CHEM MFG ",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4118.T": {
+"name": "KANEKA CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4151.T": {
+"name": "KYOWA KIRIN CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"417A.T": {
+"name": "BLUE ZONES HOLDINGS CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Retail Trade"
+},
+"4180.T": {
+"name": "APPIER GROUP INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4182.T": {
+"name": "MITSUBISHI GAS CHEMICAL CO INC",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4183.T": {
+"name": "MITSUI CHEMICALS INC",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4186.T": {
+"name": "TOKYO OHKA KOGYO CO",
+"sector": "Technology",
+"sectorJPX": "Chemicals"
+},
+"4187.T": {
+"name": "OSAKA ORGANIC CHEMICAL INDUSTRY",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4188.T": {
+"name": "MITSUBISHI CHEMICAL GROUP CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4189.T": {
+"name": "KH NEOCHEM CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4194.T": {
+"name": "VISIONAL INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"4202.T": {
+"name": "DAICEL CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4203.T": {
+"name": "SUMITOMO BAKELITE CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4204.T": {
+"name": "SEKISUI CHEMICAL CO",
+"sector": "Industrials",
+"sectorJPX": "Chemicals"
+},
+"4205.T": {
+"name": "ZEON CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4206.T": {
+"name": "AICA KOGYO CO",
+"sector": "Industrials",
+"sectorJPX": "Chemicals"
+},
+"4208.T": {
+"name": "UBE CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4212.T": {
+"name": "SEKISUI JUSHI CORP",
+"sector": "Industrials",
+"sectorJPX": "Chemicals"
+},
+"4216.T": {
+"name": "ASAHI YUKIZAI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Chemicals"
+},
+"4218.T": {
+"name": "NICHIBAN CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Chemicals"
+},
+"4220.T": {
+"name": "RIKEN TECHNOS CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4221.T": {
+"name": "OKURA INDUSTRIAL CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4228.T": {
+"name": "SEKISUI KASEI CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4229.T": {
+"name": "GUN EI CHEMICAL INDUSTRY CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4246.T": {
+"name": "DAIKYONISHIKAWA CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Chemicals"
+},
+"4249.T": {
+"name": "MORIROKU CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4251.T": {
+"name": "KEIWA INCORPORATED",
+"sector": "Technology",
+"sectorJPX": "Chemicals"
+},
+"4272.T": {
+"name": "NIPPON KAYAKU CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4275.T": {
+"name": "CARLIT CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4290.T": {
+"name": "PRESTIGE INTERNATIONAL INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"429A.T": {
+"name": "TEKSCEND PHOTOMASK CORP.",
+"sector": "Technology",
+"sectorJPX": "Other Products"
+},
+"4301.T": {
+"name": "AMUSE INC",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"4307.T": {
+"name": "NOMURA RESEARCH INSTITUTE",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4310.T": {
+"name": "DREAM INCUBATOR INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4318.T": {
+"name": "QUICK CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4323.T": {
+"name": "JAPAN SYSTEM TECHNIQUES CO",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4324.T": {
+"name": "DENTSU GROUP INC",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"4326.T": {
+"name": "INTAGE HOLDINGS INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"4331.T": {
+"name": "TAKE & GIVE NEEDS CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"4337.T": {
+"name": "PIA CORPORATION",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"4343.T": {
+"name": "AEON FANTASY CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"4344.T": {
+"name": "SOURCENEXT CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4345.T": {
+"name": "CTS CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4362.T": {
+"name": "NIPPON FINE CHEMICAL CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4368.T": {
+"name": "FUSO CHEMICAL CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4369.T": {
+"name": "TRI CHEMICAL LABORATORIES INC.",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4373.T": {
+"name": "SIMPLEX HLDGS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4385.T": {
+"name": "MERCARI INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Information & Communication"
+},
+"4390.T": {
+"name": "IPS INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"4392.T": {
+"name": "FUTURE INNOVATION GROUP INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4396.T": {
+"name": "SYSTEM SUPPORT HOLDINGS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4401.T": {
+"name": "ADEKA CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4403.T": {
+"name": "NOF CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4410.T": {
+"name": "HARIMA CHEMICALS GROUP INC",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4413.T": {
+"name": "BAUDROIE INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4432.T": {
+"name": "WINGARC1ST INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4433.T": {
+"name": "HITO-COMMUNICATIONS HOLDINGS IN",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4443.T": {
+"name": "SANSAN INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4452.T": {
+"name": "KAO CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4461.T": {
+"name": "DKS CO. LTD.",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4462.T": {
+"name": "ISHIHARA CHEMICAL CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4471.T": {
+"name": "SANYO CHEMICAL INDUSTRIES",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4480.T": {
+"name": "MEDLEY INC",
+"sector": "Healthcare",
+"sectorJPX": "Information & Communication"
+},
+"4481.T": {
+"name": "BASE CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4483.T": {
+"name": "JMDC INC",
+"sector": "Healthcare",
+"sectorJPX": "Information & Communication"
+},
+"4502.T": {
+"name": "TAKEDA PHARMACEUTICAL CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4503.T": {
+"name": "ASTELLAS PHARMA",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4506.T": {
+"name": "SUMITOMO PHARMA CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4507.T": {
+"name": "SHIONOGI & CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4516.T": {
+"name": "NIPPON SHINYAKU CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4519.T": {
+"name": "CHUGAI PHARMACEUTICAL CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4521.T": {
+"name": "KAKEN PHARMACEUTICAL",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4523.T": {
+"name": "EISAI CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4526.T": {
+"name": "RIKEN VITAMIN CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Foods"
+},
+"4527.T": {
+"name": "ROHTO PHARMACEUTICAL CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Pharmaceutical"
+},
+"4528.T": {
+"name": "ONO PHARMACEUTICAL CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4534.T": {
+"name": "MOCHIDA PHARMACEUTICAL CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4536.T": {
+"name": "SANTEN PHARMACEUTICAL CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4538.T": {
+"name": "FUSO PHARMACEUTICAL INDUSTRIES",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4540.T": {
+"name": "TSUMURA & CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4543.T": {
+"name": "TERUMO CORP",
+"sector": "Healthcare",
+"sectorJPX": "Precision Instruments"
+},
+"4544.T": {
+"name": "H.U. GROUP HLDGS INC",
+"sector": "Healthcare",
+"sectorJPX": "Services"
+},
+"4547.T": {
+"name": "KISSEI PHARMACEUTICAL CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4548.T": {
+"name": "SEIKAGAKU CORP",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4549.T": {
+"name": "EIKEN CHEMICAL CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4552.T": {
+"name": "JCR PHARMACEUTICAL CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4553.T": {
+"name": "TOWA PHARMACEUTICAL CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4554.T": {
+"name": "FUJI PHARMA CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4559.T": {
+"name": "ZERIA PHARMACEUTICAL",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4565.T": {
+"name": "NXERA PHARMA CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4568.T": {
+"name": "DAIICHI SANKYO COMPANY LIMITED",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4569.T": {
+"name": "KYORIN PHARMACEUTICAL CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4574.T": {
+"name": "TAIKO PHARMACEUTICAL CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4577.T": {
+"name": "DAITO PHARMACEUTICAL CO.LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4578.T": {
+"name": "OTSUKA HLDGS CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4587.T": {
+"name": "PEPTIDREAM INC",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4611.T": {
+"name": "DAI NIPPON TORYO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4612.T": {
+"name": "NIPPON PAINT HOLDINGS CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4613.T": {
+"name": "KANSAI PAINT CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4617.T": {
+"name": "CHUGOKU MARINE PAINTS",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4626.T": {
+"name": "TAIYO HLDG CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4631.T": {
+"name": "DIC CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4633.T": {
+"name": "SAKATA INX CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4634.T": {
+"name": "ARTIENCE CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4641.T": {
+"name": "ALTECH CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4658.T": {
+"name": "NIPPON AIR CONDITIONING SERVICE",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4661.T": {
+"name": "ORIENTAL LAND CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"4662.T": {
+"name": "FOCUS SYSTEMS CORP",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4665.T": {
+"name": "DUSKIN CO.LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4666.T": {
+"name": "PARK 24 CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Real Estate"
+},
+"4668.T": {
+"name": "MEIKO NETWORK JAPAN",
+"sector": "Consumer Defensive",
+"sectorJPX": "Services"
+},
+"4674.T": {
+"name": "CRESCO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4676.T": {
+"name": "FUJI MEDIA HOLDING",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"4680.T": {
+"name": "ROUND ONE CORP",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"4681.T": {
+"name": "RESORTTRUST INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"4684.T": {
+"name": "OBIC CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4686.T": {
+"name": "JUSTSYSTEMS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4687.T": {
+"name": "TDC SOFT INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4689.T": {
+"name": "LY CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Information & Communication"
+},
+"4694.T": {
+"name": "BML INC",
+"sector": "Healthcare",
+"sectorJPX": "Services"
+},
+"4704.T": {
+"name": "TREND MICRO INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4709.T": {
+"name": "ID HOLDINGS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4714.T": {
+"name": "RISO KYOIKU GROUP CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Services"
+},
+"4718.T": {
+"name": "WASEDA ACADEMY",
+"sector": "Consumer Defensive",
+"sectorJPX": "Services"
+},
+"4719.T": {
+"name": "ALPHA SYSTEMS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"471A.T": {
+"name": "NS GP INC",
+"sector": "Industrials",
+"sectorJPX": "Other Financing Business"
+},
+"4722.T": {
+"name": "FUTURE CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4725.T": {
+"name": "CAC HOLDINGS CORP",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4732.T": {
+"name": "USS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"4733.T": {
+"name": "OBIC BUSINESS CONSULTANT",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4743.T": {
+"name": "ITFOR INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4751.T": {
+"name": "CYBER AGENT",
+"sector": "Communication Services",
+"sectorJPX": "Services"
+},
+"4755.T": {
+"name": "RAKUTEN GROUP INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"4763.T": {
+"name": "CREEK & RIVER",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4765.T": {
+"name": "SBI GLOBAL ASSET MANAGEMENT CO ",
+"sector": "Financial Services",
+"sectorJPX": "Services"
+},
+"4768.T": {
+"name": "OTSUKA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4776.T": {
+"name": "CYBOZU INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4784.T": {
+"name": "GMO INTERNET INC",
+"sector": "Technology",
+"sectorJPX": "Services"
+},
+"4792.T": {
+"name": "YAMADA CONSULTING GROUP CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4801.T": {
+"name": "CENTRAL SPORTS",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"4809.T": {
+"name": "PARACA INC",
+"sector": "Industrials",
+"sectorJPX": "Real Estate"
+},
+"4812.T": {
+"name": "DENTSU SOKEN INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4813.T": {
+"name": "ACCESS CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4819.T": {
+"name": "DIGITAL GARAGE",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4820.T": {
+"name": "EM SYSTEMS CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Information & Communication"
+},
+"4825.T": {
+"name": "WEATHERNEWS INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"4826.T": {
+"name": "COMPUTER INSTITUTE OF JAPAN",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4828.T": {
+"name": "BUSINESS ENGINEERING CORPORATIO",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4839.T": {
+"name": "WOWOW INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"4847.T": {
+"name": "INTELLIGENT WAVE INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"4848.T": {
+"name": "FULLCAST HOLDINGS",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4849.T": {
+"name": "EN INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"4886.T": {
+"name": "ASKA PHARMACEUTICAL HOLDINGS CO",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4887.T": {
+"name": "SAWAI GROUP HOLDINGS CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Pharmaceutical"
+},
+"4901.T": {
+"name": "FUJIFILM HOLDINGS CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Chemicals"
+},
+"4902.T": {
+"name": "KONICA MINOLTA INC",
+"sector": "Industrials",
+"sectorJPX": "Electric Appliances"
+},
+"4911.T": {
+"name": "SHISEIDO COMPANY LIMITED",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4912.T": {
+"name": "LION CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4914.T": {
+"name": "TAKASAGO INTERNATIONAL CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4919.T": {
+"name": "MILBON CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4922.T": {
+"name": "KOSE HLDGS CORP",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4923.T": {
+"name": "COTA CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4927.T": {
+"name": "POLA ORBIS HOLDINGS INC",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4928.T": {
+"name": "NOEVIR HLDGS CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4931.T": {
+"name": "SHINNIHONSEIYAKU CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Chemicals"
+},
+"4933.T": {
+"name": "I-NE CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4951.T": {
+"name": "S.T.CORPORATION",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4956.T": {
+"name": "KONISHI CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4958.T": {
+"name": "T.HASEGAWA CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4967.T": {
+"name": "KOBAYASHI PHARMACEUTICALS",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4968.T": {
+"name": "ARAKAWA CHEMICAL INDUSTRIES",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4971.T": {
+"name": "MEC COMPANY LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4973.T": {
+"name": "JAPAN PURE CHEMICAL",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4975.T": {
+"name": "JCU CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4980.T": {
+"name": "DEXERIALS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Chemicals"
+},
+"4985.T": {
+"name": "EARTH CORPORATION",
+"sector": "Consumer Defensive",
+"sectorJPX": "Chemicals"
+},
+"4996.T": {
+"name": "KUMIAI CHEMICAL INDUSTRY CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"4997.T": {
+"name": "NIHON NOHYAKU CO",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"5011.T": {
+"name": "NICHIREKI GROUP CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Oil and Coal Products"
+},
+"5016.T": {
+"name": "JX ADVANCED METALS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Nonferrous Metals"
+},
+"5019.T": {
+"name": "IDEMITSU KOSAN CO.LTD",
+"sector": "Energy",
+"sectorJPX": "Oil and Coal Products"
+},
+"5020.T": {
+"name": "ENEOS HOLDINGS INC",
+"sector": "Energy",
+"sectorJPX": "Oil and Coal Products"
+},
+"5021.T": {
+"name": "COSMO ENERGY HLDGS CO LTD",
+"sector": "Energy",
+"sectorJPX": "Oil and Coal Products"
+},
+"5032.T": {
+"name": "ANYCOLOR INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"5036.T": {
+"name": "JAPAN BUSINESS SYSTEMS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"5074.T": {
+"name": "TESS HOLDINGS CO LTD",
+"sector": "Utilities",
+"sectorJPX": "Construction"
+},
+"5076.T": {
+"name": "INFRONEER HLDGS INC",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"50765.T": {
+"name": "INFRONEER HLDGS INC NPV PRF STO",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"5101.T": {
+"name": "YOKOHAMA RUBBER CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Rubber Products"
+},
+"5105.T": {
+"name": "TOYO TIRE CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Rubber Products"
+},
+"5108.T": {
+"name": "BRIDGESTONE CORP",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Rubber Products"
+},
+"5110.T": {
+"name": "SUMITOMO RUBBER INDUSTRIES",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Rubber Products"
+},
+"5121.T": {
+"name": "FUJIKURA COMPOSITES INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Rubber Products"
+},
+"5122.T": {
+"name": "OKAMOTO INDUSTRIES INC",
+"sector": "Basic Materials",
+"sectorJPX": "Rubber Products"
+},
+"5142.T": {
+"name": "ACHILLES CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"5185.T": {
+"name": "FUKOKU CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Rubber Products"
+},
+"5186.T": {
+"name": "NITTA CORP",
+"sector": "Industrials",
+"sectorJPX": "Rubber Products"
+},
+"5192.T": {
+"name": "MITSUBOSHI BELTING",
+"sector": "Industrials",
+"sectorJPX": "Rubber Products"
+},
+"5195.T": {
+"name": "BANDO CHEMICAL INDUSTRIES LTD",
+"sector": "Industrials",
+"sectorJPX": "Rubber Products"
+},
+"5201.T": {
+"name": "AGC INC",
+"sector": "Industrials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5202.T": {
+"name": "NIPPON SHEET GLASS CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5208.T": {
+"name": "ARISAWA MFG CO LTD",
+"sector": "Technology",
+"sectorJPX": "Chemicals"
+},
+"5214.T": {
+"name": "NIPPON ELECTRIC GLASS",
+"sector": "Technology",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5232.T": {
+"name": "SUMITOMO OSAKA CEMENT CO",
+"sector": "Basic Materials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5233.T": {
+"name": "TAIHEIYO CEMENT CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5261.T": {
+"name": "RESOL HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"5262.T": {
+"name": "NIPPON HUME CORP",
+"sector": "Industrials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5269.T": {
+"name": "NIPPON CONCRETE INDUSTRIES CO",
+"sector": "Basic Materials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5288.T": {
+"name": "ASIA PILE HOLDINGS CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5301.T": {
+"name": "TOKAI CARBON CO",
+"sector": "Basic Materials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5302.T": {
+"name": "NIPPON CARBON CO",
+"sector": "Basic Materials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5310.T": {
+"name": "TOYO TANSO CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5331.T": {
+"name": "NORITAKE COMPANY LIMITED",
+"sector": "Industrials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5332.T": {
+"name": "TOTO LTD",
+"sector": "Industrials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5333.T": {
+"name": "NGK CORP",
+"sector": "Industrials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5334.T": {
+"name": "NITERRA CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5344.T": {
+"name": "MARUWA CO LTD",
+"sector": "Technology",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5351.T": {
+"name": "SHINAGAWA REFRA CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5357.T": {
+"name": "YOTAI REFRACTORIES CO",
+"sector": "Basic Materials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5384.T": {
+"name": "FUJIMI INC",
+"sector": "Technology",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5393.T": {
+"name": "NICHIAS CORP",
+"sector": "Industrials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"5401.T": {
+"name": "NIPPON STEEL CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5406.T": {
+"name": "KOBE STEEL",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5408.T": {
+"name": "NAKAYAMA STEEL WORKS",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5410.T": {
+"name": "GODO STEEL LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5411.T": {
+"name": "JFE HOLDINGS INC",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5423.T": {
+"name": "TOKYO STEEL MANUFACTURING CO",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"543A.T": {
+"name": "ARCHION CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Transportation Equipment"
+},
+"5440.T": {
+"name": "KYOEI STEEL LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5444.T": {
+"name": "YAMATO KOGYO CO",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5445.T": {
+"name": "TOKYO TEKKO CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"544A.T": {
+"name": "GMS GROUP CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"5451.T": {
+"name": "YODOKO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"545A.T": {
+"name": "TORANVIA CO LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"5461.T": {
+"name": "CHUBU STEEL PLATE CO",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5463.T": {
+"name": "MARUICHI STEEL TUBE",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"546A.T": {
+"name": "MIRAINI HOLDINGS CO LTD",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"5471.T": {
+"name": "DAIDO STEEL CO",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"547A.T": {
+"name": "MUNINOVA HOLDINGS INC",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"5480.T": {
+"name": "NIPPON YAKIN KOGYO CO",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5482.T": {
+"name": "AICHI STEEL CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5535.T": {
+"name": "MIGALO HOLDINGS INC",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"5541.T": {
+"name": "PACIFIC METALS CO",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5563.T": {
+"name": "NIPPON DENKO CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5602.T": {
+"name": "KURIMOTO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5631.T": {
+"name": "JAPAN STEEL WORKS",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"5632.T": {
+"name": "MITSUBISHI STEEL MFG CO",
+"sector": "Basic Materials",
+"sectorJPX": "Iron and Steel"
+},
+"5659.T": {
+"name": "NIPPON SEISEN CO",
+"sector": "Industrials",
+"sectorJPX": "Iron and Steel"
+},
+"5702.T": {
+"name": "DAIKI ALUMINIUM INDUSTRY CO",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5703.T": {
+"name": "NIPPON LIGHT METAL HLDGS CO LIM",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5706.T": {
+"name": "MITSUI KINZOKU CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5707.T": {
+"name": "TOHO ZINC CO LTD",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5711.T": {
+"name": "MITSUBISHI MATERIALS CORP",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5713.T": {
+"name": "SUMITOMO METAL MINING CO",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5714.T": {
+"name": "DOWA HOLDINGS",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5715.T": {
+"name": "FURUKAWA CO",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5726.T": {
+"name": "OSAKA TITANIUM TECHNOLOGIES",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5741.T": {
+"name": "UACJ CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5757.T": {
+"name": "CK SAN-ETSU CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Nonferrous Metals"
+},
+"575A.T": {
+"name": "MAEZAWA HOLDINGS CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"5801.T": {
+"name": "FURUKAWA ELECTRIC CO",
+"sector": "Industrials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5802.T": {
+"name": "SUMITOMO ELECTRIC INDUSTRIES",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Nonferrous Metals"
+},
+"5803.T": {
+"name": "FUJIKURA",
+"sector": "Industrials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5805.T": {
+"name": "SWCC CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5821.T": {
+"name": "HIRAKAWA HEWTECH CORP",
+"sector": "Industrials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5830.T": {
+"name": "IYOGIN HOLDINGS INC",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"5831.T": {
+"name": "Shizuoka Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"5832.T": {
+"name": "Chugin Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"5838.T": {
+"name": "RAKUTEN BANK LTD",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"5844.T": {
+"name": "Kyoto Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"5851.T": {
+"name": "RYOBI LIMITED",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5852.T": {
+"name": "AHRESTY CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5857.T": {
+"name": "ARE Holdings,Inc.",
+"sector": "Basic Materials",
+"sectorJPX": "Nonferrous Metals"
+},
+"5889.T": {
+"name": "Japan Eyewear Holdings Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"5901.T": {
+"name": "Toyo Seikan Group Holdings,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5902.T": {
+"name": "HOKKAN HOLDINGS LIMITED",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"590A.T": {
+"name": "giftee Group,Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"5911.T": {
+"name": "Yokogawa Bridge Holdings Corp.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5929.T": {
+"name": "Sanwa Holdings Corporation",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5930.T": {
+"name": "Bunka Shutter Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5932.T": {
+"name": "Sankyo Tateyama,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5933.T": {
+"name": "ALINCO INCORPORATED",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5938.T": {
+"name": "LIXIL Corporation",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5943.T": {
+"name": "NORITZ CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5946.T": {
+"name": "CHOFU SEISAKUSHO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5947.T": {
+"name": "RINNAI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5949.T": {
+"name": "UNIPRES CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"5957.T": {
+"name": "NITTOSEIKO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5959.T": {
+"name": "OKABE CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5970.T": {
+"name": "G-TEKT CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5975.T": {
+"name": "Topre Corporation",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5976.T": {
+"name": "Neturen Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5981.T": {
+"name": "TOKYO ROPE MFG.CO.,LTD",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5988.T": {
+"name": "PIOLAX,INC.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5989.T": {
+"name": "H-ONE CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"5991.T": {
+"name": "NHK SPRING CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"6005.T": {
+"name": "MIURA CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6013.T": {
+"name": "TAKUMA CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6027.T": {
+"name": "Bengo4.com,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6036.T": {
+"name": "KeePer Technical Laboratory Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6050.T": {
+"name": "E-Guardian Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6055.T": {
+"name": "JAPAN MATERIAL Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6058.T": {
+"name": "VECTOR INC.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6062.T": {
+"name": "CHARM CARE CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6070.T": {
+"name": "CAREERLINK CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6071.T": {
+"name": "IBJ,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6073.T": {
+"name": "ASANTE INCORPORATED",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6078.T": {
+"name": "Value HR Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6080.T": {
+"name": "M&A Capital Partners Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6088.T": {
+"name": "SIGMAXYZ Holdings Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6089.T": {
+"name": "WILL GROUP,INC.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6098.T": {
+"name": "Recruit Holdings Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6099.T": {
+"name": "ELAN Corporation",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6101.T": {
+"name": "TSUGAMI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6103.T": {
+"name": "OKUMA Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6104.T": {
+"name": "SHIBAURA MACHINE CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6113.T": {
+"name": "AMADA CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6118.T": {
+"name": "AIDA ENGINEERING,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6134.T": {
+"name": "FUJI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6135.T": {
+"name": "Makino Milling Machine Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6136.T": {
+"name": "OSG Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6140.T": {
+"name": "Asahi Diamond Industrial Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6141.T": {
+"name": "DMG MORI CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6143.T": {
+"name": "Sodick Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6146.T": {
+"name": "DISCO CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6151.T": {
+"name": "NITTO KOHKI CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6167.T": {
+"name": "Fuji Die Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6178.T": {
+"name": "JAPAN POST HOLDINGS Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6183.T": {
+"name": "BELLSYSTEM24 HOLDINGS,INC.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6184.T": {
+"name": "Kamakura Shinsho,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6191.T": {
+"name": "AirTrip Corp.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6194.T": {
+"name": "Atrae,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6196.T": {
+"name": "Strike Group Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6200.T": {
+"name": "Insource Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6209.T": {
+"name": "NPR-RIKEN CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6222.T": {
+"name": "SHIMA SEIKI MFG.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6235.T": {
+"name": "OPTORUN CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6237.T": {
+"name": "IWAKI CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6238.T": {
+"name": "FURYU CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6240.T": {
+"name": "YAMASHIN-FILTER CORP.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6247.T": {
+"name": "HISAKA WORKS,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6250.T": {
+"name": "YAMABIKO CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6254.T": {
+"name": "Nomura Micro Science Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6258.T": {
+"name": "HIRATA Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6264.T": {
+"name": "Marumae Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6266.T": {
+"name": "TAZMO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6268.T": {
+"name": "Nabtesco Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6269.T": {
+"name": "MODEC,INC.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6272.T": {
+"name": "RHEON AUTOMATIC MACHINERY CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6273.T": {
+"name": "SMC CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6277.T": {
+"name": "HOSOKAWA MICRON CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6278.T": {
+"name": "UNION TOOL CO.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6279.T": {
+"name": "ZUIKO CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6282.T": {
+"name": "OILES CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6284.T": {
+"name": "NISSEI ASB MACHINE CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6287.T": {
+"name": "SATO CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6289.T": {
+"name": "GIKEN LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6294.T": {
+"name": "OKADA AIYON CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6298.T": {
+"name": "Y.A.C.HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6301.T": {
+"name": "KOMATSU LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6302.T": {
+"name": "SUMITOMO HEAVY INDUSTRIES,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6305.T": {
+"name": "Hitachi Construction Machinery Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6306.T": {
+"name": "NIKKO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6309.T": {
+"name": "TOMOE ENGINEERING CO.,LTD.(TOMOE KOGYO CO.,LTD.)",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6310.T": {
+"name": "ISEKI & CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6315.T": {
+"name": "TOWA CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6323.T": {
+"name": "RORZE CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6324.T": {
+"name": "Harmonic Drive Systems Inc.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6326.T": {
+"name": "KUBOTA CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6328.T": {
+"name": "EBARA JITSUGYO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6330.T": {
+"name": "TOYO ENGINEERING CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"6331.T": {
+"name": "Mitsubishi Kakoki Kaisha,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6332.T": {
+"name": "TSUKISHIMA HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6333.T": {
+"name": "TEIKOKU CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6339.T": {
+"name": "Sintokogio,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6340.T": {
+"name": "SHIBUYA CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6345.T": {
+"name": "AICHI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6349.T": {
+"name": "KOMORI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6351.T": {
+"name": "TSURUMI MANUFACTURING CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6358.T": {
+"name": "SAKAI HEAVY INDUSTRIES,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6361.T": {
+"name": "EBARA CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6363.T": {
+"name": "Torishima Pump Mfg.Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6364.T": {
+"name": "AIRMAN CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6367.T": {
+"name": "DAIKIN INDUSTRIES,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6368.T": {
+"name": "ORGANO CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6369.T": {
+"name": "TOYO KANETSU K.K.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6370.T": {
+"name": "Kurita Water Industries Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6371.T": {
+"name": "TSUBAKIMOTO CHAIN CO.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6376.T": {
+"name": "NIKKISO CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"6379.T": {
+"name": "RAIZNEXT Corporation",
+"sector": "Industrials",
+"sectorJPX": "Construction"
+},
+"6381.T": {
+"name": "ANEST IWATA Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6383.T": {
+"name": "DAIFUKU CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6387.T": {
+"name": "SAMCO INC.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6390.T": {
+"name": "KATO WORKS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6395.T": {
+"name": "TADANO LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6407.T": {
+"name": "CKD Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6412.T": {
+"name": "Heiwa Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6413.T": {
+"name": "RISO KAGAKU CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6417.T": {
+"name": "SANKYO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6418.T": {
+"name": "JAPAN CASH MACHINE CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6419.T": {
+"name": "Mars Group Holdings Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6420.T": {
+"name": "GALILEI HOLDINGS CO.LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6430.T": {
+"name": "DAIKOKU DENKI CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6432.T": {
+"name": "TAKEUCHI MFG.CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6436.T": {
+"name": "Amano Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6440.T": {
+"name": "JUKI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6445.T": {
+"name": "JANOME Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6448.T": {
+"name": "BROTHER INDUSTRIES,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6454.T": {
+"name": "MAX CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6455.T": {
+"name": "MORITA HOLDINGS CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"6457.T": {
+"name": "GLORY LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6458.T": {
+"name": "SINKO INDUSTRIES LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6459.T": {
+"name": "DAIWA LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6460.T": {
+"name": "SEGA SAMMY HOLDINGS INC.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6463.T": {
+"name": "TPR CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6464.T": {
+"name": "TSUBAKI NAKASHIMA CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6465.T": {
+"name": "HOSHIZAKI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6471.T": {
+"name": "NSK Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6472.T": {
+"name": "NTN CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6473.T": {
+"name": "JTEKT Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6474.T": {
+"name": "NACHI-FUJIKOSHI CORP.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6479.T": {
+"name": "MINEBEA MITSUMI Inc.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6480.T": {
+"name": "NIPPON THOMPSON CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6481.T": {
+"name": "THK CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6486.T": {
+"name": "EAGLE INDUSTRY CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6490.T": {
+"name": "PILLAR Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6498.T": {
+"name": "KITZ CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6501.T": {
+"name": "Hitachi,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6503.T": {
+"name": "Mitsubishi Electric Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6504.T": {
+"name": "FUJI ELECTRIC CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6506.T": {
+"name": "YASKAWA Electric Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6507.T": {
+"name": "SINFONIA TECHNOLOGY CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6508.T": {
+"name": "MEIDENSHA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6516.T": {
+"name": "SANYO DENKI CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6517.T": {
+"name": "Denyo Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6523.T": {
+"name": "PHC Holdings Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6525.T": {
+"name": "KOKUSAI ELECTRIC CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6526.T": {
+"name": "Socionext Inc.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6532.T": {
+"name": "BayCurrent,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6533.T": {
+"name": "Orchestra Holdings Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6535.T": {
+"name": "i-mobile Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6539.T": {
+"name": "MATCHING SERVICE JAPAN CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6544.T": {
+"name": "JAPAN ELEVATOR SERVICE HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6560.T": {
+"name": "LTS,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6564.T": {
+"name": "MIDAC HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6571.T": {
+"name": "QB Net Holdings Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6572.T": {
+"name": "OPEN Group,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"6584.T": {
+"name": "Sanoh Industrial Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"6586.T": {
+"name": "Makita Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"6588.T": {
+"name": "TOSHIBA TEC CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6590.T": {
+"name": "SHIBAURA MECHATRONICS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6592.T": {
+"name": "MABUCHI MOTOR CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6594.T": {
+"name": "NIDEC CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6615.T": {
+"name": "UMC Electronics Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6616.T": {
+"name": "TOREX SEMICONDUCTOR LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6617.T": {
+"name": "TAKAOKA TOKO CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6619.T": {
+"name": "W-SCOPE Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6620.T": {
+"name": "Miyakoshi Holdings,Inc.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"6622.T": {
+"name": "DAIHEN CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6630.T": {
+"name": "YA-MAN LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6632.T": {
+"name": "JVCKENWOOD Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6638.T": {
+"name": "MIMAKI ENGINEERING CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6644.T": {
+"name": "Osaki Electric Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6645.T": {
+"name": "OMRON Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6651.T": {
+"name": "NITTO KOGYO CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6652.T": {
+"name": "IDEC CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6653.T": {
+"name": "SEIKO ELECTRIC CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6674.T": {
+"name": "GS Yuasa Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6701.T": {
+"name": "NEC Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6702.T": {
+"name": "Fujitsu Limited",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6703.T": {
+"name": "Oki Electric Industry Company,Limited",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6706.T": {
+"name": "DKK Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6707.T": {
+"name": "Sanken Electric Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6718.T": {
+"name": "AIPHONE CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6723.T": {
+"name": "Renesas Electronics Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6724.T": {
+"name": "SEIKO EPSON CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6727.T": {
+"name": "Wacom Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6728.T": {
+"name": "ULVAC, Inc.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6737.T": {
+"name": "EIZO Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6740.T": {
+"name": "Japan Display Inc.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6741.T": {
+"name": "Nippon Signal Company,Limited",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6742.T": {
+"name": "Kyosan Electric Manufacturing Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6744.T": {
+"name": "NOHMI BOSAI LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6745.T": {
+"name": "HOCHIKI CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6750.T": {
+"name": "ELECOM CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6752.T": {
+"name": "Panasonic Holdings Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6753.T": {
+"name": "Sharp Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6754.T": {
+"name": "ANRITSU CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6758.T": {
+"name": "SONY GROUP CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6762.T": {
+"name": "TDK Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6763.T": {
+"name": "Teikoku Tsushin Kogyo Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6768.T": {
+"name": "TAMURA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6770.T": {
+"name": "ALPS ALPINE CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6779.T": {
+"name": "NIHON DEMPA KOGYO CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6785.T": {
+"name": "SUZUKI CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6787.T": {
+"name": "Meiko Electronics Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6788.T": {
+"name": "NIHON TRIM CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6794.T": {
+"name": "Foster Electric Company,Limited",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6798.T": {
+"name": "SMK Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6800.T": {
+"name": "YOKOWO CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6804.T": {
+"name": "Hosiden Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6806.T": {
+"name": "HIROSE ELECTRIC CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6807.T": {
+"name": "Japan Aviation Electronics Industry,Limited",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6809.T": {
+"name": "TOA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6810.T": {
+"name": "Maxell,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6814.T": {
+"name": "FURUNO ELECTRIC CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6817.T": {
+"name": "SUMIDA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6820.T": {
+"name": "ICOM INCORPORATED",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6823.T": {
+"name": "RION CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6841.T": {
+"name": "YOKOGAWA ELECTRIC CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6844.T": {
+"name": "Shindengen Electric Manufacturing Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6845.T": {
+"name": "Azbil Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6849.T": {
+"name": "NIHON KOHDEN CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6850.T": {
+"name": "Chino Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6856.T": {
+"name": "HORIBA,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6857.T": {
+"name": "ADVANTEST CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6859.T": {
+"name": "ESPEC CORP.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6861.T": {
+"name": "KEYENCE CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6866.T": {
+"name": "HIOKI E.E.CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6869.T": {
+"name": "SYSMEX CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6871.T": {
+"name": "MICRONICS JAPAN CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6875.T": {
+"name": "MegaChips Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6902.T": {
+"name": "DENSO CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"6905.T": {
+"name": "COSEL CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6908.T": {
+"name": "IRISO ELECTRONICS CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6914.T": {
+"name": "OPTEX GROUP Company,Limited",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6920.T": {
+"name": "Lasertec Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6923.T": {
+"name": "Stanley Electric Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6925.T": {
+"name": "USHIO INC.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6929.T": {
+"name": "NIPPON CERAMIC CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6941.T": {
+"name": "YAMAICHI ELECTRONICS CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6947.T": {
+"name": "ZUKEN INC.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6951.T": {
+"name": "JEOL Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6952.T": {
+"name": "CASIO COMPUTER CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6954.T": {
+"name": "FANUC CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6958.T": {
+"name": "CMK CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6961.T": {
+"name": "ENPLAS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6962.T": {
+"name": "DAISHINKU CORP.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6963.T": {
+"name": "ROHM COMPANY LIMITED",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6965.T": {
+"name": "HAMAMATSU PHOTONICS K.K.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6966.T": {
+"name": "Mitsui High-tec,Inc.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6971.T": {
+"name": "KYOCERA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6976.T": {
+"name": "TAIYO YUDEN CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6981.T": {
+"name": "Murata Manufacturing Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6986.T": {
+"name": "FUTABA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6988.T": {
+"name": "NITTO DENKO CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"6995.T": {
+"name": "TOKAI RIKA CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"6996.T": {
+"name": "NICHICON CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6997.T": {
+"name": "NIPPON CHEMI-CON CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"6999.T": {
+"name": "KOA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"7003.T": {
+"name": "MITSUI E&S Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"7004.T": {
+"name": "Kanadevia Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"7011.T": {
+"name": "Mitsubishi Heavy Industries,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"7012.T": {
+"name": "Kawasaki Heavy Industries,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7013.T": {
+"name": "IHI Corporation",
+"sector": "Industrials",
+"sectorJPX": "Machinery"
+},
+"7033.T": {
+"name": "Management Solutions Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"7034.T": {
+"name": "Prored Partners CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"7038.T": {
+"name": "Frontier Management Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"7059.T": {
+"name": "COPRO-HOLDINGS.Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"7071.T": {
+"name": "Amvis Holdings,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"7085.T": {
+"name": "CURVES HOLDINGS Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"7095.T": {
+"name": "Macbee Planet,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"7102.T": {
+"name": "NIPPON SHARYO,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7128.T": {
+"name": "UNISOL Holdings Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7130.T": {
+"name": "YAMAE GROUP HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7148.T": {
+"name": "Financial Partners Group Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"7157.T": {
+"name": "LIFENET INSURANCE COMPANY",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"7164.T": {
+"name": "ZENKOKU HOSHO Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"7167.T": {
+"name": "Mebuki Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7172.T": {
+"name": "Japan Investment Adviser Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"7173.T": {
+"name": "Tokyo Kiraboshi Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7180.T": {
+"name": "Kyushu Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7181.T": {
+"name": "JAPAN POST INSURANCE Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"7182.T": {
+"name": "JAPAN POST BANK Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7184.T": {
+"name": "THE FIRST BANK OF TOYAMA,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7186.T": {
+"name": "Yokohama Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7187.T": {
+"name": "J-LEASE CO.,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"7189.T": {
+"name": "Nishi-Nippon Financial Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7198.T": {
+"name": "SBI ARUHI Corporation",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"7199.T": {
+"name": "Premium Group Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"7201.T": {
+"name": "NISSAN MOTOR CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7202.T": {
+"name": "ISUZU MOTORS LIMITED",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7203.T": {
+"name": "TOYOTA MOTOR CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7211.T": {
+"name": "MITSUBISHI MOTORS CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7220.T": {
+"name": "MUSASHI SEIMITSU INDUSTRY CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7224.T": {
+"name": "ShinMaywa Industries,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7226.T": {
+"name": "KYOKUTO KAIHATSU KOGYO CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7231.T": {
+"name": "TOPY INDUSTRIES,LIMITED",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7236.T": {
+"name": "T.RAD Co., Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7238.T": {
+"name": "AKEBONO BRAKE INDUSTRY CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7239.T": {
+"name": "TACHI-S CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7240.T": {
+"name": "NOK CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7241.T": {
+"name": "FUTABA INDUSTRIAL CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7242.T": {
+"name": "KYB Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7244.T": {
+"name": "ICHIKOH INDUSTRIES,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"7245.T": {
+"name": "DAIDO METAL CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7246.T": {
+"name": "PRESS KOGYO CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7259.T": {
+"name": "AISIN CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7261.T": {
+"name": "Mazda Motor Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7267.T": {
+"name": "HONDA MOTOR CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7269.T": {
+"name": "SUZUKI MOTOR CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7270.T": {
+"name": "SUBARU CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7272.T": {
+"name": "Yamaha Motor Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7276.T": {
+"name": "KOITO MANUFACTURING CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"7278.T": {
+"name": "EXEDY Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7280.T": {
+"name": "MITSUBA Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"7282.T": {
+"name": "TOYODA GOSEI CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7283.T": {
+"name": "AISAN INDUSTRY CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7294.T": {
+"name": "YOROZU CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7296.T": {
+"name": "F.C.C.CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7309.T": {
+"name": "SHIMANO INC.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7313.T": {
+"name": "TS TECH CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Transportation Equipment"
+},
+"7322.T": {
+"name": "San ju San Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7327.T": {
+"name": "Daishi Hokuetsu Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7337.T": {
+"name": "Hirogin Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7347.T": {
+"name": "Mercuria Holdings Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"7350.T": {
+"name": "Okinawa Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7366.T": {
+"name": "LITALICO Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"7380.T": {
+"name": "Juroku Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7381.T": {
+"name": "CCI Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7383.T": {
+"name": "Net Protections Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"7384.T": {
+"name": "Procrea Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7388.T": {
+"name": "FP Partner Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"7389.T": {
+"name": "Aichi Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"7414.T": {
+"name": "ONOKEN CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7419.T": {
+"name": "Nojima Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7421.T": {
+"name": "KAPPA・CREATE CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7433.T": {
+"name": "Hakuto Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7438.T": {
+"name": "KONDOTEC INC.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7447.T": {
+"name": "NAGAILEBEN Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7453.T": {
+"name": "RYOHIN KEIKAKU CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7456.T": {
+"name": "MATSUDA SANGYO Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7458.T": {
+"name": "DAIICHIKOSHO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7459.T": {
+"name": "MEDIPAL HOLDINGS CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7466.T": {
+"name": "SPK CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7475.T": {
+"name": "ALBIS Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7476.T": {
+"name": "AS ONE CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7482.T": {
+"name": "SHIMOJIMA Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7483.T": {
+"name": "DOSHISHA CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7504.T": {
+"name": "KOHSOKU CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7508.T": {
+"name": "G-7 HOLDINGS Inc.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7510.T": {
+"name": "TAKEBISHI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7513.T": {
+"name": "Kojima Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7516.T": {
+"name": "KOHNAN SHOJI CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7520.T": {
+"name": "Eco's Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7522.T": {
+"name": "WATAMI CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7525.T": {
+"name": "RIX CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7532.T": {
+"name": "Pan Pacific International Holdings Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7537.T": {
+"name": "MARUBUN CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7545.T": {
+"name": "NISHIMATSUYA CHAIN Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7550.T": {
+"name": "ZENSHO HOLDINGS CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"75505.T": {
+"name": "Series 1 Bond-Type Class Shares of ZENSHO HOLDINGS CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7552.T": {
+"name": "HAPPINET CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7554.T": {
+"name": "KOURAKUEN CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7575.T": {
+"name": "Japan Lifeline Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7581.T": {
+"name": "SAIZERIYA CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7593.T": {
+"name": "VT HOLDINGS CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7595.T": {
+"name": "ARGO GRAPHICS Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"7596.T": {
+"name": "UORIKI CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7599.T": {
+"name": "IDOM Inc.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7600.T": {
+"name": "Japan Medical Dynamic Marketing,INC.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7606.T": {
+"name": "UNITED ARROWS LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7607.T": {
+"name": "Shinwa Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7609.T": {
+"name": "Daitron Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7611.T": {
+"name": "HIDAY HIDAKA Corp.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7613.T": {
+"name": "SIIX CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7616.T": {
+"name": "COLOWIDE CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7628.T": {
+"name": "OHASHI TECHNICA INC.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7630.T": {
+"name": "ICHIBANYA CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7637.T": {
+"name": "Hakudo Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"7649.T": {
+"name": "SUGI HOLDINGS Co.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7679.T": {
+"name": "YAKUODO HOLDINGS Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7683.T": {
+"name": "WA,Inc.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"7701.T": {
+"name": "Shimadzu Corporation",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7715.T": {
+"name": "NAGANO KEIKI CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7717.T": {
+"name": "V Technology Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7721.T": {
+"name": "TOKYO KEIKI INC.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7723.T": {
+"name": "Aichi Tokei Denki Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7725.T": {
+"name": "INTER ACTION Corporation",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7729.T": {
+"name": "TOKYO SEIMITSU CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7730.T": {
+"name": "MANI,INC.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7731.T": {
+"name": "NIKON CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7733.T": {
+"name": "OLYMPUS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7734.T": {
+"name": "RIKEN KEIKI CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7735.T": {
+"name": "SCREEN Holdings Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"7740.T": {
+"name": "Tamron Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7741.T": {
+"name": "HOYA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7744.T": {
+"name": "Noritsu Koki Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7745.T": {
+"name": "A&D HOLON Holdings Company,Limited",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7747.T": {
+"name": "ASAHI INTECC CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7751.T": {
+"name": "CANON INC.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"7752.T": {
+"name": "RICOH COMPANY,LTD.",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"7762.T": {
+"name": "Citizen Watch Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7769.T": {
+"name": "RHYTHM CO.,LTD.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7780.T": {
+"name": "Menicon Co.,Ltd.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7818.T": {
+"name": "TRANSACTION CO.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7820.T": {
+"name": "NIHON FLUSH CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7821.T": {
+"name": "MAEDA KOSEN CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7826.T": {
+"name": "FURUYA METAL CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7832.T": {
+"name": "Bandai Namco Holdings Inc.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7839.T": {
+"name": "SHOEI CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7840.T": {
+"name": "FRANCE BED HOLDINGS CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7844.T": {
+"name": "Marvelous Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"7846.T": {
+"name": "PILOT CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7856.T": {
+"name": "HAGIHARA INDUSTRIES INC.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7860.T": {
+"name": "Avex Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"7864.T": {
+"name": "FUJI SEAL INTERNATIONAL,INC.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7867.T": {
+"name": "TOMY COMPANY,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7868.T": {
+"name": "KOSAIDO Holdings Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7874.T": {
+"name": "LEC,INC.",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"7888.T": {
+"name": "SANKO GOSEI LTD.",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"7893.T": {
+"name": "PRONEXUS INC.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7911.T": {
+"name": "TOPPAN Holdings Inc.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7912.T": {
+"name": "Dai Nippon Printing Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7914.T": {
+"name": "Kyodo Printing Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7915.T": {
+"name": "Nissha Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7917.T": {
+"name": "ZACROS Corporation",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"7921.T": {
+"name": "TAKARA & COMPANY LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7931.T": {
+"name": "MIRAI INDUSTRY CO.,LTD.",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"7936.T": {
+"name": "ASICS Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7942.T": {
+"name": "JSP Corporation",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"7943.T": {
+"name": "NICHIHA CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Glass and Ceramics Products"
+},
+"7944.T": {
+"name": "Roland Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7947.T": {
+"name": "FP CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"7949.T": {
+"name": "KOMATSU WALL INDUSTRY CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7951.T": {
+"name": "YAMAHA CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7952.T": {
+"name": "Kawai Musical Instruments Manufacturing Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7955.T": {
+"name": "Cleanup Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7956.T": {
+"name": "PIGEON CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7962.T": {
+"name": "KING JIM CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7965.T": {
+"name": "Zojirushi Corporation",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"7966.T": {
+"name": "LINTEC Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7970.T": {
+"name": "Shin-Etsu Polymer Co.,Ltd.",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"7972.T": {
+"name": "ITOKI CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7974.T": {
+"name": "Nintendo Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7976.T": {
+"name": "MITSUBISHI PENCIL COMPANY,LIMITED",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7979.T": {
+"name": "SHOFU INC.",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"7981.T": {
+"name": "TAKARA STANDARD CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7984.T": {
+"name": "KOKUYO CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7988.T": {
+"name": "NIFCO INC.",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"7989.T": {
+"name": "TACHIKAWA CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Metal Products"
+},
+"7990.T": {
+"name": "GLOBERIDE,Inc.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7994.T": {
+"name": "OKAMURA CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"7995.T": {
+"name": "VALQUA,LTD.",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"8001.T": {
+"name": "ITOCHU Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8002.T": {
+"name": "Marubeni Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8005.T": {
+"name": "Scroll Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8007.T": {
+"name": "Takashima & Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8008.T": {
+"name": "YONDOSHI HOLDINGS INC.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8011.T": {
+"name": "SANYO SHOKAI LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"8012.T": {
+"name": "NAGASE & CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8014.T": {
+"name": "CHORI CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8015.T": {
+"name": "TOYOTA TSUSHO CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8016.T": {
+"name": "ONWARD HOLDINGS CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"8020.T": {
+"name": "KANEMATSU CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8022.T": {
+"name": "Mizuno Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Other Products"
+},
+"8031.T": {
+"name": "MITSUI & CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8032.T": {
+"name": "JAPAN PULP AND PAPER COMPANY LIMITED",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8035.T": {
+"name": "Tokyo Electron Limited",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"8037.T": {
+"name": "KAMEI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8043.T": {
+"name": "Starzen Company Limited",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8050.T": {
+"name": "SEIKO GROUP CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"8051.T": {
+"name": "YAMAZEN CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8052.T": {
+"name": "TSUBAKIMOTO KOGYO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8053.T": {
+"name": "SUMITOMO CORPORATION (SUMITOMO SHOJI KAISHA,LTD.)",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8056.T": {
+"name": "BIPROGY Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"8057.T": {
+"name": "UCHIDA YOKO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8058.T": {
+"name": "Mitsubishi Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8059.T": {
+"name": "DAIICHI JITSUGYO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8060.T": {
+"name": "Canon Marketing Japan Inc.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8061.T": {
+"name": "SEIKA CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8065.T": {
+"name": "SATO SHO-JI CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8070.T": {
+"name": "TOKYO SANGYO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8074.T": {
+"name": "YUASA CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8075.T": {
+"name": "Shinsho Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8078.T": {
+"name": "HANWA CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8079.T": {
+"name": "SHOEI FOODS CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8081.T": {
+"name": "KANADEN CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8084.T": {
+"name": "RYODEN CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8086.T": {
+"name": "NIPRO CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Precision Instruments"
+},
+"8088.T": {
+"name": "IWATANI  CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8091.T": {
+"name": "NICHIMO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8093.T": {
+"name": "Kyokuto Boeki Kaisha,Limited",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8095.T": {
+"name": "Astena Holdings Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8097.T": {
+"name": "SAN-AI OBBLI CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8098.T": {
+"name": "Inabata & Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8101.T": {
+"name": "GSI Creos Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8103.T": {
+"name": "Meiwa Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8111.T": {
+"name": "Goldwin Inc.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Textiles and Apparels"
+},
+"8113.T": {
+"name": "UNICHARM CORPORATION",
+"sector": "Basic Materials",
+"sectorJPX": "Chemicals"
+},
+"8125.T": {
+"name": "Wakita & Co.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8129.T": {
+"name": "TOHO HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8130.T": {
+"name": "Sangetsu Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8132.T": {
+"name": "SHINANEN HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8133.T": {
+"name": "ITOCHU ENEX CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8136.T": {
+"name": "Sanrio Company,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8137.T": {
+"name": "SUN-WA TECHNOS CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8141.T": {
+"name": "Shinko Shoji Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8142.T": {
+"name": "TOHO Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8150.T": {
+"name": "SANSHIN ELECTRONICS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8151.T": {
+"name": "TOYO Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8153.T": {
+"name": "MOS FOOD SERVICES,INC.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8154.T": {
+"name": "KAGA ELECTRONICS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8157.T": {
+"name": "TSUZUKI DENKI CO.,LTD.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"8158.T": {
+"name": "SODA NIKKA CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8159.T": {
+"name": "TACHIBANA ELETECH CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"8160.T": {
+"name": "KISOJI CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8163.T": {
+"name": "SRS HOLDINGS CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8167.T": {
+"name": "RETAIL PARTNERS CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8173.T": {
+"name": "Joshin Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8174.T": {
+"name": "NIPPON GAS CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8179.T": {
+"name": "ROYAL HOLDINGS Co., Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8185.T": {
+"name": "CHIYODA CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8194.T": {
+"name": "LIFE CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8200.T": {
+"name": "RINGER HUT CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8203.T": {
+"name": "MrMax Holdings Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8214.T": {
+"name": "AOKI Holdings Inc.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8217.T": {
+"name": "OKUWA CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8218.T": {
+"name": "KOMERI CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8219.T": {
+"name": "AOYAMA TRADING Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8227.T": {
+"name": "SHIMAMURA Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8233.T": {
+"name": "Takashimaya Company,Limited",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8237.T": {
+"name": "MATSUYA CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8242.T": {
+"name": "H2O RETAILING CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8252.T": {
+"name": "MARUI GROUP CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8253.T": {
+"name": "Credit Saison Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8255.T": {
+"name": "Axial Retailing Inc.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8267.T": {
+"name": "AEON CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8273.T": {
+"name": "IZUMI CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8276.T": {
+"name": "HEIWADO CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8278.T": {
+"name": "FUJI CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8281.T": {
+"name": "XEBIO holdings CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8282.T": {
+"name": "K'S HOLDINGS CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"8303.T": {
+"name": "SBI Shinsei Bank,Limited",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8304.T": {
+"name": "Aozora Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8306.T": {
+"name": "Mitsubishi UFJ Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8308.T": {
+"name": "Resona Holdings, Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8309.T": {
+"name": "Sumitomo Mitsui Trust Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8316.T": {
+"name": "Sumitomo Mitsui Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8331.T": {
+"name": "The Chiba Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8334.T": {
+"name": "The Gunma Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8336.T": {
+"name": "The Musashino Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8337.T": {
+"name": "The Chiba Kogyo Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8338.T": {
+"name": "Tsukuba Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8341.T": {
+"name": "The 77 Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8343.T": {
+"name": "THE AKITA BANK,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8344.T": {
+"name": "The Yamagata Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8345.T": {
+"name": "The Bank of Iwate,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8346.T": {
+"name": "The Toho Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8354.T": {
+"name": "Fukuoka Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8358.T": {
+"name": "Suruga Bank Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8359.T": {
+"name": "Hachijuni Nagano Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8360.T": {
+"name": "The Yamanashi Chuo Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8361.T": {
+"name": "The Ogaki Kyoritsu Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8362.T": {
+"name": "The Fukui Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8364.T": {
+"name": "THE SHIMIZU BANK,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8366.T": {
+"name": "THE SHIGA BANK,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8367.T": {
+"name": "The Nanto Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8368.T": {
+"name": "The Hyakugo Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8370.T": {
+"name": "The Kiyo Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8377.T": {
+"name": "Hokuhoku Financial Group, Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8381.T": {
+"name": "The San-in Godo Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8386.T": {
+"name": "The Hyakujushi Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8387.T": {
+"name": "The Shikoku Bank, Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8388.T": {
+"name": "The Awa Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8392.T": {
+"name": "THE OITA BANK,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8393.T": {
+"name": "The Miyazaki Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8395.T": {
+"name": "THE BANK OF SAGA LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8399.T": {
+"name": "Bank of The Ryukyus,Limited",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8410.T": {
+"name": "Seven Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8411.T": {
+"name": "Mizuho Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8418.T": {
+"name": "Yamaguchi Financial Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8424.T": {
+"name": "Fuyo General Lease Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8425.T": {
+"name": "Mizuho Leasing Company,Limited",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8439.T": {
+"name": "Tokyo Century Corporation",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8473.T": {
+"name": "SBI Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8511.T": {
+"name": "Japan Securities Finance Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8522.T": {
+"name": "The Bank of Nagoya,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8524.T": {
+"name": "North Pacific Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8541.T": {
+"name": "The Ehime Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8544.T": {
+"name": "The Keiyo Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8550.T": {
+"name": "THE TOCHIGI BANK,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8551.T": {
+"name": "The Kita-Nippon Bank,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8558.T": {
+"name": "THE TOWA BANK,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8566.T": {
+"name": "RICOH LEASING COMPANY,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8570.T": {
+"name": "AEON Financial Service Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8584.T": {
+"name": "JACCS CO.,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8585.T": {
+"name": "Orient Corporation",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8591.T": {
+"name": "ORIX CORPORATION",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8593.T": {
+"name": "Mitsubishi HC Capital Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8595.T": {
+"name": "JAFCO Group Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8600.T": {
+"name": "TOMONY Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8601.T": {
+"name": "Daiwa Securities Group Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8604.T": {
+"name": "Nomura Holdings, Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8609.T": {
+"name": "OKASAN SECURITIES GROUP INC.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8613.T": {
+"name": "Marusan Securities Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8614.T": {
+"name": "TOYO SECURITIES CO.,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8616.T": {
+"name": "Tokai Tokyo Financial Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8622.T": {
+"name": "Mito Securities Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8624.T": {
+"name": "Ichiyoshi Securities Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8628.T": {
+"name": "MATSUI SECURITIES CO.,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8630.T": {
+"name": "Sompo Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"8697.T": {
+"name": "Japan Exchange Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8698.T": {
+"name": "Monex Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8706.T": {
+"name": "KYOKUTO SECURITIES CO.,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8707.T": {
+"name": "IwaiCosmo Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8708.T": {
+"name": "AIZAWA SECURITIES GROUP CO.,LTD.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8713.T": {
+"name": "FIDEA Holdings Co.Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8714.T": {
+"name": "Senshu Ikeda Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Banks"
+},
+"8715.T": {
+"name": "Anicom Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"8725.T": {
+"name": "MS&AD Insurance Group Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"8729.T": {
+"name": "Sony Financial Group Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"8739.T": {
+"name": "SPARX Group Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Securities and Commodities Futures"
+},
+"8750.T": {
+"name": "Daiichi Life Group,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"8766.T": {
+"name": "Tokio Marine Holdings,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"8771.T": {
+"name": "eGuarantee,Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8793.T": {
+"name": "NEC Capital Solutions Limited",
+"sector": "Financial Services",
+"sectorJPX": "Other Financing Business"
+},
+"8795.T": {
+"name": "T&D Holdings, Inc.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"8798.T": {
+"name": "Advance Create Co.,Ltd.",
+"sector": "Financial Services",
+"sectorJPX": "Insurance"
+},
+"8801.T": {
+"name": "Mitsui Fudosan Co.,Ltd.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8802.T": {
+"name": "Mitsubishi Estate Company,Limited",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8803.T": {
+"name": "HEIWA REAL ESTATE CO.,LTD.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8804.T": {
+"name": "Tokyo Tatemono Co.,Ltd.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8818.T": {
+"name": "Keihanshin Building Co.,Ltd.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8830.T": {
+"name": "Sumitomo Realty & Development Co.,Ltd.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8848.T": {
+"name": "LEOPALACE21 CORPORATION",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8850.T": {
+"name": "STARTS CORPORATION INC.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8860.T": {
+"name": "FUJI CORPORATION LIMITED",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8876.T": {
+"name": "Relo Group,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"8877.T": {
+"name": "ESLEAD CORPORATION",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8881.T": {
+"name": "NISSHIN GROUP HOLDINGS Company,Limited",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8892.T": {
+"name": "ES-CON JAPAN Ltd.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8897.T": {
+"name": "MIRARTH HOLDINGS,Inc.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8919.T": {
+"name": "KATITAS CO.,LTD",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8923.T": {
+"name": "TOSEI CORPORATION",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8934.T": {
+"name": "Sun Frontier Fudousan Co.,Ltd.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8935.T": {
+"name": "FJ NEXT HOLDINGS CO.,LTD.",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"8999.T": {
+"name": "Grandy House Corporation",
+"sector": "Real Estate",
+"sectorJPX": "Real Estate"
+},
+"9001.T": {
+"name": "TOBU RAILWAY CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9003.T": {
+"name": "Sotetsu Holdings,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9005.T": {
+"name": "TOKYU CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9006.T": {
+"name": "Keikyu Corporation",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9007.T": {
+"name": "Odakyu Electric Railway Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9008.T": {
+"name": "Keio Corporation",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9009.T": {
+"name": "Keisei Electric Railway Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9010.T": {
+"name": "FUJI KYUKO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9020.T": {
+"name": "East Japan Railway Company",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9021.T": {
+"name": "West Japan Railway Company",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9022.T": {
+"name": "Central Japan Railway Company",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9023.T": {
+"name": "Tokyo Metro Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9024.T": {
+"name": "SEIBU HOLDINGS INC.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9025.T": {
+"name": "Konoike Transport Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9031.T": {
+"name": "Nishi-Nippon Railroad Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9037.T": {
+"name": "HAMAKYOREX CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9039.T": {
+"name": "Sakai Moving Service Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9041.T": {
+"name": "Kintetsu Group Holdings Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9042.T": {
+"name": "Hankyu Hanshin Holdings,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9044.T": {
+"name": "NANKAI Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9045.T": {
+"name": "Keihan Holdings Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9048.T": {
+"name": "Nagoya Railroad Co., Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9052.T": {
+"name": "Sanyo Electric Railway Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9064.T": {
+"name": "YAMATO HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9065.T": {
+"name": "SANKYU INC.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9068.T": {
+"name": "Maruzen Showa Unyu Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9069.T": {
+"name": "SENKO Group Holdings Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9072.T": {
+"name": "NIKKON Holdings Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9075.T": {
+"name": "FUKUYAMA TRANSPORTING CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9076.T": {
+"name": "SEINO HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9081.T": {
+"name": "Kanagawa Chuo Kotsu Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9090.T": {
+"name": "AZ-COM MARUWA Holdings Inc.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9101.T": {
+"name": "Nippon Yusen Kabushiki Kaisha",
+"sector": "Industrials",
+"sectorJPX": "Marine Transportation"
+},
+"9104.T": {
+"name": "Mitsui O.S.K.Lines,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Marine Transportation"
+},
+"9107.T": {
+"name": "Kawasaki Kisen Kaisha,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Marine Transportation"
+},
+"9110.T": {
+"name": "NS United Kaiun Kaisha,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Marine Transportation"
+},
+"9119.T": {
+"name": "IINO KAIUN KAISHA,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Marine Transportation"
+},
+"9142.T": {
+"name": "Kyushu Railway Company",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9143.T": {
+"name": "SG HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9147.T": {
+"name": "NIPPON EXPRESS HOLDINGS,INC.",
+"sector": "Industrials",
+"sectorJPX": "Land Transportation"
+},
+"9201.T": {
+"name": "Japan Airlines Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Air Transportation"
+},
+"92015.T": {
+"name": "Series 1 Bond-Type Class Shares of Japan Airlines Co.,Ltd. ",
+"sector": "Industrials",
+"sectorJPX": "Air Transportation"
+},
+"9202.T": {
+"name": "ANA HOLDINGS INC.",
+"sector": "Industrials",
+"sectorJPX": "Air Transportation"
+},
+"92025.T": {
+"name": "Series 1 Bond-Type Class Shares of ANA HOLDINGS INC.",
+"sector": "Industrials",
+"sectorJPX": "Air Transportation"
+},
+"9216.T": {
+"name": "Bewith,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9229.T": {
+"name": "SUNWELS Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9247.T": {
+"name": "TRE HOLDINGS CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9267.T": {
+"name": "Genky DrugStores Co.,Ltd.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9273.T": {
+"name": "KOA SHOJI HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9274.T": {
+"name": "KPP GROUP HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9278.T": {
+"name": "BOOKOFF GROUP HOLDINGS LIMITED",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9279.T": {
+"name": "GIFT HOLDINGS INC.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9301.T": {
+"name": "Mitsubishi Logistics Corporation",
+"sector": "Industrials",
+"sectorJPX": "Warehousing and Harbor Transportation Service"
+},
+"9302.T": {
+"name": "MITSUI-SOKO HOLDINGS Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Warehousing and Harbor Transportation Service"
+},
+"9303.T": {
+"name": "The Sumitomo Warehouse Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Warehousing and Harbor Transportation Service"
+},
+"9304.T": {
+"name": "Shibusawa Logistics Corporation",
+"sector": "Industrials",
+"sectorJPX": "Warehousing and Harbor Transportation Service"
+},
+"9305.T": {
+"name": "Yamatane Corporation",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9310.T": {
+"name": "Japan Transcity Corporation",
+"sector": "Industrials",
+"sectorJPX": "Warehousing and Harbor Transportation Service"
+},
+"9319.T": {
+"name": "Chuo Warehouse Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Warehousing and Harbor Transportation Service"
+},
+"9324.T": {
+"name": "Yasuda Logistics Corporation",
+"sector": "Industrials",
+"sectorJPX": "Warehousing and Harbor Transportation Service"
+},
+"9332.T": {
+"name": "NISSO HOLDINGS Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9336.T": {
+"name": "Daiei Kankyo Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9341.T": {
+"name": "GENOVA,Inc.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9347.T": {
+"name": "NIPPON KANZAI Holdings Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9364.T": {
+"name": "Kamigumi Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Warehousing and Harbor Transportation Service"
+},
+"9381.T": {
+"name": "AIT CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Warehousing and Harbor Transportation Service"
+},
+"9401.T": {
+"name": "TBS HOLDINGS,INC.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9404.T": {
+"name": "Nippon Television Holdings,Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9405.T": {
+"name": "ASAHI BROADCASTING GROUP HOLDINGS CORPORATION",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9409.T": {
+"name": "TV Asahi Holdings Corporation",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9412.T": {
+"name": "SKY Perfect JSAT Corporation",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9413.T": {
+"name": "TV TOKYO Holdings Corporation",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9416.T": {
+"name": "VISION INC.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9418.T": {
+"name": "U-NEXT HOLDINGS Co.,Ltd.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9424.T": {
+"name": "Japan Communications Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9432.T": {
+"name": "NTT,Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9433.T": {
+"name": "KDDI CORPORATION",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9434.T": {
+"name": "SOFTBANK CORP.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"94345.T": {
+"name": "Series 1 Bond-Type Class Shares of SoftBank Corp.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"94346.T": {
+"name": "Series 2 Bond-Type Class Shares of SoftBank Corp",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9435.T": {
+"name": "HIKARI TSUSHIN INC",
+"sector": "Industrials",
+"sectorJPX": "Information & Communication"
+},
+"9438.T": {
+"name": "MTI LTD",
+"sector": "Healthcare",
+"sectorJPX": "Information & Communication"
+},
+"9449.T": {
+"name": "GMO internet group,Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9468.T": {
+"name": "KADOKAWA CORPORATION",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9470.T": {
+"name": "GAKKEN HOLDINGS CO.,LTD.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9474.T": {
+"name": "ZENRIN CO.,LTD.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9501.T": {
+"name": "TOKYO ELEC POWER CO HLDGS INC",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9502.T": {
+"name": "CHUBU ELECTRIC POWER CO INC",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9503.T": {
+"name": "KANSAI ELECTRIC POWER CO INC",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9504.T": {
+"name": "The Chugoku Electric Power Company,Incorporated",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9505.T": {
+"name": "HOKURIKU ELECTRIC POWER CO",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9506.T": {
+"name": "TOHOKU ELECTRIC POWER CO INC",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9507.T": {
+"name": "SHIKOKU ELECTRIC POWER CO INC",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9508.T": {
+"name": "Kyushu Electric Power Company,Incorporated",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9509.T": {
+"name": "Hokkaido Electric Power Company,Incorporated",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9511.T": {
+"name": "OKINAWA ELECTRIC POWER COMPANY ",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9513.T": {
+"name": "ELECTRIC POWER DEVELOPMENT",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9517.T": {
+"name": "EREX CO LTD",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9519.T": {
+"name": "RENOVA,Inc.",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9531.T": {
+"name": "TOKYO GAS CO",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9532.T": {
+"name": "OSAKA GAS CO",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9533.T": {
+"name": "TOHO GAS CO",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9534.T": {
+"name": "HOKKAIDO GAS CO",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9535.T": {
+"name": "HIROSHIMA GAS CO.,LTD.",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9536.T": {
+"name": "SAIBU GAS HOLDINGS CO LTD",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9543.T": {
+"name": "SHIZUOKA GAS CO LTD",
+"sector": "Utilities",
+"sectorJPX": "Electric Power and Gas"
+},
+"9551.T": {
+"name": "METAWATER CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Electric Power and Gas"
+},
+"9552.T": {
+"name": "QUANTS RESEARCH INSTITUTE HOLDI",
+"sector": "Financial Services",
+"sectorJPX": "Services"
+},
+"9601.T": {
+"name": "Shochiku Co.,Ltd.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9602.T": {
+"name": "TOHO CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9603.T": {
+"name": "H.I.S. CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"9605.T": {
+"name": "TOEI CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9612.T": {
+"name": "LUCKLAND CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9616.T": {
+"name": "KYORITSU MAINTENANCE CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9619.T": {
+"name": "ICHINEN HOLDINGS CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9621.T": {
+"name": "CTI ENGINEERING CO",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9622.T": {
+"name": "SPACE CO LTD (JP)",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9627.T": {
+"name": "AIN HOLDINGS INC",
+"sector": "Healthcare",
+"sectorJPX": "Retail Trade"
+},
+"9628.T": {
+"name": "SAN HOLDINGS,INC.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9629.T": {
+"name": "PCA CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"9644.T": {
+"name": "TANABE CONSULTING GROUP CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9658.T": {
+"name": "BUSINESS BRAIN SHOWA-OTA INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"9663.T": {
+"name": "NAGAWA CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9672.T": {
+"name": "TOKYOTOKEIBA CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Services"
+},
+"9678.T": {
+"name": "KANAMOTO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9682.T": {
+"name": "DTS CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"9684.T": {
+"name": "SQUARE ENIX HOLDINGS CO.LTD.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9692.T": {
+"name": "COMPUTER ENGINEERING & CONSULTI",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"9697.T": {
+"name": "CAPCOM CO LTD",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9699.T": {
+"name": "NISHIO HOLDINGS CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9702.T": {
+"name": "ISB CORPORATION",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9706.T": {
+"name": "JAPAN AIRPORT TERMINAL CO",
+"sector": "Industrials",
+"sectorJPX": "Real Estate"
+},
+"9715.T": {
+"name": "TRANSCOSMOS INC",
+"sector": "Technology",
+"sectorJPX": "Services"
+},
+"9716.T": {
+"name": "NOMURA Co.,Ltd.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9722.T": {
+"name": "FUJITA KANKO INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9729.T": {
+"name": "TOKAI Corp.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9735.T": {
+"name": "SECOM CO",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9739.T": {
+"name": "NSW Inc.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9740.T": {
+"name": "CENTRAL SECURITY PATROLS CO",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9742.T": {
+"name": "INES CORPORATION",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"9743.T": {
+"name": "TANSEISHA CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9744.T": {
+"name": "MEITEC GROUP HOLDINGS INC",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9746.T": {
+"name": "TKC Corporation",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9755.T": {
+"name": "OYO CORP",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9757.T": {
+"name": "FUNAI SOKEN HOLDINGS INCORPORAT",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9759.T": {
+"name": "NSD CO.LTD",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"9765.T": {
+"name": "OHBA CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9766.T": {
+"name": "KONAMI GROUP CORPORATION",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9769.T": {
+"name": "GAKKYUSHA CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9788.T": {
+"name": "NAC CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9790.T": {
+"name": "FUKUI COMPUTER HOLDINGS INC",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9793.T": {
+"name": "DAISEKI CO LTD",
+"sector": "Industrials",
+"sectorJPX": "Services"
+},
+"9795.T": {
+"name": "STEP CO LTD",
+"sector": "Consumer Defensive",
+"sectorJPX": "Services"
+},
+"9824.T": {
+"name": "SENSHU ELECTRIC CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9830.T": {
+"name": "TRUSCO NAKAYAMA CORP",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9831.T": {
+"name": "YAMADA HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9832.T": {
+"name": "AUTOBACS SEVEN CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Wholesale Trade"
+},
+"9837.T": {
+"name": "MORITO CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Wholesale Trade"
+},
+"9842.T": {
+"name": "ARCLANDS CORPORATION",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9843.T": {
+"name": "NITORI HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9850.T": {
+"name": "GOURMET KINEYA CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9861.T": {
+"name": "YOSHINOYA HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9869.T": {
+"name": "KATO SANGYO CO",
+"sector": "Consumer Defensive",
+"sectorJPX": "Wholesale Trade"
+},
+"9880.T": {
+"name": "INNOTECH CORP (JAPAN)",
+"sector": "Technology",
+"sectorJPX": "Electric Appliances"
+},
+"9882.T": {
+"name": "YELLOW HAT LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Wholesale Trade"
+},
+"9887.T": {
+"name": "MATSUYA FOODS HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9889.T": {
+"name": "JBCC HOLDINGS INC",
+"sector": "Technology",
+"sectorJPX": "Information & Communication"
+},
+"9900.T": {
+"name": "Sagami Holdings Corporation",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9902.T": {
+"name": "NICHIDEN CORP",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9928.T": {
+"name": "MIROKU JYOHO SERVICE CO.,LTD.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9932.T": {
+"name": "SUGIMOTO & CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9934.T": {
+"name": "INABA DENKISANGYO CO.,LTD.",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9936.T": {
+"name": "OHSHO FOOD SERVICE CORP",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9946.T": {
+"name": "MINISTOP CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9948.T": {
+"name": "ARCS COMPANY LIMITED",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9956.T": {
+"name": "VALOR HOLDINGS CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9960.T": {
+"name": "TOTECH CORP",
+"sector": "Technology",
+"sectorJPX": "Wholesale Trade"
+},
+"9962.T": {
+"name": "MISUMI GROUP INC",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9974.T": {
+"name": "Belc CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9983.T": {
+"name": "FAST RETAILING CO LTD",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9984.T": {
+"name": "SoftBank Group Corp.",
+"sector": "Communication Services",
+"sectorJPX": "Information & Communication"
+},
+"9987.T": {
+"name": "SUZUKEN CO LTD",
+"sector": "Healthcare",
+"sectorJPX": "Wholesale Trade"
+},
+"9989.T": {
+"name": "SUNDRUG CO.,LTD.",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9990.T": {
+"name": "SACS BAR HOLDINGS INC",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+},
+"9991.T": {
+"name": "GECOSS CORPORATION",
+"sector": "Industrials",
+"sectorJPX": "Wholesale Trade"
+},
+"9997.T": {
+"name": "BELLUNA CO",
+"sector": "Consumer Cyclical",
+"sectorJPX": "Retail Trade"
+}
+}

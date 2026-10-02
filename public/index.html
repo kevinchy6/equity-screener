@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Equity Screener — Trend &amp; Momentum</title>
-  <meta name="description" content="US & HK equity screener with SMA trend alignment filters. Free, open-source." />
+  <meta name="description" content="US, HK & Japan equity screener with SMA trend alignment and momentum filters. Free, open-source." />
   <style>
     :root {
       --bg: #ffffff;
@@ -264,7 +264,7 @@
     let view = (() => {           // 'trend' (SMA alignment) | 'momentum' (ADR / RS Rating / EMA screen)
       try { const v = localStorage.getItem('es_view'); return ['trend','momentum'].includes(v) ? v : 'trend'; } catch { return 'trend'; }
     })();
-    let data = { us: null, hk: null };
+    let data = { us: null, hk: null, jp: null };
     let search = '';
     let sortField = view === 'momentum' ? 'rs' : 'marketCap';
     let sortDir = 'desc';
@@ -315,6 +315,7 @@
     const CONFIG = {
       us: { title: 'US Equity Screener', currency: '$', mcap: 'MCap > $3B', price: 'Price > $10', value: 'AvgValue > $50M' },
       hk: { title: 'HK Equity Screener', currency: 'HK$', mcap: 'MCap > HK$10B', price: 'Price > HK$10', value: 'AvgValue > HK$50M' },
+      jp: { title: 'JP Equity Screener', currency: '¥', mcap: 'MCap > ¥100B', price: 'Price > ¥100', value: 'AvgValue > ¥1B', universe: 'TSE Prime' },
     };
 
     // ─── Data Loading ──────────────────────────────────
@@ -389,9 +390,10 @@
     }
 
     // ─── Format Helpers ────────────────────────────────
+    const CUR = () => CONFIG[market].currency;
     const fmt = {
       mcap(v) {
-        const p = market === 'hk' ? 'HK$' : '$';
+        const p = CUR();
         if (v >= 1e12) return p + (v/1e12).toFixed(1) + 'T';
         if (v >= 1e9) return p + (v/1e9).toFixed(1) + 'B';
         if (v >= 1e6) return p + (v/1e6).toFixed(0) + 'M';
@@ -402,9 +404,9 @@
         if (v >= 1e3) return (v/1e3).toFixed(0) + 'K';
         return v.toLocaleString();
       },
-      price(v) { return v.toFixed(2); },
+      price(v) { return market === 'jp' ? Math.round(v).toLocaleString() : v.toFixed(2); },
       val(v) {
-        const p = market === 'hk' ? 'HK$' : '$';
+        const p = CUR();
         if (v >= 1e9) return p + (v/1e9).toFixed(1) + 'B';
         if (v >= 1e6) return p + (v/1e6).toFixed(0) + 'M';
         return p + v.toLocaleString();
@@ -422,6 +424,7 @@
 
     function tvSymbol(ticker) {
       if (market === 'hk') return 'HKEX:' + ticker.replace('.HK', '').replace(/^0+/, '');
+      if (market === 'jp') return 'TSE:' + ticker.replace('.T', '');
       return ticker.replace(/-/g, '.');
     }
     function tvLink(ticker) {
@@ -448,7 +451,7 @@
 
     // ─── Copy Tickers ──────────────────────────────────
     function copyTickers(tickers) {
-      const formatted = market === 'hk' ? tickers.map(t => 'HKEX:' + t.replace('.HK','').replace(/^0+/,'')) : tickers;
+      const formatted = tickers.map(tvSymbol);
       // Comma only, no spaces: TradingView's watchlist / symbol-search paste
       // handler URL-encodes anything after the first space ("%20HKEX%3A...").
       const text = formatted.join(',');
@@ -620,6 +623,7 @@
               <div class="market-toggle">
                 <button class="market-btn ${market==='us'?'active':''}" data-market="us">🇺🇸 US</button>
                 <button class="market-btn ${market==='hk'?'active':''}" data-market="hk">🇭🇰 HK</button>
+                <button class="market-btn ${market==='jp'?'active':''}" data-market="jp">🇯🇵 JP</button>
               </div>
               <div class="view-tabs" id="view-tabs">
                 <button class="view-tab ${!mom?'active':''}" data-view="trend" title="SMA 10&gt;20&gt;50&gt;100&gt;200 trend alignment">Trend</button>

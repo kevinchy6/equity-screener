@@ -1,0 +1,1986 @@
+{
+"0700.HK": {
+"name": "TENCENT",
+"sector": "Communication Services"
+},
+"1398.HK": {
+"name": "ICBC",
+"sector": "Financial Services"
+},
+"1288.HK": {
+"name": "ABC",
+"sector": "Financial Services"
+},
+"0857.HK": {
+"name": "PETROCHINA",
+"sector": "Energy"
+},
+"4333.HK": {
+"name": "CISCO-T",
+"sector": "Technology"
+},
+"9988.HK": {
+"name": "BABA-W",
+"sector": "Consumer Cyclical"
+},
+"0939.HK": {
+"name": "CCB",
+"sector": "Financial Services"
+},
+"4336.HK": {
+"name": "4336.HK,0P0000ARMR,0",
+"sector": ""
+},
+"0005.HK": {
+"name": "HSBC HOLDINGS",
+"sector": "Financial Services"
+},
+"3750.HK": {
+"name": "CATL",
+"sector": "Industrials"
+},
+"3988.HK": {
+"name": "BANK OF CHINA",
+"sector": "Financial Services"
+},
+"4335.HK": {
+"name": "INTEL-T",
+"sector": "Technology"
+},
+"0941.HK": {
+"name": "CHINA MOBILE",
+"sector": "Communication Services"
+},
+"0883.HK": {
+"name": "CNOOC",
+"sector": "Energy"
+},
+"2318.HK": {
+"name": "PING AN",
+"sector": "Financial Services"
+},
+"2628.HK": {
+"name": "CHINA LIFE",
+"sector": "Financial Services"
+},
+"3968.HK": {
+"name": "CM BANK",
+"sector": "Financial Services"
+},
+"1088.HK": {
+"name": "CHINA SHENHUA",
+"sector": "Energy"
+},
+"2899.HK": {
+"name": "ZIJIN MINING",
+"sector": "Basic Materials"
+},
+"6288.HK": {
+"name": "FAST RETAIL-DRS",
+"sector": "Consumer Cyclical"
+},
+"1211.HK": {
+"name": "BYD COMPANY",
+"sector": "Consumer Cyclical"
+},
+"1810.HK": {
+"name": "XIAOMI-W",
+"sector": "Technology"
+},
+"1299.HK": {
+"name": "AIA",
+"sector": "Financial Services"
+},
+"0386.HK": {
+"name": "SINOPEC CORP",
+"sector": "Energy"
+},
+"1658.HK": {
+"name": "PSBC",
+"sector": "Financial Services"
+},
+"3328.HK": {
+"name": "BANKCOMM",
+"sector": "Financial Services"
+},
+"0300.HK": {
+"name": "MIDEA GROUP",
+"sector": "Consumer Cyclical"
+},
+"0981.HK": {
+"name": "SMIC",
+"sector": "Technology"
+},
+"0728.HK": {
+"name": "CHINA TELECOM",
+"sector": "Communication Services"
+},
+"9999.HK": {
+"name": "NTES",
+"sector": "Communication Services"
+},
+"0388.HK": {
+"name": "HKEX",
+"sector": "Financial Services"
+},
+"2259.HK": {
+"name": "ZIJIN GOLD INTL",
+"sector": "Basic Materials"
+},
+"9633.HK": {
+"name": "NONGFU SPRING",
+"sector": "Consumer Defensive"
+},
+"3690.HK": {
+"name": "MEITUAN-W",
+"sector": "Consumer Cyclical"
+},
+"3993.HK": {
+"name": "CMOC",
+"sector": "Basic Materials"
+},
+"0998.HK": {
+"name": "CITIC BANK",
+"sector": "Financial Services"
+},
+"0945.HK": {
+"name": "MANULIFE-S",
+"sector": "Financial Services"
+},
+"2388.HK": {
+"name": "BOC HONG KONG",
+"sector": "Financial Services"
+},
+"6030.HK": {
+"name": "CITIC SEC",
+"sector": "Financial Services"
+},
+"1276.HK": {
+"name": "HENGRUI PHARMA",
+"sector": "Healthcare"
+},
+"2601.HK": {
+"name": "CPIC",
+"sector": "Financial Services"
+},
+"1378.HK": {
+"name": "CHINAHONGQIAO",
+"sector": "Basic Materials"
+},
+"1339.HK": {
+"name": "PICC GROUP",
+"sector": "Financial Services"
+},
+"0016.HK": {
+"name": "SHK PPT",
+"sector": "Real Estate"
+},
+"2888.HK": {
+"name": "STANCHART",
+"sector": "Financial Services"
+},
+"2328.HK": {
+"name": "PICC P&C",
+"sector": "Financial Services"
+},
+"2611.HK": {
+"name": "GTHT",
+"sector": "Financial Services"
+},
+"9888.HK": {
+"name": "BIDU-W",
+"sector": "Communication Services"
+},
+"0267.HK": {
+"name": "CITIC",
+"sector": "Industrials"
+},
+"2714.HK": {
+"name": "MUYUAN",
+"sector": "Consumer Defensive"
+},
+"0100.HK": {
+"name": "MINIMAX-W",
+"sector": "Technology"
+},
+"2359.HK": {
+"name": "WUXI APPTEC",
+"sector": "Healthcare"
+},
+"9618.HK": {
+"name": "JD-SW",
+"sector": "Consumer Cyclical"
+},
+"2378.HK": {
+"name": "PRU",
+"sector": "Financial Services"
+},
+"9992.HK": {
+"name": "POP MART",
+"sector": "Consumer Cyclical"
+},
+"1919.HK": {
+"name": "COSCO SHIP HOLD",
+"sector": "Industrials"
+},
+"2600.HK": {
+"name": "CHALCO",
+"sector": "Basic Materials"
+},
+"9961.HK": {
+"name": "TRIP.COM-S",
+"sector": "Consumer Cyclical"
+},
+"1024.HK": {
+"name": "KUAISHOU-W",
+"sector": "Communication Services"
+},
+"1898.HK": {
+"name": "CHINA COAL",
+"sector": "Energy"
+},
+"6690.HK": {
+"name": "HAIER SMARTHOME",
+"sector": "Consumer Cyclical"
+},
+"3288.HK": {
+"name": "HAITIAN FLAV",
+"sector": "Consumer Defensive"
+},
+"6160.HK": {
+"name": "BEONE MEDICINES",
+"sector": "Healthcare"
+},
+"2338.HK": {
+"name": "WEICHAI POWER",
+"sector": "Consumer Cyclical"
+},
+"0762.HK": {
+"name": "CHINA UNICOM",
+"sector": "Communication Services"
+},
+"2513.HK": {
+"name": "Z.AI",
+"sector": "Technology"
+},
+"1816.HK": {
+"name": "CGN POWER",
+"sector": "Utilities"
+},
+"1787.HK": {
+"name": "SD GOLD",
+"sector": "Basic Materials"
+},
+"0001.HK": {
+"name": "CKH HOLDINGS",
+"sector": "Industrials"
+},
+"3986.HK": {
+"name": "GIGADEVICE",
+"sector": "Technology"
+},
+"1336.HK": {
+"name": "NCI",
+"sector": "Financial Services"
+},
+"6031.HK": {
+"name": "SANY HEAVY IND",
+"sector": "Industrials"
+},
+"2020.HK": {
+"name": "ANTA SPORTS",
+"sector": "Consumer Cyclical"
+},
+"6818.HK": {
+"name": "CEB BANK",
+"sector": "Financial Services"
+},
+"2050.HK": {
+"name": "SANHUA",
+"sector": "Industrials"
+},
+"6936.HK": {
+"name": "SF HOLDING",
+"sector": "Industrials"
+},
+"1109.HK": {
+"name": "CHINA RES LAND",
+"sector": "Real Estate"
+},
+"1171.HK": {
+"name": "YANKUANG ENERGY",
+"sector": "Energy"
+},
+"9927.HK": {
+"name": "SERES",
+"sector": "Consumer Cyclical"
+},
+"0669.HK": {
+"name": "TECHTRONIC IND",
+"sector": "Industrials"
+},
+"6809.HK": {
+"name": "MONTAGE TECH",
+"sector": "Technology"
+},
+"0066.HK": {
+"name": "MTR CORPORATION",
+"sector": "Industrials"
+},
+"1766.HK": {
+"name": "CRRC",
+"sector": "Industrials"
+},
+"0788.HK": {
+"name": "CHINA TOWER",
+"sector": "Communication Services"
+},
+"3692.HK": {
+"name": "HANSOH PHARMA",
+"sector": "Healthcare"
+},
+"1988.HK": {
+"name": "MINSHENG BANK",
+"sector": "Financial Services"
+},
+"6886.HK": {
+"name": "HTSC",
+"sector": "Financial Services"
+},
+"0175.HK": {
+"name": "GEELY AUTO",
+"sector": "Consumer Cyclical"
+},
+"0002.HK": {
+"name": "CLP HOLDINGS",
+"sector": "Utilities"
+},
+"0763.HK": {
+"name": "ZTE",
+"sector": "Technology"
+},
+"6613.HK": {
+"name": "LENS",
+"sector": "Technology"
+},
+"6066.HK": {
+"name": "CSC",
+"sector": "Financial Services"
+},
+"2333.HK": {
+"name": "GWMOTOR",
+"sector": "Consumer Cyclical"
+},
+"6869.HK": {
+"name": "YOFC",
+"sector": "Technology"
+},
+"0358.HK": {
+"name": "JIANGXI COPPER",
+"sector": "Basic Materials"
+},
+"1347.HK": {
+"name": "HUA HONG GRACE",
+"sector": "Technology"
+},
+"3606.HK": {
+"name": "FUYAO GLASS",
+"sector": "Consumer Cyclical"
+},
+"1880.HK": {
+"name": "CTG DUTY-FREE",
+"sector": "Consumer Cyclical"
+},
+"1698.HK": {
+"name": "TME-SW",
+"sector": "Communication Services"
+},
+"1038.HK": {
+"name": "CKI HOLDINGS",
+"sector": "Utilities"
+},
+"1113.HK": {
+"name": "CK ASSET",
+"sector": "Real Estate"
+},
+"0027.HK": {
+"name": "GALAXY ENT",
+"sector": "Consumer Cyclical"
+},
+"1776.HK": {
+"name": "GF SEC",
+"sector": "Financial Services"
+},
+"0501.HK": {
+"name": "OMNIVISION",
+"sector": "Technology"
+},
+"0390.HK": {
+"name": "CHINA RAILWAY",
+"sector": "Industrials"
+},
+"6618.HK": {
+"name": "JD HEALTH",
+"sector": "Healthcare"
+},
+"1772.HK": {
+"name": "GANFENGLITHIUM",
+"sector": "Basic Materials"
+},
+"6099.HK": {
+"name": "CMSC",
+"sector": "Financial Services"
+},
+"3996.HK": {
+"name": "CH ENERGY ENG",
+"sector": "Industrials"
+},
+"2423.HK": {
+"name": "BEKE-W",
+"sector": "Real Estate"
+},
+"0012.HK": {
+"name": "HENDERSON LAND",
+"sector": "Real Estate"
+},
+"1072.HK": {
+"name": "DONGFANG ELEC",
+"sector": "Industrials"
+},
+"9868.HK": {
+"name": "XPENG-W",
+"sector": "Consumer Cyclical"
+},
+"3908.HK": {
+"name": "CICC",
+"sector": "Financial Services"
+},
+"9973.HK": {
+"name": "CHERY AUTO",
+"sector": "Consumer Cyclical"
+},
+"6881.HK": {
+"name": "CGS",
+"sector": "Financial Services"
+},
+"9987.HK": {
+"name": "YUM CHINA",
+"sector": "Consumer Cyclical"
+},
+"0914.HK": {
+"name": "CONCH CEMENT",
+"sector": "Basic Materials"
+},
+"9980.HK": {
+"name": "EASTROC",
+"sector": "Consumer Defensive"
+},
+"2727.HK": {
+"name": "SH ELECTRIC",
+"sector": "Industrials"
+},
+"2269.HK": {
+"name": "WUXI BIO",
+"sector": "Healthcare"
+},
+"1972.HK": {
+"name": "SWIREPROPERTIES",
+"sector": "Real Estate"
+},
+"2057.HK": {
+"name": "ZTO EXPRESS-W",
+"sector": "Industrials"
+},
+"1801.HK": {
+"name": "INNOVENT BIO",
+"sector": "Healthcare"
+},
+"0688.HK": {
+"name": "CHINA OVERSEAS",
+"sector": "Real Estate"
+},
+"0003.HK": {
+"name": "HK & CHINA GAS",
+"sector": "Utilities"
+},
+"2015.HK": {
+"name": "LI AUTO-W",
+"sector": "Consumer Cyclical"
+},
+"1928.HK": {
+"name": "SANDS CHINA LTD",
+"sector": "Consumer Cyclical"
+},
+"1800.HK": {
+"name": "CHINA COMM CONS",
+"sector": "Industrials"
+},
+"2208.HK": {
+"name": "GOLDWIND",
+"sector": "Industrials"
+},
+"6806.HK": {
+"name": "SWHY",
+"sector": "Financial Services"
+},
+"0916.HK": {
+"name": "CHINA LONGYUAN",
+"sector": "Utilities"
+},
+"0753.HK": {
+"name": "AIR CHINA",
+"sector": "Industrials"
+},
+"0006.HK": {
+"name": "POWER ASSETS",
+"sector": "Utilities"
+},
+"1138.HK": {
+"name": "COSCO SHIP ENGY",
+"sector": "Energy"
+},
+"0902.HK": {
+"name": "HUANENG POWER",
+"sector": "Utilities"
+},
+"2097.HK": {
+"name": "MIXUE GROUP",
+"sector": "Consumer Defensive"
+},
+"0288.HK": {
+"name": "WH GROUP",
+"sector": "Consumer Defensive"
+},
+"1179.HK": {
+"name": "HWORLD-S",
+"sector": "Consumer Cyclical"
+},
+"1055.HK": {
+"name": "CHINA SOUTH AIR",
+"sector": "Industrials"
+},
+"0992.HK": {
+"name": "LENOVO GROUP",
+"sector": "Technology"
+},
+"6181.HK": {
+"name": "LAOPU GOLD",
+"sector": "Consumer Cyclical"
+},
+"1929.HK": {
+"name": "CHOW TAI FOOK",
+"sector": "Consumer Cyclical"
+},
+"0670.HK": {
+"name": "CHINA EAST AIR",
+"sector": "Industrials"
+},
+"1186.HK": {
+"name": "CHINA RAIL CONS",
+"sector": "Industrials"
+},
+"9866.HK": {
+"name": "NIO-SW",
+"sector": "Consumer Cyclical"
+},
+"1818.HK": {
+"name": "ZHAOJIN MINING",
+"sector": "Basic Materials"
+},
+"0083.HK": {
+"name": "SINO LAND",
+"sector": "Real Estate"
+},
+"1177.HK": {
+"name": "SBP GROUP",
+"sector": "Healthcare"
+},
+"9660.HK": {
+"name": "HORIZONROBOT-W",
+"sector": "Technology"
+},
+"0019.HK": {
+"name": "SWIRE PACIFIC A",
+"sector": "Industrials"
+},
+"0087.HK": {
+"name": "SWIRE PACIFIC B",
+"sector": "Industrials"
+},
+"1208.HK": {
+"name": "MMG",
+"sector": "Basic Materials"
+},
+"3808.HK": {
+"name": "SINOTRUK",
+"sector": "Industrials"
+},
+"9926.HK": {
+"name": "AKESO",
+"sector": "Healthcare"
+},
+"1209.HK": {
+"name": "CHINA RES MIXC",
+"sector": "Real Estate"
+},
+"9696.HK": {
+"name": "TIANQI LITHIUM",
+"sector": "Basic Materials"
+},
+"1913.HK": {
+"name": "PRADA",
+"sector": "Consumer Cyclical"
+},
+"0836.HK": {
+"name": "CHINA RES POWER",
+"sector": "Utilities"
+},
+"1876.HK": {
+"name": "BUD APAC",
+"sector": "Consumer Defensive"
+},
+"1093.HK": {
+"name": "CSPC PHARMA",
+"sector": "Healthcare"
+},
+"0470.HK": {
+"name": "WUXI LEAD",
+"sector": "Industrials"
+},
+"0823.HK": {
+"name": "LINK REIT",
+"sector": "Real Estate"
+},
+"0316.HK": {
+"name": "OOIL",
+"sector": "Industrials"
+},
+"6823.HK": {
+"name": "HKT-SS",
+"sector": "Communication Services"
+},
+"6990.HK": {
+"name": "SKB BIO",
+"sector": "Healthcare"
+},
+"2016.HK": {
+"name": "CZBANK",
+"sector": "Financial Services"
+},
+"1308.HK": {
+"name": "SITC",
+"sector": "Industrials"
+},
+"6862.HK": {
+"name": "HAIDILAO",
+"sector": "Consumer Cyclical"
+},
+"3958.HK": {
+"name": "DFZQ",
+"sector": "Financial Services"
+},
+"1157.HK": {
+"name": "ZOOMLION",
+"sector": "Industrials"
+},
+"6693.HK": {
+"name": "CHIFENG GOLD",
+"sector": "Basic Materials"
+},
+"2238.HK": {
+"name": "GAC GROUP",
+"sector": "Consumer Cyclical"
+},
+"1768.HK": {
+"name": "BUSYMING",
+"sector": "Consumer Defensive"
+},
+"3618.HK": {
+"name": "CQRC BANK",
+"sector": "Financial Services"
+},
+"1519.HK": {
+"name": "J&T EXPRESS-W",
+"sector": "Industrials"
+},
+"0486.HK": {
+"name": "RUSAL",
+"sector": "Basic Materials"
+},
+"2618.HK": {
+"name": "JD LOGISTICS",
+"sector": "Industrials"
+},
+"0991.HK": {
+"name": "DATANG POWER",
+"sector": "Utilities"
+},
+"0168.HK": {
+"name": "TSINGTAO BR-500",
+"sector": "Consumer Defensive"
+},
+"0291.HK": {
+"name": "CHINA RES BEER",
+"sector": "Consumer Defensive"
+},
+"0020.HK": {
+"name": "SENSETIME-W",
+"sector": "Technology"
+},
+"2313.HK": {
+"name": "SHENZHOU INTL",
+"sector": "Consumer Cyclical"
+},
+"0241.HK": {
+"name": "ALI HEALTH",
+"sector": "Healthcare"
+},
+"9626.HK": {
+"name": "BILIBILI-W",
+"sector": "Communication Services"
+},
+"0489.HK": {
+"name": "",
+"sector": ""
+},
+"6082.HK": {
+"name": "BIREN TECH",
+"sector": "Technology"
+},
+"3200.HK": {
+"name": "HANS CNC",
+"sector": "Industrials"
+},
+"6178.HK": {
+"name": "EB SECURITIES",
+"sector": "Financial Services"
+},
+"2883.HK": {
+"name": "CHINA OILFIELD",
+"sector": "Energy"
+},
+"0966.HK": {
+"name": "CHINA TAIPING",
+"sector": "Financial Services"
+},
+"2688.HK": {
+"name": "ENN ENERGY",
+"sector": "Utilities"
+},
+"1997.HK": {
+"name": "WHARF REIC",
+"sector": "Real Estate"
+},
+"0293.HK": {
+"name": "CATHAY PAC AIR",
+"sector": "Industrials"
+},
+"3898.HK": {
+"name": "TIMES ELECTRIC",
+"sector": "Industrials"
+},
+"9903.HK": {
+"name": "ILUVATAR COREX",
+"sector": "Technology"
+},
+"0135.HK": {
+"name": "KUNLUN ENERGY",
+"sector": "Energy"
+},
+"1618.HK": {
+"name": "MCC",
+"sector": "Industrials"
+},
+"0322.HK": {
+"name": "TINGYI",
+"sector": "Consumer Defensive"
+},
+"0144.HK": {
+"name": "CHINA MER PORT",
+"sector": "Industrials"
+},
+"1508.HK": {
+"name": "CHINA RE",
+"sector": "Financial Services"
+},
+"2196.HK": {
+"name": "FOSUN PHARMA",
+"sector": "Healthcare"
+},
+"1888.HK": {
+"name": "KB LAMINATES",
+"sector": "Technology"
+},
+"2268.HK": {
+"name": "WUXI XDC",
+"sector": "Healthcare"
+},
+"0285.HK": {
+"name": "BYD ELECTRONIC",
+"sector": "Technology"
+},
+"3939.HK": {
+"name": "WANGUO GOLD GP",
+"sector": "Basic Materials"
+},
+"3969.HK": {
+"name": "CHINA CRSC",
+"sector": "Industrials"
+},
+"1071.HK": {
+"name": "HUADIAN POWER",
+"sector": "Utilities"
+},
+"9698.HK": {
+"name": "GDS-SW",
+"sector": "Technology"
+},
+"9901.HK": {
+"name": "NEW ORIENTAL-S",
+"sector": "Consumer Defensive"
+},
+"2099.HK": {
+"name": "CHINAGOLDINTL",
+"sector": "Basic Materials"
+},
+"1099.HK": {
+"name": "SINOPHARM",
+"sector": "Healthcare"
+},
+"0177.HK": {
+"name": "JIANGSU EXPRESS",
+"sector": "Industrials"
+},
+"2607.HK": {
+"name": "SH PHARMA",
+"sector": "Healthcare"
+},
+"0960.HK": {
+"name": "LONGFOR GROUP",
+"sector": "Real Estate"
+},
+"1364.HK": {
+"name": "GUMING",
+"sector": "Consumer Cyclical"
+},
+"2039.HK": {
+"name": "CIMC",
+"sector": "Industrials"
+},
+"6198.HK": {
+"name": "QINGDAO PORT",
+"sector": "Industrials"
+},
+"9995.HK": {
+"name": "REMEGEN",
+"sector": "Healthcare"
+},
+"9863.HK": {
+"name": "LEAPMOTOR",
+"sector": "Consumer Cyclical"
+},
+"2799.HK": {
+"name": "CITIC FAMC",
+"sector": "Financial Services"
+},
+"2319.HK": {
+"name": "MENGNIU DAIRY",
+"sector": "Consumer Defensive"
+},
+"2382.HK": {
+"name": "SUNNY OPTICAL",
+"sector": "Technology"
+},
+"2788.HK": {
+"name": "CHUANGXIN IND",
+"sector": "Basic Materials"
+},
+"3698.HK": {
+"name": "HUISHANG BANK",
+"sector": "Financial Services"
+},
+"2638.HK": {
+"name": "HKELECTRIC-SS",
+"sector": "Utilities"
+},
+"2579.HK": {
+"name": "CNGR",
+"sector": "Basic Materials"
+},
+"3668.HK": {
+"name": "YANCOAL AUS",
+"sector": "Energy"
+},
+"2202.HK": {
+"name": "CHINA VANKE",
+"sector": "Real Estate"
+},
+"1456.HK": {
+"name": "GLMS SEC",
+"sector": "Financial Services"
+},
+"3858.HK": {
+"name": "JIAXIN INTL RES",
+"sector": "Basic Materials"
+},
+"1033.HK": {
+"name": "SINOPEC SSC",
+"sector": "Energy"
+},
+"2577.HK": {
+"name": "INNOSCIENCE",
+"sector": "Technology"
+},
+"0151.HK": {
+"name": "WANT WANT CHINA",
+"sector": "Consumer Defensive"
+},
+"1385.HK": {
+"name": "SHANGHAI FUDAN",
+"sector": "Technology"
+},
+"3759.HK": {
+"name": "PHARMARON",
+"sector": "Healthcare"
+},
+"1133.HK": {
+"name": "HARBIN ELECTRIC",
+"sector": "Industrials"
+},
+"2588.HK": {
+"name": "BOC AVIATION",
+"sector": "Industrials"
+},
+"1530.HK": {
+"name": "3SBIO",
+"sector": "Healthcare"
+},
+"9880.HK": {
+"name": "UBTECH ROBOTICS",
+"sector": "Industrials"
+},
+"2076.HK": {
+"name": "BOSS ZHIPIN-W",
+"sector": "Communication Services"
+},
+"3931.HK": {
+"name": "CALB",
+"sector": "Industrials"
+},
+"3347.HK": {
+"name": "TIGERMED",
+"sector": "Healthcare"
+},
+"1258.HK": {
+"name": "CHINFMINING",
+"sector": "Basic Materials"
+},
+"2331.HK": {
+"name": "LI NING",
+"sector": "Consumer Cyclical"
+},
+"3311.HK": {
+"name": "CHINA STATE CON",
+"sector": "Industrials"
+},
+"0270.HK": {
+"name": "GUANGDONG INV",
+"sector": "Utilities"
+},
+"6680.HK": {
+"name": "JLMAG",
+"sector": "Industrials"
+},
+"6655.HK": {
+"name": "HX BLDG MAT",
+"sector": "Basic Materials"
+},
+"1193.HK": {
+"name": "CHINA RES GAS",
+"sector": "Utilities"
+},
+"3998.HK": {
+"name": "BOSIDENG",
+"sector": "Consumer Cyclical"
+},
+"0008.HK": {
+"name": "PCCW",
+"sector": "Communication Services"
+},
+"0101.HK": {
+"name": "HANG LUNG PPT",
+"sector": "Real Estate"
+},
+"0868.HK": {
+"name": "XINYI GLASS",
+"sector": "Basic Materials"
+},
+"2656.HK": {
+"name": "160 HEALTH",
+"sector": "Healthcare"
+},
+"2282.HK": {
+"name": "MGM CHINA",
+"sector": "Consumer Cyclical"
+},
+"0598.HK": {
+"name": "SINOTRANS",
+"sector": "Industrials"
+},
+"0564.HK": {
+"name": "ZCZL",
+"sector": "Industrials"
+},
+"0522.HK": {
+"name": "ASMPT",
+"sector": "Technology"
+},
+"0392.HK": {
+"name": "BEIJING ENT",
+"sector": "Industrials"
+},
+"0780.HK": {
+"name": "TONGCHENGTRAVEL",
+"sector": "Consumer Cyclical"
+},
+"0874.HK": {
+"name": "BAIYUNSHAN PH",
+"sector": "Healthcare"
+},
+"1359.HK": {
+"name": "CHINA CINDA",
+"sector": "Financial Services"
+},
+"3323.HK": {
+"name": "CNBM",
+"sector": "Basic Materials"
+},
+"0384.HK": {
+"name": "CHINA GAS HOLD",
+"sector": "Utilities"
+},
+"0425.HK": {
+"name": "MINTH GROUP",
+"sector": "Consumer Cyclical"
+},
+"2921.HK": {
+"name": "CAPITAL IND-OLD",
+"sector": ""
+},
+"0631.HK": {
+"name": "SANY INT'L",
+"sector": "Industrials"
+},
+"2631.HK": {
+"name": "SICC",
+"sector": "Technology"
+},
+"0247.HK": {
+"name": "TST PROPERTIES",
+"sector": "Real Estate"
+},
+"1828.HK": {
+"name": "FWD",
+"sector": "Financial Services"
+},
+"6166.HK": {
+"name": "CIG",
+"sector": "Technology"
+},
+"6963.HK": {
+"name": "SUNSHINE INS",
+"sector": "Financial Services"
+},
+"2380.HK": {
+"name": "CHINA POWER",
+"sector": "Utilities"
+},
+"0699.HK": {
+"name": "JOYSON ELEC",
+"sector": "Consumer Cyclical"
+},
+"0576.HK": {
+"name": "ZHEJIANGEXPRESS",
+"sector": "Industrials"
+},
+"2880.HK": {
+"name": "LIAONING PORT",
+"sector": "Industrials"
+},
+"0148.HK": {
+"name": "KINGBOARD HLDG",
+"sector": "Industrials"
+},
+"2228.HK": {
+"name": "XTALPI",
+"sector": "Healthcare"
+},
+"0317.HK": {
+"name": "COMEC",
+"sector": "Industrials"
+},
+"9896.HK": {
+"name": "MNSO",
+"sector": "Consumer Cyclical"
+},
+"6821.HK": {
+"name": "ASYMCHEM",
+"sector": "Healthcare"
+},
+"0290.HK": {
+"name": "GOFINTECH QUANT",
+"sector": "Financial Services"
+},
+"2610.HK": {
+"name": "NANSHAN AL INTL",
+"sector": "Basic Materials"
+},
+"0659.HK": {
+"name": "CTF SERVICES",
+"sector": "Industrials"
+},
+"6865.HK": {
+"name": "FLAT GLASS",
+"sector": "Technology"
+},
+"2026.HK": {
+"name": "PONY-W",
+"sector": "Technology"
+},
+"9981.HK": {
+"name": "WOER",
+"sector": "Industrials"
+},
+"6088.HK": {
+"name": "FIT HON TENG",
+"sector": "Technology"
+},
+"1318.HK": {
+"name": "MAO GEPING",
+"sector": "Consumer Defensive"
+},
+"2018.HK": {
+"name": "AAC TECH",
+"sector": "Technology"
+},
+"0666.HK": {
+"name": "REPT BATTERO",
+"sector": "Consumer Cyclical"
+},
+"2689.HK": {
+"name": "ND PAPER",
+"sector": "Basic Materials"
+},
+"1963.HK": {
+"name": "BCQ",
+"sector": "Financial Services"
+},
+"1882.HK": {
+"name": "HAITIAN INT'L",
+"sector": "Industrials"
+},
+"3317.HK": {
+"name": "XUNCE",
+"sector": "Technology"
+},
+"2696.HK": {
+"name": "HENLIUS",
+"sector": "Healthcare"
+},
+"0023.HK": {
+"name": "BANK OF E ASIA",
+"sector": "Financial Services"
+},
+"7618.HK": {
+"name": "JD INDUSTRIALS",
+"sector": "Consumer Cyclical"
+},
+"2866.HK": {
+"name": "COSCO SHIP DEV",
+"sector": "Industrials"
+},
+"2648.HK": {
+"name": "ANJOY FOOD",
+"sector": "Consumer Defensive"
+},
+"0956.HK": {
+"name": "CHINA SUNTIEN",
+"sector": "Utilities"
+},
+"3800.HK": {
+"name": "GCL TECH",
+"sector": "Technology"
+},
+"2315.HK": {
+"name": "BIOCYTOGEN-B",
+"sector": "Healthcare"
+},
+"3330.HK": {
+"name": "LINGBAO GOLD",
+"sector": "Basic Materials"
+},
+"3360.HK": {
+"name": "FE HORIZON",
+"sector": "Financial Services"
+},
+"1735.HK": {
+"name": "CENTRAL NEW EGY",
+"sector": "Industrials"
+},
+"0220.HK": {
+"name": "U-PRESID CHINA",
+"sector": "Consumer Defensive"
+},
+"0921.HK": {
+"name": "HISENSE HA",
+"sector": "Consumer Cyclical"
+},
+"1585.HK": {
+"name": "YADEA",
+"sector": "Consumer Cyclical"
+},
+"6186.HK": {
+"name": "CHINA FEIHE",
+"sector": "Consumer Defensive"
+},
+"2400.HK": {
+"name": "XD INC",
+"sector": "Communication Services"
+},
+"0323.HK": {
+"name": "MAANSHAN IRON",
+"sector": "Basic Materials"
+},
+"1729.HK": {
+"name": "TIME INTERCON",
+"sector": "Industrials"
+},
+"2706.HK": {
+"name": "HAIZHI TECH GP",
+"sector": "Technology"
+},
+"0683.HK": {
+"name": "KERRY PPT",
+"sector": "Real Estate"
+},
+"2692.HK": {
+"name": "ZHAOWEI",
+"sector": "Industrials"
+},
+"3888.HK": {
+"name": "KINGSOFT",
+"sector": "Communication Services"
+},
+"2659.HK": {
+"name": "BAO PHARMA-B",
+"sector": "Healthcare"
+},
+"1044.HK": {
+"name": "HENGAN INT'L",
+"sector": "Consumer Defensive"
+},
+"1164.HK": {
+"name": "CGN MINING",
+"sector": "Energy"
+},
+"0656.HK": {
+"name": "FOSUN INTL",
+"sector": "Industrials"
+},
+"2386.HK": {
+"name": "SINOPEC SEG",
+"sector": "Industrials"
+},
+"0268.HK": {
+"name": "KINGDEE INT'L",
+"sector": "Technology"
+},
+"1877.HK": {
+"name": "JUNSHI BIO",
+"sector": "Healthcare"
+},
+"3896.HK": {
+"name": "KINGSOFT CLOUD",
+"sector": "Technology"
+},
+"1908.HK": {
+"name": "C&D INTL GROUP",
+"sector": "Real Estate"
+},
+"0338.HK": {
+"name": "SHANGHAI PECHEM",
+"sector": "Energy"
+},
+"0257.HK": {
+"name": "EB ENVIRONMENT",
+"sector": "Industrials"
+},
+"9899.HK": {
+"name": "NETEASE MUSIC",
+"sector": "Communication Services"
+},
+"2367.HK": {
+"name": "GIANT BIOGENE",
+"sector": "Consumer Defensive"
+},
+"1513.HK": {
+"name": "LIVZON PHARMA",
+"sector": "Healthcare"
+},
+"3696.HK": {
+"name": "INSILICO",
+"sector": "Healthcare"
+},
+"3866.HK": {
+"name": "BQD",
+"sector": "Financial Services"
+},
+"2419.HK": {
+"name": "DEKON AGR",
+"sector": "Consumer Defensive"
+},
+"6979.HK": {
+"name": "ZJLD",
+"sector": "Consumer Defensive"
+},
+"2357.HK": {
+"name": "AVICHINA",
+"sector": "Industrials"
+},
+"0968.HK": {
+"name": "XINYI SOLAR",
+"sector": "Technology"
+},
+"0867.HK": {
+"name": "CMS",
+"sector": "Healthcare"
+},
+"0696.HK": {
+"name": "TRAVELSKY TECH",
+"sector": "Technology"
+},
+"0552.HK": {
+"name": "CHINACOMSERVICE",
+"sector": "Communication Services"
+},
+"2617.HK": {
+"name": "TRANSTHERA-B",
+"sector": "Healthcare"
+},
+"0772.HK": {
+"name": "CHINA LIT",
+"sector": "Communication Services"
+},
+"2718.HK": {
+"name": "MININGLAMP-W",
+"sector": "Technology"
+},
+"2096.HK": {
+"name": "SIMCERE PHARMA",
+"sector": "Healthcare"
+},
+"2525.HK": {
+"name": "HESAI-W",
+"sector": "Consumer Cyclical"
+},
+"1070.HK": {
+"name": "TCL ELECTRONICS",
+"sector": "Technology"
+},
+"3393.HK": {
+"name": "WASION HOLDINGS",
+"sector": "Industrials"
+},
+"1128.HK": {
+"name": "WYNN MACAU",
+"sector": "Consumer Cyclical"
+},
+"0136.HK": {
+"name": "CHINA RUYI",
+"sector": "Communication Services"
+},
+"2676.HK": {
+"name": "NOVOSENSE",
+"sector": "Technology"
+},
+"3320.HK": {
+"name": "CHINARES PHARMA",
+"sector": "Healthcare"
+},
+"0371.HK": {
+"name": "BJ ENT WATER",
+"sector": "Utilities"
+},
+"2276.HK": {
+"name": "CONANT OPTICAL",
+"sector": "Healthcare"
+},
+"0995.HK": {
+"name": "ANHUIEXPRESSWAY",
+"sector": "Industrials"
+},
+"0347.HK": {
+"name": "ANGANG STEEL",
+"sector": "Basic Materials"
+},
+"9985.HK": {
+"name": "WL DELICIOUS",
+"sector": "Consumer Defensive"
+},
+"2661.HK": {
+"name": "QINGSONG HEALTH",
+"sector": "Healthcare"
+},
+"1797.HK": {
+"name": "EAST BUY",
+"sector": "Consumer Defensive"
+},
+"0551.HK": {
+"name": "YUE YUEN IND",
+"sector": "Consumer Cyclical"
+},
+"3900.HK": {
+"name": "GREENTOWN CHINA",
+"sector": "Real Estate"
+},
+"2575.HK": {
+"name": "XUANZHUBIO-B",
+"sector": "Healthcare"
+},
+"1860.HK": {
+"name": "MOBVISTA",
+"sector": "Communication Services"
+},
+"2590.HK": {
+"name": "GEEKPLUS-W",
+"sector": "Technology"
+},
+"6055.HK": {
+"name": "CTIHK",
+"sector": "Consumer Defensive"
+},
+"2889.HK": {
+"name": "PATEO",
+"sector": "Technology"
+},
+"0638.HK": {
+"name": "FIBOCOM",
+"sector": "Technology"
+},
+"3899.HK": {
+"name": "CIMC ENRIC",
+"sector": "Energy"
+},
+"1833.HK": {
+"name": "PA GOODDOCTOR",
+"sector": "Healthcare"
+},
+"1199.HK": {
+"name": "COSCO SHIP PORT",
+"sector": "Industrials"
+},
+"6127.HK": {
+"name": "JOINN",
+"sector": "Healthcare"
+},
+"0512.HK": {
+"name": "GRAND PHARMA",
+"sector": "Healthcare"
+},
+"6600.HK": {
+"name": "ONEROBOTICS",
+"sector": "Technology"
+},
+"2252.HK": {
+"name": "MEDBOT-B",
+"sector": "Healthcare"
+},
+"1686.HK": {
+"name": "SUNEVISION",
+"sector": "Real Estate"
+},
+"0142.HK": {
+"name": "FIRST PACIFIC",
+"sector": "Consumer Defensive"
+},
+"2655.HK": {
+"name": "GUOXIA TECH",
+"sector": "Utilities"
+},
+"1757.HK": {
+"name": "GLOBAL CHI BC",
+"sector": "Industrials"
+},
+"9606.HK": {
+"name": "DUALITYBIO-B",
+"sector": "Healthcare"
+},
+"2865.HK": {
+"name": "DRINDA",
+"sector": "Technology"
+},
+"1548.HK": {
+"name": "GENSCRIPT BIO",
+"sector": "Healthcare"
+},
+"1788.HK": {
+"name": "GUOTAI JUNAN I",
+"sector": "Financial Services"
+},
+"0179.HK": {
+"name": "JOHNSON ELEC H",
+"sector": "Consumer Cyclical"
+},
+"6887.HK": {
+"name": "SUNSHINE PHARMA",
+"sector": "Healthcare"
+},
+"0548.HK": {
+"name": "SHENZHENEXPRESS",
+"sector": "Industrials"
+},
+"9969.HK": {
+"name": "INNOCARE",
+"sector": "Healthcare"
+},
+"1357.HK": {
+"name": "MEITU",
+"sector": "Communication Services"
+},
+"6060.HK": {
+"name": "ZA ONLINE",
+"sector": "Financial Services"
+},
+"9889.HK": {
+"name": "DRCB",
+"sector": "Financial Services"
+},
+"2460.HK": {
+"name": "CR BEVERAGE",
+"sector": "Consumer Defensive"
+},
+"0525.HK": {
+"name": "GUANGSHEN RAIL",
+"sector": "Industrials"
+},
+"0053.HK": {
+"name": "GUOCO GROUP",
+"sector": "Industrials"
+},
+"0017.HK": {
+"name": "NEW WORLD DEV",
+"sector": "Real Estate"
+},
+"0881.HK": {
+"name": "ZHONGSHENG HLDG",
+"sector": "Consumer Cyclical"
+},
+"9611.HK": {
+"name": "LONGCHEER",
+"sector": "Technology"
+},
+"2715.HK": {
+"name": "ESTUN",
+"sector": "Industrials"
+},
+"0675.HK": {
+"name": "K & P INT'L",
+"sector": "Technology"
+},
+"2627.HK": {
+"name": "AB&B BIO-TECH-B",
+"sector": ""
+},
+"2145.HK": {
+"name": "CHICMAX",
+"sector": "Consumer Defensive"
+},
+"1910.HK": {
+"name": "SAMSONITE",
+"sector": "Consumer Cyclical"
+},
+"2602.HK": {
+"name": "ONEWO",
+"sector": "Real Estate"
+},
+"0152.HK": {
+"name": "SHENZHEN INT'L",
+"sector": "Industrials"
+},
+"1415.HK": {
+"name": "COWELL",
+"sector": "Technology"
+},
+"3933.HK": {
+"name": "UNITED LAB",
+"sector": "Healthcare"
+},
+"0189.HK": {
+"name": "DONGYUE GROUP",
+"sector": "Basic Materials"
+},
+"3369.HK": {
+"name": "QHD PORT",
+"sector": "Industrials"
+},
+"3677.HK": {
+"name": "ZENERGY",
+"sector": "Consumer Cyclical"
+},
+"1551.HK": {
+"name": "GRCB",
+"sector": "Financial Services"
+},
+"1066.HK": {
+"name": "WEIGAO GROUP",
+"sector": "Healthcare"
+},
+"0010.HK": {
+"name": "HANG LUNG GROUP",
+"sector": "Real Estate"
+},
+"0586.HK": {
+"name": "CONCH VENTURE",
+"sector": "Industrials"
+},
+"2565.HK": {
+"name": "PEGBIO CO-B",
+"sector": "Healthcare"
+},
+"3396.HK": {
+"name": "LEGENDHOLDING",
+"sector": "Technology"
+},
+"1277.HK": {
+"name": "KINETIC DEV",
+"sector": "Energy"
+},
+"2635.HK": {
+"name": "NUOBIKAN",
+"sector": "Technology"
+},
+"6651.HK": {
+"name": "51WORLD",
+"sector": "Technology"
+},
+"0107.HK": {
+"name": "SICHUAN EXPRESS",
+"sector": "Industrials"
+},
+"1060.HK": {
+"name": "DAMAI ENT",
+"sector": "Communication Services"
+},
+"0579.HK": {
+"name": "JNCEC",
+"sector": "Utilities"
+},
+"9678.HK": {
+"name": "UNISOUND",
+"sector": "Technology"
+},
+"1196.HK": {
+"name": "REALORD TECH",
+"sector": "Industrials"
+},
+"1304.HK": {
+"name": "FORTIOR",
+"sector": "Technology"
+},
+"2009.HK": {
+"name": "BBMG",
+"sector": "Basic Materials"
+},
+"2068.HK": {
+"name": "CHALIECO",
+"sector": "Industrials"
+},
+"6098.HK": {
+"name": "CG SERVICES",
+"sector": "Real Estate"
+},
+"0817.HK": {
+"name": "CHINA JINMAO",
+"sector": "Real Estate"
+},
+"0853.HK": {
+"name": "MICROPORT",
+"sector": "Healthcare"
+},
+"1635.HK": {
+"name": "DZUG",
+"sector": "Utilities"
+},
+"2232.HK": {
+"name": "CRYSTAL INTL",
+"sector": "Consumer Cyclical"
+},
+"1918.HK": {
+"name": "SUNAC",
+"sector": "Real Estate"
+},
+"1375.HK": {
+"name": "CC SECURITIES",
+"sector": "Financial Services"
+},
+"0014.HK": {
+"name": "HYSAN DEV",
+"sector": "Real Estate"
+},
+"6682.HK": {
+"name": "PHANCY",
+"sector": "Technology"
+},
+"0467.HK": {
+"name": "UNITEDENERGY GP",
+"sector": "Energy"
+},
+"1606.HK": {
+"name": "CDB LEASING",
+"sector": "Industrials"
+},
+"9858.HK": {
+"name": "YOURAN DAIRY",
+"sector": "Consumer Defensive"
+},
+"2128.HK": {
+"name": "CHINA LESSO",
+"sector": "Industrials"
+},
+"0013.HK": {
+"name": "HUTCHMED",
+"sector": "Healthcare"
+},
+"2630.HK": {
+"name": "VIGONVITA-B",
+"sector": "Healthcare"
+},
+"9898.HK": {
+"name": "WB-SW",
+"sector": "Communication Services"
+},
+"2507.HK": {
+"name": "CIRRUS",
+"sector": "Industrials"
+},
+"2658.HK": {
+"name": "TIANYU SEMI",
+"sector": "Technology"
+},
+"0340.HK": {
+"name": "TONGGUAN GOLD",
+"sector": "Basic Materials"
+},
+"6110.HK": {
+"name": "TOPSPORTS",
+"sector": "Consumer Cyclical"
+},
+"3918.HK": {
+"name": "NAGACORP",
+"sector": "Consumer Cyclical"
+},
+"2643.HK": {
+"name": "CAOCAO INC",
+"sector": "Technology"
+},
+"0800.HK": {
+"name": "WERIDE-W",
+"sector": "Technology"
+},
+"2768.HK": {
+"name": "GON TECHNOLOGY",
+"sector": "Basic Materials"
+},
+"6196.HK": {
+"name": "BANKOFZHENGZHOU",
+"sector": "Financial Services"
+},
+"6049.HK": {
+"name": "POLY PPT SER",
+"sector": "Real Estate"
+},
+"1866.HK": {
+"name": "CHINA XLX FERT",
+"sector": "Basic Materials"
+},
+"1999.HK": {
+"name": "MAN WAH HLDGS",
+"sector": "Consumer Cyclical"
+},
+"9989.HK": {
+"name": "HEPALINK",
+"sector": "Healthcare"
+},
+"2518.HK": {
+"name": "AUTOHOME-S",
+"sector": "Communication Services"
+},
+"2698.HK": {
+"name": "SOFTCARE",
+"sector": "Consumer Defensive"
+},
+"1114.HK": {
+"name": "BRILLIANCE CHI",
+"sector": "Consumer Cyclical"
+},
+"1057.HK": {
+"name": "ZHEJIANG SHIBAO",
+"sector": "Consumer Cyclical"
+},
+"0811.HK": {
+"name": "XINHUA WINSHARE",
+"sector": "Communication Services"
+},
+"6855.HK": {
+"name": "ASCENTAGE",
+"sector": "Healthcare"
+},
+"0123.HK": {
+"name": "YUEXIU PROPERTY",
+"sector": "Real Estate"
+},
+"0069.HK": {
+"name": "SHANGRI-LA ASIA",
+"sector": "Consumer Cyclical"
+},
+"0639.HK": {
+"name": "SHOUGANG RES",
+"sector": "Basic Materials"
+},
+"2356.HK": {
+"name": "DAHSING BANKING",
+"sector": "Financial Services"
+},
+"0038.HK": {
+"name": "FIRST TRACTOR",
+"sector": "Industrials"
+},
+"2038.HK": {
+"name": "FIH",
+"sector": "Technology"
+},
+"1440.HK": {
+"name": "STAR SHINE HLDG",
+"sector": "Consumer Cyclical"
+},
+"2580.HK": {
+"name": "AUX ELECTRIC",
+"sector": "Industrials"
+},
+"2314.HK": {
+"name": "LEE & MAN PAPER",
+"sector": "Basic Materials"
+},
+"9688.HK": {
+"name": "ZAI LAB",
+"sector": "Healthcare"
+},
+"2858.HK": {
+"name": "YIXIN",
+"sector": "Financial Services"
+},
+"1030.HK": {
+"name": "SEAZEN",
+"sector": "Real Estate"
+},
+"3983.HK": {
+"name": "CHINA BLUECHEM",
+"sector": "Basic Materials"
+},
+"2498.HK": {
+"name": "ROBOSENSE",
+"sector": "Technology"
+},
+"2432.HK": {
+"name": "DOBOT",
+"sector": "Industrials"
+},
+"0363.HK": {
+"name": "SHANGHAI IND H",
+"sector": "Industrials"
+},
+"1672.HK": {
+"name": "ASCLETIS-B",
+"sector": "Healthcare"
+},
+"2691.HK": {
+"name": "NANHUA FUTURES",
+"sector": "Financial Services"
+},
+"1428.HK": {
+"name": "BRIGHT SMART",
+"sector": "Financial Services"
+},
+"1053.HK": {
+"name": "CHONGQING IRON",
+"sector": "Basic Materials"
+},
+"1384.HK": {
+"name": "DEEPEXI TECH",
+"sector": "Technology"
+},
+"0590.HK": {
+"name": "LUK FOOK HOLD",
+"sector": "Consumer Cyclical"
+},
+"0880.HK": {
+"name": "SJM HOLDINGS",
+"sector": "Consumer Cyclical"
+},
+"6993.HK": {
+"name": "BLUE MOON GROUP",
+"sector": "Consumer Defensive"
+},
+"0303.HK": {
+"name": "VTECH HOLDINGS",
+"sector": "Technology"
+},
+"2162.HK": {
+"name": "KEYMED BIO-B",
+"sector": "Healthcare"
+},
+"9668.HK": {
+"name": "CBHB",
+"sector": "Financial Services"
+},
+"1316.HK": {
+"name": "NEXTEER",
+"sector": "Consumer Cyclical"
+},
+"1907.HK": {
+"name": "CHINA RISUN GP",
+"sector": "Basic Materials"
+},
+"2343.HK": {
+"name": "PACIFIC BASIN",
+"sector": "Industrials"
+},
+"6808.HK": {
+"name": "SUNART RETAIL",
+"sector": "Consumer Cyclical"
+},
+"6199.HK": {
+"name": "BANK OF GUIZHOU",
+"sector": "Financial Services"
+},
+"6623.HK": {
+"name": "LUFAX",
+"sector": "Financial Services"
+},
+"9677.HK": {
+"name": "WEIHAI BANK",
+"sector": "Financial Services"
+},
+"0325.HK": {
+"name": "BLOKS",
+"sector": "Consumer Cyclical"
+},
+"9636.HK": {
+"name": "JF SMARTINVEST",
+"sector": "Consumer Defensive"
+},
+"0697.HK": {
+"name": "SHOUCHENG",
+"sector": "Industrials"
+}
+}
