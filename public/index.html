@@ -315,7 +315,7 @@
     const CONFIG = {
       us: { title: 'US Equity Screener', currency: '$', mcap: 'MCap > $3B', price: 'Price > $10', value: 'AvgValue > $50M' },
       hk: { title: 'HK Equity Screener', currency: 'HK$', mcap: 'MCap > HK$10B', price: 'Price > HK$10', value: 'AvgValue > HK$50M' },
-      jp: { title: 'JP Equity Screener', currency: '¥', mcap: 'MCap > ¥100B', price: 'Price > ¥100', value: 'AvgValue > ¥1B', universe: 'TSE Prime' },
+      jp: { title: 'JP Equity Screener', currency: '¥', mcap: 'MCap > ¥100B', price: 'Price > ¥100', value: 'AvgValue > ¥1B', vol: '100K', universe: 'TSE Prime' },
     };
 
     // ─── Data Loading ──────────────────────────────────
@@ -651,8 +651,8 @@
             </div>` : `<div class="badges">
               <span class="badge">${c.mcap}</span>
               <span class="badge">${c.price}</span>
-              <span class="badge">Vol &gt; 500K</span>
-              <span class="badge">AvgVol 10/60/90d &gt; 500K</span>
+              <span class="badge">Vol &gt; ${c.vol || '500K'}</span>
+              <span class="badge">AvgVol 10/60/90d &gt; ${c.vol || '500K'}</span>
               <span class="badge">${c.value}</span>
               <span class="sma-toggle" id="strict-toggle" title="Require SMA50 &gt; SMA100 in the trend alignment">
                 <span class="sma-label">${icons.trend} SMA 10&gt;20&gt;50${requireSma50gt100 ? '&gt;100&gt;200' : ' &middot; 100&gt;200'} &nbsp;·&nbsp; 50&gt;100</span>
