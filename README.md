@@ -8,13 +8,13 @@ A free, open-source stock screener for **US and Hong Kong** equities. Automatica
 
 ## Features
 
-- **US & HK Markets** — Toggle between US and Hong Kong stock screens
+- **US, HK & JP Markets** — Toggle between US, Hong Kong and Japan (TSE Prime) stock screens
 - **SMA Trend Alignment** — SMA 10 > 20 > 50 > 100 > 200, Price > SMA 30
-- **Volume & Liquidity Filters** — Avg Volume (10/60/90d) > 500K, Avg Trading Value > $50M (US) / HK$50M (HK)
-- **Market Cap Filter** — US: > $3B, HK: > HK$1B
+- **Volume & Liquidity Filters** — Avg Volume (10/60/90d) > 500K (US/HK) / 100K (JP), Avg Trading Value > $50M (US) / HK$50M (HK) / ¥1B (JP)
+- **Market Cap Filter** — US: > $3B, HK: > HK$1B, JP: > ¥100B
 - **Daily/5D Change Filters** — Dropdown filters for price change ranges
 - **Sector Data** — Sector column for each stock
-- **Copy Tickers** — One-click copy all tickers (HK tickers in TradingView format: `HKEX:700`)
+- **Copy Tickers** — One-click copy all tickers in TradingView format (`HKEX:700`, `TSE:7203`)
 - **Dark Mode** — Auto-detects system preference, with manual toggle
 - **Auto-refresh** — GitHub Actions runs scanner 4x daily on weekdays
 - **Zero cost** — Uses yfinance (free) + GitHub Pages (free) + GitHub Actions (free for public repos)
