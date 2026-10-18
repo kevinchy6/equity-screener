@@ -42,6 +42,24 @@ def compute_extras(closes):
     }
 
 
+def percentile_ranks(values):
+    """Map values to the shared 1-99 RS scale (None stays None).
+
+    This is the single definition of the rank formula. Both the Trend tab's RS
+    (`add_rs_ranks`) and the Momentum tab's RS Rating (`momentum.rank_rs`) go
+    through it: they used to carry their own copy of the same expression, with
+    nothing keeping the two in sync.
+    """
+    idx = [(i, v) for i, v in enumerate(values) if v is not None]
+    out = [None] * len(values)
+    n = len(idx)
+    if n < 2:
+        return out
+    for rank, (i, _) in enumerate(sorted(idx, key=lambda x: x[1])):
+        out[i] = max(1, min(99, round(rank / (n - 1) * 98 + 1)))
+    return out
+
+
 def add_rs_ranks(passing, field="rs", ret_field="ret63"):
     """RS 1-99: percentile rank of `ret_field` (default 3-month return) among
     the given stocks.
@@ -49,18 +67,9 @@ def add_rs_ranks(passing, field="rs", ret_field="ret63"):
     Stocks not in `passing` are untouched; callers that rank a subset should
     pre-set the field to None on the excluded stocks.
     """
-    vals = [(i, s.get(ret_field)) for i, s in enumerate(passing)
-            if s.get(ret_field) is not None]
-    n = len(vals)
-    if n < 2:
-        for s in passing:
-            s[field] = None
-        return
-    order = sorted(vals, key=lambda x: x[1])
-    for rank, (i, _) in enumerate(order):
-        passing[i][field] = max(1, min(99, round(rank / (n - 1) * 98 + 1)))
-    for s in passing:
-        s.setdefault(field, None)
+    ranks = percentile_ranks([s.get(ret_field) for s in passing])
+    for s, rank in zip(passing, ranks):
+        s[field] = rank
 
 
 def add_composite_rs(passing, field="rsComp", a="rs", b="rs1m"):

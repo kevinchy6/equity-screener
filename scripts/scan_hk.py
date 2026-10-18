@@ -29,7 +29,9 @@ except ImportError:
     subprocess.run([sys.executable, "-m", "pip", "install", "pandas", "-q"])
     import pandas as pd
 
-from enrich import compute_extras, finalize_lists, utc_now_iso, patch_last_bar
+from enrich import finalize_lists, utc_now_iso
+from scan_common import (calc_sma, is_partial_bar, analyze_from_batch,
+                         fetch_metadata, download_chunk_with_retry)
 from momentum import (rs_returns, rs_ratings, analyze_momentum, select_momentum,
                       finalize_momentum)
 
@@ -44,130 +46,14 @@ os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
 # Market cap threshold: HK$1 billion
 MCAP_THRESHOLD = 1_000_000_000
-
-
-def calc_sma(prices, period):
-    if len(prices) < period:
-        return None
-    return sum(prices[-period:]) / period
+PRICE_THRESHOLD = 10.0             # HK$
+MIN_VOLUME = 500_000               # shares/day
+MIN_TRADING_VALUE = 50_000_000     # HK$ average daily value (20d)
 
 
 _print_lock = threading.Lock()
 _pass_count = [0]
 _fail_count = [0]
-
-
-def is_partial_bar(last_index, tz="Asia/Hong_Kong", close_hm=(16, 15)):
-    """True if the last daily bar is today's session and HKEX has not closed
-    yet (intraday scan), i.e. its volume is incomplete."""
-    try:
-        from zoneinfo import ZoneInfo
-        from datetime import datetime
-        now = datetime.now(ZoneInfo(tz))
-        bar_date = last_index.date() if hasattr(last_index, "date") else last_index
-        return bar_date == now.date() and (now.hour, now.minute) < close_hm
-    except Exception:
-        return False
-
-
-def analyze_from_batch(ticker, closes, volumes, partial_last_bar=False):
-    """
-    Phase 1: Analyze a ticker using pre-downloaded close/volume arrays.
-    Returns dict with technical data if all SMA/volume filters pass, else None.
-    `partial_last_bar=True`: the last bar is today's open session -- price/SMA
-    use it, but all volume tests use completed sessions only.
-    """
-    if len(closes) < 200:
-        return None
-
-    last_price = closes[-1]
-    prev_close = closes[-2] if len(closes) >= 2 else last_price
-
-    if last_price < 10:
-        return None
-
-    sma10 = calc_sma(closes, 10)
-    sma20 = calc_sma(closes, 20)
-    sma30 = calc_sma(closes, 30)
-    sma50 = calc_sma(closes, 50)
-    sma100 = calc_sma(closes, 100)
-    sma200 = calc_sma(closes, 200)
-
-    if not all([sma10, sma20, sma30, sma50, sma100, sma200]):
-        return None
-
-    # Relaxed alignment: 10 > 20 > 50, 100 > 200, 50 > 200.
-    # The 50 > 100 leg is recorded as `strict` so the frontend can toggle it.
-    if sma10 <= sma20 or sma20 <= sma50 or sma100 <= sma200 or sma50 <= sma200:
-        return None
-    strict = sma50 > sma100
-    if last_price <= sma30:
-        return None
-
-    # Volume
-    vol_c = volumes[:-1] if partial_last_bar else volumes
-    close_c = closes[:-1] if partial_last_bar else closes
-    if len(vol_c) < 90:
-        return None
-    avg_vol_10 = calc_sma(vol_c, 10)
-    avg_vol_60 = calc_sma(vol_c, 60)
-    avg_vol_90 = calc_sma(vol_c, 90)
-    daily_volume = vol_c[-1]
-
-    if not all([avg_vol_10, avg_vol_60, avg_vol_90]):
-        return None
-
-    if daily_volume < 500_000:
-        return None
-    if avg_vol_10 < 500_000:
-        return None
-    if avg_vol_60 < 500_000:
-        return None
-    if avg_vol_90 < 500_000:
-        return None
-
-    # Average trading value (last 20 days)
-    recent_closes = close_c[-20:]
-    recent_volumes = vol_c[-20:]
-    avg_trading_value = sum(c * v for c, v in zip(recent_closes, recent_volumes)) / len(recent_closes)
-
-    if avg_trading_value < 50_000_000:
-        return None
-
-    change = last_price - prev_close
-    change_pct = (change / prev_close * 100) if prev_close != 0 else 0
-
-    if len(closes) >= 6:
-        price_5d_ago = closes[-6]
-        change_5d_pct = ((last_price - price_5d_ago) / price_5d_ago * 100) if price_5d_ago != 0 else 0
-    else:
-        change_5d_pct = 0
-
-    out = {
-        "ticker": ticker,
-        "name": ticker,  # filled in Phase 2
-        "price": round(last_price, 2),
-        "change": round(change, 2),
-        "changePercent": round(change_pct, 2),
-        "change5dPercent": round(change_5d_pct, 2),
-        "marketCap": 0,  # filled in Phase 2
-        "volume": int(daily_volume),
-        "avgVolume10d": int(avg_vol_10),
-        "avgVolume60d": int(avg_vol_60),
-        "avgVolume90d": int(avg_vol_90),
-        "avgTradingValue": int(avg_trading_value),
-        "sma10": round(sma10, 2),
-        "sma20": round(sma20, 2),
-        "sma30": round(sma30, 2),
-        "sma50": round(sma50, 2),
-        "sma100": round(sma100, 2),
-        "sma200": round(sma200, 2),
-        "sector": "",
-        "indices": [],
-        "strict": strict,
-    }
-    out.update(compute_extras(closes))
-    return out
 
 
 META_CACHE_FILE = os.path.join(SCRIPT_DIR, "hk_meta.json")
@@ -176,58 +62,6 @@ try:
         META_CACHE = json.load(_f)   # ticker -> {"name", "sector"} (built offline; Yahoo's
 except Exception:                     # quoteSummary/.info is blocked from GitHub runners)
     META_CACHE = {}
-
-
-def fetch_metadata(ticker_code, retries=3):
-    """Phase 2: market cap (Yahoo fast_info) + name/sector (Yahoo .info, falling
-    back to the offline META_CACHE when .info is unavailable)."""
-    out = _fetch_metadata_live(ticker_code, retries)
-    c = META_CACHE.get(ticker_code) or {}
-    if (not out["name"] or out["name"] == ticker_code) and c.get("name"):
-        out["name"] = c["name"]
-    if not out["sector"] and c.get("sector"):
-        out["sector"] = c["sector"]
-    return out
-
-
-def _fetch_metadata_live(ticker_code, retries=3):
-    for attempt in range(retries):
-        try:
-            tk = yf.Ticker(ticker_code)
-            market_cap = 0
-            name = ticker_code
-            sector = ''
-
-            try:
-                fi = tk.fast_info
-                market_cap = getattr(fi, 'market_cap', 0) or 0
-            except Exception:
-                pass
-
-            try:
-                info = tk.info
-                name = info.get('shortName', '') or info.get('longName', ticker_code)
-                sector = info.get('sector', '') or ''
-            except Exception:
-                pass
-
-            # If we got at least market_cap or name, return
-            if market_cap > 0 or name != ticker_code:
-                return {"market_cap": market_cap, "name": name, "sector": sector}
-
-            # If first attempt got nothing, retry
-            if attempt < retries - 1:
-                time.sleep(2)
-                continue
-
-            return {"market_cap": market_cap, "name": name, "sector": sector}
-        except Exception:
-            if attempt < retries - 1:
-                time.sleep(2)
-            else:
-                return {"market_cap": 0, "name": ticker_code, "sector": ""}
-
-    return {"market_cap": 0, "name": ticker_code, "sector": ""}
 
 
 def main():
@@ -255,33 +89,11 @@ def main():
     ticker_errors = 0        # per-ticker analysis failures (was silently swallowed)
     total_chunks = (len(tickers) + chunk_size - 1) // chunk_size
 
-    def download_chunk_with_retry(chunk, max_retries=4):
-        delay = 30
-        for attempt in range(max_retries):
-            try:
-                d = yf.download(chunk, period="1y", group_by="ticker", progress=False, threads=False)
-                if d is not None and not d.empty:
-                    return d
-                raise RuntimeError("empty dataframe")
-            except Exception as e:
-                msg = str(e)
-                is_rate = "Rate" in msg or "429" in msg or "Too Many" in msg or "empty" in msg
-                if attempt < max_retries - 1:
-                    wait = delay * (2 ** attempt) if is_rate else 10
-                    print(f"    retry {attempt+1} in {wait}s ({msg[:80]})", file=sys.stderr)
-                    time.sleep(wait)
-                else:
-                    print(f"    chunk failed permanently: {msg[:120]}", file=sys.stderr)
-        return None
-
     for i in range(0, len(tickers), chunk_size):
         chunk = tickers[i:i + chunk_size]
         chunk_num = i // chunk_size + 1
 
-        data = download_chunk_with_retry(chunk)
-        if data is not None:
-            data = patch_last_bar(data, chunk, "Asia/Hong_Kong",
-                                  log=lambda m: print(m, file=sys.stderr))
+        data = download_chunk_with_retry(chunk, "Asia/Hong_Kong")
         if data is None:
             failed_chunks += 1
             continue
@@ -302,7 +114,7 @@ def main():
 
                     closes = ticker_data["Close"].tolist()
                     volumes = ticker_data["Volume"].tolist()
-                    partial = is_partial_bar(ticker_data.index[-1])
+                    partial = is_partial_bar(ticker_data.index[-1], "Asia/Hong_Kong", (16, 15))
                     last_dates[ticker_data.index[-1].date()] += 1
 
                     # Momentum tab: universe-wide RS score + non-RS criteria.
@@ -319,7 +131,8 @@ def main():
                     except Exception:
                         pass
 
-                    result = analyze_from_batch(t, closes, volumes, partial_last_bar=partial)
+                    result = analyze_from_batch(t, closes, volumes, PRICE_THRESHOLD, MIN_VOLUME,
+                                               MIN_TRADING_VALUE, partial_last_bar=partial)
                     if result:
                         technical_passers.append(result)
                 except Exception as e:
@@ -346,7 +159,7 @@ def main():
     # Use sequential with delays to avoid rate limiting (only ~30-50 tickers)
     for idx, item in enumerate(technical_passers):
         try:
-            meta = fetch_metadata(item["ticker"])
+            meta = fetch_metadata(item["ticker"], META_CACHE)
             meta_cache[item["ticker"]] = meta
             market_cap = meta["market_cap"]
 
@@ -426,7 +239,7 @@ def main():
         try:
             meta = meta_cache.get(item["ticker"])
             if meta is None:
-                meta = fetch_metadata(item["ticker"])
+                meta = fetch_metadata(item["ticker"], META_CACHE)
                 meta_cache[item["ticker"]] = meta
                 time.sleep(1.5 if (idx + 1) % 5 == 0 else 0.3)
             market_cap = meta["market_cap"]

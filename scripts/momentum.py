@@ -17,7 +17,7 @@ downloaded into `rs_returns()` (so the RS percentile is universe-wide), and runs
 `analyze_momentum()` to test the non-RS criteria. `rs_ratings()` then turns the
 returns into 1-99 ranks and `select_momentum()` keeps stocks > 90 on any mode.
 """
-from enrich import compute_extras, apply_history
+from enrich import compute_extras, apply_history, percentile_ranks
 
 ADR_MIN_PCT = 4.0
 ADR_PERIOD = 20
@@ -53,16 +53,12 @@ def rs_returns(closes):
 
 
 def rank_rs(scores):
-    """{ticker: score} -> {ticker: 1..99 percentile rating}."""
-    items = [(t, s) for t, s in scores.items() if s is not None]
-    n = len(items)
-    if n < 2:
-        return {t: None for t, _ in items}
-    items.sort(key=lambda x: x[1])
-    out = {}
-    for rank, (t, _) in enumerate(items):
-        out[t] = max(1, min(99, round(rank / (n - 1) * 98 + 1)))
-    return out
+    """{ticker: score} -> {ticker: 1..99 percentile rating}.
+    Delegates to enrich.percentile_ranks so the Momentum tab and the Trend tab
+    cannot drift onto two different rank formulas."""
+    tickers = list(scores)
+    ranks = percentile_ranks([scores[t] for t in tickers])
+    return {t: r for t, r in zip(tickers, ranks) if scores[t] is not None}
 
 
 def rs_ratings(returns):
