@@ -64,28 +64,14 @@ jobs:
 
       - name: Determine which markets to scan
         id: markets
+        env:
+          # The cron that actually fired. Authoritative for scheduled runs: the
+          # clock at start time is not, because GitHub starts these 2-4h late.
+          SCHEDULE_CRON: ${{ github.event.schedule }}
+          REQUESTED_MARKET: ${{ github.event.inputs.market }}
         run: |
-          MARKET="${{ github.event.inputs.market || 'both' }}"
-          HOUR=$(date -u +%H)
-          MINUTE=$(date -u +%M)
-
-          # Auto-detect based on schedule time (UTC):
-          #   00:00 (JST 09:00 TSE open / HKT 08:00)  → US + HK + JP
-          #   06:45 (JST 15:45 TSE just closed)        → JP
-          #   08:30 (HKT 16:30 HK just closed)         → HK + JP
-          #   13:30 / 14:xx (US open)                  → US + HK
-          #   15:00-21:59 (US session / after close)   → US
-          if [ "$MARKET" = "both" ]; then
-            case "$HOUR" in
-              15|16|17|18|19|20|21) MARKET="us" ;;
-              06|07) MARKET="jp" ;;
-              08) MARKET="hk jp" ;;
-              00) MARKET="us hk jp" ;;
-              *) MARKET="us hk" ;;
-            esac
-          elif [ "$MARKET" = "all" ]; then
-            MARKET="us hk jp"
-          fi
+          MARKET=$(bash scripts/select_markets.sh "$SCHEDULE_CRON" "$REQUESTED_MARKET")
+          echo "cron='${SCHEDULE_CRON}' requested='${REQUESTED_MARKET}' -> ${MARKET}"
           for m in us hk jp; do
             case " $MARKET " in *" $m "*) echo "$m=true" >> $GITHUB_OUTPUT ;; *) echo "$m=false" >> $GITHUB_OUTPUT ;; esac
           done

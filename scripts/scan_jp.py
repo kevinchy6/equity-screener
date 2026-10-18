@@ -212,14 +212,14 @@ def _fetch_metadata_live(ticker_code, retries=3):
             try:
                 fi = tk.fast_info
                 market_cap = getattr(fi, 'market_cap', 0) or 0
-            except:
+            except Exception:
                 pass
 
             try:
                 info = tk.info
                 name = info.get('shortName', '') or info.get('longName', ticker_code)
                 sector = info.get('sector', '') or ''
-            except:
+            except Exception:
                 pass
 
             # If we got at least market_cap or name, return
@@ -232,7 +232,7 @@ def _fetch_metadata_live(ticker_code, retries=3):
                 continue
 
             return {"market_cap": market_cap, "name": name, "sector": sector}
-        except:
+        except Exception:
             if attempt < retries - 1:
                 time.sleep(2)
             else:
@@ -298,6 +298,7 @@ def main():
     mom_candidates = []   # momentum tab passers (before the RS Rating test)
     failed_chunks = 0
     last_dates = Counter()  # last completed bar date per ticker -> trading session
+    ticker_errors = 0        # per-ticker analysis failures (was silently swallowed)
     total_chunks = (len(tickers) + chunk_size - 1) // chunk_size
 
     def download_chunk_with_retry(chunk, max_retries=4):
@@ -367,8 +368,11 @@ def main():
                     result = analyze_from_batch(t, closes, volumes, partial_last_bar=partial)
                     if result:
                         technical_passers.append(result)
-                except:
-                    pass
+                except Exception as e:
+                    ticker_errors += 1
+                    if ticker_errors <= 5:
+                        print(f"    [ticker] {t}: {type(e).__name__}: {str(e)[:120]}",
+                              file=sys.stderr)
         except Exception as e:
             print(f"  [Batch Error] chunk {chunk_num}: {e}", file=sys.stderr)
 
@@ -377,7 +381,7 @@ def main():
         time.sleep(2.0)
 
     elapsed = time.time() - start_time
-    print(f"[JP Screener] Phase 1 complete: {len(technical_passers)} pass all technical filters ({elapsed:.0f}s)", file=sys.stderr)
+    print(f"[JP Screener] Phase 1 complete: {len(technical_passers)} pass all technical filters ({elapsed:.0f}s, {ticker_errors} ticker errors)", file=sys.stderr)
 
     # ─── Phase 2: Fetch metadata only for survivors ──────────────
     print(f"[JP Screener] Phase 2: Fetching metadata for {len(technical_passers)} stocks...", file=sys.stderr)
@@ -416,7 +420,7 @@ def main():
             with _print_lock:
                 _pass_count[0] += 1
                 print(f"[Pass] {item['ticker']} ({meta['name']}) ¥{item['price']:.0f} MCap=¥{market_cap/1e9:.0f}B Sector={item['sector']}", file=sys.stderr)
-        except:
+        except Exception:
             _fail_count[0] += 1
 
         # Small delay between metadata calls to avoid rate limits
@@ -440,7 +444,7 @@ def main():
                 stock["sector"] = info.get("sector", "") or (META_CACHE.get(stock["ticker"]) or {}).get("sector", "") or JPX_SECTOR.get(stock["ticker"], "")
                 if not stock["name"] or stock["name"] == stock["ticker"]:
                     stock["name"] = info.get("shortName", "") or info.get("longName", stock["ticker"])
-            except:
+            except Exception:
                 pass
             if (idx + 1) % 5 == 0:
                 print(f"  [Phase 3] {idx+1}/{len(no_sector)} sectors retried", file=sys.stderr)

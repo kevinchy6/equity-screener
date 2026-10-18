@@ -266,6 +266,7 @@ def main():
     mom_candidates = []   # momentum screen passers (before the RS Rating test)
     failed_chunks = 0
     last_dates = Counter()  # last completed bar date per ticker -> trading session
+    ticker_errors = 0        # per-ticker analysis failures (was silently swallowed)
     total_chunks = (len(tickers) + CHUNK_SIZE - 1) // CHUNK_SIZE
 
     for i in range(0, len(tickers), CHUNK_SIZE):
@@ -313,8 +314,10 @@ def main():
                             m["sector"] = meta["sector"]
                             m["marketCap"] = meta["marketCap"]
                         mom_candidates.append(m)
-                except Exception:
-                    pass
+                except Exception as e:
+                    ticker_errors += 1
+                    if ticker_errors <= 5:
+                        log(f"    [momentum] {t}: {type(e).__name__}: {str(e)[:120]}")
 
                 result = analyze(t, closes_l, volumes_l, partial_last_bar=partial)
                 if result:
@@ -324,12 +327,14 @@ def main():
                         result["sector"] = meta["sector"]
                         result["marketCap"] = meta["marketCap"]
                     passing.append(result)
-            except Exception:
-                pass
+            except Exception as e:
+                ticker_errors += 1
+                if ticker_errors <= 5:
+                    log(f"    [ticker] {t}: {type(e).__name__}: {str(e)[:120]}")
 
         if chunk_num % 3 == 0 or chunk_num == total_chunks:
             log(f"  [Phase 1] chunk {chunk_num}/{total_chunks}, "
-                f"{len(passing)} passing, {failed_chunks} failed chunks "
+                f"{len(passing)} passing, {failed_chunks} failed chunks, {ticker_errors} ticker errors "
                 f"({time.time()-start:.0f}s)")
         time.sleep(CHUNK_PAUSE)
 
