@@ -15,6 +15,7 @@ import json
 import sys
 import os
 import time
+from collections import Counter
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
@@ -296,6 +297,7 @@ def main():
     rs_rets = {}          # ticker -> {ret21, ret63}, for EVERY ticker with enough history
     mom_candidates = []   # momentum tab passers (before the RS Rating test)
     failed_chunks = 0
+    last_dates = Counter()  # last completed bar date per ticker -> trading session
     total_chunks = (len(tickers) + chunk_size - 1) // chunk_size
 
     def download_chunk_with_retry(chunk, max_retries=4):
@@ -346,6 +348,7 @@ def main():
                     closes = ticker_data["Close"].tolist()
                     volumes = ticker_data["Volume"].tolist()
                     partial = is_partial_bar(ticker_data.index[-1])
+                    last_dates[ticker_data.index[-1].date()] += 1
 
                     # Momentum tab: universe-wide RS score + non-RS criteria.
                     rr = rs_returns(closes)
@@ -447,8 +450,12 @@ def main():
 
     # Sort by market cap descending
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
+    # Session the data describes (most common last bar) — see scan_us.py.
+    session = last_dates.most_common(1)[0][0] if last_dates else None
+    if session:
+        print(f"[Session] as_of {session} ({len(last_dates)} distinct last-bar dates)", file=sys.stderr)
     history_file = os.path.join(ROOT_DIR, "public", "data", "jp_history.json")
-    n_strict = finalize_lists(passing, history_file, "Asia/Tokyo")
+    n_strict = finalize_lists(passing, history_file, "Asia/Tokyo", as_of=session)
     print(f"[Lists] strict (50>100 required): {n_strict}, relaxed total: {len(passing)}", file=sys.stderr)
 
     # ── Momentum tab: RS Rating percentile across the whole universe ──
@@ -476,7 +483,7 @@ def main():
         except Exception:
             pass
     momentum = kept
-    finalize_momentum(momentum, history_file, "Asia/Tokyo")
+    finalize_momentum(momentum, history_file, "Asia/Tokyo", as_of=session)
     print(f"[Momentum] final list: {len(momentum)}", file=sys.stderr)
 
     elapsed = time.time() - start_time

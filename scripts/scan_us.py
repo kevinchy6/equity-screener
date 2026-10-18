@@ -23,6 +23,7 @@ import os
 import sys
 import time
 import urllib.request
+from collections import Counter
 from datetime import datetime
 
 try:
@@ -264,6 +265,7 @@ def main():
     rs_rets = {}          # ticker -> {ret21, ret63}, for EVERY ticker with enough history
     mom_candidates = []   # momentum screen passers (before the RS Rating test)
     failed_chunks = 0
+    last_dates = Counter()  # last completed bar date per ticker -> trading session
     total_chunks = (len(tickers) + CHUNK_SIZE - 1) // CHUNK_SIZE
 
     for i in range(0, len(tickers), CHUNK_SIZE):
@@ -293,6 +295,7 @@ def main():
                 closes_l = tdf["Close"].tolist()
                 volumes_l = tdf["Volume"].tolist()
                 partial = is_partial_bar(tdf.index[-1])
+                last_dates[tdf.index[-1].date()] += 1
 
                 # Momentum tab: universe-wide RS score + non-RS criteria.
                 rr = rs_returns(closes_l)
@@ -358,14 +361,20 @@ def main():
         passing = kept
 
     passing.sort(key=lambda x: x["marketCap"], reverse=True)
+    # The session the data actually describes (most common last bar), NOT the
+    # wall-clock date: 00:00 UTC runs land on 20:00 ET of the previous day and
+    # would otherwise record a phantom Sunday/holiday entry in the history.
+    session = last_dates.most_common(1)[0][0] if last_dates else None
+    if session:
+        log(f"[Session] as_of {session} ({len(last_dates)} distinct last-bar dates)")
     history_file = os.path.join(ROOT_DIR, "public", "data", "us_history.json")
-    n_strict = finalize_lists(passing, history_file, "America/New_York")
+    n_strict = finalize_lists(passing, history_file, "America/New_York", as_of=session)
     log(f"[Lists] strict (50>100 required): {n_strict}, relaxed total: {len(passing)}")
 
     # ── Momentum tab: RS Rating percentile across the whole scanned universe ──
     ratings = rs_ratings(rs_rets)
     momentum = select_momentum(mom_candidates, ratings)
-    finalize_momentum(momentum, history_file, "America/New_York")
+    finalize_momentum(momentum, history_file, "America/New_York", as_of=session)
     log(f"[Momentum] {len(mom_candidates)} pass ADR/EMA, {len(momentum)} with RS > 90 on 1M/3M/1M+3M "
         f"(universe ranked: {len(rs_rets)})")
     elapsed = time.time() - start

@@ -77,17 +77,31 @@ def add_composite_rs(passing, field="rsComp", a="rs", b="rs1m"):
 
 
 def apply_history(passing, history_file, tz_name, keep=40,
-                  key="dates", streak_field="streak", new_field="isNew"):
+                  key="dates", streak_field="streak", new_field="isNew",
+                  as_of=None):
     """Track daily lists; annotate each stock with streak / isNew.
 
     history JSON: {"dates": {"YYYY-MM-DD": ["TICK", ...], ...}, "datesAll": {...}}
     `key` selects which list is tracked (strict vs relaxed). Other keys in
     the file are preserved. Re-runs on the same date overwrite that date.
+
+    `as_of` is the actual trading session the scan describes (a date). Pass it
+    from the scanner whenever the last bar is known: using the wall-clock date
+    in `tz_name` instead makes non-trading runs (weekends, holidays, scans that
+    fire before the open) record phantom dates, which inflates every streak.
+    Falls back to the wall-clock date only when no session date is available.
     """
-    if ZoneInfo is not None:
+    if as_of is not None:
+        today = as_of.isoformat() if hasattr(as_of, "isoformat") else str(as_of)
+    elif ZoneInfo is not None:
         today = datetime.now(ZoneInfo(tz_name)).strftime("%Y-%m-%d")
     else:
         today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    if not passing:
+        # A rate-limited / failed scan produced nothing. Recording an empty
+        # list here would reset every streak and poison the history, so skip.
+        return today
 
     doc = {}
     if os.path.exists(history_file):
@@ -122,12 +136,13 @@ def apply_history(passing, history_file, tz_name, keep=40,
     return today
 
 
-def finalize_lists(passing, history_file, tz_name):
+def finalize_lists(passing, history_file, tz_name, as_of=None):
     """Rank + track both the strict list (SMA50 > SMA100 required) and the
     relaxed list (all stocks, incl. those where only SMA50 <= SMA100).
 
     Strict fields: rs (3M) / rs1m (1M) / streak / isNew (None for relaxed-only).
     Relaxed fields: rsAll / rs1mAll / streakAll / isNewAll (set for every stock).
+    `as_of` is the trading session the scan describes; see apply_history.
     """
     strict = [s for s in passing if s.get("strict", True)]
     for s in passing:
@@ -144,9 +159,9 @@ def finalize_lists(passing, history_file, tz_name):
     add_rs_ranks(passing, field="rs1mAll", ret_field="ret21")
     add_composite_rs(passing, field="rsCompAll", a="rsAll", b="rs1mAll")
     apply_history(strict, history_file, tz_name, key="dates",
-                  streak_field="streak", new_field="isNew")
+                  streak_field="streak", new_field="isNew", as_of=as_of)
     apply_history(passing, history_file, tz_name, key="datesAll",
-                  streak_field="streakAll", new_field="isNewAll")
+                  streak_field="streakAll", new_field="isNewAll", as_of=as_of)
     return len(strict)
 
 

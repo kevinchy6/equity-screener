@@ -167,14 +167,16 @@ def select_momentum(candidates, ratings, min_rs=RS_MIN):
     return out
 
 
-def finalize_momentum(mom, history_file, tz_name, min_rs=RS_MIN):
+def finalize_momentum(mom, history_file, tz_name, min_rs=RS_MIN, as_of=None):
     """Track each RS-mode list day over day (NEW badge / streak days).
-    A stock not in a given mode's list gets None / False for that mode."""
+    A stock not in a given mode's list gets None / False for that mode.
+    `as_of` is the trading session the scan describes; see apply_history."""
     for rs_field, key, streak_field, new_field in RS_MODES:
         subset = [s for s in mom if (s.get(rs_field) or 0) > min_rs]
         for s in mom:
             s[streak_field] = None
             s[new_field] = False
         apply_history(subset, history_file, tz_name, key=key,
-                      streak_field=streak_field, new_field=new_field)
+                      streak_field=streak_field, new_field=new_field,
+                      as_of=as_of)
     return len(mom)
