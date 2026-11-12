@@ -1,0 +1,1722 @@
+{
+"A": {
+"name": "Agilent Technologies, Inc.",
+"sector": "Healthcare",
+"marketCap": 50335575700
+},
+"AAPL": {
+"name": "Apple Inc.",
+"sector": "Technology",
+"marketCap": 5154129185074
+},
+"ABBV": {
+"name": "AbbVie Inc.",
+"sector": "Healthcare",
+"marketCap": 516055602114
+},
+"ABNB": {
+"name": "Airbnb, Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 107361583147
+},
+"ABT": {
+"name": "Abbott Laboratories",
+"sector": "Healthcare",
+"marketCap": 190608833426
+},
+"ACGL": {
+"name": "Arch Capital Group Ltd.",
+"sector": "Financial Services",
+"marketCap": 35176267013
+},
+"ACHC": {
+"name": "Acadia Healthcare Company, Inc.",
+"sector": "Healthcare",
+"marketCap": 3585725012
+},
+"ACIW": {
+"name": "ACI Worldwide, Inc.",
+"sector": "Technology",
+"marketCap": 6145431773
+},
+"ADP": {
+"name": "Automatic Data Processing, Inc.",
+"sector": "Technology",
+"marketCap": 120081872583
+},
+"AER": {
+"name": "AerCap Holdings N.V.",
+"sector": "Consumer Discretionary",
+"marketCap": 26199060527
+},
+"AES": {
+"name": "The AES Corporation",
+"sector": "Utilities",
+"marketCap": 10647097924
+},
+"AFL": {
+"name": "AFLAC Incorporated",
+"sector": "Financial Services",
+"marketCap": 62424356589
+},
+"AHR": {
+"name": "American Healthcare REIT Inc",
+"sector": "Real Estate",
+"marketCap": 13501423080
+},
+"AIG": {
+"name": "American International Group, I",
+"sector": "Financial Services",
+"marketCap": 42874893628
+},
+"AJG": {
+"name": "Arthur J. Gallagher & Co.",
+"sector": "Financial Services",
+"marketCap": 71397476553
+},
+"ALKS": {
+"name": "Alkermes plc",
+"sector": "Healthcare",
+"marketCap": 7890484728
+},
+"ALL": {
+"name": "Allstate Corporation (The)",
+"sector": "Financial Services",
+"marketCap": 64876307048
+},
+"ALLE": {
+"name": "Allegion plc",
+"sector": "Industrials",
+"marketCap": 16249679125
+},
+"ALV": {
+"name": "Autoliv Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 8893186866
+},
+"AMCR": {
+"name": "Amcor plc",
+"sector": "Consumer Cyclical",
+"marketCap": 20870806731
+},
+"AMGN": {
+"name": "Amgen Inc.",
+"sector": "Healthcare",
+"marketCap": 253206069660
+},
+"AMH": {
+"name": "American Homes 4 Rent Common Shares of Beneficial Interest",
+"sector": "Real Estate",
+"marketCap": 11734805642
+},
+"AMRX": {
+"name": "Amneal Pharmaceuticals, Inc.",
+"sector": "Healthcare",
+"marketCap": 7564039962
+},
+"AMZN": {
+"name": "Amazon.com, Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 2878133168103
+},
+"ANF": {
+"name": "Abercrombie & Fitch Company",
+"sector": "Consumer Discretionary",
+"marketCap": 6340120268
+},
+"APD": {
+"name": "Air Products and Chemicals, Inc",
+"sector": "Basic Materials",
+"marketCap": 70186023714
+},
+"APLE": {
+"name": "Apple Hospitality REIT Inc Common Shares",
+"sector": "Real Estate",
+"marketCap": 4457617466
+},
+"APPN": {
+"name": "Appian Corporation",
+"sector": "Technology",
+"marketCap": 3826149809
+},
+"ARES": {
+"name": "Ares Management Corporation",
+"sector": "Financial Services",
+"marketCap": 31387616645
+},
+"ASB": {
+"name": "Associated Banc-Corp",
+"sector": "Finance",
+"marketCap": 5637098436
+},
+"ASND": {
+"name": "Ascendis Pharma A/S",
+"sector": "Healthcare",
+"marketCap": 17061568217
+},
+"AUB": {
+"name": "Atlantic Union Bankshares Corporation",
+"sector": "Finance",
+"marketCap": 5504514041
+},
+"AVPT": {
+"name": "AvePoint, Inc.",
+"sector": "Technology",
+"marketCap": 3476769026
+},
+"AVY": {
+"name": "Avery Dennison Corporation",
+"sector": "Consumer Discretionary",
+"marketCap": 14101760860
+},
+"AWK": {
+"name": "American Water Works Company, I",
+"sector": "Utilities",
+"marketCap": 29798004294
+},
+"AXGN": {
+"name": "AxoGen, Inc.",
+"sector": "Healthcare",
+"marketCap": 3502011884
+},
+"AXTA": {
+"name": "Axalta Coating Systems Ltd. Common Shares",
+"sector": "Consumer Discretionary",
+"marketCap": 7801943786
+},
+"BALL": {
+"name": "Ball Corporation",
+"sector": "Consumer Cyclical",
+"marketCap": 17129785743
+},
+"BAX": {
+"name": "Baxter International Inc.",
+"sector": "Healthcare",
+"marketCap": 13626951350
+},
+"BBY": {
+"name": "Best Buy Co., Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 22054965489
+},
+"BDX": {
+"name": "Becton, Dickinson and Company",
+"sector": "Healthcare",
+"marketCap": 58432417499
+},
+"BEKE": {
+"name": "KE Holdings Inc American Depositary Shares (each representing three)",
+"sector": "Finance",
+"marketCap": 21269236381
+},
+"BF-B": {
+"name": "Brown Forman Inc",
+"sector": "Consumer Defensive",
+"marketCap": 13811814551
+},
+"BIIB": {
+"name": "Biogen Inc.",
+"sector": "Healthcare",
+"marketCap": 37457643605
+},
+"BILL": {
+"name": "BILL Holdings Inc",
+"sector": "Technology",
+"marketCap": 4500444761
+},
+"BJ": {
+"name": "BJ's Wholesale Club Holdings Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 13826406186
+},
+"BKH": {
+"name": "Black Hills Corporation",
+"sector": "Utilities",
+"marketCap": 6497721108
+},
+"BLK": {
+"name": "BlackRock, Inc.",
+"sector": "Financial Services",
+"marketCap": 189597992359
+},
+"BLLN": {
+"name": "BillionToOne, Inc.",
+"sector": "Healthcare",
+"marketCap": 5266221655
+},
+"BMO": {
+"name": "Bank Of Montreal",
+"sector": "Finance",
+"marketCap": 118923330828
+},
+"BNS": {
+"name": "Bank Nova Scotia Halifax Pfd 3",
+"sector": "Finance",
+"marketCap": 112496400912
+},
+"BOX": {
+"name": "Box Inc",
+"sector": "Technology",
+"marketCap": 5756944435
+},
+"BR": {
+"name": "Broadridge Financial Solutions,",
+"sector": "Technology",
+"marketCap": 21812538302
+},
+"BRK-B": {
+"name": "Berkshire Hathaway Inc. New",
+"sector": "Financial Services",
+"marketCap": 1249727172872
+},
+"BRO": {
+"name": "Brown & Brown, Inc.",
+"sector": "Financial Services",
+"marketCap": 23679479469
+},
+"BRZE": {
+"name": "Braze, Inc.",
+"sector": "Technology",
+"marketCap": 5279863151
+},
+"BSY": {
+"name": "Bentley Systems, Incorporated",
+"sector": "Technology",
+"marketCap": 13440354214
+},
+"BTSG": {
+"name": "BrightSpring Health Services, I",
+"sector": "Healthcare",
+"marketCap": 14450263069
+},
+"BUD": {
+"name": "Anheuser-Busch Inbev SA Sponsored ADR (Belgium)",
+"sector": "Consumer Staples",
+"marketCap": 165560569883
+},
+"BWIN": {
+"name": "The Baldwin Insurance Group Inc",
+"sector": "Finance",
+"marketCap": 4461156721
+},
+"BXP": {
+"name": "BXP, Inc.",
+"sector": "Real Estate",
+"marketCap": 10132209248
+},
+"BZ": {
+"name": "KANZHUN LIMITED - American Depo",
+"sector": "Communication Services",
+"marketCap": 7315095170
+},
+"CAH": {
+"name": "Cardinal Health, Inc.",
+"sector": "Healthcare",
+"marketCap": 64128867751
+},
+"CART": {
+"name": "Maplebear Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 13930413145
+},
+"CB": {
+"name": "Chubb Limited",
+"sector": "Financial Services",
+"marketCap": 141495393152
+},
+"CCEP": {
+"name": "Coca-Cola Europacific Partners ",
+"sector": "Consumer Defensive",
+"marketCap": 51705464085
+},
+"CCK": {
+"name": "Crown Holdings Inc",
+"sector": "Industrials",
+"marketCap": 13103402131
+},
+"CDNA": {
+"name": "CareDx, Inc.",
+"sector": "Healthcare",
+"marketCap": 4264897843
+},
+"CDW": {
+"name": "CDW Corporation",
+"sector": "Technology",
+"marketCap": 21601997853
+},
+"CHD": {
+"name": "Church & Dwight Company, Inc.",
+"sector": "Consumer Defensive",
+"marketCap": 26440309672
+},
+"CI": {
+"name": "The Cigna Group",
+"sector": "Health Care",
+"marketCap": 79819123606
+},
+"CINF": {
+"name": "Cincinnati Financial Corporatio",
+"sector": "Financial Services",
+"marketCap": 29133189101
+},
+"CL": {
+"name": "Colgate-Palmolive Company",
+"sector": "Consumer Defensive",
+"marketCap": 77902210274
+},
+"CM": {
+"name": "Canadian Imperial Bank of Commerce",
+"sector": "Finance",
+"marketCap": 104596547098
+},
+"CNC": {
+"name": "Centene Corporation",
+"sector": "Healthcare",
+"marketCap": 34892394301
+},
+"CNI": {
+"name": "Canadian National Railway Company",
+"sector": "Industrials",
+"marketCap": 74398782000
+},
+"CNK": {
+"name": "Cinemark Holdings Inc Cinemark Holdings Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 4515281401
+},
+"CNO": {
+"name": "CNO Financial Group Inc",
+"sector": "Finance",
+"marketCap": 5066235450
+},
+"COKE": {
+"name": "Coca-Cola Consolidated, Inc.",
+"sector": "Consumer Defensive",
+"marketCap": 14263396837
+},
+"COLB": {
+"name": "Columbia Banking System, Inc.",
+"sector": "Financial Services",
+"marketCap": 8687928391
+},
+"COLD": {
+"name": "Americold Realty Trust Inc",
+"sector": "Real Estate",
+"marketCap": 4572795733
+},
+"COLM": {
+"name": "Columbia Sportswear Company",
+"sector": "Consumer Cyclical",
+"marketCap": 3636100694
+},
+"CON": {
+"name": "Concentra Group Holdings Parent Inc",
+"sector": "Health Care",
+"marketCap": 5338415871
+},
+"COR": {
+"name": "Cencora, Inc.",
+"sector": "Healthcare",
+"marketCap": 66766609421
+},
+"CP": {
+"name": "Canadian Pacific Kansas City Limited Common Shares",
+"sector": "Industrials",
+"marketCap": 80129469291
+},
+"CRBG": {
+"name": "Corebridge Financial Inc",
+"sector": "Finance",
+"marketCap": 14943259047
+},
+"CRL": {
+"name": "Charles River Laboratories Inte",
+"sector": "Healthcare",
+"marketCap": 16420836883
+},
+"CROX": {
+"name": "Crocs, Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 7315091543
+},
+"CSX": {
+"name": "CSX Corporation",
+"sector": "Industrials",
+"marketCap": 95672369911
+},
+"CTAS": {
+"name": "Cintas Corporation",
+"sector": "Industrials",
+"marketCap": 90239283453
+},
+"CUBE": {
+"name": "CubeSmart Common Shares",
+"sector": "Real Estate",
+"marketCap": 10056471955
+},
+"CVLT": {
+"name": "Commvault Systems, Inc.",
+"sector": "Technology",
+"marketCap": 6956776698
+},
+"DAL": {
+"name": "Delta Air Lines, Inc.",
+"sector": "Industrials",
+"marketCap": 60080558340
+},
+"DBX": {
+"name": "Dropbox Inc",
+"sector": "Technology",
+"marketCap": 8077006764
+},
+"DEO": {
+"name": "Diageo plc",
+"sector": "Consumer Staples",
+"marketCap": 55520265614
+},
+"DG": {
+"name": "Dollar General Corporation",
+"sector": "Consumer Defensive",
+"marketCap": 30321572156
+},
+"DGX": {
+"name": "Quest Diagnostics Incorporated",
+"sector": "Healthcare",
+"marketCap": 28455900268
+},
+"DHR": {
+"name": "Danaher Corporation",
+"sector": "Healthcare",
+"marketCap": 165547834360
+},
+"DIS": {
+"name": "Walt Disney Company (The)",
+"sector": "Communication Services",
+"marketCap": 206598090459
+},
+"DLTR": {
+"name": "Dollar Tree, Inc.",
+"sector": "Consumer Defensive",
+"marketCap": 26812368581
+},
+"DOCS": {
+"name": "Doximity Inc",
+"sector": "Technology",
+"marketCap": 5799199302
+},
+"DOCU": {
+"name": "DocuSign, Inc.",
+"sector": "Technology",
+"marketCap": 14531665643
+},
+"DRH": {
+"name": "Diamondrock Hospitality Company",
+"sector": "Real Estate",
+"marketCap": 3008453274
+},
+"DRI": {
+"name": "Darden Restaurants, Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 25903009978
+},
+"DVA": {
+"name": "DaVita Inc.",
+"sector": "Healthcare",
+"marketCap": 11542150000
+},
+"EBAY": {
+"name": "eBay Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 53856520133
+},
+"EBC": {
+"name": "Eastern Bankshares, Inc.",
+"sector": "Financial Services",
+"marketCap": 5154663979
+},
+"ECL": {
+"name": "Ecolab Inc.",
+"sector": "Basic Materials",
+"marketCap": 86344808181
+},
+"ED": {
+"name": "Consolidated Edison, Inc.",
+"sector": "Utilities",
+"marketCap": 44235433760
+},
+"EHC": {
+"name": "Encompass Health Corporation",
+"sector": "Health Care",
+"marketCap": 13495921732
+},
+"EL": {
+"name": "Estee Lauder Companies, Inc. (T",
+"sector": "Consumer Defensive",
+"marketCap": 40700581235
+},
+"ELF": {
+"name": "e.l.f. Beauty Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 6869406561
+},
+"EMR": {
+"name": "Emerson Electric Company",
+"sector": "Industrials",
+"marketCap": 91649114660
+},
+"EQH": {
+"name": "Equitable Holdings Inc",
+"sector": "Finance",
+"marketCap": 14043227303
+},
+"ESNT": {
+"name": "Essent Group Ltd. Common Shares",
+"sector": "Finance",
+"marketCap": 5699068421
+},
+"ETSY": {
+"name": "Etsy Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 7749909151
+},
+"EVRG": {
+"name": "Evergy, Inc.",
+"sector": "Utilities",
+"marketCap": 20715433820
+},
+"EW": {
+"name": "Edwards Lifesciences Corporatio",
+"sector": "Healthcare",
+"marketCap": 60840748596
+},
+"EWBC": {
+"name": "East West Bancorp, Inc.",
+"sector": "Financial Services",
+"marketCap": 17871037533
+},
+"EXEL": {
+"name": "Exelixis, Inc.",
+"sector": "Healthcare",
+"marketCap": 17251569531
+},
+"EXLS": {
+"name": "ExlService Holdings, Inc.",
+"sector": "Technology",
+"marketCap": 6622640789
+},
+"EXR": {
+"name": "Extra Space Storage Inc",
+"sector": "Real Estate",
+"marketCap": 33230285694
+},
+"FAST": {
+"name": "Fastenal Company",
+"sector": "Industrials",
+"marketCap": 63663761494
+},
+"FDS": {
+"name": "FactSet Research Systems Inc.",
+"sector": "Financial Services",
+"marketCap": 11811174237
+},
+"FHI": {
+"name": "Federated Hermes Inc",
+"sector": "Finance",
+"marketCap": 4732302955
+},
+"FIGS": {
+"name": "FIGS Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 3284764650
+},
+"FITB": {
+"name": "Fifth Third Bancorp",
+"sector": "Financial Services",
+"marketCap": 49158330994
+},
+"FIVE": {
+"name": "Five Below, Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 13804249038
+},
+"FMX": {
+"name": "Fomento Economico Mexicano S.A.B. de C.V.",
+"sector": "Consumer Staples",
+"marketCap": 44227268176
+},
+"FNB": {
+"name": "F.N.B. Corporation",
+"sector": "Finance",
+"marketCap": 6281808839
+},
+"FOX": {
+"name": "Fox Corporation",
+"sector": "Communication Services",
+"marketCap": 25573820181
+},
+"FOXA": {
+"name": "Fox Corporation",
+"sector": "Communication Services",
+"marketCap": 38497172024
+},
+"FTDR": {
+"name": "frontdoor, inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 6614209574
+},
+"FWONK": {
+"name": "Liberty Media Corporation - Ser",
+"sector": "Communication Services",
+"marketCap": 28301868912
+},
+"GDDY": {
+"name": "GoDaddy Inc.",
+"sector": "Technology",
+"marketCap": 13769529662
+},
+"GEN": {
+"name": "Gen Digital Inc.",
+"sector": "Technology",
+"marketCap": 18177978729
+},
+"GFL": {
+"name": "GFL Environmental Inc Subordinate voting shares no par value",
+"sector": "Utilities",
+"marketCap": 20189750145
+},
+"GILD": {
+"name": "Gilead Sciences, Inc.",
+"sector": "Healthcare",
+"marketCap": 210522667654
+},
+"GKOS": {
+"name": "Glaukos Corporation",
+"sector": "Health Care",
+"marketCap": 13284369597
+},
+"GLBE": {
+"name": "Global-E Online Ltd.",
+"sector": "Consumer Cyclical",
+"marketCap": 7089903420
+},
+"GM": {
+"name": "General Motors Company",
+"sector": "Consumer Cyclical",
+"marketCap": 74991544991
+},
+"GMAB": {
+"name": "Genmab A/S",
+"sector": "Healthcare",
+"marketCap": 33215899266
+},
+"GPN": {
+"name": "Global Payments Inc.",
+"sector": "Industrials",
+"marketCap": 26524448124
+},
+"GSAT": {
+"name": "Globalstar, Inc.",
+"sector": "Communication Services",
+"marketCap": 11152449767
+},
+"HAE": {
+"name": "Haemonetics Corporation",
+"sector": "Health Care",
+"marketCap": 5460175256
+},
+"HALO": {
+"name": "Halozyme Therapeutics Inc",
+"sector": "Health Care",
+"marketCap": 14029487780
+},
+"HAS": {
+"name": "Hasbro, Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 17345757818
+},
+"HHH": {
+"name": "Howard Hughes Holdings Inc",
+"sector": "Real Estate",
+"marketCap": 4644113864
+},
+"HLT": {
+"name": "Hilton Worldwide Holdings Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 83864117257
+},
+"HNGE": {
+"name": "Hinge Health Inc",
+"sector": "Technology",
+"marketCap": 9337150991
+},
+"HOG": {
+"name": "Harley-Davidson Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 3299420075
+},
+"HOMB": {
+"name": "Home BancShares Inc",
+"sector": "Finance",
+"marketCap": 5975482448
+},
+"HQY": {
+"name": "HealthEquity, Inc.",
+"sector": "Healthcare",
+"marketCap": 8522156845
+},
+"HRB": {
+"name": "H&R Block Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 6457531702
+},
+"HRI": {
+"name": "Herc Holdings Inc",
+"sector": "Industrials",
+"marketCap": 5008131845
+},
+"HST": {
+"name": "Host Hotels & Resorts, Inc.",
+"sector": "Real Estate",
+"marketCap": 17663323774
+},
+"HTFL": {
+"name": "Heartflow, Inc.",
+"sector": "Healthcare",
+"marketCap": 5138959223
+},
+"HUM": {
+"name": "Humana Inc.",
+"sector": "Healthcare",
+"marketCap": 53603281214
+},
+"IBN": {
+"name": "ICICI Bank Limited",
+"sector": "Finance",
+"marketCap": 121310207217
+},
+"ICLR": {
+"name": "ICON plc",
+"sector": "Healthcare",
+"marketCap": 14960869554
+},
+"IEX": {
+"name": "IDEX Corporation",
+"sector": "Industrials",
+"marketCap": 17625734621
+},
+"IRON": {
+"name": "Disc Medicine, Inc.",
+"sector": "Healthcare",
+"marketCap": 3965696604
+},
+"ITRI": {
+"name": "Itron, Inc.",
+"sector": "Technology",
+"marketCap": 4367621600
+},
+"ITW": {
+"name": "Illinois Tool Works Inc.",
+"sector": "Industrials",
+"marketCap": 82054224346
+},
+"J": {
+"name": "Jacobs Solutions Inc.",
+"sector": "Industrials",
+"marketCap": 18594196160
+},
+"JKHY": {
+"name": "Jack Henry & Associates, Inc.",
+"sector": "Technology",
+"marketCap": 12245931191
+},
+"JNJ": {
+"name": "Johnson & Johnson",
+"sector": "Healthcare",
+"marketCap": 675033880504
+},
+"KDP": {
+"name": "Keurig Dr Pepper Inc.",
+"sector": "Consumer Defensive",
+"marketCap": 52056274387
+},
+"KHC": {
+"name": "The Kraft Heinz Company",
+"sector": "Consumer Defensive",
+"marketCap": 28731529061
+},
+"KMB": {
+"name": "Kimberly-Clark Corporation",
+"sector": "Consumer Defensive",
+"marketCap": 66804695056
+},
+"KNSA": {
+"name": "Kiniksa Pharmaceuticals Interna",
+"sector": "Healthcare",
+"marketCap": 7524026638
+},
+"KO": {
+"name": "Coca-Cola Company (The)",
+"sector": "Consumer Defensive",
+"marketCap": 419736609513
+},
+"KOD": {
+"name": "Kodiak Sciences Inc",
+"sector": "Healthcare",
+"marketCap": 6871959398
+},
+"KRC": {
+"name": "Kilroy Realty Corporation",
+"sector": "Real Estate",
+"marketCap": 4167351040
+},
+"KYMR": {
+"name": "Kymera Therapeutics, Inc.",
+"sector": "Healthcare",
+"marketCap": 11511478858
+},
+"LAMR": {
+"name": "Lamar Advertising Company",
+"sector": "Real Estate",
+"marketCap": 16518995370
+},
+"LFST": {
+"name": "LifeStance Health Group, Inc.",
+"sector": "Healthcare",
+"marketCap": 5463340660
+},
+"LH": {
+"name": "Labcorp Holdings Inc.",
+"sector": "Healthcare",
+"marketCap": 30225076892
+},
+"LIVN": {
+"name": "LivaNova PLC",
+"sector": "Healthcare",
+"marketCap": 5011798067
+},
+"LLY": {
+"name": "Eli Lilly and Company",
+"sector": "Healthcare",
+"marketCap": 1280258960400
+},
+"LNTH": {
+"name": "Lantheus Holdings, Inc.",
+"sector": "Healthcare",
+"marketCap": 6644783461
+},
+"LTH": {
+"name": "Life Time Group Holdings Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 10586686020
+},
+"LW": {
+"name": "Lamb Weston Holdings, Inc.",
+"sector": "Consumer Defensive",
+"marketCap": 7835573873
+},
+"LYFT": {
+"name": "Lyft, Inc.",
+"sector": "Technology",
+"marketCap": 6533826871
+},
+"LYV": {
+"name": "Live Nation Entertainment, Inc.",
+"sector": "Communication Services",
+"marketCap": 42463090050
+},
+"M": {
+"name": "Macy's Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 6030568756
+},
+"MA": {
+"name": "Mastercard Incorporated",
+"sector": "Financial Services",
+"marketCap": 575612176788
+},
+"MAC": {
+"name": "Macerich Company (The)",
+"sector": "Real Estate",
+"marketCap": 7043614875
+},
+"MANH": {
+"name": "Manhattan Associates, Inc.",
+"sector": "Technology",
+"marketCap": 14999128039
+},
+"MAR": {
+"name": "Marriott International",
+"sector": "Consumer Cyclical",
+"marketCap": 110515735218
+},
+"MAS": {
+"name": "Masco Corporation",
+"sector": "Industrials",
+"marketCap": 16368025241
+},
+"MCK": {
+"name": "McKesson Corporation",
+"sector": "Healthcare",
+"marketCap": 124023542831
+},
+"MCO": {
+"name": "Moody's Corporation",
+"sector": "Financial Services",
+"marketCap": 88786331281
+},
+"MDLZ": {
+"name": "Mondelez International, Inc.",
+"sector": "Consumer Defensive",
+"marketCap": 84431416016
+},
+"MDT": {
+"name": "Medtronic plc.",
+"sector": "Healthcare",
+"marketCap": 129973201783
+},
+"MEOH": {
+"name": "Methanex Corporation",
+"sector": "Basic Materials",
+"marketCap": 5309509157
+},
+"MET": {
+"name": "MetLife, Inc.",
+"sector": "Financial Services",
+"marketCap": 64691835734
+},
+"MFC": {
+"name": "Manulife Financial Corporation",
+"sector": "Finance",
+"marketCap": 71422481867
+},
+"MHK": {
+"name": "Mohawk Industries Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 8748795966
+},
+"MMM": {
+"name": "3M Company",
+"sector": "Industrials",
+"marketCap": 97599884460
+},
+"MMSI": {
+"name": "Merit Medical Systems Inc",
+"sector": "Health Care",
+"marketCap": 5364493465
+},
+"MNDY": {
+"name": "monday.com Ltd.",
+"sector": "Technology",
+"marketCap": 4037972500
+},
+"MNST": {
+"name": "Monster Beverage Corporation",
+"sector": "Consumer Defensive",
+"marketCap": 88753590842
+},
+"MO": {
+"name": "Altria Group, Inc.",
+"sector": "Consumer Defensive",
+"marketCap": 128733381836
+},
+"MRK": {
+"name": "Merck & Company, Inc.",
+"sector": "Healthcare",
+"marketCap": 362834842303
+},
+"MRNA": {
+"name": "Moderna, Inc.",
+"sector": "Healthcare",
+"marketCap": 100625191260
+},
+"MRSH": {
+"name": "Marsh",
+"sector": "Financial Services",
+"marketCap": 98678735170
+},
+"MSCI": {
+"name": "MSCI Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 45823635000
+},
+"MSFT": {
+"name": "Microsoft Corporation",
+"sector": "Technology",
+"marketCap": 3959349687910
+},
+"MSI": {
+"name": "Motorola Solutions, Inc.",
+"sector": "Technology",
+"marketCap": 88490026523
+},
+"MTN": {
+"name": "Vail Resorts Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 5753383115
+},
+"NAVN": {
+"name": "Navan, Inc.",
+"sector": "Technology",
+"marketCap": 6791505637
+},
+"NDAQ": {
+"name": "Nasdaq, Inc.",
+"sector": "Financial Services",
+"marketCap": 60868314699
+},
+"NSC": {
+"name": "Norfolk Southern Corporation",
+"sector": "Industrials",
+"marketCap": 74256029402
+},
+"NTES": {
+"name": "NetEase, Inc.",
+"sector": "Communication Services",
+"marketCap": 78199107270
+},
+"NTSK": {
+"name": "Netskope, Inc.",
+"sector": "Technology",
+"marketCap": 9140108265
+},
+"NUE": {
+"name": "Nucor Corporation",
+"sector": "Basic Materials",
+"marketCap": 58798161721
+},
+"OGE": {
+"name": "OGE Energy Corp",
+"sector": "Utilities",
+"marketCap": 10466536114
+},
+"OHI": {
+"name": "Omega Healthcare Investors, Inc",
+"sector": "Real Estate",
+"marketCap": 14644214914
+},
+"OMC": {
+"name": "Omnicom Group Inc.",
+"sector": "Communication Services",
+"marketCap": 25331349917
+},
+"ORKA": {
+"name": "Oruka Therapeutics, Inc.",
+"sector": "Healthcare",
+"marketCap": 7268522089
+},
+"OUT": {
+"name": "OUTFRONT Media Inc",
+"sector": "Real Estate",
+"marketCap": 5423204378
+},
+"OZK": {
+"name": "Bank OZK",
+"sector": "Financial Services",
+"marketCap": 5440639195
+},
+"PAYC": {
+"name": "Paycom Software Inc",
+"sector": "Technology",
+"marketCap": 11263848304
+},
+"PAYX": {
+"name": "Paychex, Inc.",
+"sector": "Technology",
+"marketCap": 41069468147
+},
+"PCOR": {
+"name": "Procore Technologies Inc",
+"sector": "Technology",
+"marketCap": 11263291694
+},
+"PCTY": {
+"name": "Paylocity Holding Corporation",
+"sector": "Technology",
+"marketCap": 9355474163
+},
+"PCVX": {
+"name": "Vaxcyte, Inc.",
+"sector": "Healthcare",
+"marketCap": 10862545131
+},
+"PFE": {
+"name": "Pfizer, Inc.",
+"sector": "Healthcare",
+"marketCap": 167860696785
+},
+"PG": {
+"name": "Procter & Gamble Company (The)",
+"sector": "Consumer Defensive",
+"marketCap": 388622695342
+},
+"PGR": {
+"name": "Progressive Corporation (The)",
+"sector": "Financial Services",
+"marketCap": 135298448020
+},
+"PK": {
+"name": "Park Hotels & Resorts Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 3179762284
+},
+"PKG": {
+"name": "Packaging Corporation of Americ",
+"sector": "Consumer Cyclical",
+"marketCap": 22609552502
+},
+"PM": {
+"name": "Philip Morris International Inc",
+"sector": "Health Care",
+"marketCap": 314630225270
+},
+"PNFP": {
+"name": "Pinnacle Financial Partners Inc Common stock",
+"sector": "Finance",
+"marketCap": 15213404224
+},
+"PRU": {
+"name": "Prudential Financial, Inc.",
+"sector": "Financial Services",
+"marketCap": 42202720314
+},
+"PSA": {
+"name": "Public Storage",
+"sector": "Real Estate",
+"marketCap": 62728953185
+},
+"PTC": {
+"name": "PTC Inc.",
+"sector": "Technology",
+"marketCap": 21307125133
+},
+"PVH": {
+"name": "PVH Corp.",
+"sector": "Industrials",
+"marketCap": 4150098078
+},
+"PYPL": {
+"name": "PayPal Holdings, Inc.",
+"sector": "Financial Services",
+"marketCap": 49407555184
+},
+"QGEN": {
+"name": "Qiagen N.V. Common Shares",
+"sector": "Health Care",
+"marketCap": 10367620823
+},
+"QLYS": {
+"name": "Qualys, Inc.",
+"sector": "Technology",
+"marketCap": 7130035473
+},
+"QSR": {
+"name": "Restaurant Brands International",
+"sector": "Consumer Cyclical",
+"marketCap": 26704568314
+},
+"QTWO": {
+"name": "Q2 Holdings Inc",
+"sector": "Technology",
+"marketCap": 4567818308
+},
+"RAL": {
+"name": "Ralliant Corporation",
+"sector": "Industrials",
+"marketCap": 7499941598
+},
+"RDNT": {
+"name": "RadNet, Inc.",
+"sector": "Healthcare",
+"marketCap": 6150743711
+},
+"REGN": {
+"name": "Regeneron Pharmaceuticals, Inc.",
+"sector": "Healthcare",
+"marketCap": 99248907625
+},
+"RELX": {
+"name": "RELX PLC PLC American Depositary Shares (Each representing One Ordinary Share)",
+"sector": "Consumer Discretionary",
+"marketCap": 70182028154
+},
+"REXR": {
+"name": "Rexford Industrial Realty Inc",
+"sector": "Real Estate",
+"marketCap": 8020872444
+},
+"RHI": {
+"name": "Robert Half Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 4282375254
+},
+"RHP": {
+"name": "Ryman Hospitality Properties Inc (REIT)",
+"sector": "Real Estate",
+"marketCap": 9105964758
+},
+"RLI": {
+"name": "RLI Corp. (DE)",
+"sector": "Finance",
+"marketCap": 6270801708
+},
+"ROKU": {
+"name": "Roku Inc",
+"sector": "Telecommunications",
+"marketCap": 23945672313
+},
+"ROP": {
+"name": "Roper Technologies, Inc.",
+"sector": "Technology",
+"marketCap": 47309703342
+},
+"ROST": {
+"name": "Ross Stores, Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 77074453214
+},
+"RPRX": {
+"name": "Royalty Pharma plc",
+"sector": "Healthcare",
+"marketCap": 31173059959
+},
+"RRC": {
+"name": "Range Resources Corporation",
+"sector": "Energy",
+"marketCap": 12119205497
+},
+"RSG": {
+"name": "Republic Services, Inc.",
+"sector": "Industrials",
+"marketCap": 75958849963
+},
+"RVTY": {
+"name": "Revvity, Inc.",
+"sector": "Healthcare",
+"marketCap": 17666833295
+},
+"RY": {
+"name": "Royal Bank Of Canada",
+"sector": "Finance",
+"marketCap": 278491898367
+},
+"RYAN": {
+"name": "Ryan Specialty Holdings Inc",
+"sector": "Finance",
+"marketCap": 12002940054
+},
+"SAIL": {
+"name": "SailPoint, Inc.",
+"sector": "Technology",
+"marketCap": 11623761196
+},
+"SAP": {
+"name": "SAP  SE ADS",
+"sector": "Technology",
+"marketCap": 286868023214
+},
+"SBRA": {
+"name": "Sabra Health Care REIT, Inc.",
+"sector": "Real Estate",
+"marketCap": 5493331657
+},
+"SEIC": {
+"name": "SEI Investments Company",
+"sector": "Financial Services",
+"marketCap": 13115817245
+},
+"SEZL": {
+"name": "Sezzle Inc.",
+"sector": "Financial Services",
+"marketCap": 5157036109
+},
+"SGRY": {
+"name": "Surgery Partners, Inc.",
+"sector": "Healthcare",
+"marketCap": 3489293385
+},
+"SIG": {
+"name": "Signet Jewelers Limited Common Shares",
+"sector": "Consumer Discretionary",
+"marketCap": 4494229431
+},
+"SIRI": {
+"name": "SiriusXM Holdings Inc.",
+"sector": "Communication Services",
+"marketCap": 10855060861
+},
+"SJM": {
+"name": "The J.M. Smucker Company",
+"sector": "Consumer Defensive",
+"marketCap": 14214961744
+},
+"SN": {
+"name": "SharkNinja Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 31444401448
+},
+"SONY": {
+"name": "Sony Group Corporation American Depositary Shares",
+"sector": "Consumer Staples",
+"marketCap": 159075497907
+},
+"SPG": {
+"name": "Simon Property Group, Inc.",
+"sector": "Real Estate",
+"marketCap": 75699882032
+},
+"SPGI": {
+"name": "S&P Global Inc.",
+"sector": "Financial Services",
+"marketCap": 137734384753
+},
+"SPOT": {
+"name": "Spotify Technology S.A.",
+"sector": "Consumer Discretionary",
+"marketCap": 127062232715
+},
+"SSB": {
+"name": "SouthState Bank Corporation",
+"sector": "Finance",
+"marketCap": 10066399065
+},
+"STRC": {
+"name": "Strategy Inc Variable Rate Series A Perpetual Stretch Preferred Stock",
+"sector": "Technology",
+"marketCap": 42167883963
+},
+"SWK": {
+"name": "Stanley Black & Decker, Inc.",
+"sector": "Industrials",
+"marketCap": 17192258058
+},
+"SWKS": {
+"name": "Skyworks Solutions, Inc.",
+"sector": "Technology",
+"marketCap": 20609908570
+},
+"SYF": {
+"name": "Synchrony Financial",
+"sector": "Finance",
+"marketCap": 22978564177
+},
+"SYNA": {
+"name": "Synaptics Incorporated",
+"sector": "Technology",
+"marketCap": 4676046211
+},
+"SYRE": {
+"name": "Spyre Therapeutics, Inc.",
+"sector": "Healthcare",
+"marketCap": 10144608205
+},
+"TAK": {
+"name": "Takeda Pharmaceutical Company Limited American Depositary Shares (each representing 1/2 of a share of)",
+"sector": "Health Care",
+"marketCap": 66388335214
+},
+"TBBB": {
+"name": "BBB Foods Inc Common Shares",
+"sector": "Consumer Staples",
+"marketCap": 7731428974
+},
+"TD": {
+"name": "Toronto Dominion Bank (The)",
+"sector": "Finance",
+"marketCap": 199911532170
+},
+"TDC": {
+"name": "Teradata Corporation",
+"sector": "Technology",
+"marketCap": 3059700000
+},
+"TECH": {
+"name": "Bio-Techne Corp",
+"sector": "Healthcare",
+"marketCap": 11436205405
+},
+"TEM": {
+"name": "Tempus AI, Inc.",
+"sector": "Healthcare",
+"marketCap": 14488162082
+},
+"TENB": {
+"name": "Tenable Holdings, Inc.",
+"sector": "Technology",
+"marketCap": 4486512287
+},
+"TEVA": {
+"name": "Teva Pharmaceutical Industries Limited",
+"sector": "Health Care",
+"marketCap": 49718489266
+},
+"TFX": {
+"name": "Teleflex Incorporated",
+"sector": "Health Care",
+"marketCap": 5976952033
+},
+"TGTX": {
+"name": "TG Therapeutics, Inc.",
+"sector": "Healthcare",
+"marketCap": 9939481426
+},
+"THC": {
+"name": "Tenet Healthcare Corporation",
+"sector": "Healthcare",
+"marketCap": 23316896457
+},
+"TMO": {
+"name": "Thermo Fisher Scientific Inc",
+"sector": "Healthcare",
+"marketCap": 265922951763
+},
+"TOST": {
+"name": "Toast Inc",
+"sector": "Technology",
+"marketCap": 20137460000
+},
+"TPG": {
+"name": "TPG Inc.",
+"sector": "Financial Services",
+"marketCap": 8533640986
+},
+"TREX": {
+"name": "Trex Company Inc",
+"sector": "Basic Materials",
+"marketCap": 5472544261
+},
+"TRI": {
+"name": "Thomson Reuters Corporation Common Shares",
+"sector": "Consumer Discretionary",
+"marketCap": 48794464433
+},
+"TRNO": {
+"name": "Terreno Realty Corporation",
+"sector": "Real Estate",
+"marketCap": 7387069225
+},
+"TROW": {
+"name": "T. Rowe Price Group, Inc.",
+"sector": "Financial Services",
+"marketCap": 23613047601
+},
+"TRU": {
+"name": "TransUnion",
+"sector": "Finance",
+"marketCap": 15488654000
+},
+"TRV": {
+"name": "The Travelers Companies, Inc.",
+"sector": "Financial Services",
+"marketCap": 81867866021
+},
+"TS": {
+"name": "Tenaris S.A.",
+"sector": "Energy",
+"marketCap": 30900024270
+},
+"TTAN": {
+"name": "ServiceTitan, Inc.",
+"sector": "Technology",
+"marketCap": 7893003794
+},
+"TTC": {
+"name": "Toro Company (The)",
+"sector": "Consumer Discretionary",
+"marketCap": 9923561916
+},
+"TTEK": {
+"name": "Tetra Tech, Inc.",
+"sector": "Industrials",
+"marketCap": 9629831093
+},
+"TXN": {
+"name": "Texas Instruments Incorporated",
+"sector": "Technology",
+"marketCap": 283095179369
+},
+"TYL": {
+"name": "Tyler Technologies, Inc.",
+"sector": "Technology",
+"marketCap": 16770169967
+},
+"UL": {
+"name": "Unilever PLC American Depositary Shares (each representing One Ordinary Share)",
+"sector": "Consumer Discretionary",
+"marketCap": 142164061431
+},
+"UNH": {
+"name": "UnitedHealth Group Incorporated (DE)",
+"sector": "Health Care",
+"marketCap": 354842874408
+},
+"UNP": {
+"name": "Union Pacific Corporation",
+"sector": "Industrials",
+"marketCap": 179528984472
+},
+"URBN": {
+"name": "Urban Outfitters, Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 7449866046
+},
+"USB": {
+"name": "U.S. Bancorp",
+"sector": "Financial Services",
+"marketCap": 94583276866
+},
+"USFD": {
+"name": "US Foods Holding Corp.",
+"sector": "Consumer Discretionary",
+"marketCap": 22901169933
+},
+"V": {
+"name": "Visa Inc.",
+"sector": "Financial Services",
+"marketCap": 793991189352
+},
+"VCTR": {
+"name": "Victory Capital Holdings, Inc. ",
+"sector": "Financial Services",
+"marketCap": 7771225900
+},
+"VEEV": {
+"name": "Veeva Systems Inc",
+"sector": "Technology",
+"marketCap": 50120503606
+},
+"VLTO": {
+"name": "Veralto Corp",
+"sector": "Industrials",
+"marketCap": 28877953620
+},
+"VLY": {
+"name": "Valley National Bancorp",
+"sector": "Financial Services",
+"marketCap": 7916626662
+},
+"VRDN": {
+"name": "Viridian Therapeutics, Inc.",
+"sector": "Healthcare",
+"marketCap": 3548701531
+},
+"VRNS": {
+"name": "Varonis Systems, Inc.",
+"sector": "Technology",
+"marketCap": 5653088648
+},
+"VRSN": {
+"name": "VeriSign, Inc.",
+"sector": "Technology",
+"marketCap": 28173872671
+},
+"VRTX": {
+"name": "Vertex Pharmaceuticals Incorpor",
+"sector": "Healthcare",
+"marketCap": 138692721236
+},
+"VSXY": {
+"name": "Victorias Secret & Co.",
+"sector": "Consumer Discretionary",
+"marketCap": 8618105594
+},
+"VTR": {
+"name": "Ventas, Inc.",
+"sector": "Real Estate",
+"marketCap": 47815903431
+},
+"VTRS": {
+"name": "Viatris Inc.",
+"sector": "Healthcare",
+"marketCap": 24144335980
+},
+"W": {
+"name": "Wayfair Inc",
+"sector": "Consumer Discretionary",
+"marketCap": 15286389697
+},
+"WAB": {
+"name": "Westinghouse Air Brake Technolo",
+"sector": "Industrials",
+"marketCap": 51042127936
+},
+"WAT": {
+"name": "Waters Corporation",
+"sector": "Healthcare",
+"marketCap": 92547739320
+},
+"WAY": {
+"name": "Waystar Holding Corp.",
+"sector": "Healthcare",
+"marketCap": 5548575446
+},
+"WCN": {
+"name": "Waste Connections Inc Common Shares",
+"sector": "Utilities",
+"marketCap": 47290679113
+},
+"WDAY": {
+"name": "Workday Inc",
+"sector": "Technology",
+"marketCap": 48330140000
+},
+"WELL": {
+"name": "Welltower Inc.",
+"sector": "Real Estate",
+"marketCap": 181458404090
+},
+"WK": {
+"name": "Workiva Inc",
+"sector": "Technology",
+"marketCap": 4661860527
+},
+"WRB": {
+"name": "W.R. Berkley Corporation",
+"sector": "Financial Services",
+"marketCap": 28484113865
+},
+"WSM": {
+"name": "Williams-Sonoma, Inc.",
+"sector": "Consumer Cyclical",
+"marketCap": 30865814688
+},
+"WST": {
+"name": "West Pharmaceutical Services, I",
+"sector": "Healthcare",
+"marketCap": 28744930915
+},
+"WTRG": {
+"name": "Essential Utilities Inc",
+"sector": "Utilities",
+"marketCap": 13015790927
+},
+"WTW": {
+"name": "Willis Towers Watson Public Lim",
+"sector": "Financial Services",
+"marketCap": 30696016695
+},
+"XMTR": {
+"name": "Xometry, Inc.",
+"sector": "Industrials",
+"marketCap": 7058914908
+},
+"XNCR": {
+"name": "Xencor, Inc.",
+"sector": "Healthcare",
+"marketCap": 3027101065
+},
+"XYZ": {
+"name": "Block, Inc.",
+"sector": "Technology",
+"marketCap": 51819626577
+},
+"ZBH": {
+"name": "Zimmer Biomet Holdings, Inc.",
+"sector": "Healthcare",
+"marketCap": 20339115574
+},
+"ZION": {
+"name": "Zions Bancorporation N.A.",
+"sector": "Financial Services",
+"marketCap": 9644704776
+}
+}

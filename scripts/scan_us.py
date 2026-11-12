@@ -43,6 +43,15 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 OUTPUT_FILE = os.path.join(ROOT_DIR, "public", "data", "us.json")
 UNIVERSE_FILE = os.path.join(SCRIPT_DIR, "us_universe.txt")
+# Offline name/sector cache, used when Nasdaq's screener API answers 403 to the
+# Actions IPs (intermittent since 2026-11-11). Yahoo's .info that would replace
+# it is blocked from runners, so without this the sector column just goes blank.
+META_CACHE_FILE = os.path.join(SCRIPT_DIR, "us_meta.json")
+try:
+    with open(META_CACHE_FILE) as _f:
+        META_CACHE = json.load(_f)
+except Exception:
+    META_CACHE = {}
 
 os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
@@ -95,7 +104,21 @@ def build_prefiltered_universe():
         log("[Phase 0] Nasdaq API unavailable — falling back to static universe file")
         with open(UNIVERSE_FILE) as f:
             tickers = [line.strip() for line in f if line.strip()]
-        return {t: None for t in tickers}, len(tickers), False
+        # Name/sector/marketCap come from the cache; marketCap is still
+        # refreshed per-ticker from fast_info in Phase 2.
+        cached = 0
+        candidates = {}
+        for t in tickers:
+            c = META_CACHE.get(t)
+            if c:
+                cached += 1
+                candidates[t] = {"name": c.get("name") or t,
+                                 "sector": c.get("sector") or "",
+                                 "marketCap": 0}
+            else:
+                candidates[t] = None
+        log(f"[Phase 0] metadata cache covers {cached}/{len(tickers)} tickers")
+        return candidates, len(tickers), False
 
     total = len(rows)
     candidates = {}
@@ -121,6 +144,17 @@ def build_prefiltered_universe():
         except Exception:
             continue
     log(f"[Phase 0] Nasdaq universe {total} → {len(candidates)} after MCap>${MCAP_THRESHOLD/1e9:.0f}B & Price>${PRICE_THRESHOLD}")
+    # Keep the offline cache fresh (and growing) whenever the API works.
+    try:
+        merged = dict(META_CACHE)
+        for t, m in candidates.items():
+            merged[t] = {"name": m["name"], "sector": m["sector"],
+                         "marketCap": int(m["marketCap"])}
+        with open(META_CACHE_FILE, "w") as f:
+            json.dump(dict(sorted(merged.items())), f, ensure_ascii=False, indent=0)
+        log(f"[Phase 0] metadata cache refreshed → {len(merged)} tickers")
+    except Exception as e:
+        log(f"[Phase 0] could not refresh metadata cache: {str(e)[:80]}")
     return candidates, total, True
 
 
@@ -350,6 +384,10 @@ def main():
                     mcap = getattr(tk.fast_info, "market_cap", 0) or 0
                 except Exception:
                     pass
+                if not mcap:
+                    # fast_info can come back empty; a cached size beats dropping
+                    # a stock the Nasdaq API would have sized correctly.
+                    mcap = (META_CACHE.get(item["ticker"]) or {}).get("marketCap") or 0
                 if mcap < MCAP_THRESHOLD:
                     continue
                 item["marketCap"] = int(mcap)
