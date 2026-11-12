@@ -391,10 +391,17 @@ def main():
                 if mcap < MCAP_THRESHOLD:
                     continue
                 item["marketCap"] = int(mcap)
+                # Only fill what .info actually knows. Assigning
+                # `info.get(...) or ticker` unconditionally wiped the values the
+                # cache had just supplied, because .info returns {} on runners.
                 try:
-                    info = tk.info
-                    item["name"] = info.get("shortName") or info.get("longName") or item["ticker"]
-                    item["sector"] = info.get("sector") or ""
+                    info = tk.info or {}
+                    name = info.get("shortName") or info.get("longName")
+                    if name:
+                        item["name"] = name
+                    sector = info.get("sector")
+                    if sector:
+                        item["sector"] = sector
                 except Exception:
                     pass
                 kept.append(item)
