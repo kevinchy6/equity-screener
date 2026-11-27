@@ -157,7 +157,7 @@
 "ADI": {
 "name": "Analog Devices Inc",
 "sector": "Technology",
-"marketCap": 161411179219
+"marketCap": 160781926552
 },
 "ADM": {
 "name": "Archer-Daniels-Midland Company",
@@ -182,7 +182,7 @@
 "ADSK": {
 "name": "Autodesk Inc",
 "sector": "Technology",
-"marketCap": 51578065000
+"marketCap": 51331280000
 },
 "AEE": {
 "name": "Ameren Corporation",
@@ -477,7 +477,7 @@
 "AMTM": {
 "name": "Amentum Holdings Inc",
 "sector": "Consumer Discretionary",
-"marketCap": 6083319555
+"marketCap": 6091263366
 },
 "AMX": {
 "name": "America Movil S.A.B. de C.V. American Depositary Shares (each representing the right to receive twenty (20) Series B Shares",
@@ -512,7 +512,7 @@
 "ANT": {
 "name": "Anthropic PBC",
 "sector": "Technology",
-"marketCap": 1083445623974
+"marketCap": 1094454184030
 },
 "AON": {
 "name": "Aon plc (Ireland)",
@@ -642,7 +642,7 @@
 "ARMK": {
 "name": "Aramark",
 "sector": "Consumer Discretionary",
-"marketCap": 15229618792
+"marketCap": 15218118691
 },
 "AROC": {
 "name": "Archrock Inc",
@@ -1137,7 +1137,7 @@
 "BJ": {
 "name": "BJ's Wholesale Club Holdings Inc",
 "sector": "Consumer Discretionary",
-"marketCap": 12846204176
+"marketCap": 12843392883
 },
 "BKH": {
 "name": "Black Hills Corporation",
@@ -1407,7 +1407,7 @@
 "BURL": {
 "name": "Burlington Stores Inc",
 "sector": "Consumer Discretionary",
-"marketCap": 15708195814
+"marketCap": 15637071905
 },
 "BVN": {
 "name": "Buenaventura Mining Company Inc",
@@ -1852,7 +1852,7 @@
 "CMC": {
 "name": "Commercial Metals Company",
 "sector": "Industrials",
-"marketCap": 6289085811
+"marketCap": 6285221649
 },
 "CMCSA": {
 "name": "Comcast Corporation",
@@ -2642,7 +2642,7 @@
 "DY": {
 "name": "Dycom Industries Inc",
 "sector": "Industrials",
-"marketCap": 5355228720
+"marketCap": 5294924473
 },
 "DYN": {
 "name": "Dyne Therapeutics Inc",
@@ -3142,7 +3142,7 @@
 "FE": {
 "name": "FirstEnergy Corp.",
 "sector": "Utilities",
-"marketCap": 27587161641
+"marketCap": 27592723599
 },
 "FELE": {
 "name": "Franklin Electric Co. Inc",
@@ -3572,7 +3572,7 @@
 "GIB": {
 "name": "CGI Inc",
 "sector": "Consumer Discretionary",
-"marketCap": 17272159698
+"marketCap": 17243113333
 },
 "GIL": {
 "name": "Gildan Activewear Inc Sub. Vot.",
@@ -4917,7 +4917,7 @@
 "LOW": {
 "name": "Lowe's Companies Inc",
 "sector": "Consumer Discretionary",
-"marketCap": 132195547957
+"marketCap": 132194109968
 },
 "LPLA": {
 "name": "LPL Financial Holdings Inc",
@@ -7882,7 +7882,7 @@
 "TGT": {
 "name": "Target Corporation",
 "sector": "Consumer Discretionary",
-"marketCap": 78216269037
+"marketCap": 77948614072
 },
 "TGTX": {
 "name": "TG Therapeutics Inc",
